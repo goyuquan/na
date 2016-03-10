@@ -4,7 +4,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::auth();
 
-    Route::get('/', 'PageController@homepage');
+    Route::get('/', 'PageController@home');
 
     Route::get('/loginm','UserController@loginm');
     Route::post('/loginm_post','UserController@loginm_post');
