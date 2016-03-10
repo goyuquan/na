@@ -1,0 +1,53 @@
+/*common.css*/
+body {
+    background: #f3f3f3;
+}
+h1,h2,h3,h4,h5,h6,span,div,p,a {
+    font-family: "Microsoft YaHei"!important;
+}
+.inline_block {
+    display: inline-block;
+}
+#menu .item:first-child {
+    margin-right: 2em!important;
+}
+#footer {
+    text-align:center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: -2em;
+    border-top: 1px solid #0a50ae;
+    background: #1e70bf!important;
+}
+#footer a {
+    color:#fff!important;
+    margin: 0 1em;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+#footer p {
+    margin: 0.6em!important;
+    color: 	#aed2dd;
+}
+.fixed.menu {
+    background:rgba(255,255,255,0.8);
+    height: 4em;
+}
+#user_pop {
+    padding: 0!important;
+}
+.text_center {
+    text-align: center;
+}
+.block {
+    display: block!important;
+}
+
+
+.order {
+    margin: 2em auto;
+}
+.order h2 {
+    color:#1e70bf!important;
+}
