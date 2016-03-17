@@ -85,45 +85,6 @@ class UserController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
-        $messages = [
-            'name.required' => '角色名称不能为空',
-            'name.max' => '角色名称不能大于:max位',
-            'name.min' => '角色名称不能小于:min位',
-            'email.required' => 'email不能为空',
-            'email.unique' => 'email不能重复',
-            'email.email' => 'email格式不正确',
-            'password.required' => 'password不能为空',
-            'password.max' => 'password不能大于:max位',
-            'password.min' => 'password不能小于:min位',
-            'password_confirmation.confirmed' => '密码不一致'
-        ];
-        $this->validate($request, [
-            'name' => 'required|min:1|max:20',
-            'email' => 'required|email|unique:users',
-            'password' => 'confirmed|required|min:6|max:20'
-        ],$messages);
-
-        $user = new User;
-
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->save();
-
-        Session()->flash('user', 'user create was successful!');
-
-        return redirect('/admin/users');
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
     public function edit($id)
     {
         $user = User::findOrFail($id);
@@ -145,24 +106,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         if ($request->password) {
             $user->password = bcrypt($request->password);
-        }
-
-
-        if ($request->member) {
-            $later_time = $user->member ? $user->member : time();
-            switch ($request->member)
-                {
-                    case 30: $member = ($later_time + 30*86400); break;
-                    case 90: $member = ($later_time + 90*86400); break;
-                    case 180: $member = ($later_time + 180*86400); break;
-                    case 360: $member = ($later_time + 360*86400); break;
-                    default: $member = null;
-                }
-            $user->member = $member;
-        } else {
-            if ($request->member2) {
-                $user->member = strtotime($request->member2);
-            }
         }
 
         $user->save();
