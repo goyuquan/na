@@ -72,6 +72,12 @@ class UserController extends Controller
         }
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
 
     public function create()
     {
@@ -166,20 +172,6 @@ class UserController extends Controller
         return redirect('/admin/users');
     }
 
-
-    public function loginm()
-    {
-        return view('auth.loginm');
-    }
-
-    public function loginm_post(Request $request)
-    {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('/admin/users/mobile/1');
-        } else {
-            return "wrong";
-        }
-    }
 
 
     public function destroy($id)

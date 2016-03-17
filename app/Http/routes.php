@@ -7,6 +7,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/register', 'UserController@_register');
     Route::get('/login', 'UserController@login');
     Route::post('/login', 'UserController@_login');
+    Route::get('/logout', 'UserController@logout');
 
     Route::get('/albums/{id?}', 'AlbumController@albums');
     Route::get('/videoss/{id?}', 'VideoController@videos');
