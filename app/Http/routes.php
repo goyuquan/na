@@ -15,6 +15,7 @@ Route::group(['middleware' => ['web']], function () {
 
     // Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', 'AdminController@index');
+    Route::get('/admin/users/{id}', 'AdminuserController@index');
 
         Route::get('/admin','AdminController@index');
         Route::post('/admin/thumbnail','AdminController@thumbnail');

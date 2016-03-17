@@ -115,13 +115,4 @@ class UserController extends Controller
         return redirect('/admin/users');
     }
 
-
-
-    public function destroy($id)
-    {
-        user::destroy($id);
-
-        return redirect('/admin/users');
-    }
-
 }
