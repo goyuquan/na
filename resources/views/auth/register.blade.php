@@ -127,7 +127,8 @@ $(function(){
 				equalTo : '两次输入密码不一致'
 			},
 			distinguish : {
-				required : '输入abcedfg'
+				required : '输入abcedfg',
+				equalTo : '输入abcedfg'
 			}
 		},
 	});
