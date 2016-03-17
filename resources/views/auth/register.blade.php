@@ -1,420 +1,136 @@
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-
-		<title> SmartAdmin </title>
-		<meta name="description" content="">
-		<meta name="author" content="">
-
-		<!-- Use the correct meta names below for your web application
-			 Ref: http://davidbcalhoun.com/2010/viewport-metatag
-
-		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">-->
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<!-- Basic Styles -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
-
-		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.css">
-		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.css">
-
-		<!-- SmartAdmin RTL Support is under construction
-			<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.css"> -->
-
-		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-
-		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.css">
-
-		<!-- FAVICONS -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
-
-	</head>
-	<body id="login">
-		<!-- possible classes: minified, no-right-panel, fixed-ribbon, fixed-header, fixed-width-->
-		<header id="header">
-			<!--<span id="logo"></span>-->
-
-			<div id="logo-group">
-				<span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
-
-				<!-- END AJAX-DROPDOWN -->
-			</div>
-
-			<span id="login-header-space"> <span class="hidden-mobile">已经注册?</span> <a href="/login" class="btn btn-danger">登录</a> </span>
-
-		</header>
-
-		<div id="main" role="main">
-
-			<!-- MAIN CONTENT -->
-			<div id="content" class="container">
-
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
-						<h1 class="txt-color-red login-header-big">SmartAdmin</h1>
-						<div class="hero">
-
-							<div class="pull-left login-desc-box-l">
-								<h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
-								<div class="login-app-icons">
-									<a href="javascript:void(0);" class="btn btn-danger btn-sm">price table</a>
-								</div>
-							</div>
-
-							<img src="img/demo/iphoneview.png" alt="" class="pull-right display-image" style="width:210px">
-
-						</div>
-
-						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
-								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
-								</p>
-							</div>
-							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<h5 class="about-heading">Not just your average template!</h5>
-								<p>
-									Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
-								</p>
-							</div>
-						</div>
-
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-						<div class="well no-padding">
-
-                                <form id="smart-form-register" class="smart-form client-form" role="form" method="POST" action="{{ url('/register') }}">
-                                    {!! csrf_field() !!}
-								<header>
-									用户注册
-								</header>
-
-								<fieldset>
-									<section>
-										<label class="input"> <i class="icon-append fa fa-user"></i>
-                                            <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="用户名">
-                                            @if ($errors->has('name'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('name') }}</strong>
-                                            </span>
-                                            @endif
-
-											<b class="tooltip tooltip-bottom-right">用来登录网站</b> </label>
-									</section>
-
-									<section>
-										<label class="input"> <i class="icon-append fa fa-envelope"></i>
-                                            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
-                                            @if ($errors->has('email'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                            @endif
-
-											<b class="tooltip tooltip-bottom-right">用来验证帐号</b> </label>
-									</section>
-
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-                                            <input id="password" type="password" class="form-control" name="password" placeholder="密码">
-                                            @if ($errors->has('password'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                            @endif
-
-											<b class="tooltip tooltip-bottom-right">不要忘记密码</b> </label>
-									</section>
-
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-                                            <input type="password" class="form-control" name="password_confirmation" placeholder="密码确认">
-                                            @if ($errors->has('password_confirmation'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                            </span>
-                                            @endif
-
-											<b class="tooltip tooltip-bottom-right">不要忘记密码</b> </label>
-									</section>
-
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-											<input type="hidden" id="distinguished" name="distinguished" value="abcedfg">
-                                            <input type="text" class="form-control" name="distinguish" placeholder="机器人识别">
-											<b class="tooltip tooltip-bottom-right">填写:abcedfg</b> </label>
-									</section>
-								</fieldset>
-
-								<fieldset>
-									<!-- <div class="row">
-										<section class="col col-6">
-											<label class="input">
-												<input type="text" name="firstname" placeholder="First name">
-											</label>
-										</section>
-										<section class="col col-6">
-											<label class="input">
-												<input type="text" name="lastname" placeholder="Last name">
-											</label>
-										</section>
-									</div> -->
-
-									{{--
-									<div class="row">
-										<section class="col col-6">
-											<label class="select">
-												<select name="gender">
-													<option value="0" selected="" disabled="">Gender</option>
-													<option value="1">Male</option>
-													<option value="2">Female</option>
-													<option value="3">Prefer not to answer</option>
-												</select> <i></i> </label>
-										</section>
-										<section class="col col-6">
-											<label class="input"> <i class="icon-append fa fa-calendar"></i>
-												<input type="text" name="request" placeholder="Request activation on" class="datepicker" data-dateformat='dd/mm/yy'>
-											</label>
-										</section>
-									</div>
-									--}}
-
-									<section>
-										<!-- <label class="checkbox">
-											<input type="checkbox" name="subscription" id="subscription">
-											<i></i>I want to receive news and special offers</label> -->
-										<label class="checkbox">
-											<input type="checkbox" name="terms" id="terms">
-											<i></i>同意 <a href="#" data-toggle="modal" data-target="#myModal"> Terms and Conditions </a>
-                                        </label>
-									</section>
-								</fieldset>
-								<footer>
-									<button type="submit" class="btn btn-primary">
-										注册
-									</button>
-								</footer>
-
-								<div class="message">
-									<i class="fa fa-check"></i>
-									<p>
-										感谢注册!
-									</p>
-								</div>
-							</form>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							&times;
-						</button>
-						<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
-					</div>
-					<div class="modal-body custom-scroll terms-body">
-
- <div id="left">
-
-
-
-            <h1>SMARTADMIN TERMS & CONDITIONS TEMPLATE</h1>
-
-
-
-            <h2>Introduction</h2>
-
-            <p>These terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full.   If you disagree with these terms and conditions or any part of these terms and conditions, you must not use this website.</p>
-
-            <p>[You must be at least [18] years of age to use this website.  By using this website [and by agreeing to these terms and conditions] you warrant and represent that you are at least [18] years of age.]</p>
-
-
-
-            <p>
-                <strong>By using this  WEBSITE TERMS AND CONDITIONS template document, you agree to the
-                    <a href="#">terms and conditions</a> set out on
-                    <a href="#">SmartAdmin.com</a>.  You must retain the credit
-                    set out in the section headed "ABOUT THESE WEBSITE TERMS AND CONDITIONS".  Subject to the licensing restrictions, you should
-                    edit the document, adapting it to the requirements of your jurisdiction, your business and your
-                    website.  If you are not a lawyer, we recommend that you take professional legal advice in relation to the editing and
-                    use of the template.
-                </strong>
-            </p>
-
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							Cancel
-						</button>
-						<button type="button" class="btn btn-primary" id="i-agree">
-							<i class="fa fa-check"></i> I Agree
-						</button>
-
-						<button type="button" class="btn btn-danger pull-left" id="print">
-							<i class="fa fa-print"></i> Print
-						</button>
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
-		<!--================================================== -->
-
-		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
-		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
-
-	    <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-		<script> if (!window.jQuery) { document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');} </script>
-
-		<script> if (!window.jQuery.ui) { document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');} </script>
-
-		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events
-		<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> -->
-
-		<!-- BOOTSTRAP JS -->
-		<script src="js/bootstrap/bootstrap.min.js"></script>
-
-		<!-- CUSTOM NOTIFICATION -->
-		<script src="js/notification/SmartNotification.min.js"></script>
-
-		<!-- JARVIS WIDGETS -->
-		<script src="js/smartwidgets/jarvis.widget.min.js"></script>
-
-		<!-- EASY PIE CHARTS -->
-		<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
-		<!-- SPARKLINES -->
-		<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
-
-		<!-- JQUERY VALIDATE -->
-		<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
-
-		<!-- JQUERY MASKED INPUT -->
-		<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
-		<!-- JQUERY SELECT2 INPUT -->
-		<script src="js/plugin/select2/select2.min.js"></script>
-
-		<!-- JQUERY UI + Bootstrap Slider -->
-		<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-
-		<!-- browser msie issue fix -->
-		<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-
-		<!-- FastClick: For mobile devices -->
-		<script src="js/plugin/fastclick/fastclick.js"></script>
-
-		<!--[if IE 7]>
-
-			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-
-		<![endif]-->
-
-		<!-- MAIN APP JS FILE -->
-		<script src="js/app.js"></script>
-
-		<script type="text/javascript">
-			runAllForms();
-
-			// Model i agree button
-			$("#i-agree").click(function(){
-				$this=$("#terms");
-				if($this.checked) {
-					$('#myModal').modal('toggle');
-				} else {
-					$this.prop('checked', true);
-					$('#myModal').modal('toggle');
-				}
-			});
-
-			// Validation
-			$(function() {
-				// Validation
-				$("#smart-form-register").validate({
-
-					// Rules for form validation
-					rules : {
-						name : {
-							required : true
-						},
-						email : {
-							required : true,
-							email : true
-						},
-						password : {
-							required : true,
-							minlength : 3,
-							maxlength : 20
-						},
-						password_confirmation : {
-							required : true,
-							minlength : 3,
-							maxlength : 20,
-							equalTo : '#password'
-						},
-						distinguish : {
-							equalTo : '#distinguished',
-							required : true
-						}
-					},
-
-					messages : {
-						name : {
-							required : '请输入用户名'
-						},
-						email : {
-							required : '请输入 email',
-							email : 'email 格式不正确'
-						},
-						password : {
-							required : '请输入密码'
-						},
-						password_confirmation : {
-							required : '请再输入一次密码',
-							equalTo : '两次输入密码不一致'
-						},
-						distinguish : {
-							required : '输入abcedfg'
-						}
-					},
-
-					// Ajax form submition
-					submitHandler : function(form) {
-						$(form).ajaxSubmit({
-							success : function() {
-								$("#smart-form-register").addClass('submited');
-							}
-						});
-					},
-
-					// Do not change code below
-					errorPlacement : function(error, element) {
-						error.insertAfter(element.parent());
-					}
-				});
-
-			});
-		</script>
-
-	</body>
-</html>
+@extends('layouts.app')
+
+@section('title','用户注册')
+@section('description','title_description')
+@section('keywords','title_keywords')
+
+@section('content')
+
+<form id="register" method="POST" action="{{ url('/register') }}">
+	{!! csrf_field() !!}
+	<section>
+		<label for="name">用户名</label>
+		<input type="text" name="name" id="name" value="{{old('name')}}">
+		@if ($errors->has('name'))
+			<strong>{{ $errors->first('name') }}</strong>
+		@endif
+	</section>
+	<section>
+		<label for="email">E-mail</label>
+		<input type="email" name="email" id="email" value="{{old('email')}}">
+		@if ($errors->has('email'))
+			<strong>{{ $errors->first('email') }}</strong>
+		@endif
+	</section>
+	<section>
+		<label for="phone">手机号</label>
+		<input type="text" name="phone" id="phone" value="{{old('phone')}}">
+		@if ($errors->has('phone'))
+		<strong>{{ $errors->first('phone') }}</strong>
+		@endif
+	</section>
+	<section>
+		<label for="password">密码</label>
+		<input type="password" name="password" id="password" value="{{old('password')}}">
+		@if ($errors->has('password'))
+		<strong>{{ $errors->first('password') }}</strong>
+		@endif
+	</section>
+	<section>
+		<label for="password_confirmation">重复密码</label>
+		<input type="password" name="password_confirmation" id="password_confirmation">
+		@if ($errors->has('password_confirmation'))
+		<strong>{{ $errors->first('password_confirmation') }}</strong>
+		@endif
+	</section>
+	<section>
+		<label for="distinguished">填写:abcedfg</label>
+		<input type="hidden" id="distinguished" name="distinguished" value="abcedfg">
+		<input type="text" class="form-control" name="distinguish" placeholder="机器人识别">
+	</section>
+
+	<input type="submit" value="注册">
+</form>
+
+@if (count($errors) > 0)
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@endsection
+
+@section('script')
+<script src="{{url('/js/jquery.validate.min.js')}}"></script>
+<script src="{{url('/js/additional-methods.js')}}"></script>
+<script type="text/javascript">
+$(function(){
+	var validate = $("#register").validate({
+	    debug: true, //调试模式取消submit的默认提交功能
+	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
+	        form.submit();   //提交表单
+	    },
+
+		rules : {
+			name : {
+				required : true,
+				minlength : 2,
+				maxlength : 20
+			},
+			email : {
+				email : true
+			},
+			phone : {
+				required : true,
+				isMobile : true
+			},
+			password : {
+				required : true,
+				minlength : 6,
+				maxlength : 50
+			},
+			password_confirmation : {
+				required : true,
+				minlength : 6,
+				maxlength : 50,
+				equalTo : '#password'
+			},
+			distinguish : {
+				equalTo : '#distinguished',
+				required : true
+			}
+		},
+
+		messages : {
+			name : {
+				required : '请输入用户名'
+			},
+			email : {
+				required : '请输入 email',
+				email : 'email 格式不正确'
+			},
+			phone : {
+				required : '手机号码必须填写',
+				isMobile : '手机号码不正确'
+			},
+			password : {
+				required : '请输入密码',
+				min : '密码长度不能小于6位',
+				max : '密码长度不能大于50位'
+			},
+			password_confirmation : {
+				required : '重复密码不能为空',
+				equalTo : '两次输入密码不一致'
+			},
+			distinguish : {
+				required : '输入abcedfg'
+			}
+		},
+	});
+});
+</script>
+@endsection

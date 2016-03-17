@@ -2,34 +2,22 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::auth();
-
     Route::get('/', 'PageController@home');
+    Route::get('/register', 'UserController@register');
+    Route::post('/register', 'UserController@_register');
+    Route::get('/login', 'UserController@login');
+    Route::post('/login', 'UserController@_login');
 
-    Route::get('/loginm','UserController@loginm');
-    Route::post('/loginm_post','UserController@loginm_post');
-
-    Route::get('/price', 'PageController@price');
     Route::get('/albums/{id?}', 'AlbumController@albums');
     Route::get('/videoss/{id?}', 'VideoController@videos');
     Route::get('/album/{id?}', 'AlbumController@album');
 
-    Route::group(['middleware' => ['auth','member']], function () {
-        Route::post('/album/img', 'AlbumController@img');
-        Route::get('/album/{album?}/page/{page?}', 'AlbumController@page');
-        Route::get('/videoss/page/{id?}', 'VideoController@page');
-    });
-
-    Route::group(['middleware' => 'auth'], function () {
-        Route::get('/pay/{price}','PageController@pay');
-    });
-
-    Route::group(['middleware' => ['auth','authuser']], function () {
+    // Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin', 'AdminController@index');
 
         Route::get('/admin','AdminController@index');
         Route::post('/admin/thumbnail','AdminController@thumbnail');
         Route::post('/admin/thumbnail2','AdminController@thumbnail2');
-
 
         Route::get('/admin/articles/{id?}', 'ArticleController@article_list');
         Route::get('/admin/article/create', 'ArticleController@create');
@@ -52,13 +40,6 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/admin/album/{id}/destroy', 'AlbumController@destroy');
         Route::get('/admin/albums/{id?}', 'AlbumController@index');
 
-        Route::get('/admin/video/create', 'VideoController@create');
-        Route::post('/admin/video/store', 'VideoController@store');
-        Route::get('/admin/video/{id}/edit', 'VideoController@edit');
-        Route::post('/admin/video/{id}/update', 'VideoController@update');
-        Route::post('/admin/video/upload/uploadstore','VideoController@uploadstore');
-        Route::get('/admin/video/{id}/destroy', 'VideoController@destroy');
-        Route::get('/admin/videos/{id?}/', 'VideoController@index');
 
         Route::get('/admin/users/', 'UserController@index');
         Route::get('/admin/user/create', 'UserController@create');
@@ -67,12 +48,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/admin/user/store', 'UserController@store');
         Route::get('/admin/user/{id}/destroy', 'UserController@destroy');
 
-        Route::post('/admin/mobile/search', 'UserController@mobile_search_post');
-        Route::get('/admin/users/mobile/search', 'UserController@mobile_search');
-        Route::get('/admin/users/mobile/{id?}', 'UserController@index_mobile');
-        Route::get('/admin/user/mobile/{id?}/edit', 'UserController@mobile_edit');
-        Route::post('/admin/user/mobile/{id?}/update', 'UserController@mobile_update');
-    });
+    // });
 
 
 });

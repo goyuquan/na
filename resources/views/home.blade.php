@@ -11,9 +11,3 @@
 <h1>welcome to our best website </h1>
 
 @endsection
-
-@section('script')
-<script type="text/javascript">
-
-</script>
-@endsection
