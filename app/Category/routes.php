@@ -16,15 +16,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/user/update/{id}', 'AdminuserController@update');
     Route::get('/admin/user/delete/{id}', 'AdminuserController@destroy');
 
-    Route::get('/admin/categories', 'CategoryController@index');
-    Route::post('/admin/category/create', 'CategoryController@create');
-    Route::get('/admin/category/edit/{id}', 'CategoryController@edit');
-    Route::post('/admin/category/update/{id}', 'CategoryController@update');
-    Route::get('/admin/category/delete/{id}', 'CategoryController@destroy');
+    Route::get('/admin/categorys', 'AdmincategoryController@index');
 
 
     // Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('/admin/categorys', 'AdmincategoryController@index');
 
         Route::get('/admin','AdminController@index');
         Route::post('/admin/thumbnail','AdminController@thumbnail');

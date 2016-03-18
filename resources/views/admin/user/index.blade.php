@@ -21,6 +21,10 @@
             <td> {{$user->phone}} </td>
             <td> {{substr($user->created_at,0,10)}} </td>
             <td> {{substr($user->updated_at,0,10)}} </td>
+            <td>
+                <a href="{{url('/admin/user/edit/'.$user->id)}}">编辑</a>
+                <a class="del" href="{{url('/admin/user/delete/'.$user->id)}}">删除</a>
+            </td>
         </tr>
         @endforeach
         </tbody>
@@ -30,4 +34,17 @@
         {{$users->links()}}
     </div>
 
+@endsection
+
+@section('script')
+<script type="text/javascript">
+$(function(){
+    $(".del").click(function(e){
+        var r=confirm("确认删除");
+        if (r==false) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
 @endsection
