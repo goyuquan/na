@@ -9,8 +9,9 @@ class CreateColumnsTable extends Migration
     {
         Schema::create('columns', function (Blueprint $table) {
             $table->increments('id');
+            $table->smallInteger('category_id');
             $table->string('name')->unique();
-            $table->integer('parent_id')->nullable();
+            $table->timestamps();
         });
     }
 

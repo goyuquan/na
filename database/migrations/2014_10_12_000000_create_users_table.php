@@ -13,6 +13,7 @@ class CreateUsersTable extends Migration
             $table->string('email',50);
             $table->string('password');
             $table->bigInteger('phone')->unique();
+            $table->tinyInteger('role');
             $table->rememberToken();
             $table->timestamps();
         });

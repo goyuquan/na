@@ -56,7 +56,6 @@
 
 @section('script')
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
-<script src="{{url('/js/additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 
@@ -66,7 +65,7 @@ $(function(){
             e.preventDefault();
         }
     });
-    
+
 	var validate = $("#category").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
