@@ -11,6 +11,11 @@ use App\Http\Controllers\Controller;
 class ColumnController extends Controller
 {
 
+    public function __construct()
+    {
+
+    }
+
     public function index()
     {
         $categories = $categoriess = Category::all();

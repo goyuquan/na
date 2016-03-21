@@ -6,7 +6,7 @@
 @if(count($columns) > 0)
     <ul>
     @foreach($columns as $column)
-        <li>{{$column->name}}
+        <li>{{$column->name}}   ({{$column->type}})
             <a href="/admin/column/edit/{{$column->id}}">编辑</a>
             <a class="del" href="/admin/column/delete/{{$column->id}}">删除</a>
         </li>

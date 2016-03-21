@@ -10,6 +10,7 @@
     <ul>
     @foreach($columns as $column)
         <li>
+
         @if($column->id == $edit)
             <input type="text" name="name" id="name" value="{{$column->name}} ">
             @if ($errors->has('name'))
@@ -17,8 +18,9 @@
             @endif
             <input type="submit" value="修改">
         @else
-            {{$column->name}}
+            {{$column->name}}   ({{$column->type}})
         @endif
+
         </li>
     @endforeach
     </ul>
@@ -31,7 +33,7 @@
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
-
+    
 	var validate = $("#column").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form

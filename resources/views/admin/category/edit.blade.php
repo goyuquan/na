@@ -47,7 +47,7 @@
 	</section>
     @endif
 
-	<input type="submit" value="添加">
+	<input type="submit" value="修改">
 </form>
 
 @endsection
