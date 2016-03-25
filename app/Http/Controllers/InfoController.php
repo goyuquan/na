@@ -14,8 +14,8 @@ class InfoController extends Controller
 
     public function index()
     {
-        $info = Info::find(2);
-        $contents = collect(json_decode($info->content))->except(['_token', 'query_string']);
+        $info = Info::find(5);
+        $contents = json_decode($info->content);
         return view('info.index',[
             'info' => $info,
             'contents' => $contents,
@@ -40,7 +40,7 @@ class InfoController extends Controller
 
     public function create_save(Request $request)
     {
-        $content = collect($request->input());
+        $content = collect($request->input())->except(['_token', 'query_string']);
 
         $info = new Info;
         $info->title = $request->title;

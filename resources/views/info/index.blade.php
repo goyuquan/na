@@ -8,7 +8,7 @@
 
 
 @foreach($contents as $content)
-{{$content}}<br>
+    {{$content}}<br>
 @endforeach
 
 @endsection
