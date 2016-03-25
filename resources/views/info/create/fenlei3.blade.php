@@ -6,7 +6,8 @@
 
 @section('content')
 
-<form id="create" method="POST" action="{{ url('/info/create') }}">
+<form id="create" method="POST" action="{{ url('/info/create/') }}">
+	<input type="hidden" name="category_id" value="{{$category->id}}">
 	{!! csrf_field() !!}
 	<section>
 		<label for="title">标题</label>

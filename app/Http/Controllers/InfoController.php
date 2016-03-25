@@ -14,11 +14,10 @@ class InfoController extends Controller
 
     public function index()
     {
-        $info = Info::find(5);
-        $contents = json_decode($info->content);
+        $categories = $categoriess = Category::all();
         return view('info.index',[
-            'info' => $info,
-            'contents' => $contents,
+            'categories' => $categories,
+            'categoriess' => $categoriess
         ]);
     }
 
@@ -40,12 +39,14 @@ class InfoController extends Controller
 
     public function create_save(Request $request)
     {
-        $content = collect($request->input())->except(['_token', 'query_string']);
+        $content = collect($request->input()) ->except(['_token', 'query_string','category_id','title','text']);
 
-        $info = new Info;
-        $info->title = $request->title;
-        $info->content = $content;
-        $info->save();
+        $request->user()->info()->create([
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'text' => $request->text,
+            'content' => $content,
+        ]);
 
         Session()->flash('info', 'info create was successful!');
 

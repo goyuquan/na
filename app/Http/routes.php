@@ -28,13 +28,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/category/update/{id}', 'CategoryController@update');
     Route::get('/admin/category/delete/{id}', 'CategoryController@destroy');
 
-
-    Route::get('/admin/columns', 'ColumnController@index');
-    Route::get('/admin/column/category/{id}', 'ColumnController@column');
-    Route::post('/admin/column/create/{id}', 'ColumnController@create');
-    Route::get('/admin/column/edit/{id}', 'ColumnController@edit');
-    Route::post('/admin/column/update/{id}', 'ColumnController@update');
-    Route::get('/admin/column/delete/{id}', 'ColumnController@destroy');
     // Route::group(['middleware' => 'auth'], function () {
 
 

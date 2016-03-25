@@ -14,6 +14,7 @@ class CreateInfosTable extends Migration
             $table->char('title',50);
             $table->text('text');
             $table->text('content');
+            $table->integer('top');
             $table->dateTime('publish_at');
             $table->timestamps();
         });
