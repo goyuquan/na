@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Column extends Model
 {
-    protected $fillable = ['name','type','parent_id'];
+    protected $fillable = ['name','category_id'];
 
     public function category()
     {

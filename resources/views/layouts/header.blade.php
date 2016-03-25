@@ -1,7 +1,7 @@
 <a href="{{ url('/') }}">
     logo
 </a>
-
+<a href="{{url('/info/create_category')}}">创建</a>
 @if (Auth::guest())
     <a href="{{ url('/login') }}">登陆</a>
     <a href="{{ url('/register') }}">注册</a>

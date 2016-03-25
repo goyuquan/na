@@ -11,8 +11,9 @@ class CreateInfosTable extends Migration
             $table->increments('id');
             $table->tinyInteger('user_id');
             $table->tinyInteger('category_id');
-            $table->char('name',20);
-            $table->string('text');
+            $table->char('title',50);
+            $table->text('text');
+            $table->text('content');
             $table->dateTime('publish_at');
             $table->timestamps();
         });

@@ -26,6 +26,17 @@
 		@endif
 	</section>
 	<section>
+		<label for="role">权限</label>
+		<select name="role" value="{{$user->role}}">
+			<option value="0" <?php  if($user->role == 0){ echo 'selected="selected"';}  ?>>用户</option>
+			<option value="5" <?php  if($user->role == 5){ echo 'selected="selected"';}  ?>>编辑</option>
+			<option value="9" <?php  if($user->role == 9){ echo 'selected="selected"';}  ?>>管理员</option>
+		</select>
+		@if ($errors->has('role'))
+		<strong>{{ $errors->first('role') }}</strong>
+		@endif
+	</section>
+	<section>
 		<label for="password">密码</label>
 		<input type="password" name="password" id="password" value="">
 		@if ($errors->has('password'))

@@ -3,46 +3,51 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Info;
+use App\Column;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class InfoController extends Controller
 {
 
     public function index()
     {
-        $categories = $categoriess = Category::all();
-        return view('admin.category.index',[
-            'categories' => $categories,
-            'categoriess' => $categoriess
+        $info = Info::find(2);
+        $contents = collect(json_decode($info->content))->except(['_token', 'query_string']);
+        return view('info.index',[
+            'info' => $info,
+            'contents' => $contents,
         ]);
     }
 
-    public function create(Request $request)
+    public function create_category()
     {
-        $messages = [
-            'name.required' => '分类名不能为空',
-            'name.unique' => '分类名已被使用',
-            'name.max' => '分类名不能大于:max位',
-            'name.min' => '分类名不能小于:min位',
-            'alias.required' => '别名不能为空',
-            'alias.max' => '别名不能大于:max位',
-            'alias.min' => '别名不能小于:min位',
-        ];
-        $this->validate($request, [
-            'name' => 'required|unique:categories|min:1|max:20',
-            'alias' => 'required|min:2|max:50',
-        ],$messages);
+        $categories = Category::all();
+        return view('info.create_category',[
+            'categories' => $categories
+        ]);
+    }
 
-        $category = new Category;
+    public function create($id)
+    {
+        $category = Category::find($id);
+        return view('info.create.'.$category->alias,[
+            'category' => $category,
+        ]);
+    }
 
-        $category->name = $request->name;
-        $category->alias = $request->alias;
-        $category->parent_id = $request->parent;
-        $category->save();
+    public function create_save(Request $request)
+    {
+        $content = collect($request->input());
 
-        Session()->flash('category', 'category create was successful!');
+        $info = new Info;
+        $info->title = $request->title;
+        $info->content = $content;
+        $info->save();
+
+        Session()->flash('info', 'info create was successful!');
 
         return redirect('/admin/categories');
     }
@@ -64,21 +69,14 @@ class CategoryController extends Controller
             'name.required' => '分类名不能为空',
             'name.max' => '分类名不能大于:max位',
             'name.min' => '分类名不能小于:min位',
-            'alias.required' => '别名不能为空',
-            'alias.max' => '别名不能大于:max位',
-            'alias.min' => '别名不能小于:min位',
         ];
         $this->validate($request, [
             'name' => 'required|min:1|max:20',
-            'alias' => 'required|min:1|max:20',
         ],$messages);
 
         $category = Category::find($id);
         if ($category->name != $request->name){
             $category->name = $request->name;
-        }
-        if ($category->alias != $request->alias){
-            $category->alias = $request->alias;
         }
         if ($category->parent_id && $category->parent_id != $request->parent){
             $category->parent_id = $request->parent;

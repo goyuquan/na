@@ -55,6 +55,9 @@ class AdminuserController extends Controller
         if ($user->phone != $request->phone){
             $user->phone = $request->phone;
         }
+        if ($user->role != $request->role){
+            $user->role = $request->role;
+        }
         if($request->password){
             $user->password = bcrypt($request->password);
         }

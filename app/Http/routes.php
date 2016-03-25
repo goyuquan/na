@@ -11,6 +11,12 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/admin', 'AdminController@index');
 
+
+    Route::get('/info/create_category', 'InfoController@create_category');
+    Route::get('/info/create/category/{id}', 'InfoController@create');
+    Route::post('/info/create', 'InfoController@create_save');
+    Route::get('/infos', 'InfoController@index');
+
     Route::get('/admin/users/{id?}', 'AdminuserController@index');
     Route::get('/admin/user/edit/{id}', 'AdminuserController@edit');
     Route::post('/admin/user/update/{id}', 'AdminuserController@update');
