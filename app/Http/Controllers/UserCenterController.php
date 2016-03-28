@@ -6,19 +6,28 @@ use App\Category;
 use App\Info;
 use App\Column;
 use Gate;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class InfoController extends Controller
+class UserCenterController extends Controller
 {
 
     public function index()
     {
         $categories = $categoriess = Category::all();
-        return view('info.index',[
+        return view('user.index',[
             'categories' => $categories,
             'categoriess' => $categoriess
+        ]);
+    }
+
+    public function infos()
+    {
+        $infos = Auth::user()->info;
+        return view('user.infos',[
+            'infos' => $infos
         ]);
     }
 
@@ -56,10 +65,10 @@ class InfoController extends Controller
 
     public function edit($id)
     {
+        $info = Info::find($id);
         $categories = $categoriess = Category::all();
-        $name = Category::find($id);
-        return view('admin.category.edit',[
-            'name' => $name,
+        return view('user.edit',[
+            'info' => $info,
             'categories' => $categories,
             'categoriess' => $categoriess
         ]);
@@ -68,31 +77,39 @@ class InfoController extends Controller
     public function update(Request $request,$id)
     {
         $messages = [
-            'name.required' => '名不能为空',
-            'name.max' => '名不能大于:max位',
-            'name.min' => '名不能小于:min位',
+            'title.required' => '标题不能为空',
+            'title.max' => '标题不能大于:max位',
+            'title.min' => '标题不能小于:min位',
+            'text.required' => '内容不能为空',
+            'text.max' => '内容不能大于:max位',
+            'text.min' => '内容不能小于:min位',
         ];
         $this->validate($request, [
-            'name' => 'required|min:1|max:20',
+            'title' => 'required|min:5|max:50',
+            'text' => 'required|min:10|max:1000',
         ],$messages);
 
         $info = Info::find($id);
 
-        if (Gate::denies('album_authorize', $info)) {
+        if (Gate::allows('info_authorize', $info)) {
+            return "passed";
+
+            if ($info->name != $request->name){
+                $info->name = $request->name;
+            }
+            if ($info->parent_id && $info->parent_id != $request->parent){
+                $info->parent_id = $request->parent;
+            }
+            $info->save();
+
+            Session()->flash('category', 'category update was successful!');
+
+            return redirect('/admin/categories');
+
+        } else {
             return "authorize fails";
         }
 
-        if ($info->name != $request->name){
-            $info->name = $request->name;
-        }
-        if ($info->parent_id && $info->parent_id != $request->parent){
-            $info->parent_id = $request->parent;
-        }
-        $info->save();
-
-        Session()->flash('category', 'category update was successful!');
-
-        return redirect('/admin/categories');
     }
 
     public function destroy($id)

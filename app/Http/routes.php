@@ -12,9 +12,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin', 'AdminController@index');
 
 
-    Route::get('/info/create_category', 'InfoController@create_category');
-    Route::get('/info/create/category/{id}', 'InfoController@create');
-    Route::post('/info/create', 'InfoController@create_save');
     Route::get('/infos', 'InfoController@index');
 
     Route::get('/admin/users/{id?}', 'AdminuserController@index');
@@ -28,8 +25,16 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/category/update/{id}', 'CategoryController@update');
     Route::get('/admin/category/delete/{id}', 'CategoryController@destroy');
 
-    // Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'auth'], function () {
 
+        Route::get('/user/index', 'UserCenterController@index');
+        Route::get('/user/infos', 'UserCenterController@infos');
+        Route::get('/user/info/create_category', 'UserCenterController@create_category');
+        Route::get('/user/info/create/category/{id}', 'UserCenterController@create');
+        Route::post('/user/info/create', 'UserCenterController@create_save');
+        Route::get('/user/info/edit/{id}', 'UserCenterController@edit');
+        Route::post('/user/info/update/{id}', 'UserCenterController@update');
+        Route::get('/user/info/delete/{id}', 'UserCenterController@destroy');
 
         Route::get('/admin','AdminController@index');
         Route::post('/admin/thumbnail','AdminController@thumbnail');
@@ -64,7 +69,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/admin/user/store', 'UserController@store');
         Route::get('/admin/user/{id}/destroy', 'UserController@destroy');
 
-    // });
+    });
 
 
 });
