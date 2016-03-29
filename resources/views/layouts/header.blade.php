@@ -2,7 +2,7 @@
     logo
 </a>
 <a href="{{url('/infos')}}">全部分类</a>
-<a href="{{url('/info/create_category')}}">创建</a>
+<a href="{{url('/user/info/create_category')}}">创建</a>
 @if (Auth::guest())
     <a href="{{ url('/login') }}">登陆</a>
     <a href="{{ url('/register') }}">注册</a>

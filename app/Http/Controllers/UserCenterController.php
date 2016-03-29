@@ -26,7 +26,7 @@ class UserCenterController extends Controller
     public function infos()
     {
         $infos = Auth::user()->info;
-        return view('user.infos',[
+        return view('user.info.index',[
             'infos' => $infos
         ]);
     }
@@ -34,7 +34,7 @@ class UserCenterController extends Controller
     public function create_category()
     {
         $categories = Category::all();
-        return view('info.create_category',[
+        return view('user.info.create_category',[
             'categories' => $categories
         ]);
     }
@@ -42,7 +42,7 @@ class UserCenterController extends Controller
     public function create($id)
     {
         $category = Category::find($id);
-        return view('info.create.'.$category->alias,[
+        return view('user.info.create.'.$category->alias,[
             'category' => $category,
         ]);
     }
@@ -67,7 +67,7 @@ class UserCenterController extends Controller
     {
         $info = Info::find($id);
         $categories = $categoriess = Category::all();
-        return view('user.edit',[
+        return view('user.Info.edit',[
             'info' => $info,
             'categories' => $categories,
             'categoriess' => $categoriess
@@ -92,7 +92,6 @@ class UserCenterController extends Controller
         $info = Info::find($id);
 
         if (Gate::allows('info_authorize', $info)) {
-            return "passed";
 
             if ($info->name != $request->name){
                 $info->name = $request->name;
@@ -104,18 +103,23 @@ class UserCenterController extends Controller
 
             Session()->flash('category', 'category update was successful!');
 
-            return redirect('/admin/categories');
+            return redirect('/user/infos');
 
         } else {
-            return "authorize fails";
+            return "无权编辑！";
         }
 
     }
 
     public function destroy($id)
     {
-        Info::destroy($id);
-        return redirect('/admin/categories');
+        $info = Info::find($id);
+        if (Gate::allows('info_authorize', $info)) {
+            Info::destroy($id);
+            return redirect('/user/infos');
+        } else {
+            return "无权删除！";
+        }
     }
 
 }

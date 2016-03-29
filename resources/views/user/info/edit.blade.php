@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-
+<h1>用户 > 信息 > 编辑 > {{$info->title}}</h1>
 
 <form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
 	{!! csrf_field() !!}
@@ -27,37 +27,38 @@
 
 @section('script')
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
-<script src="{{url('/js/additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){
-	var validate = $("#category").validate({
+
+	var validate = $("#edit").validate({
 
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
 	    },
 
 		rules : {
-			name : {
+			title : {
 				required : true,
-				minlength : 1,
-				maxlength : 20
+				minlength : 5,
+				maxlength : 50
 			},
-            alias : {
+            text : {
 				required : true,
-				minlength : 2,
-				maxlength : 20
+				minlength : 10,
+				maxlength : 1000
 			}
 		},
 
 		messages : {
-			name : {
-				required : '名称不能为空',
-				max : '名称最长不能大于20'
+			title : {
+				required : '标题不能为空',
+				minlength : '标题最长不能小于5',
+				maxlength : '标题最长不能大于50'
 			},
-            alias : {
-				required : '别名不能为空',
-				min : '别名最长不能小于2'
-				max : '别名最长不能大于20'
+            text : {
+				required : '内容不能为空',
+				minlength : '内容最长不能小于10',
+				maxlength : '内容最长不能大于1000'
 			}
 		}
 

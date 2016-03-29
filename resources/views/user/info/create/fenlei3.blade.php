@@ -5,8 +5,8 @@
 @section('keywords','title_keywords')
 
 @section('content')
-
-<form id="create" method="POST" action="{{ url('/info/create/') }}">
+<h1>用户 > 信息 > 创建 </h1>
+<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
 	<input type="hidden" name="category_id" value="{{$category->id}}">
 	{!! csrf_field() !!}
 	<section>
@@ -36,66 +36,36 @@
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
-	var validate = $("#creates").validate({
+
+	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
 	    },
 
 		rules : {
-			name : {
+			title : {
 				required : true,
-				minlength : 2,
-				maxlength : 20
-			},
-			email : {
-				email : true
-			},
-			phone : {
-				required : true,
-				isMobile : true
-			},
-			password : {
-				required : true,
-				minlength : 6,
+				minlength : 5,
 				maxlength : 50
 			},
-			password_confirmation : {
+			text : {
 				required : true,
-				minlength : 6,
-				maxlength : 50,
-				equalTo : '#password'
-			},
-			distinguish : {
-				equalTo : '#distinguished',
-				required : true
+				minlength : 10,
+				maxlength : 1000
 			}
 		},
 
 		messages : {
-			name : {
-				required : '请输入用户名'
+			title : {
+				required : '标题不能为空',
+				minlength : '标题最长不能小于5',
+				maxlength : '标题最长不能大于50'
 			},
-			email : {
-				required : '请输入 email',
-				email : 'email 格式不正确'
-			},
-			phone : {
-				required : '手机号码必须填写',
-				isMobile : '手机号码不正确'
-			},
-			password : {
-				required : '请输入密码',
-				min : '密码长度不能小于6位',
-				max : '密码长度不能大于50位'
-			},
-			password_confirmation : {
-				required : '重复密码不能为空',
-				equalTo : '两次输入密码不一致'
-			},
-			distinguish : {
-				required : '输入abcedfg',
-				equalTo : '输入abcedfg'
+			text : {
+				required : '内容不能为空',
+				minlength : '内容最长不能小于10',
+				maxlength : '内容最长不能大于1000'
 			}
 		},
 	});
