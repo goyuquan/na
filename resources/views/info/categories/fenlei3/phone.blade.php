@@ -5,12 +5,12 @@
 @section('keywords','title_keywords')
 
 @section('content')
-<h1>全部类别 > phone</h1>
+<h1>全部类别 > {{$category->name}}</h1>
 
 @if(count($infos) > 0)
 <ul>
     @foreach( $infos as $info )
-        <li><b>{{ $info->title }}</b> </li>
+        <li><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a> </li>
     @endforeach
 </ul>
 @endif

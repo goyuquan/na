@@ -5,7 +5,7 @@
 @section('keywords','title_keywords')
 
 @section('content')
-<h1>全部类别 > common</h1>
+<h1>全部类别 > {{$category->name}}</h1>
 
 @if(count($infos) > 0)
 <ul>
