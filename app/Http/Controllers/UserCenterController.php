@@ -33,16 +33,18 @@ class UserCenterController extends Controller
 
     public function create_category()
     {
-        $categories = Category::all();
+        $categories = $categoriess = Category::all();
         return view('user.info.create_category',[
-            'categories' => $categories
+            'categories' => $categories,
+            'categoriess' => $categoriess
         ]);
     }
 
     public function create($id)
     {
         $category = Category::find($id);
-        return view('user.info.create.'.$category->alias,[
+        $folder = Category::find($category->parent_id);
+        return view('user.info.create.'.$folder->alias.'.'.$category->alias,[
             'category' => $category,
         ]);
     }
