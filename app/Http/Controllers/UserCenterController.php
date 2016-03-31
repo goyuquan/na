@@ -17,16 +17,13 @@ class UserCenterController extends Controller
 
     public function index()
     {
-        $categories = $categoriess = Category::all();
-        return view('user.index',[
-            'categories' => $categories,
-            'categoriess' => $categoriess
-        ]);
+        return view('user.index');
     }
 
-    public function infos()
+    public function infos($page_id)
     {
-        $infos = Auth::user()->info;
+        $infos = Auth::user()->info()->orderBy('publish_at', 'desc')
+        ->paginate($perPage = 10, $columns = ['*'], $pageName = 'page', $page = $page_id);
         return view('user.info.index',[
             'infos' => $infos
         ]);
@@ -34,10 +31,11 @@ class UserCenterController extends Controller
 
     public function create_category()
     {
-        $categories = $categoriess = Category::all();
+        $categoriess = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id','>',0)->get();
         return view('user.info.create_category',[
-            'categories' => $categories,
-            'categoriess' => $categoriess
+            'categoriess' => $categoriess,
+            'categories' => $categories
         ]);
     }
 

@@ -2,30 +2,28 @@
 
 @section('content')
 
-@if(count($categories) > 0)
+@if(count($categoriess) > 0)
 <ul>
-    @foreach ( $categories as $category )
-        @if ( $category->parent_id == NULL)
-            <li><span>{{ $category->name }}</span>
-                <span>[{{ $category->alias }}]</span>
-                <a href="/admin/category/edit/{{$category->id}}">编辑</a>
-                <a class="del" href="/admin/category/delete/{{$category->id}}">删除</a>
-                @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
+    @foreach ( $categoriess as $category )
+        <li><span>{{ $category->name }}</span>
+            <span>[{{ $category->alias }}]</span>
+            <a href="/admin/category/edit/{{$category->id}}">编辑</a>
+            <a class="del" href="/admin/category/delete/{{$category->id}}">删除</a>
+            @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
 
-                    <ul> @foreach ( $categoriess as $category_ )
-                        @if ($category_->parent_id === $category->id)
-                        <li>
-                            <b> {{$category_->name}} </b>
-                            <span>[{{$category_->alias}}]</span>
-                            <a href="/admin/category/edit/{{$category_->id}}">编辑</a>
-                            <a class="del" href="/admin/category/delete/{{$category_->id}}">删除</a>
-                        </li>
-                        @endif
-                    @endforeach </ul>
+                <ul> @foreach ( $categories as $category_ )
+                    @if ($category_->parent_id === $category->id)
+                    <li>
+                        <b> {{$category_->name}} </b>
+                        <span>[{{$category_->alias}}]</span>
+                        <a href="/admin/category/edit/{{$category_->id}}">编辑</a>
+                        <a class="del" href="/admin/category/delete/{{$category_->id}}">删除</a>
+                    </li>
+                    @endif
+                @endforeach </ul>
 
-                @endif
-            </li>
-        @endif
+            @endif
+        </li>
     @endforeach
 </ul>
 @endif
@@ -101,7 +99,7 @@ $(function(){
 			},
 			alias : {
 				required : '别名不能为空',
-				min : '别名最长不能小于2'
+				min : '别名最长不能小于2',
 				max : '别名最长不能大于20'
 			}
 		}

@@ -15,18 +15,23 @@ class InfoController extends Controller
 
     public function index()
     {
-        $categories = $categoriess = Category::all();
+        $categoriess = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id','>',0)->get();
         return view('info.index',[
-            'categories' => $categories,
-            'categoriess' => $categoriess
+            'categoriess' => $categoriess,
+            'categories' => $categories
         ]);
     }
 
-    public function category($category)
+    public function category($category,$page_id = 1)
     {
         $category_data = Category::find($category);
         $folder = Category::find($category_data->parent_id);
-        $infos = $category_data->info;
+        $infos = $category_data->info()
+        ->where('publish_at','<',date("Y-m-d H:i:s",time()+8*60*60))
+        ->orderBy('publish_at', 'desc')
+        ->paginate($perPage = 10, $columns = ['*'], $pageName = 'page', $page = $page_id);
+
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
                 'infos' => $infos,

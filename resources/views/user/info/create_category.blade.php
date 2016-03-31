@@ -6,15 +6,14 @@
 
 @section('content')
 <h1>创建 > 选择分类</h1>
-@if(count($categories) > 0)
+@if(count($categoriess) > 0)
     <ul>
-        @foreach($categories as $category)
-            @if($category->parent_id == NULL)
+        @foreach($categoriess as $category)
             <li><b>{{$category->name}}</b>
                 @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
 
                     <ul>
-                        @foreach ( $categoriess as $category_ )
+                        @foreach ( $categories as $category_ )
                             @if ($category_->parent_id === $category->id)
                                 <li>
                                     <a href="{{url('/user/info/create/category/'.$category_->id)}}">{{ $category_->name }}</a>
@@ -25,7 +24,6 @@
 
                 @endif
             </li>
-            @endif
         @endforeach
     </ul>
 @endif

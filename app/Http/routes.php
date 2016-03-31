@@ -14,7 +14,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/categories', 'InfoController@index');
     Route::get('/info/{id}', 'InfoController@info');
-    Route::get('/infos/category/{category}', 'InfoController@category');
+    Route::get('/infos/category/{category}/page/{page_id?}', 'InfoController@category');
 
     Route::get('/admin/users/{id?}', 'AdminuserController@index');
     Route::get('/admin/user/edit/{id}', 'AdminuserController@edit');
@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/user/index', 'UserCenterController@index');
-        Route::get('/user/infos', 'UserCenterController@infos');
+        Route::get('/user/infos/{id?}', 'UserCenterController@infos');
         Route::get('/user/info/create_category', 'UserCenterController@create_category');
         Route::get('/user/info/create/category/{id}', 'UserCenterController@create');
         Route::post('/user/info/create', 'UserCenterController@create_save');

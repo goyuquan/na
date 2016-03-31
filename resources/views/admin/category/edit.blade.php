@@ -2,26 +2,24 @@
 
 @section('content')
 
-@if(count($categories) > 0)
+@if(count($categoriess) > 0)
 <ul>
-    @foreach ( $categories as $category )
-        @if ( $category->parent_id == NULL)
-            <li><span>{{ $category->name }}</span>
-                <span>{{ $category->alias }}</span>
-                @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
+    @foreach ( $categoriess as $category )
+        <li><span>{{ $category->name }}</span>
+            <span>{{ $category->alias }}</span>
+            @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
 
-                    <ul> @foreach ( $categoriess as $category_ )
-                        @if ($category_->parent_id === $category->id)
-                            <li>
-                                <b> {{$category_->name}} </b>
-                                <span> {{$category_->alias}} </span>
-                             </li>
-                        @endif
-                    @endforeach </ul>
+                <ul> @foreach ( $categories as $category_ )
+                    @if ($category_->parent_id === $category->id)
+                        <li>
+                            <b> {{$category_->name}} </b>
+                            <span> {{$category_->alias}} </span>
+                         </li>
+                    @endif
+                @endforeach </ul>
 
-                @endif
-            </li>
-        @endif
+            @endif
+        </li>
     @endforeach
 </ul>
 @endif

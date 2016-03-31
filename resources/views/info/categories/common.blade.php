@@ -13,6 +13,9 @@
         <li><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a> </li>
     @endforeach
 </ul>
+<p>
+</p>
 @endif
+{{$infos->links()}}
 
 @endsection

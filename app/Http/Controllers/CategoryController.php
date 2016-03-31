@@ -12,10 +12,11 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = $categoriess = Category::all();
+        $categoriess = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id','>',0)->get();
         return view('admin.category.index',[
-            'categories' => $categories,
-            'categoriess' => $categoriess
+            'categoriess' => $categoriess,
+            'categories' => $categories
         ]);
     }
 
@@ -49,12 +50,13 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
-        $categories = $categoriess = Category::all();
+        $categoriess = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id','>',0)->get();
         $name = Category::find($id);
         return view('admin.category.edit',[
             'name' => $name,
-            'categories' => $categories,
-            'categoriess' => $categoriess
+            'categoriess' => $categoriess,
+            'categories' => $categories
         ]);
     }
 

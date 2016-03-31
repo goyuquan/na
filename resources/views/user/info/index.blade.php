@@ -5,19 +5,29 @@
 @section('keywords','title_keywords')
 
 @section('content')
+
 <h1>用户 > 信息 > 列表</h1>
 @if(count($infos) > 0)
-<ul>
+<table>
+    <thead>
+        <th> 标题 </th>
+        <th> 时间 </th>
+        <th>  </th>
+    </thead>
     @foreach($infos as $info)
-    <li>
-        {{$info->title}}
-        {{$info->publish_at}}
-        <a href="/user/info/edit/{{$info->id}}">编辑</a>
-        <a class="del" href="/user/info/delete/{{$info->id}}">删除</a>
-    </li>
+    <tr>
+        <td>{{$info->title}}</td>
+        <td>{{$info->publish_at}}</td>
+        <td>&nbsp;
+            <a href="/user/info/edit/{{$info->id}}">编辑</a>
+            <a class="del" href="/user/info/delete/{{$info->id}}">删除</a>
+        </td>
+    </tr>
     @endforeach
-</ul>
+</table>
 @endif
+<p> {{$infos->links()}} </p>
+
 @endsection
 
 @section('script')
