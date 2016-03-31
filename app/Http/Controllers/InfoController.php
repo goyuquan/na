@@ -55,7 +55,7 @@ class InfoController extends Controller
             ]);
         } else {
             return view('info.categories.common_show',[
-                'infos' => $infos,
+                'info' => $info,
                 'category' => $category,
                 'parent_category' => $parent_category,
                 'content' => $content

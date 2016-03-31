@@ -7,6 +7,7 @@ use App\Info;
 use App\Column;
 use Gate;
 use Auth;
+use View;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -44,20 +45,28 @@ class UserCenterController extends Controller
     {
         $category = Category::find($id);
         $folder = Category::find($category->parent_id);
-        return view('user.info.create.'.$folder->alias.'.'.$category->alias,[
-            'category' => $category,
-        ]);
+        if(View::exists('user.info.create.'.$folder->alias.'.'.$category->alias)){
+            return view('user.info.create.'.$folder->alias.'.'.$category->alias,[
+                'category' => $category,
+            ]);
+        } else {
+            return view('user.info.create.common',[
+                'category' => $category,
+            ]);
+        }
     }
 
     public function create_save(Request $request)
     {
-        $content = collect($request->input()) ->except(['_token', 'query_string','category_id','title','text']);
+        $content = collect($request->input()) ->except(['_token', 'query_string','category_id','title','text','publish_at']);
+        $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
 
         $request->user()->info()->create([
             'category_id' => $request->category_id,
             'title' => $request->title,
             'text' => $request->text,
             'content' => $content,
+            'publish_at' => $publish_at,
         ]);
 
         Session()->flash('info', 'info create was successful!');

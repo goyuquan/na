@@ -11,6 +11,7 @@
     @foreach($infos as $info)
     <li>
         {{$info->title}}
+        {{$info->publish_at}}
         <a href="/user/info/edit/{{$info->id}}">编辑</a>
         <a class="del" href="/user/info/delete/{{$info->id}}">删除</a>
     </li>
