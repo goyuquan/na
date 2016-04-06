@@ -58,7 +58,11 @@ class UserController extends Controller
 
         Session()->flash('user', 'user create was successful!');
 
-        return redirect('/');
+        if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
+            return Redirect::intended('/');
+        } else {
+            return "register login wrong";
+        }
     }
 
     public function login()
@@ -69,10 +73,9 @@ class UserController extends Controller
     public function _login(Request $request)
     {
         if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
-            // return redirect('/');
             return Redirect::intended('/');
         } else {
-            return "wrong";
+            return "login wrong";
         }
     }
 

@@ -9,14 +9,17 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/login', 'UserController@_login');
     Route::get('/logout', 'UserController@logout');
 
-    Route::get('/admin', 'AdminController@index');
+    Route::post('/search', 'PageController@search_push');
+    Route::get('/search/{word}', 'PageController@search');
 
+
+    Route::get('/admin', 'AdminController@index');
 
     Route::get('/categories', 'InfoController@index');
     Route::get('/info/{id}', 'InfoController@info');
     Route::get('/infos/category/{category}', 'InfoController@category');
 
-    Route::get('/admin/users/{id?}', 'AdminuserController@index');
+    Route::get('/admin/users', 'AdminuserController@index');
     Route::get('/admin/user/edit/{id}', 'AdminuserController@edit');
     Route::post('/admin/user/update/{id}', 'AdminuserController@update');
     Route::get('/admin/user/delete/{id}', 'AdminuserController@destroy');
@@ -30,7 +33,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/user/index', 'UserCenterController@index');
-        Route::get('/user/infos/{id?}', 'UserCenterController@infos');
+        Route::get('/user/infos', 'UserCenterController@infos');
         Route::get('/user/info/create_category', 'UserCenterController@create_category');
         Route::get('/user/info/create/category/{id}', 'UserCenterController@create');
         Route::post('/user/info/create', 'UserCenterController@create_save');
@@ -51,25 +54,7 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('/admin/display', 'DisplayController@index');
         Route::post('/admin/display/store', 'DisplayController@store');
-        Route::get('/admin/display/banner/{id?}', 'DisplayController@banner');
-
-        Route::get('/admin/album/{id?}/show', 'AlbumController@show');
-        Route::get('/admin/album/create', 'AlbumController@create');
-        Route::post('/admin/album/store', 'AlbumController@store');
-        Route::get('/admin/album/{id}/edit', 'AlbumController@edit');
-        Route::post('/admin/album/{id}/update', 'AlbumController@update');
-        Route::get('/admin/album/upload/{id?}', 'AlbumController@upload');
-        Route::post('/admin/album/upload/uploadstore','AlbumController@uploadstore');
-        Route::get('/admin/album/{id}/destroy', 'AlbumController@destroy');
-        Route::get('/admin/albums/{id?}', 'AlbumController@index');
-
-
-        Route::get('/admin/users/', 'UserController@index');
-        Route::get('/admin/user/create', 'UserController@create');
-        Route::get('/admin/user/{id}/edit', 'UserController@edit');
-        Route::post('/admin/user/{id}/update', 'UserController@update');
-        Route::post('/admin/user/store', 'UserController@store');
-        Route::get('/admin/user/{id}/destroy', 'UserController@destroy');
+        Route::get('/admin/display/banner', 'DisplayController@banner');
 
     });
 

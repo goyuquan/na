@@ -48,11 +48,11 @@ class DisplayController extends Controller
         return redirect('/admin/display');
     }
 
-    public function banner($id = 1)
+    public function banner()
     {
         $banners = Album::where("display_id",2)
         ->orderBy('id', 'desc')
-        ->paginate($perPage = 20, $columns = ['*'], $pageName = 'page', $page = $id);
+        ->paginate(10);
         return view('admin.displays.banner', [
             "banners" => $banners
         ]);

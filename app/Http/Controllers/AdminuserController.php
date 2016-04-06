@@ -10,10 +10,10 @@ use App\Http\Controllers\Controller;
 class AdminuserController extends Controller
 {
 
-    public function index($id=1)
+    public function index()
     {
         $users = User::orderBy('id', 'desc')
-        ->paginate($perPage = 20, $columns = ['*'], $pageName = 'page', $page = $id);
+        ->paginate(20);
         return view('admin.user.index',['users' => $users]);
     }
 

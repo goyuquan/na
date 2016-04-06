@@ -11,3 +11,9 @@
     <a href="{{ url('/logout') }}" class="item"><i class="fa fa-btn fa-sign-out"></i>退出</a>
 @endif
 <hr>
+<form id="search" method="POST" action="{{ url('/search') }}">
+	{!! csrf_field() !!}
+    <input type="text" name="word">
+    <button type="submit"> 搜索 </button>
+</form>
+<hr>

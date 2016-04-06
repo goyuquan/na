@@ -29,7 +29,7 @@ class InfoController extends Controller
         $folder = Category::find($category_data->parent_id);
         $infos = $category_data->info()
         ->orderBy('publish_at', 'desc')
-        ->paginate(2);
+        ->paginate(10);
 
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
@@ -66,5 +66,7 @@ class InfoController extends Controller
             ]);
         }
     }
+
+
 
 }
