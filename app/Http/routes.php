@@ -2,15 +2,16 @@
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', 'PageController@home');
+    Route::get('/', 'CommonController@home');
+    Route::post('/search', 'CommonController@search_push');
+    Route::get('/search/{word}', 'CommonController@search');
+
     Route::get('/register', 'UserController@register');
     Route::post('/register', 'UserController@_register');
     Route::get('/login', 'UserController@login');
     Route::post('/login', 'UserController@_login');
     Route::get('/logout', 'UserController@logout');
 
-    Route::post('/search', 'PageController@search_push');
-    Route::get('/search/{word}', 'PageController@search');
 
 
     Route::get('/admin', 'AdminController@index');
@@ -29,6 +30,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/category/edit/{id}', 'CategoryController@edit');
     Route::post('/admin/category/update/{id}', 'CategoryController@update');
     Route::get('/admin/category/delete/{id}', 'CategoryController@destroy');
+
+    Route::get('/admin/pages', 'PageController@index');
+    Route::post('/admin/page/create', 'PageController@create');
+    Route::get('/admin/page/edit/{id}', 'PageController@edit');
+    Route::post('/admin/page/update/{id}', 'PageController@update');
+    Route::get('/admin/page/delete/{id}', 'PageController@destroy');
 
     Route::group(['middleware' => 'auth'], function () {
 

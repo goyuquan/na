@@ -13,4 +13,9 @@ class Column extends Model
         return $this->belongsTo('App\Category');
     }
 
+    public function page()
+    {
+        return $this->belongsTo('App\Page');
+    }
+
 }

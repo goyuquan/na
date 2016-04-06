@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Info extends Model
 {
-    protected $fillable = ['user_id','category_id','title','text','content','top','publish_at'];
+    protected $fillable = ['user_id','category_id','page_id','type','title','text','content','top','publish_at'];
 
 
     public function user()
@@ -17,6 +17,11 @@ class Info extends Model
     public function category()
     {
         return $this->belongsTo('App\Category');
+    }
+
+    public function page()
+    {
+        return $this->belongsTo('App\Page');
     }
 
 }

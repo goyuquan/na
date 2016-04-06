@@ -10,7 +10,7 @@
     <ul>
         @foreach($results as $result)
             <li>
-                <a href="#">{{$result->title}}</a>
+                <a href="/info/{{$result->id}}">{{$result->title}}</a>
             </li>
         @endforeach
     </ul>
