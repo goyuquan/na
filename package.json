@@ -1,26 +1,10 @@
 {
-  "name": "na",
-  "version": "1.0.0",
-  "description": "ning an info",
-  "main": "gulpfile.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:goyuquan/na.git"
-  },
-  "author": "guoyuquan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goyuquan/na/issues"
-  },
-  "homepage": "https://github.com/goyuquan/na",
+  "private": true,
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2"
+    "gulp": "^3.8.8"
+  },
+  "dependencies": {
+    "laravel-elixir": "^4.0.0",
+    "bootstrap-sass": "^3.0.0"
   }
 }

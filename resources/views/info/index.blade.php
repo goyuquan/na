@@ -15,7 +15,7 @@
                     @foreach ( $categories as $category_ )
                         @if ($category_->parent_id === $category->id)
                             <li>
-                                <a href="{{ url('/infos/category/'.$category_->id.'/page/1') }}">{{ $category_->name }}</a>
+                                <a href="{{ url('/infos/category/'.$category_->id) }}">{{ $category_->name }}</a>
                             </li>
                         @endif
                     @endforeach

@@ -23,14 +23,13 @@ class InfoController extends Controller
         ]);
     }
 
-    public function category($category,$page_id = 1)
+    public function category($category)
     {
         $category_data = Category::find($category);
         $folder = Category::find($category_data->parent_id);
         $infos = $category_data->info()
-        ->where('publish_at','<',date("Y-m-d H:i:s",time()+8*60*60))
         ->orderBy('publish_at', 'desc')
-        ->paginate($perPage = 10, $columns = ['*'], $pageName = 'page', $page = $page_id);
+        ->paginate(2);
 
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
