@@ -12,8 +12,8 @@ class PageController extends Controller
 
     public function index()
     {
-        $pagess = Page::where('parent_id',0)->get();
         $pages = Page::where('parent_id','>',0)->get();
+        $pagess = Page::where('parent_id',0)->get();
         return view('admin.page.index',[
             'pagess' => $pagess,
             'pages' => $pages
@@ -32,7 +32,7 @@ class PageController extends Controller
             'alias.min' => '别名不能小于:min位',
         ];
         $this->validate($request, [
-            'name' => 'required|unique:page|min:1|max:20',
+            'name' => 'required|unique:pages|min:1|max:20',
             'alias' => 'required|min:2|max:50',
         ],$messages);
 
@@ -45,7 +45,7 @@ class PageController extends Controller
 
         Session()->flash('page', 'page create was successful!');
 
-        return redirect('/admin/page');
+        return redirect('/admin/pages');
     }
 
     public function edit($id)

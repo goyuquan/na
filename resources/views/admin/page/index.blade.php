@@ -44,12 +44,12 @@
 			<strong>{{ $errors->first('alias') }}</strong>
 		@endif
 	</section>
-    @if(count($pages) > 0)
+    @if(count($pagess) > 0)
 	<section>
 		<label for="parent">父页面</label>
         <select name="parent" id="parent">
-            <option value=NULL>无</option>
-            @foreach ( $pages as $page )
+            <option value=0>无</option>
+            @foreach ( $pagess as $page )
             <option value="{{$page->id}}">{{$page->name}}</option>
             @endforeach
         </select>

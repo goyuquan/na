@@ -13,9 +13,4 @@ class Page extends Model
         return $this->hasMany('App\Info');
     }
 
-    public function column()
-    {
-        return $this->hasMany('App\Column');
-    }
-
 }
