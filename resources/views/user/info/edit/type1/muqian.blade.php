@@ -1,7 +1,7 @@
-@extends('admin.layouts.admin')
+@extends('layouts.app')
 
 @section('content')
-<h1>用户 > 信息 > 编辑 > {{$info->title}}</h1>
+<h1>用户 > 信息 > 编辑 > {{$info->title}}mudan view</h1>
 
 <form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
 	{!! csrf_field() !!}

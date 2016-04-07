@@ -82,10 +82,11 @@ class CategoryController extends Controller
         if ($category->alias != $request->alias){
             $category->alias = $request->alias;
         }
-        if ($category->parent_id && $category->parent_id != $request->parent){
+
+        if ($category->parent_id != $request->parent){
             $category->parent_id = $request->parent;
         }
-        $category->save();
+        $category->update();
 
         Session()->flash('category', 'category update was successful!');
 

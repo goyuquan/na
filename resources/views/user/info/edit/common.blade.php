@@ -1,33 +1,26 @@
 @extends('layouts.app')
 
-@section('title','创建')
-@section('description','title_description')
-@section('keywords','title_keywords')
-
 @section('content')
-<h1>用户 > 信息 > 创建 </h1>
-<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
-	<input type="hidden" name="category_id" value="{{$category->id}}">
+<h1>用户 > 信息 > 编辑 > {{$info->title}}</h1>
+
+<form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
 	{!! csrf_field() !!}
 	<section>
 		<label for="title">标题</label>
-		<input type="text" name="title" id="title">
+		<input type="text" name="title" id="title" value="{{$info->title}}">
+		@if ($errors->has('title'))
+			<strong>{{ $errors->first('title') }}</strong>
+		@endif
 	</section>
 	<section>
-		<label for="text">正文</label>
-		<input type="text" name="text" id="text">
-	</section>
-	<section>
-		<label for="muqian">目前</label>
-		<input type="text" name="muqian" id="muqian">
-	</section>
-	<section>
-		<label for="chengshi">城市</label>
-		<input type="text" name="chengshi" id="chengshi">
+		<label for="text">描述</label>
+		<input type="text" name="text" id="text" value="{{$info->text}}">
+		@if ($errors->has('text'))
+			<strong>{{ $errors->first('text') }}</strong>
+		@endif
 	</section>
 
-
-	<input type="submit" value="提交">
+	<input type="submit" value="修改">
 </form>
 
 @endsection
@@ -37,8 +30,8 @@
 <script type="text/javascript">
 $(function(){
 
-	var validate = $("#create").validate({
-	    debug: true, //调试模式取消submit的默认提交功能
+	var validate = $("#edit").validate({
+
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
 	    },
@@ -49,7 +42,7 @@ $(function(){
 				minlength : 5,
 				maxlength : 50
 			},
-			text : {
+            text : {
 				required : true,
 				minlength : 10,
 				maxlength : 1000
@@ -62,12 +55,13 @@ $(function(){
 				minlength : '标题最长不能小于5',
 				maxlength : '标题最长不能大于50'
 			},
-			text : {
+            text : {
 				required : '内容不能为空',
 				minlength : '内容最长不能小于10',
 				maxlength : '内容最长不能大于1000'
 			}
-		},
+		}
+
 	});
 });
 </script>

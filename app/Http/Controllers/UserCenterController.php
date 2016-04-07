@@ -77,34 +77,24 @@ class UserCenterController extends Controller
         $info = Info::find($id);
         if (Gate::allows('info_authorize', $info)) {
             $categories = $categoriess = Category::all();
-            return view('user.Info.edit',[
-                'info' => $info,
-                'categories' => $categories,
-                'categoriess' => $categoriess
-            ]);
+            $category = $info->category;
+            $folder = Category::find($category->parent_id);
+            if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
+                return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
+                    'info' => $info,
+                    'categories' => $categories,
+                    'categoriess' => $categoriess
+                ]);
+            } else {
+                return view('user.Info.edit.common',[
+                    'info' => $info,
+                    'categories' => $categories,
+                    'categoriess' => $categoriess
+                ]);
+            }
         } else {
-            return "无权编辑";
+            return view('common.info_authorize',['info' => "无权编辑!"]);
         }
-    }
-
-
-    public function refresh(Request $request)
-    {
-
-        $content = collect($request->input()) ->except(['_token', 'query_string','category_id','title','text','publish_at']);
-        $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
-
-        $request->user()->info()->create([
-            'category_id' => $request->category_id,
-            'title' => $request->title,
-            'text' => $request->text,
-            'content' => $content,
-            'publish_at' => $publish_at,
-        ]);
-
-        Session()->flash('info', 'info create was successful!');
-
-        return redirect('/admin/categories');
     }
 
 
@@ -126,24 +116,37 @@ class UserCenterController extends Controller
         $info = Info::find($id);
 
         if (Gate::allows('info_authorize', $info)) {
-
-            if ($info->name != $request->name){
-                $info->name = $request->name;
+            if ($info->title != $request->title){
+                $info->title = $request->title;
             }
-            if ($info->parent_id && $info->parent_id != $request->parent){
-                $info->parent_id = $request->parent;
+            if ($info->text != $request->text){
+                $info->text = $request->text;
             }
-            $info->save();
+            $info->update();
 
             Session()->flash('category', 'category update was successful!');
-
             return redirect('/user/infos');
-
         } else {
-            return "无权编辑！";
+            return view('common.info_authorize',['info' => "无权编辑!"]);
         }
 
     }
+
+
+    public function refresh($id)
+    {
+        $info = Info::find($id);
+        if (Gate::allows('info_authorize', $info)) {
+            $publish_at = date("Y-m-d H:i:s",time()+8*60*60);
+            $info->publish_at = $publish_at;
+            $info->update();
+            Session()->flash('info', 'info refresh was successful!');
+            return redirect('/user/infos');
+        } else {
+            return view('common.info_authorize',['info' => "无权刷新!"]);
+        }
+    }
+
 
     public function destroy($id)
     {
@@ -152,7 +155,7 @@ class UserCenterController extends Controller
             Info::destroy($id);
             return redirect('/user/infos');
         } else {
-            return "无权删除！";
+            return view('common.info_authorize',['info' => "无权删除!"]);
         }
     }
 

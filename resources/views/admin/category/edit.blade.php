@@ -40,12 +40,12 @@
 			<strong>{{ $errors->first('alias') }}</strong>
 		@endif
 	</section>
-    @if(count($categories) > 0)
+    @if(count($categoriess) > 0)
 	<section>
 		<label for="parent">父类别</label>
         <select name="parent" id="parent">
             <option value="0">无</option>
-            @foreach ( $categories as $category )
+            @foreach ( $categoriess as $category )
             <option value="{{$category->id}}"
                 @if($category->id == $name->parent_id)
                  selected="selected"

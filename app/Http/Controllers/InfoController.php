@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Info;
-use App\Column;
 use View;
 use Illuminate\Http\Request;
 use App\Http\Requests;
