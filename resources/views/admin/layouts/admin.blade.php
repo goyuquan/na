@@ -12,7 +12,7 @@
     @include('admin.layouts.header')
     @yield('content')
     @include('admin.layouts.footer')
-    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     @yield('script')
 </body>
 </html>

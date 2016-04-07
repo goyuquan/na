@@ -75,13 +75,38 @@ class UserCenterController extends Controller
     public function edit($id)
     {
         $info = Info::find($id);
-        $categories = $categoriess = Category::all();
-        return view('user.Info.edit',[
-            'info' => $info,
-            'categories' => $categories,
-            'categoriess' => $categoriess
-        ]);
+        if (Gate::allows('info_authorize', $info)) {
+            $categories = $categoriess = Category::all();
+            return view('user.Info.edit',[
+                'info' => $info,
+                'categories' => $categories,
+                'categoriess' => $categoriess
+            ]);
+        } else {
+            return "无权编辑";
+        }
     }
+
+
+    public function refresh(Request $request)
+    {
+
+        $content = collect($request->input()) ->except(['_token', 'query_string','category_id','title','text','publish_at']);
+        $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
+
+        $request->user()->info()->create([
+            'category_id' => $request->category_id,
+            'title' => $request->title,
+            'text' => $request->text,
+            'content' => $content,
+            'publish_at' => $publish_at,
+        ]);
+
+        Session()->flash('info', 'info create was successful!');
+
+        return redirect('/admin/categories');
+    }
+
 
     public function update(Request $request,$id)
     {
