@@ -36,6 +36,18 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/page/update/{id}', 'PageController@update');
     Route::get('/admin/page/delete/{id}', 'PageController@destroy');
 
+
+    Route::get('/admin/pageinfo/{id}', 'PageinfoController@index');
+    Route::get('/admin/pageinfo/create/{page}', 'PageinfoController@create');
+    Route::post('/admin/pageinfo/create/{page}', 'PageinfoController@_create');
+
+    Route::get('/admin/pageinfo/info/create/category/{id}', 'PageinfoController@create');
+    Route::post('/admin/pageinfo/info/create', 'PageinfoController@create_save');
+    Route::get('/admin/pageinfo/info/refresh/{id}', 'PageinfoController@refresh');
+    Route::get('/admin/pageinfo/info/edit/{id}', 'PageinfoController@edit');
+    Route::post('/admin/pageinfo/info/update/{id}', 'PageinfoController@update');
+    Route::get('/admin/pageinfo/info/delete/{id}', 'PageinfoController@destroy');
+
     Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/user/index', 'UserCenterController@index');

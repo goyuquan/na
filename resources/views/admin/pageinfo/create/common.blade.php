@@ -1,13 +1,9 @@
 @extends('layouts.app')
 
-@section('title','创建')
-@section('description','title_description')
-@section('keywords','title_keywords')
 
 @section('content')
-<h1>用户 > 信息 > 创建 </h1>
-<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
-	<input type="hidden" name="category_id" value="{{$category->id}}">
+<h1>页面 > 记录 > 新建  </h1>
+<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
 	{!! csrf_field() !!}
 	<section>
 		<label for="title">标题</label>
@@ -18,12 +14,8 @@
 		<input type="text" name="text" id="text">
 	</section>
 	<section>
-		<label for="muqian">目前</label>
-		<input type="text" name="muqian" id="muqian">
-	</section>
-	<section>
-		<label for="chengshi">城市</label>
-		<input type="text" name="chengshi" id="chengshi">
+		<label for="publish_at">发布时间</label>
+		<input type="date" name="publish_at" id="publish_at">
 	</section>
 
 
@@ -42,7 +34,6 @@ $(function(){
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
 	    },
-
 		rules : {
 			title : {
 				required : true,
@@ -55,7 +46,6 @@ $(function(){
 				maxlength : 1000
 			}
 		},
-
 		messages : {
 			title : {
 				required : '标题不能为空',

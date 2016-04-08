@@ -10,7 +10,6 @@ class CreateInfosTable extends Migration
             $table->tinyInteger('user_id');
             $table->tinyInteger('category_id');
             $table->tinyInteger('page_id');
-            $table->tinyInteger('type');
             $table->char('title',50);
             $table->text('text');
             $table->text('content');

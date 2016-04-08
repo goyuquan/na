@@ -5,7 +5,7 @@
 @if(count($pagess) > 0)
 <ul>
     @foreach ( $pagess as $page )
-        <li><span>{{ $page->name }}</span>
+        <li><a href="/admin/pageinfo/{{$page->id}}">{{ $page->name }}</a>
             <span>[{{ $page->alias }}]</span>
             <a href="/admin/page/edit/{{$page->id}}">编辑</a>
             <a class="del" href="/admin/page/delete/{{$page->id}}">删除</a>
@@ -62,7 +62,7 @@
 @endsection
 
 @section('script')
-<script src="{{url('/js/jquery.validate.min.js')}}"></script>
+<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript">
 $(function(){
 

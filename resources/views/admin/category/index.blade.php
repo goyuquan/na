@@ -62,7 +62,7 @@
 @endsection
 
 @section('script')
-<script src="{{url('/js/jquery.validate.min.js')}}"></script>
+<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript">
 $(function(){
 
