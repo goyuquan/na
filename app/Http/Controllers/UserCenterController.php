@@ -56,7 +56,7 @@ class UserCenterController extends Controller
 
     public function create_save(Request $request)
     {
-        $content = collect($request->input()) ->except(['_token', 'query_string','category_id','title','text','publish_at']);
+        $content = collect($request->input())->except(['_token', 'query_string','category_id','title','text','publish_at']);
         $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
 
         $request->user()->info()->create([
@@ -116,6 +116,8 @@ class UserCenterController extends Controller
             'text' => 'required|min:10|max:1000',
         ],$messages);
 
+        $content = collect($request->input())->except(['_token', 'query_string','category_id','title','text','publish_at']);
+
         $info = Info::find($id);
 
         if (Gate::allows('info_authorize', $info)) {
@@ -125,9 +127,15 @@ class UserCenterController extends Controller
             if ($info->text != $request->text){
                 $info->text = $request->text;
             }
+            if ($info->content != $content){
+                $info->content = $content;
+            }
+            if ($info->category_id != $request->category_id){
+                $info->category_id = $request->category_id;
+            }
             $info->update();
 
-            Session()->flash('category', 'category update was successful!');
+            Session()->flash('info', 'info update was successful!');
             return redirect('/user/infos');
         } else {
             return view('common.info_authorize',['info' => "无权编辑!"]);

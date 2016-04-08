@@ -19,6 +19,34 @@
 			<strong>{{ $errors->first('text') }}</strong>
 		@endif
 	</section>
+	<section>
+		@if(count($categoriess) > 0)
+		<label for="parent_category">父类别</label>
+		<select name="parent_category" id="parent_category">
+			@foreach ( $categoriess as $category )
+			<option value="{{$category->id}}"
+				@if($category->id == $current_category->parent_id)
+				 selected="selected"
+				 @endif
+				>{{$category->name}}</option>
+			@endforeach
+		</select>
+		@endif
+
+		@if(count($categories) > 0)
+		<label for="category">类别</label>
+		<select name="category_id" id="category">
+			@foreach ( $categories as $category )
+			<option value="{{$category->id}}" data-parent="{{$category->parent_id}}"
+				@if($category->id == $current_category->id)
+				selected="selected"
+				@endif
+				>{{$category->name}}</option>
+			@endforeach
+		</select>
+		@endif
+	</section>
+
 
 	<input type="submit" value="修改">
 </form>
@@ -26,16 +54,14 @@
 @endsection
 
 @section('script')
-<script src="{{url('/js/jquery.validate.min.js')}}"></script>
+@include('user.info.edit.category_select')
 <script type="text/javascript">
 $(function(){
 
 	var validate = $("#edit").validate({
-
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
 	    },
-
 		rules : {
 			title : {
 				required : true,
@@ -48,7 +74,6 @@ $(function(){
 				maxlength : 1000
 			}
 		},
-
 		messages : {
 			title : {
 				required : '标题不能为空',
@@ -61,7 +86,6 @@ $(function(){
 				maxlength : '内容最长不能大于1000'
 			}
 		}
-
 	});
 });
 </script>

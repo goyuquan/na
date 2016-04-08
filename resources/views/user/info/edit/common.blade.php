@@ -40,7 +40,7 @@
 
 		@if(count($categories) > 0)
 		<label for="category">类别</label>
-		<select name="category" id="category">
+		<select name="category_id" id="category">
 			@foreach ( $categories as $category )
 			<option value="{{$category->id}}" data-parent="{{$category->parent_id}}"
 				@if($category->id == $current_category->id)
@@ -58,16 +58,9 @@
 @endsection
 
 @section('script')
-<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+@include('user.info.edit.category_select')
 <script type="text/javascript">
 $(function(){
-
-	$("#category option").hide();
-	$("#category option[data-parent='"+ $("#parent_category").val() +"']").show();
-	$("#parent_category").change(function(){
-		$("#category option").hide();
-		$("#category option[data-parent='"+ $(this).val() +"']").show();
-	});
 
 	var validate = $("#edit").validate({
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
