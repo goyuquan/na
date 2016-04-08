@@ -76,20 +76,23 @@ class UserCenterController extends Controller
     {
         $info = Info::find($id);
         if (Gate::allows('info_authorize', $info)) {
-            $categories = $categoriess = Category::all();
+            $categoriess = Category::where('parent_id',0)->get();
+            $categories = Category::where('parent_id','>',0)->get();
             $category = $info->category;
             $folder = Category::find($category->parent_id);
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
                     'info' => $info,
                     'categories' => $categories,
-                    'categoriess' => $categoriess
+                    'categoriess' => $categoriess,
+                    'current_category' => $category
                 ]);
             } else {
                 return view('user.Info.edit.common',[
                     'info' => $info,
                     'categories' => $categories,
-                    'categoriess' => $categoriess
+                    'categoriess' => $categoriess,
+                    'current_category' => $category
                 ]);
             }
         } else {
