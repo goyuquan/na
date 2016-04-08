@@ -48,18 +48,31 @@ class PageinfoController extends Controller
 
         if(Auth::user()->role > 1)
         {
-            $pageinfo = new Info;
-            $pageinfo->title = $request->title;
-            $pageinfo->text = $request->text;
-            $pageinfo->page_id = $page;
-            $pageinfo->publish_at = $request->publish_at;
-            $pageinfo->content = $content;
-            $pageinfo->save();
+            $request->user()->info()->create([
+                'title' => $request->title,
+                'text' => $request->text,
+                'page_id' => $page,
+                'content' => $content,
+                'publish_at' => $request->publish_at,
+                ]);
 
             Session()->flash('pageinfo', 'pageinfo create was successful!');
 
             return redirect('/admin/pages');
         }
+    }
+
+
+    public function edit($id)
+    {
+        $pageinfo = Info::find($id);
+        $page = $pageinfo->page;
+        if(View::exists('user.info.edit.'.$page->alias)){
+            return view('user.info.edit.'.$page->alias,[ 'pageinfo' => $pageinfo ]);
+        } else {
+            return view('user.info.edit.common',[ 'pageinfo' => $pageinfo ]);
+        }
+
     }
 
 }

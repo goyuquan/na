@@ -9,11 +9,23 @@
         @foreach($pageinfos as $pageinfo)
         <li>
             {{$pageinfo->title}}&nbsp;
-            <a href="#">编辑</a>
-            <a href="#">删除</a>
+            <a href="/admin/pageinfo/edit/{{$pageinfo->id}}">编辑</a>
+            <a class="del" href="/admin/pageinfo/delete/{{$pageinfo->id}}">删除</a>
         </li>
         @endforeach
     </ul>
 @endif
 
+@endsection
+@section('script')
+<script type="text/javascript">
+$(function(){
+    $(".del").click(function(e){
+        var r=confirm("确认删除");
+        if (r==false) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
 @endsection
