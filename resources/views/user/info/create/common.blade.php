@@ -4,6 +4,48 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+@section('style')
+<style media="screen">
+	#background {
+		background: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		display: none;
+		z-index: 1;
+	}
+	#myModal {
+		position: absolute;
+		width: 350px;
+		height: 100px;
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		background: #fff;
+		padding: 2em;
+		border: 1px solid #666;
+		z-index: 2;
+	}
+	#progress {
+		width: 1%;
+		height: 20px;
+		line-height: 20px;
+		background: #337ab7;
+		margin: 1em 0;
+		border: 1px solid #333;
+		color:#fff;
+		text-align: right;
+		box-sizing: border-box;
+	}
+</style>
+@endsection
+@include('common.thumbnail')
 @section('content')
 <h1>用户 > 信息 > 创建(common) </h1>
 <form id="create" method="POST" action="{{ url('/user/info/create/') }}">
@@ -25,7 +67,7 @@
 	@endif
 	<section>
 		<label for="thumbnail">缩略图</label>
-		<input type="file" name="thumbnail" id="thumbnail">
+		<button type="button" name="button"  id="thumbnail_bt">上传缩略图</button>
 	</section>
 
 
@@ -35,6 +77,7 @@
 @endsection
 
 @section('script')
+<script src="{{url('/js/thumbnail.js')}}"></script>
 <script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript">
 $(function(){

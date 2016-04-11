@@ -14,6 +14,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
     Route::get('/admin', 'AdminController@index');
+    Route::post('/admin/thumbnail', 'AdminController@thumbnail');
 
     Route::get('/categories', 'InfoController@index');
     Route::get('/info/{id}', 'InfoController@info');
