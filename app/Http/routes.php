@@ -41,9 +41,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/pageinfo/create/{page}', 'PageinfoController@create');
     Route::post('/admin/pageinfo/create/{page}', 'PageinfoController@_create');
     Route::get('/admin/pageinfo/edit/{page}', 'PageinfoController@edit');
-    Route::post('/admin/pageinfo/update/{page}', 'PageinfoController@_update');
+    Route::post('/admin/pageinfo/update/{page}', 'PageinfoController@update');
+    Route::get('/admin/pageinfo/delete/{id}', 'PageinfoController@destroy');
 
-    Route::get('/admin/pageinfo/info/delete/{id}', 'PageinfoController@destroy');
 
     Route::group(['middleware' => 'auth'], function () {
 
