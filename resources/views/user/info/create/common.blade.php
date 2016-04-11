@@ -24,12 +24,8 @@
 		</section>
 	@endif
 	<section>
-		<label for="muqian">目前</label>
-		<input type="text" name="muqian" id="muqian">
-	</section>
-	<section>
-		<label for="chengshi">城市</label>
-		<input type="text" name="chengshi" id="chengshi">
+		<label for="thumbnail">缩略图</label>
+		<input type="file" name="thumbnail" id="thumbnail">
 	</section>
 
 
