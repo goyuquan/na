@@ -78,7 +78,6 @@ class CommonController extends Controller
     {
         if ($request->hasFile('file'))//文件是否上传
         {
-
             if ($request->file('file')->isValid())//上传文件是否有效
             {
                 $OriginalName = $request->file('file')->getClientOriginalName();

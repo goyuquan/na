@@ -50,7 +50,7 @@ $(function(){
     $('.close_bt').click(function(){ $('.background').fadeOut(); });
 
     $("#photos_bt").click(function(){
-        $(".dz-message span").text("拖拽图片上传");
+        $(".dz-message span").text("拖拽图片上传,每个文件不能超过500K");
         $('.background_photos').fadeIn();
      });
     $('.background_photos').click(function(){ $(this).fadeOut(); })

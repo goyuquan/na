@@ -50,13 +50,17 @@ $(function(){
     $("#my-awesome-dropzone").dropzone({
         url: "/upload/photos/"+$("#photos_sha1").val(),
         parallelUploads: 1,
-        maxFilesize: 100,
-        addRemoveLinks: true,
+        maxFilesize: 0.5,
+		maxFiles:10,
         thumbnailWidth: 100,
         thumbnailHeight: 100,
         dictFileTooBig:"文件太大了",
-        dictCancelUpload: "取消",
-        dictRemoveFile: "删除",
+        dragenter:function(){
+			$("#my-awesome-dropzone").css("border-color","#eea236");
+		},
+		dragleave:function(){
+			$("#my-awesome-dropzone").css("border-color","#398439");
+		}
      });
 
 	var validate = $("#create").validate({
