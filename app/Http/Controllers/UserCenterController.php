@@ -54,7 +54,7 @@ class UserCenterController extends Controller
         }
     }
 
-    public function create_save(Request $request)
+    public function _create(Request $request)
     {
         $content = collect($request->input())->except(['_token', 'query_string','category_id','title','text','publish_at']);
         $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
@@ -69,7 +69,7 @@ class UserCenterController extends Controller
 
         Session()->flash('info', 'info create was successful!');
 
-        return redirect('/admin/categories');
+        return view('common.infomation');
     }
 
     public function edit($id)

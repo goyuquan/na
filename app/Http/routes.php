@@ -12,9 +12,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/login', 'UserController@_login');
     Route::get('/logout', 'UserController@logout');
 
-
-    Route::get('/admin', 'AdminController@index');
-    Route::post('/admin/thumbnail', 'AdminController@thumbnail');
+    Route::post('/upload/thumbnail', 'CommonController@thumbnail');
+    Route::post('/upload/photos/{id}', 'CommonController@photos');
 
     Route::get('/categories', 'InfoController@index');
     Route::get('/info/{id}', 'InfoController@info');

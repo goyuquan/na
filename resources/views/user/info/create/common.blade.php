@@ -4,47 +4,6 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
-@section('style')
-<style media="screen">
-	#background {
-		background: rgba(0, 0, 0, 0.5);
-		position: absolute;
-		top:0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		display: none;
-		z-index: 1;
-	}
-	#myModal {
-		position: absolute;
-		width: 350px;
-		height: 100px;
-		position: absolute;
-		top:0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		background: #fff;
-		padding: 2em;
-		border: 1px solid #666;
-		z-index: 2;
-	}
-	#progress {
-		width: 1%;
-		height: 20px;
-		line-height: 20px;
-		background: #337ab7;
-		margin: 1em 0;
-		border: 1px solid #333;
-		color:#fff;
-		text-align: right;
-		box-sizing: border-box;
-	}
-</style>
-@endsection
 @include('common.thumbnail')
 @section('content')
 <h1>用户 > 信息 > 创建(common) </h1>
@@ -67,7 +26,12 @@
 	@endif
 	<section>
 		<label for="thumbnail">缩略图</label>
-		<button type="button" name="button"  id="thumbnail_bt">上传缩略图</button>
+		<button type="button" id="thumbnail_bt">上传缩略图</button>
+	</section>
+	<section>
+		<label for="photos">图片</label>
+		<input type="hidden" id="photos_sha1" value="{{sha1(time())}}">
+		<button type="button" id="photos_bt">上传图片</button>
 	</section>
 
 
@@ -79,8 +43,21 @@
 @section('script')
 <script src="{{url('/js/thumbnail.js')}}"></script>
 <script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="http://apps.bdimg.com/libs/dropzone/3.8.4/dropzone.min.js"></script>
 <script type="text/javascript">
 $(function(){
+
+    $("#my-awesome-dropzone").dropzone({
+        url: "/upload/photos/"+$("#photos_sha1").val(),
+        parallelUploads: 1,
+        maxFilesize: 100,
+        addRemoveLinks: true,
+        thumbnailWidth: 100,
+        thumbnailHeight: 100,
+        dictFileTooBig:"文件太大了",
+        dictCancelUpload: "取消",
+        dictRemoveFile: "删除",
+     });
 
 	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能

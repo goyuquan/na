@@ -6,7 +6,7 @@ $(function(){
             var fd = new FormData(this); // Neex AJAX2
             // You could show a loading image for example...
             $.ajax({
-                url: "/admin/thumbnail",
+                url: "/upload/thumbnail",
                 xhr: function() { // custom xhr (is the best)
                     var xhr = new XMLHttpRequest();
                     var total = 0;
@@ -29,7 +29,7 @@ $(function(){
                 data: fd,
                 success: function(data) {
                     // $("input[name='thumbnail']").val(data);
-                    $("#thumbnail_bt").after("<input type='hidden' value='"+data+"'>")
+                    $("#thumbnail_bt").after("<input type='hidden' name='thumbnail' value='"+data+"'>")
                     .after("<img src='/uploads/thumbnails/"+data+"'>");
                     $('#img_upload').hide();
                     $('#progress').css({
@@ -44,12 +44,17 @@ $(function(){
         $('#file_form').submit();
     });
 
-    $("#thumbnail_bt").click(function(){ $('#background').fadeIn(); });
+    $("#thumbnail_bt").click(function(){ $('.background').fadeIn(); });
+    $('.background').click(function(){ $(this).fadeOut(); })
+    $('.myModal').click(function(e){ e.stopPropagation(); })
+    $('.close_bt').click(function(){ $('.background').fadeOut(); });
 
-    $('#background').click(function(){ $('#background').fadeOut(); })
-
-    $('#myModal').click(function(e){ e.stopPropagation(); })
-
-    $('#close_bt').click(function(){ $('#background').fadeOut(); });
+    $("#photos_bt").click(function(){
+        $(".dz-message span").text("拖拽图片上传");
+        $('.background_photos').fadeIn();
+     });
+    $('.background_photos').click(function(){ $(this).fadeOut(); })
+    $('.myModal_photos').click(function(e){ e.stopPropagation(); })
+    $('.close_bt').click(function(){ $('.background_photos').fadeOut(); });
 
 });
