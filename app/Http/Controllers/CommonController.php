@@ -75,7 +75,7 @@ class CommonController extends Controller
 
     public function thumbnail_($id,$url)
     {
-        // File::delete(['uploads/thumbnails/'.$url]);
+        File::delete(['uploads/thumbnails/'.$url]);
         $page = Info::find($id);
         $content = collect(json_decode($page->content,true));
         $content->forget('thumbnail');
@@ -112,5 +112,26 @@ class CommonController extends Controller
         } else {
             return "图片上传失败！";
         }
+    }
+
+
+    public function photos_($id,$sha1)
+    {
+        $photos = Img::where('label',$sha1)->get();
+        if (count($photos) > 0) {
+            foreach ($photos as $photo) {
+                File::delete(['uploads/thumbnails/'.$photo->name]);
+                File::delete(['uploads/'.$photo->name]);
+            }
+        }
+        Img::where('label',$sha1)->delete();
+
+        $page = Info::find($id);
+        $content = collect(json_decode($page->content,true));
+        $content->forget('photos_sha1');
+        $page->content = $content->toJson();
+        $page->update(); 
+
+        return "thumbnail was deleted.";
     }
 }

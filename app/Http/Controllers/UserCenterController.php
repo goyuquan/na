@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Info;
 use App\Column;
+use App\Img;
 use Gate;
 use Auth;
 use View;
@@ -80,6 +81,10 @@ class UserCenterController extends Controller
             $categories = Category::where('parent_id','>',0)->get();
             $category = $info->category;
             $content = json_decode($info->content);
+            $photos = NULL;
+            if (isset($content->photos_sha1)) {
+                $photos = Img::where('label',$content->photos_sha1)->get(['name']);
+            }
             $folder = Category::find($category->parent_id);
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
@@ -87,7 +92,8 @@ class UserCenterController extends Controller
                     'content' => $content,
                     'categories' => $categories,
                     'categoriess' => $categoriess,
-                    'current_category' => $category
+                    'current_category' => $category,
+                    'photos' => $photos
                 ]);
             } else {
                 return view('user.Info.edit.common',[
@@ -95,7 +101,8 @@ class UserCenterController extends Controller
                     'content' => $content,
                     'categories' => $categories,
                     'categoriess' => $categoriess,
-                    'current_category' => $category
+                    'current_category' => $category,
+                    'photos' => $photos
                 ]);
             }
         } else {
@@ -166,6 +173,12 @@ class UserCenterController extends Controller
     {
         $info = Info::find($id);
         if (Gate::allows('info_authorize', $info)) {
+            $content = json_decode($info->content);
+            $url = $content->thumbnail;
+            $photo = $content->photos_sha1;
+            File::delete(['uploads/thumbnails/'.$url]);
+            File::delete(['uploads/'.$photo]);
+            Img::where('label',$photo)->delete();
             Info::destroy($id);
             return redirect('/user/infos');
         } else {

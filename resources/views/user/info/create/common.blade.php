@@ -24,13 +24,13 @@
 			<input type="date" name="publish_at" id="publish_at">
 		</section>
 	@endif
-	<section>
+	<section class="thumb_wrap">
 		<label for="thumbnail">缩略图</label>
 		<button type="button" id="thumbnail_bt">上传缩略图</button>
 	</section>
-	<section>
+	<section class="photo_wrap">
 		<label for="photos">图片</label>
-		<input type="hidden" id="photos_sha1" value="{{sha1(time())}}">
+		<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{sha1(time())}}">
 		<button type="button" id="photos_bt">上传图片</button>
 	</section>
 

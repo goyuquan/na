@@ -45,12 +45,12 @@ $(function(){
         $('#file_form').submit();
     });
 
-    $("#thumbnail_bt").click(function(){ $('.background').fadeIn(); });
+    $(".thumb_wrap").on("click","#thumbnail_bt",function(){ $('.background').fadeIn(); });
     $('.background').click(function(){ $(this).fadeOut(); })
     $('.myModal').click(function(e){ e.stopPropagation(); })
     $('.close_bt').click(function(){ $('.background').fadeOut(); });
 
-    $("#photos_bt").click(function(){
+    $(".photo_wrap").on("click","#photos_bt",function(){
         $(".dz-message span").text("拖拽图片上传,每个文件不能超过500K");
         $('.background_photos').fadeIn();
      });

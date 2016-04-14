@@ -53,14 +53,26 @@
 		</select>
 		@endif
 	</section>
-	<section>
+	<section class="thumb_wrap">
+		<label for="thumbnail">缩略图</label>
 		@if(isset($content->thumbnail))
 		<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
 		<button type="button" id="delete_thumb">删除</button>
 		@else
-		<label for="thumbnail">缩略图</label>
 		<button type="button" id="thumbnail_bt">上传缩略图</button>
 		@endif
+	</section>
+	<section class="photo_wrap">
+		<label for="photos">图片</label>
+			@if($photos && count($photos) > 0)
+				@foreach($photos as $photo)
+				<img src="{{url('uploads/thumbnails/'.$photo->name)}}" />
+				@endforeach
+				<button type="button" id="delete_photos">删除</button>
+			@else
+				<button type="button" id="photos_bt">上传图片</button>
+			@endif
+		<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{ $content->photos_sha1 or sha1(time()) }}">
 	</section>
 
 	<input type="submit" value="修改">
@@ -71,6 +83,8 @@
 @section('script')
 @include('user.info.edit.category_select')
 <script src="{{url('/js/thumbnail.js')}}"></script>
+<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="http://apps.bdimg.com/libs/dropzone/3.8.4/dropzone.min.js"></script>
 <script type="text/javascript">
 $(function(){
 
@@ -87,6 +101,36 @@ $(function(){
 			}
 		});
 	});
+
+	$('#delete_photos').click(function(){
+		var page = $("input[name='page']").val();
+		var sha1 = $("#photos_sha1").val();
+		$.ajax({
+			type:"GET",
+			url:"/delete/page/"+page+"/photos/"+sha1,
+			success:function(data){
+				console.log(data);
+				$("#delete_photos").after('<button type="button" id="photos_bt">上传图片</button>');
+				$("#delete_photos,.photo_wrap img").remove();
+			}
+		});
+	});
+
+	$("#my-awesome-dropzone").dropzone({
+        url: "/upload/photos/"+$("#photos_sha1").val(),
+        parallelUploads: 1,
+        maxFilesize: 0.5,
+		maxFiles:10,
+        thumbnailWidth: 100,
+        thumbnailHeight: 100,
+        dictFileTooBig:"文件太大了",
+        dragenter:function(){
+			$("#my-awesome-dropzone").css("border-color","#eea236");
+		},
+		dragleave:function(){
+			$("#my-awesome-dropzone").css("border-color","#398439");
+		}
+     });
 
 	var validate = $("#edit").validate({
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
