@@ -13,6 +13,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/logout', 'UserController@logout');
 
     Route::post('/upload/thumbnail', 'CommonController@thumbnail');
+    Route::get('/delete/page/{page}/thumbnail/{id}', 'CommonController@thumbnail_');
     Route::post('/upload/photos/{id}', 'CommonController@photos');
 
     Route::get('/categories', 'InfoController@index');

@@ -5,10 +5,12 @@
 
 </style>
 @endsection
+@include('common.thumbnail')
 @section('content')
 <h1>用户 > 信息 > 编辑 > {{$info->title}}</h1>
 
 <form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
+	<input type="hidden" name="page" value="{{$info->id}}">
 	{!! csrf_field() !!}
 	<section>
 		<label for="title">标题</label>
@@ -51,6 +53,15 @@
 		</select>
 		@endif
 	</section>
+	<section>
+		@if(isset($content->thumbnail))
+		<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
+		<button type="button" id="delete_thumb">删除</button>
+		@else
+		<label for="thumbnail">缩略图</label>
+		<button type="button" id="thumbnail_bt">上传缩略图</button>
+		@endif
+	</section>
 
 	<input type="submit" value="修改">
 </form>
@@ -59,8 +70,23 @@
 
 @section('script')
 @include('user.info.edit.category_select')
+<script src="{{url('/js/thumbnail.js')}}"></script>
 <script type="text/javascript">
 $(function(){
+
+	$('#delete_thumb').click(function(){
+		var src = $("#thumbnail").attr("name");
+		var page = $("input[name='page']").val();
+		$.ajax({
+			type:"GET",
+			url:"/delete/page/"+page+"/thumbnail/"+src,
+			success:function(data){
+				console.log(data);
+				$("#delete_thumb").after('<label for="thumbnail">缩略图</label> <button type="button" id="thumbnail_bt">上传缩略图</button>')
+				$("#delete_thumb,#thumbnail").remove();
+			}
+		});
+	});
 
 	var validate = $("#edit").validate({
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form

@@ -31,6 +31,7 @@ $(function(){
                     // $("input[name='thumbnail']").val(data);
                     $("#thumbnail_bt").after("<input type='hidden' name='thumbnail' value='"+data+"'>")
                     .after("<img src='/uploads/thumbnails/"+data+"'>");
+                    $("#thumbnail_bt").remove();
                     $('#img_upload').hide();
                     $('#progress').css({
                         'background':'#3c763d',

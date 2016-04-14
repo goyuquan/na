@@ -79,10 +79,12 @@ class UserCenterController extends Controller
             $categoriess = Category::where('parent_id',0)->get();
             $categories = Category::where('parent_id','>',0)->get();
             $category = $info->category;
+            $content = json_decode($info->content);
             $folder = Category::find($category->parent_id);
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
                     'info' => $info,
+                    'content' => $content,
                     'categories' => $categories,
                     'categoriess' => $categoriess,
                     'current_category' => $category
@@ -90,6 +92,7 @@ class UserCenterController extends Controller
             } else {
                 return view('user.Info.edit.common',[
                     'info' => $info,
+                    'content' => $content,
                     'categories' => $categories,
                     'categoriess' => $categoriess,
                     'current_category' => $category

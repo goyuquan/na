@@ -9,6 +9,7 @@
 
 <h1>{{$info->title}}</h1>
 <p> {{$info->text}} </p>
-<p> {{$content->muqian}} </p>
+
+
 
 @endsection

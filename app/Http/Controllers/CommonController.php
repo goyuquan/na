@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Info;
 use App\Img;
 use Image;
+use File;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -62,7 +63,6 @@ class CommonController extends Controller
                 Image::make($request->file('thumbnail'))//生成缩略图
                                     ->resize(100, null, function ($constraint) { $constraint->aspectRatio(); })
                                     ->save('uploads/thumbnails/'.$fileName);
-                // $request->file('thumbnail')->move($destinationPath, $fileName);
                 Session()->flash('img',$fileName);
                 return $fileName;
             } else {
@@ -73,6 +73,17 @@ class CommonController extends Controller
         }
     }
 
+    public function thumbnail_($id,$url)
+    {
+        // File::delete(['uploads/thumbnails/'.$url]);
+        $page = Info::find($id);
+        $content = collect(json_decode($page->content,true));
+        $content->forget('thumbnail');
+        $page->content = $content->toJson();
+        $page->update();
+
+        return "thumbnail was deleted.";
+    }
 
     public function photos(Request $request,$id)
     {
