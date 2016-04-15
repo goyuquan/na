@@ -1,0 +1,142 @@
+$color:#01579B;
+$hover_color:#a94442;
+html {
+    background: #f3f3f3;
+}
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html & { height: 1px }
+}
+@media only screen and (min-width: 1200px) {
+    body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+    body{font:12px"宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;}
+    a{color:#369;text-decoration:none}
+    a:hover{color:#a94442;text-decoration:underline}
+    em{font-style:normal}
+    li{list-style:none}
+    img{border:0;vertical-align:middle}
+    table{border-collapse:collapse;border-spacing:0}
+    p{word-wrap:break-word}
+
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+
+    .header {
+        @include clearfix;
+        width: 100%;
+        background: #FAFAFA;
+        border-bottom: 1px solid #E4E4E4;
+        padding-bottom: 0.5rem;
+
+        .top_bar {
+            background: #fff;
+            line-height: 2.4rem;
+            border-bottom: 1px solid #E4E4E4;
+
+            .top_nav {
+                text-align: right;
+                width: 100%;
+
+                a {
+                    color: #333;
+                    font-size: 1.2em;
+                    margin-left: 0.5em;
+                }
+            }
+        }
+        a.logo {
+            display: inline-block;
+            width: 20%;
+            float: left;
+            font-size: 1em;
+        }
+
+        .search_wrap {
+            display: inline-block;
+            float: right;
+            width: 79%;
+            margin-top: 1em;
+            padding:0.3rem 1rem 0.4rem;;
+            // text-align: right;
+            box-sizing: border-box;
+
+            input {
+                height:3em;
+                width: 40%;
+                font-size: 1rem;
+                color: #353535;
+                border: 1px solid #E4E4E4;
+                border-radius: 0.3em;
+                padding: 0 1rem;
+                box-sizing: border-box;
+            }
+            select {
+                padding: 0 1rem;
+                height:3em;
+                font-size: 1rem;
+                color: #353535;
+                border-radius: 0.3em;
+                border: 1px solid #E4E4E4;
+
+                option {
+                    display: inline-block;
+                    padding: 0.2rem 0 ;
+                }
+            }
+            button {
+                position: relative;
+                left: -4rem;
+                top: 0.3rem;
+                font-size: 2rem;
+                background: none;
+                border: none;
+                color: $color;
+                cursor: pointer;
+
+                :hover {
+                    color: $hover_color;
+                }
+            }
+            .post_bt {
+                padding: 0.5em 1em;
+                color: #fff;
+                font-size: 1rem;
+                border-radius: 0.3rem;
+                background: $color;
+
+                &:hover {
+                    background: $hover_color;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        width: 970px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

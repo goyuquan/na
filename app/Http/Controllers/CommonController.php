@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Info;
 use App\Img;
+use App\Category;
 use Image;
 use File;
 use App\Http\Requests;
@@ -15,7 +16,12 @@ class CommonController extends Controller
 
     public function home()
     {
-        return view('home');
+        $categoriess = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id','>',0)->get();
+        return view('home',[
+            'categoriess' => $categoriess,
+            'categories' => $categories
+        ]);
     }
 
 
@@ -130,7 +136,7 @@ class CommonController extends Controller
         $content = collect(json_decode($page->content,true));
         $content->forget('photos_sha1');
         $page->content = $content->toJson();
-        $page->update(); 
+        $page->update();
 
         return "thumbnail was deleted.";
     }

@@ -8,7 +8,7 @@
     <meta name="description" content="@yield('description')_description">
 	<meta name="keywords" content="@yield('keywords')_keywords">
     <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{url('/css/common.css')}}">
+    <link rel="stylesheet" href="{{url('/css/common.css')}}"/>
     @yield('style')
 </head>
 <body>
