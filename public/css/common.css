@@ -8,7 +8,7 @@ html {
     padding: 0; }
 
   body {
-    font: 12px "宋体", "Arial Narrow", HELVETICA;
+    font: 12px "Microsoft YaHei","宋体","Arial Narrow",HELVETICA;
     -webkit-text-size-adjust: 100%; }
 
   a {
@@ -85,18 +85,20 @@ html {
         border: 1px solid #E4E4E4;
         border-radius: 0.3em;
         padding: 0 1rem;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        background: #fff; }
       .header .search_wrap select {
         padding: 0 1rem;
         height: 3em;
         font-size: 1rem;
         color: #353535;
         border-radius: 0.3em;
-        border: 1px solid #E4E4E4; }
+        border: 1px solid #E4E4E4;
+        background: #fff; }
         .header .search_wrap select option {
           display: inline-block;
           padding: 0.2rem 0; }
-      .header .search_wrap button {
+      .header .search_wrap button.submit {
         position: relative;
         left: -4rem;
         top: 0.3rem;
@@ -105,14 +107,27 @@ html {
         border: none;
         color: #01579B;
         cursor: pointer; }
-        .header .search_wrap button :hover {
+        .header .search_wrap button.submit :hover {
           color: #a94442; }
+      .header .search_wrap button.search_bt {
+        position: relative;
+        left: -4rem;
+        top: 1px;
+        padding: 0.7em 2em;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #01579B;
+        font-family: "Microsoft YaHei";
+        border: 1px solid #666; }
+        .header .search_wrap button.search_bt:hover {
+          background: #a94442; }
       .header .search_wrap .post_bt {
         padding: 0.5em 1em;
         color: #fff;
         font-size: 1rem;
         border-radius: 0.3rem;
-        background: #01579B; }
+        background: #679AC3; }
         .header .search_wrap .post_bt:hover {
           background: #a94442; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {

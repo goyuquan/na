@@ -27,7 +27,8 @@
                     <option>类别一别一</option>
                 </select>
                 <input type="text" name="word" placeholder="请输入搜索关键词">
-                <button type="submit"> <i class="fa fa-search"></i>&nbsp; </button>
+                <button type="submit" class="submit"> <i class="fa fa-search"></i>&nbsp; </button>
+                <button type="submit" class="search_bt">搜索</button>
                 <a href="#" class="post_bt">free post</a>
             </form>
         </div>
