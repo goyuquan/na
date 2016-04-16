@@ -1,5 +1,11 @@
 <div class="header">
-    <div class="top_bar">
+    <a href="#top_bar" id="open_nav" class="menu_bar open">
+        <i class="fa fa-bars"></i>
+    </a>
+    <div id="top_bar" class="top_bar">
+        <a href="#open_nav" class="menu_bar close">
+            <i class="fa fa-arrow-up"></i>
+        </a>
         <div class="container">
             <div class="top_nav">
                 <a href="{{url('/categories')}}">全部分类</a>
@@ -14,23 +20,33 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <a href="{{ url('/') }}" class="logo">
-            <img src="{{url('img/new-logo.gif')}}" />
-        </a>
+    <div class="head">
+        <div class="container">
+            <a href="{{ url('/') }}" class="logo">
+                <img src="{{url('img/new-logo.gif')}}" />
+            </a>
 
-        <div class="search_wrap">
-            <form id="search" method="POST" action="{{ url('/search') }}">
-                {!! csrf_field() !!}
-                <select name="search_category">
-                    <option>类别一</option>
-                    <option>类别一别一</option>
-                </select>
-                <input type="text" name="word" placeholder="请输入搜索关键词">
-                <button type="submit" class="submit"> <i class="fa fa-search"></i>&nbsp; </button>
-                <button type="submit" class="search_bt">搜索</button>
-                <a href="#" class="post_bt">free post</a>
-            </form>
+            <div class="search_wrap">
+                <form id="search" method="POST" action="{{ url('/search') }}">
+                    {!! csrf_field() !!}
+                    <div class="search_category">
+                        <select name="search_category">
+                            <option>类别一</option>
+                            <option>类别一别一</option>
+                        </select>
+                    </div>
+                    <div class="key_word">
+                        <input type="text" name="word" placeholder="请输入搜索关键词">
+                        <button type="submit" class="submit"> <i class="fa fa-search"></i>&nbsp; </button>
+                    </div>
+                    <div class="search_bt">
+                        <button type="submit">搜索</button>
+                    </div>
+                    <div class="post_bt">
+                        <a href="#">free post</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

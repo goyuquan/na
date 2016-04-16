@@ -144,6 +144,15 @@ html {
         width: 970px;
         margin: 0 auto;
     }
+    body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+    body{font:12px "Microsoft YaHei","宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;}
+    a{color:#369;text-decoration:none}
+    a:hover{color:#a94442;text-decoration:underline}
+    em{font-style:normal}
+    li{list-style:none}
+    img{border:0;vertical-align:middle}
+    table{border-collapse:collapse;border-spacing:0}
+    p{word-wrap:break-word}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

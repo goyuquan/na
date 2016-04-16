@@ -15,9 +15,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/info/{id}', 'InfoController@info');
     Route::get('/infos/category/{category}', 'InfoController@category');
 
-
-
-
     Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/user/index', 'UserCenterController@index');
