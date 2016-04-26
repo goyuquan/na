@@ -1,11 +1,15 @@
 {
-  "name": "public",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "na",
+  "version": "0.0.0",
+  "description": "na",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.9.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "guo",
   "license": "ISC"
 }

@@ -23,7 +23,6 @@ img{border:0;vertical-align:middle}
 table{border-collapse:collapse;border-spacing:0}
 p{word-wrap:break-word}
 
-
 @media only screen and (min-width: 1200px) {
 
     body{font:12px "Microsoft YaHei","宋体","Arial Narrow";}
@@ -172,130 +171,129 @@ p{word-wrap:break-word}
     }
 
     .header {
-      display: inline-block;
-      width: 100%;
-      background: #FAFAFA;
-      border-bottom: 1px solid #E4E4E4;
-      padding-bottom: 0.5rem;
-      @include clearfix;
-
-      .container div {
-          display: inline-block;
-      }
-      .menu_bar {
-          display: none;
-      }
-      .top_bar {
-          background: #fff;
-          line-height: 2.4rem;
-          width: 100%;
-          border-bottom: 1px solid #E4E4E4;
-
-          .top_nav {
-              text-align: right;
-              width: 100%;
-          }
-          a {
-              color: #333;
-              font-size: 1.2em;
-              margin-left: 0.5em;
-          }
-        }
-    }
-
-    .head {
+        @include clearfix;
         width: 100%;
+        background: #FAFAFA;
+        border-bottom: 1px solid #E4E4E4;
+        padding-bottom: 0.5rem;
 
-        .container {
-            @include clearfix;
+        .container div {
+            display: inline-block;
         }
-        a {
-            .logo {
+        .menu_bar {
+            display: none;
+        }
+        .top_bar {
+            background: #fff;
+            line-height: 2.4rem;
+            width: 100%;
+            border-bottom: 1px solid #E4E4E4;
+
+            .top_nav {
+                text-align: right;
+                width: 100%;
+
+                a {
+                    color: #333;
+                    font-size: 1.2em;
+                    margin-left: 0.5em;
+                }
+            }
+        }
+        .head {
+            width: 100%;
+
+            .container {
+                @include clearfix;
+                display: block;
+            }
+
+            a.logo {
                 display: inline-block;
                 width: 20%;
                 float: left;
                 font-size: 1em;
             }
-        }
-        .search_wrap {
-            @include clearfix;
-            display: inline-block;
-            float: right;
-            width: 79%;
-            margin-top: 1em;
-            padding: 0.3rem 1rem 0.4rem;
-            box-sizing: border-box;
+            .search_wrap {
+                @include clearfix;
+                display: inline-block;
+                float: right;
+                width: 79%;
+                margin-top: 1em;
+                padding:0.3rem 1rem 0.4rem;;
+                box-sizing: border-box;
 
-            .search_category {
-                select {
+                .search_category select {
                     padding: 0 1rem;
-                    height: 3em;
+                    height:3em;
                     font-size: 1rem;
                     color: #353535;
                     border-radius: 0.3em;
                     border: 1px solid #E4E4E4;
                     background: #fff;
+                    display: inline-block;
                 }
-            }
-            .key_word {
-                width: 40%;
-                position: relative;
+                .key_word {
+                    width: 40%;
+                    position: relative;
 
-                input {
-                    height: 3em;
-                    font-size: 1rem;
-                    color: #353535;
-                    width: 100%;
-                    border: 1px solid #E4E4E4;
-                    border-radius: 0.3em;
-                    padding: 0 1rem;
-                    box-sizing: border-box;
-                    background: #fff;
-                }
-                button.submit {
-                    position: absolute;
-                    right: 0.2rem;
-                    top: 0.3rem;
-                    font-size: 2rem;
-                    background: none;
-                    border: none;
-                    color: #01579B;
-                    cursor: pointer;
+                    input {
+                        height:3em;
+                        width: 100%;
+                        font-size: 1rem;
+                        color: #353535;
+                        border: 1px solid #E4E4E4;
+                        border-radius: 0.3em;
+                        padding: 0 1rem;
+                        box-sizing: border-box;
+                        background: #fff;
+                    }
+                    .submit {
+                        position: absolute;
+                        right: 0.2rem;
+                        top: 0.2rem;
+                        font-size: 2rem;
+                        background: none;
+                        border: none;
+                        color: $color;
+                        cursor: pointer;
 
-                    &:hover {
-                        color: #a94442;
+                        :hover {
+                            color: $hover_color;
+                        }
                     }
                 }
-            }
-            .search_bt button {
-                position: relative;
-                top: 1px;
-                padding: 0.7em 2em;
-                color: #fff;
-                font-size: 1rem;
-                border-radius: 0.3rem;
-                background: #01579B;
-                font-family: "Microsoft YaHei";
-                border: 1px solid #666;
+                .search_bt button{
+                    position: relative;
+                    left: 0;
+                    top: 1px;
+                    padding: 0.7em 2em;
+                    color: #fff;
+                    font-size: 1rem;
+                    border-radius: 0.3rem;
+                    background: $color;
+                    font-family: "Microsoft YaHei";
+                    border: 1px solid #666;
 
-                &:hover {
-                    background: #a94442;
+                    &:hover {
+                        background: $hover_color;
+                    }
                 }
-            }
-        }
-        .post_bt {
-            display: inline-block;
-            margin-left: 1rem;
+                .post_bt {
+                    display: inline-block;
+                    margin-left: 1rem;
 
-            a{
-                padding: 0.5em 1em;
-                color: #fff;
-                font-size: 1rem;
-                border-radius: 0.3rem;
-                background: #679AC3;
+                    a {
+                        padding: 0.5em 1em;
+                        color: #fff;
+                        font-size: 1rem;
+                        border-radius: 0.3rem;
+                        background: #679AC3;
 
-                &:hover {
-                    background: #a94442;
+                        &:hover {
+                            background: $hover_color;
+                        }
+                    }
                 }
             }
         }
