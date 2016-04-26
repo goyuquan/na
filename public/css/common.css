@@ -16,7 +16,7 @@ a {
 
 a:hover {
   color: #a94442;
-  text-decoration: underline; }
+  text-decoration: none; }
 
 em {
   font-style: normal; }
@@ -166,6 +166,7 @@ p {
               background: #a94442; }
 
   .footer {
+    margin-top: 1rem;
     padding: 2em 0;
     width: 100%;
     background: #fff;
@@ -348,6 +349,7 @@ p {
               background: #a94442; }
 
   .footer {
+    margin-top: 1rem;
     padding: 2em 0;
     width: 100%;
     background: #fff;
@@ -537,6 +539,7 @@ p {
             background: #a94442; }
 
   .footer {
+    margin-top: 1rem;
     padding: 2em 0;
     width: 100%;
     background: #fff;
@@ -736,6 +739,7 @@ p {
           background: #a94442; }
 
   .footer {
+    margin-top: 1rem;
     padding: 2em 0;
     width: 100%;
     background: #fff;

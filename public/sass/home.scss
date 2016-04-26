@@ -1,0 +1,132 @@
+$color:#01579B;
+$hover_color:#a94442;
+
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html & { height: 1px }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    body{font:12px "Microsoft YaHei","宋体","Arial Narrow";}
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+
+    .services {
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        background: #fff;
+        border: 1px solid #ccc;
+
+        .head {
+            border-bottom: 1px solid #ccc;
+            line-height: 3rem;
+
+            h2 {
+                color: #353535;
+                display: inline-block;
+            }
+        }
+        .list {
+            box-sizing: border-box;
+            @include clearfix;
+            width: 100%;
+
+            li {
+                float: left;
+                margin-top: 1rem;
+                display: inline-block;
+                width: 16.6%;
+                text-align: center;
+
+                a {
+                    display: block;
+                    padding: 1rem;
+
+                    &:hover {
+                        color: #fff;
+                        background: $color;
+                    }
+                    i {
+                        font-size: 3rem;
+                    }
+                    h3 {
+                        line-height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .category {
+        @include clearfix;
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        background: #fff;
+        border: 1px solid #ccc;
+        display: block;
+
+        .head {
+            border-bottom: 1px solid #ccc;
+            line-height: 3rem;
+
+            h2 {
+                color: #353535;
+                display: inline-block;
+            }
+        }
+        .column {
+            box-sizing: border-box;
+            border-left: 1px solid #ccc;
+            margin: 1rem 0 0 0;
+            width: 20%;
+            float: left;
+            padding: 0.8rem;
+
+            h3 {
+                color:$color;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    body{font:12px "Microsoft YaHei","宋体","Arial Narrow";}
+    .container {
+        width: 970px;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+}
