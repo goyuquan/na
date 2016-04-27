@@ -584,7 +584,7 @@
     .services .list {
       box-sizing: border-box;
       display: inline-block;
-      width: 108%; }
+      width: 100%; }
       .services .list:after {
         content: ".";
         display: block;

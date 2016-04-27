@@ -675,7 +675,7 @@ $hover_color:#a94442;
         .list {
             box-sizing: border-box;
             @include clearfix;
-            width: 108%;
+            width: 100%;
 
             li {
                 float: left;
