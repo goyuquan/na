@@ -8,10 +8,20 @@
     margin: 0 auto; }
 
   .services {
+    display: inline-block;
     margin-top: 1rem;
     padding: 1rem 2rem;
     background: #fff;
-    border: 1px solid #ccc; }
+    border: 1px solid #ccc;
+    display: block; }
+    .services:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .services {
+      height: 1px; }
     .services .head {
       border-bottom: 1px solid #ccc;
       line-height: 3rem; }
@@ -75,8 +85,106 @@
       width: 20%;
       float: left;
       padding: 0.8rem; }
+      .category .column:nth-child(2) {
+        border-left: none; }
       .category .column h3 {
-        color: #01579B; } }
+        color: #01579B;
+        font-size: 1rem; }
+      .category .column h3:not(:first-child) {
+        margin-top: 1.5rem; }
+      .category .column ul {
+        margin-top: 0.5rem; }
+        .category .column ul li:hover {
+          background: #ebebeb; }
+        .category .column ul li i {
+          font-size: 1rem;
+          padding-right: 0.5rem; }
+        .category .column ul li a {
+          display: inline-block;
+          width: 90%;
+          text-indent: 0.3rem;
+          color: #353535;
+          line-height: 1.6rem; }
+
+  h2.latest_title {
+    color: #353535;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    font-weight: normal; }
+
+  .latest_list {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .latest_list:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .latest_list {
+      height: 1px; }
+    .latest_list .content {
+      width: 72%;
+      float: left; }
+      .latest_list .content dl {
+        margin-top: 1rem; }
+        .latest_list .content dl dt {
+          font-size: 1.4rem;
+          border-bottom: 1px solid #ccc;
+          line-height: 2.4rem;
+          margin-bottom: 1rem; }
+          .latest_list .content dl dt a:hover {
+            color: #a94442; }
+        .latest_list .content dl dd {
+          margin-top: 1rem;
+          border-bottom: 1px solid #b2cce1;
+          padding-bottom: 1rem; }
+          .latest_list .content dl dd:last-child {
+            border-bottom: none; }
+          .latest_list .content dl dd .date {
+            color: #666; }
+          .latest_list .content dl dd h4 {
+            display: inline-block;
+            text-indent: 1rem; }
+            .latest_list .content dl dd h4 a {
+              color: #575757;
+              font-size: 1rem;
+              line-height: 2rem; }
+              .latest_list .content dl dd h4 a:hover {
+                color: #000; }
+          .latest_list .content dl dd .price {
+            color: #01579B;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-left: 1rem; }
+          .latest_list .content dl dd .phone {
+            margin-left: 1rem;
+            font-size: 0.9rem; }
+          .latest_list .content dl dd p {
+            text-indent: 4rem; }
+    .latest_list .sidebar {
+      width: 25%;
+      float: left;
+      padding-top: 1rem;
+      margin-left: 3%; }
+      .latest_list .sidebar h2 {
+        margin-top: 1rem;
+        border-bottom: 2px solid #80abcd;
+        line-height: 2rem; }
+      .latest_list .sidebar ul {
+        margin-top: 0.8rem; }
+        .latest_list .sidebar ul li {
+          margin-top: 0.4rem; }
+          .latest_list .sidebar ul li a {
+            color: #353535;
+            font-size: 0.9rem; }
+            .latest_list .sidebar ul li a:hover {
+              color: #a94442; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
     font: 12px "Microsoft YaHei","宋体","Arial Narrow"; }
