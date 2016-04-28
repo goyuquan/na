@@ -1,12 +1,4 @@
-@charset "UTF-8";
 @media only screen and (min-width: 1200px) {
-  body {
-    font: 12px "Microsoft YaHei","宋体","Arial Narrow"; }
-
-  .container {
-    width: 1170px;
-    margin: 0 auto; }
-
   .services {
     display: inline-block;
     margin-top: 1rem;
@@ -156,7 +148,7 @@
               font-size: 1rem;
               line-height: 2rem; }
               .latest_list .content dl dd h4 a:hover {
-                color: #000; }
+                color: #a94442; }
           .latest_list .content dl dd .price {
             color: #01579B;
             font-size: 1rem;
@@ -186,13 +178,6 @@
             .latest_list .sidebar ul li a:hover {
               color: #a94442; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  body {
-    font: 12px "Microsoft YaHei","宋体","Arial Narrow"; }
-
-  .container {
-    width: 970px;
-    margin: 0 auto; }
-
   .services {
     display: inline-block;
     margin-top: 1rem;
@@ -342,7 +327,7 @@
               font-size: 1rem;
               line-height: 2rem; }
               .latest_list .content dl dd h4 a:hover {
-                color: #000; }
+                color: #a94442; }
           .latest_list .content dl dd .price {
             color: #01579B;
             font-size: 1rem;
@@ -372,10 +357,6 @@
             .latest_list .sidebar ul li a:hover {
               color: #a94442; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .container {
-    width: 750px;
-    margin: 0 auto; }
-
   .services {
     display: inline-block;
     margin-top: 1rem;
@@ -525,7 +506,7 @@
               font-size: 1rem;
               line-height: 2rem; }
               .latest_list .content dl dd h4 a:hover {
-                color: #000; }
+                color: #a94442; }
           .latest_list .content dl dd .price {
             color: #01579B;
             font-size: 1rem;
@@ -555,10 +536,6 @@
             .latest_list .sidebar ul li a:hover {
               color: #a94442; } }
 @media only screen and (max-width: 767px) {
-  .container {
-    width: 100%;
-    margin: 0 auto; }
-
   .services {
     box-sizing: border-box;
     display: inline-block;
@@ -713,7 +690,7 @@
               line-height: 2rem;
               color: #01579B; }
               .latest_list .content dl dd h4 a:hover {
-                color: #000; }
+                color: #a94442; }
           .latest_list .content dl dd .price {
             color: #01579B;
             font-size: 1rem;

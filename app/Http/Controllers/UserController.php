@@ -17,9 +17,10 @@ class UserController extends Controller
         return view('admin.users.index',['users' => $users]);
     }
 
-    public function register()
+    
+    public function login()
     {
-        return view('auth.register');
+        return view('auth.login');
     }
 
     public function _register(Request $request)
@@ -63,11 +64,6 @@ class UserController extends Controller
         } else {
             return "register login wrong";
         }
-    }
-
-    public function login()
-    {
-        return view('auth.login');
     }
 
     public function _login(Request $request)

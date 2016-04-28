@@ -1,0 +1,344 @@
+@media only screen and (min-width: 1200px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .main {
+      display: inline-block;
+      width: 70%;
+      float: left;
+      padding-bottom: 4rem; }
+      .main_wrap .main h2 {
+        color: #01579B;
+        font-size: 2rem;
+        text-align: center;
+        margin: 3rem 0 2rem; }
+      .main_wrap .main ul li {
+        display: inline-block;
+        margin-top: 1rem; }
+        .main_wrap .main ul li:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .main ul li {
+          height: 1px; }
+        .main_wrap .main ul li .icon {
+          width: 20%;
+          float: left;
+          display: inline-block;
+          text-align: right; }
+          .main_wrap .main ul li .icon img {
+            width: 5rem; }
+        .main_wrap .main ul li span {
+          box-sizing: border-box;
+          padding: 0 2rem;
+          display: inline-block;
+          float: left;
+          width: 80%;
+          font-size: 1.2rem; }
+    .main_wrap .form {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 30%;
+      float: right;
+      padding: 1.5rem;
+      text-align: center;
+      background: #4d89b9;
+      padding-bottom: 2rem;
+      margin-bottom: 0; }
+      .main_wrap .form h1 {
+        color: #e5eef5;
+        margin-top: 1rem;
+        font-weight: normal; }
+      .main_wrap .form input:not([type="submit"]) {
+        width: 80%;
+        height: 1.8rem;
+        margin-top: 0.6rem;
+        border: 1px solid #353535;
+        padding: 0 0.5rem;
+        border-radius: 4px; }
+      .main_wrap .form input + label, .main_wrap .form input + strong {
+        display: block;
+        color: #fff; }
+      .main_wrap .form input[type="submit"] {
+        margin-top: 1rem;
+        border: 1px solid #353535;
+        padding: 0.4rem 2rem;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af; }
+        .main_wrap .form input[type="submit"]:hover {
+          background: #a94442; } }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .main {
+      display: inline-block;
+      width: 70%;
+      float: left;
+      padding-bottom: 4rem; }
+      .main_wrap .main h2 {
+        color: #01579B;
+        font-size: 2rem;
+        text-align: center;
+        margin: 3rem 0 2rem; }
+      .main_wrap .main ul li {
+        display: inline-block;
+        margin-top: 1rem; }
+        .main_wrap .main ul li:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .main ul li {
+          height: 1px; }
+        .main_wrap .main ul li .icon {
+          width: 20%;
+          float: left;
+          display: inline-block;
+          text-align: right; }
+          .main_wrap .main ul li .icon img {
+            width: 5rem; }
+        .main_wrap .main ul li span {
+          box-sizing: border-box;
+          padding: 0 2rem;
+          display: inline-block;
+          float: left;
+          width: 80%;
+          font-size: 1.2rem; }
+    .main_wrap .form {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 30%;
+      float: right;
+      padding: 1.5rem;
+      text-align: center;
+      background: #4d89b9;
+      padding-bottom: 2rem;
+      margin-bottom: 0; }
+      .main_wrap .form h1 {
+        color: #e5eef5;
+        margin-top: 1rem;
+        font-weight: normal; }
+      .main_wrap .form input:not([type="submit"]) {
+        width: 80%;
+        height: 1.8rem;
+        margin-top: 0.6rem;
+        border: 1px solid #353535;
+        padding: 0 0.5rem;
+        border-radius: 4px; }
+      .main_wrap .form input + label, .main_wrap .form input + strong {
+        display: block;
+        color: #fff; }
+      .main_wrap .form input[type="submit"] {
+        margin-top: 1rem;
+        border: 1px solid #353535;
+        padding: 0.4rem 2rem;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af; }
+        .main_wrap .form input[type="submit"]:hover {
+          background: #a94442; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .main {
+      display: inline-block;
+      width: 100%;
+      float: left;
+      padding-bottom: 4rem; }
+      .main_wrap .main h2 {
+        color: #01579B;
+        font-size: 2rem;
+        text-align: center;
+        margin: 3rem 0 2rem; }
+      .main_wrap .main ul li {
+        display: inline-block;
+        margin-top: 1rem; }
+        .main_wrap .main ul li:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .main ul li {
+          height: 1px; }
+        .main_wrap .main ul li .icon {
+          width: 20%;
+          float: left;
+          display: inline-block;
+          text-align: right; }
+          .main_wrap .main ul li .icon img {
+            width: 5rem; }
+        .main_wrap .main ul li span {
+          box-sizing: border-box;
+          padding: 0 2rem;
+          display: inline-block;
+          float: left;
+          width: 80%;
+          font-size: 1.2rem; }
+    .main_wrap .form {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      float: right;
+      padding: 1.5rem;
+      text-align: center;
+      background: #4d89b9;
+      padding-bottom: 2rem;
+      margin-bottom: 0; }
+      .main_wrap .form .login {
+        width: 50%;
+        display: inline-block;
+        float: left; }
+      .main_wrap .form .register {
+        width: 50%;
+        display: inline-block;
+        float: left; }
+      .main_wrap .form h1 {
+        color: #e5eef5;
+        margin-top: 1rem;
+        font-weight: normal; }
+      .main_wrap .form input:not([type="submit"]) {
+        width: 80%;
+        height: 1.8rem;
+        margin-top: 0.6rem;
+        border: 1px solid #353535;
+        padding: 0 0.5rem;
+        border-radius: 4px; }
+      .main_wrap .form input + label, .main_wrap .form input + strong {
+        display: block;
+        color: #fff; }
+      .main_wrap .form input[type="submit"] {
+        margin-top: 1rem;
+        border: 1px solid #353535;
+        padding: 0.4rem 2rem;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af; }
+        .main_wrap .form input[type="submit"]:hover {
+          background: #a94442; } }
+@media only screen and (max-width: 767px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .main {
+      display: inline-block;
+      width: 100%;
+      float: left;
+      padding-bottom: 4rem; }
+      .main_wrap .main h2 {
+        color: #01579B;
+        font-size: 2rem;
+        text-align: center;
+        margin: 3rem 0 2rem; }
+      .main_wrap .main ul li {
+        display: inline-block;
+        margin-top: 1rem; }
+        .main_wrap .main ul li:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .main ul li {
+          height: 1px; }
+        .main_wrap .main ul li .icon {
+          width: 20%;
+          float: left;
+          display: inline-block;
+          text-align: right; }
+          .main_wrap .main ul li .icon img {
+            width: 5rem; }
+        .main_wrap .main ul li span {
+          box-sizing: border-box;
+          padding: 0 2rem;
+          display: inline-block;
+          float: left;
+          width: 80%;
+          font-size: 1.2rem; }
+    .main_wrap .form {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      float: right;
+      padding: 1.5rem;
+      text-align: center;
+      background: #4d89b9;
+      padding-bottom: 2rem;
+      margin-bottom: 0; }
+      .main_wrap .form h1 {
+        color: #e5eef5;
+        margin-top: 1rem;
+        font-weight: normal; }
+      .main_wrap .form input:not([type="submit"]) {
+        width: 80%;
+        height: 1.8rem;
+        margin-top: 0.6rem;
+        border: 1px solid #353535;
+        padding: 0 0.5rem;
+        border-radius: 4px; }
+      .main_wrap .form input + label, .main_wrap .form input + strong {
+        display: block;
+        color: #fff; }
+      .main_wrap .form input[type="submit"] {
+        margin-top: 1rem;
+        border: 1px solid #353535;
+        padding: 0.4rem 2rem;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af; }
+        .main_wrap .form input[type="submit"]:hover {
+          background: #a94442; } }

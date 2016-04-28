@@ -23,12 +23,6 @@ $hover_color:#a94442;
 
 @media only screen and (min-width: 1200px) {
 
-    body{font:12px "Microsoft YaHei","宋体","Arial Narrow";}
-    .container {
-        width: 1170px;
-        margin: 0 auto;
-    }
-
     .services {
         @include wrap;
 
@@ -177,7 +171,7 @@ $hover_color:#a94442;
                             font-size: 1rem;
                             line-height: 2rem;
                             &:hover {
-                                color:#000;
+                                color:$hover_color;
                             }
                         }
                     }
@@ -229,12 +223,6 @@ $hover_color:#a94442;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
-    body{font:12px "Microsoft YaHei","宋体","Arial Narrow";}
-    .container {
-        width: 970px;
-        margin: 0 auto;
-    }
 
     .services {
         @include wrap;
@@ -384,7 +372,7 @@ $hover_color:#a94442;
                             font-size: 1rem;
                             line-height: 2rem;
                             &:hover {
-                                color:#000;
+                                color:$hover_color;
                             }
                         }
                     }
@@ -437,11 +425,6 @@ $hover_color:#a94442;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-
-    .container {
-        width: 750px;
-        margin: 0 auto;
-    }
 
     .services {
         @include wrap;
@@ -591,7 +574,7 @@ $hover_color:#a94442;
                             font-size: 1rem;
                             line-height: 2rem;
                             &:hover {
-                                color:#000;
+                                color:$hover_color;
                             }
                         }
                     }
@@ -644,11 +627,6 @@ $hover_color:#a94442;
 }
 
 @media only screen and (max-width: 767px) {
-
-    .container {
-        width: 100%;
-        margin: 0 auto;
-    }
 
     @mixin wrap {
         @include clearfix;
@@ -812,7 +790,7 @@ $hover_color:#a94442;
                             line-height: 2rem;
                             color: $color;
                             &:hover {
-                                color:#000;
+                                color:$hover_color;
                             }
                         }
                     }

@@ -150,7 +150,7 @@ p{word-wrap:break-word}
                         color: #fff;
                         font-size: 1rem;
                         border-radius: 0.3rem;
-                        background: #679AC3;
+                        background: #3378af;
 
                         &:hover {
                             background: $hover_color;
@@ -172,17 +172,17 @@ p{word-wrap:break-word}
             @include clearfix;
             display: block;
 
-            .title {
-                border-bottom: 1px solid #15b6ff;
-                font-weight: 500;
-                line-height: 3rem;
-            }
             .about {
                 display: inline-block;
                 width:65%;
                 float: left;
                 margin-bottom: 2rem;
 
+                .title {
+                    border-bottom: 1px solid #15b6ff;
+                    font-weight: 500;
+                    line-height: 3rem;
+                }
                 p {
                     color: #888;
                     line-height: 1.4rem;
@@ -207,8 +207,13 @@ p{word-wrap:break-word}
 
                     li {
                         a {
+                            color:#353535;
+                            &:hover {
+                                color:$color;
+                            }
+
                             font: {
-                                size:1.2rem;
+                                size:1rem;
                             }
                         }
                     }
@@ -355,7 +360,7 @@ p{word-wrap:break-word}
                         color: #fff;
                         font-size: 1rem;
                         border-radius: 0.3rem;
-                        background: #679AC3;
+                        background: #3378af;
 
                         &:hover {
                             background: $hover_color;
@@ -377,17 +382,17 @@ p{word-wrap:break-word}
             @include clearfix;
             display: block;
 
-            .title {
-                border-bottom: 1px solid #15b6ff;
-                font-weight: 500;
-                line-height: 3rem;
-            }
             .about {
                 display: inline-block;
                 width:65%;
                 float: left;
                 margin-bottom: 2rem;
 
+                .title {
+                    border-bottom: 1px solid #15b6ff;
+                    font-weight: 500;
+                    line-height: 3rem;
+                }
                 p {
                     color: #888;
                     line-height: 1.4rem;
@@ -412,8 +417,13 @@ p{word-wrap:break-word}
 
                     li {
                         a {
+                            color:#353535;
+                            &:hover {
+                                color:$color;
+                            }
+
                             font: {
-                                size:1.2rem;
+                                size:1rem;
                             }
                         }
                     }
@@ -435,7 +445,6 @@ p{word-wrap:break-word}
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .container {
-        width: 750px;
         margin: 0 auto;
     }
 
@@ -572,7 +581,7 @@ p{word-wrap:break-word}
                     color: #fff;
                     font-size: 1rem;
                     border-radius: 0.3rem;
-                    background: #679AC3;
+                    background: #3378af;
                     margin-top: 1rem;
 
                     &:hover {
@@ -595,17 +604,17 @@ p{word-wrap:break-word}
             display: block;
             text-align: center;
 
-            .title {
-                border-bottom: 1px solid #15b6ff;
-                font-weight: 500;
-                line-height: 3rem;
-            }
             .about {
                 display: inline-block;
                 width:100%;
                 float: left;
                 margin-bottom: 2rem;
 
+                .title {
+                    border-bottom: 1px solid #15b6ff;
+                    font-weight: 500;
+                    line-height: 3rem;
+                }
                 p {
                     color: #888;
                     line-height: 1.4rem;
@@ -630,8 +639,13 @@ p{word-wrap:break-word}
 
                     li {
                         a {
+                            color:#353535;
+                            &:hover {
+                                color:$color;
+                            }
+
                             font: {
-                                size:1.2rem;
+                                size:1rem;
                             }
                         }
                     }
@@ -803,7 +817,7 @@ p{word-wrap:break-word}
                 color: #fff;
                 font-size: 1rem;
                 border-radius: 0.3rem;
-                background: #679AC3;
+                background: #3378af;
                 margin-top: 1rem;
                 border: 1px solid #01579B;
 
@@ -825,17 +839,17 @@ p{word-wrap:break-word}
             display: block;
             text-align: center;
 
-            .title {
-                border-bottom: 1px solid #15b6ff;
-                font-weight: 500;
-                line-height: 3rem;
-            }
             .about {
                 display: inline-block;
                 width:100%;
                 float: left;
                 margin-bottom: 2rem;
 
+                .title {
+                    border-bottom: 1px solid #15b6ff;
+                    font-weight: 500;
+                    line-height: 3rem;
+                }
                 p {
                     color: #888;
                     line-height: 1.4rem;
@@ -859,9 +873,14 @@ p{word-wrap:break-word}
                     padding-left: 1.6rem;
 
                     li {
-                        a {
+                            a {
+                            color:#353535;
+                            &:hover {
+                                color:$color;
+                            }
+
                             font: {
-                                size:1.2rem;
+                                size:1rem;
                             }
                         }
                     }

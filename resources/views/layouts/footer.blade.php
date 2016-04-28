@@ -1,7 +1,6 @@
 <div class="footer">
     <div class="container">
         <div class="links">
-            <h2 class="title">困在进行哈士奇Popular Cities</h2>
             <ul>
                 <li><a href="#">about us</a></li>
                 <li><a href="#">about us</a></li>
