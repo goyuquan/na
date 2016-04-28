@@ -1,0 +1,20 @@
+@media only screen and (min-width: 1200px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 0.5rem;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .category {
+      float: left;
+      width: 250px;
+      border: 1px solid #ccc; }
+    .main_wrap .content {
+      margin-left: 270px;
+      border: 1px solid #ccc; } }
