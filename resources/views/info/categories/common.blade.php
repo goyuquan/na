@@ -97,7 +97,7 @@
                     }
                     ?>
                 </span>
-                <span class="phone">54632541256</span>
+                <span class="phone">{{ $info->user->phone }}</span>
                 <p> {{ $info->text }} </p>
             </li>
             @endforeach
