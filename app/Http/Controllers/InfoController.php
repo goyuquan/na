@@ -24,6 +24,8 @@ class InfoController extends Controller
 
     public function category($category)
     {
+        $categoriess = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id','>',0)->get();
         $category_data = Category::find($category);
         $folder = Category::find($category_data->parent_id);
         $infos = $category_data->info()
@@ -33,12 +35,16 @@ class InfoController extends Controller
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
                 'infos' => $infos,
-                'category' => $category_data
+                'category' => $category_data,
+                'categoriess' => $categoriess,
+                'categories' => $categories
             ]);
         } else {
             return view('info.categories.common',[
                 'infos' => $infos,
-                'category' => $category_data
+                'category' => $category_data,
+                'categoriess' => $categoriess,
+                'categories' => $categories
             ]);
         }
     }

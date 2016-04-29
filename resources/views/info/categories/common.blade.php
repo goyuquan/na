@@ -21,63 +21,26 @@
 
     <div class="category">
         <h3>分类菜单</h3>
-
+        @if(count($categoriess) > 0)
         <ul>
-            <li>
-                <a href="#">或者火是</a>
-                <ul>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">或者火是</a>
-                <ul>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">或者火是</a>
-                <ul>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">或者火是</a>
-                <ul>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">或者火是</a>
-                <ul>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">或者火是</a>
-                <ul>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                    <li> <a href="#">载波会炒家蛤</a> </li>
-                </ul>
-            </li>
+            @foreach ( $categoriess as $category )
+                <li><a href="#">{{ $category->name }}</a>
+                    @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
+                        <ul>
+                            @foreach ( $categories as $category_ )
+                                @if ($category_->parent_id === $category->id)
+                                    <li>
+                                        <a href="{{ url('/infos/category/'.$category_->id) }}">{{ $category_->name }}</a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    @endif
+                </li>
+            @endforeach
         </ul>
+        @endif
+
     </div>
     <div class="content">
         <div class="headbar">

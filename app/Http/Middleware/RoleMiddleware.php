@@ -4,6 +4,7 @@
 
  use Closure;
  use Auth;
+ use Illuminate\Http\RedirectResponse;
 
  class RoleMiddleware
  {
@@ -16,8 +17,8 @@
       */
      public function handle($request, Closure $next)
      {
-         if (Auth::user()->role = 1) {
-             return Redirect::intended('/');
+         if (Auth::user()->role < 5) {
+             return redirect('/');
          }
          return $next($request);
      }
