@@ -20,17 +20,88 @@
 <div class="main_wrap container">
 
     <div class="category">
-        55555555555555555
+        <h3>分类菜单</h3>
+
+        <ul>
+            <li>
+                <a href="#">或者火是</a>
+                <ul>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">或者火是</a>
+                <ul>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">或者火是</a>
+                <ul>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">或者火是</a>
+                <ul>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">或者火是</a>
+                <ul>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">或者火是</a>
+                <ul>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                    <li> <a href="#">载波会炒家蛤</a> </li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <div class="content">
+        <div class="headbar">
+            headbar
+        </div>
         @if(count($infos) > 0)
-        <ul>
+        <ul class="list">
             @foreach( $infos as $info )
-            <li><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a> </li>
+            <li>
+                <span class="date">{{ substr($info->publish_at,0,10) }}</span>
+                <h4><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a></h4>
+                <span class="price">
+                    <?php if(isset(json_decode($info->content)->price)){
+                        echo "￥".json_decode($info->content)->price;
+                    } else {
+                        echo "面议";
+                    }
+                    ?>
+                </span>
+                <span class="phone">54632541256</span>
+                <p> {{ $info->text }} </p>
+            </li>
             @endforeach
         </ul>
-        <p>
-        </p>
         @endif
         {{$infos->links()}}
 
