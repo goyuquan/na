@@ -38,37 +38,37 @@
 			<form id="register" method="POST" action="{{ url('/register') }}">
 				{!! csrf_field() !!}
 				<section>
-					<input type="text" name="name" id="name" value="{{old('name')}}" placeholder="用户名">
+					<input type="text" name="name" id="rname" value="{{old('name')}}" placeholder="用户名">
 					@if ($errors->has('name'))
 					<strong>{{ $errors->first('name') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="email" name="email" id="email" value="{{old('email')}}" placeholder="Email">
+					<input type="email" name="email" id="remail" value="{{old('email')}}" placeholder="Email">
 					@if ($errors->has('email'))
 					<strong>{{ $errors->first('email') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="text" name="phone" id="phone" value="{{old('phone')}}" placeholder="手机号">
+					<input type="text" name="phone" id="rphone" value="{{old('phone')}}" placeholder="手机号">
 					@if ($errors->has('phone'))
 					<strong>{{ $errors->first('phone') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="password" name="password" id="password" value="{{old('password')}}" placeholder="密码">
+					<input type="password" name="password" id="rpassword" value="{{old('password')}}" placeholder="密码">
 					@if ($errors->has('password'))
 					<strong>{{ $errors->first('password') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="password" name="password_confirmation" id="password_confirmation" placeholder="重复密码">
+					<input type="password" name="password_confirmation" id="rpassword_confirmation" placeholder="重复密码">
 					@if ($errors->has('password_confirmation'))
 					<strong>{{ $errors->first('password_confirmation') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="hidden" id="distinguished" name="distinguished" value="abcedfg">
+					<input type="hidden" id="rdistinguished" name="distinguished" value="abcedfg">
 					<input type="text" class="form-control" name="distinguish" placeholder="填写:abcedfg">
 				</section>
 
@@ -107,7 +107,7 @@
 
 @section('script')
 <script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-<script src="{{url('/js/additional-methods.js')}}"></script>
+<script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 	var validate = $("#register").validate({
