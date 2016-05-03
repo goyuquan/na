@@ -15,7 +15,7 @@
     <a href="#">全部类别</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$category->name}}</span>
-    {{ $category_active = $category->name }}
+    <?php $category_active = $category->name ?>
 </div>
 
 <div class="main_wrap container">
