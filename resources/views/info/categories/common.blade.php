@@ -74,3 +74,12 @@
 </div>
 
 @endsection
+@section('script')
+<script type="text/javascript">
+    $(function(){
+        $(".category > ul > li").click(function(){
+            $(this).find('ul').slideToggle('fast');
+        });
+    });
+</script>
+@endsection

@@ -469,6 +469,8 @@ $hover_color:#a94442;
                         margin-bottom: 0.5rem;
                     }
                     & > ul {
+                        display: none;
+                        
                         li {
                             text-indent: 01rem;
                             line-height: 1.5rem;

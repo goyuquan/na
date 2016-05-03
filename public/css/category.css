@@ -320,19 +320,21 @@
           display: block;
           color: #2e4a5d;
           margin-bottom: 0.5rem; }
-        .main_wrap .category > ul > li > ul li {
-          text-indent: 01rem;
-          line-height: 1.5rem; }
-          .main_wrap .category > ul > li > ul li.active a {
-            color: #a94442;
-            background: #ebebeb; }
-          .main_wrap .category > ul > li > ul li a {
-            font-size: 0.8rem;
-            color: #353535;
-            display: block; }
-            .main_wrap .category > ul > li > ul li a:hover {
+        .main_wrap .category > ul > li > ul {
+          display: none; }
+          .main_wrap .category > ul > li > ul li {
+            text-indent: 01rem;
+            line-height: 1.5rem; }
+            .main_wrap .category > ul > li > ul li.active a {
               color: #a94442;
               background: #ebebeb; }
+            .main_wrap .category > ul > li > ul li a {
+              font-size: 0.8rem;
+              color: #353535;
+              display: block; }
+              .main_wrap .category > ul > li > ul li a:hover {
+                color: #a94442;
+                background: #ebebeb; }
     .main_wrap .content {
       margin-top: 1rem;
       width: 100%;
