@@ -33,6 +33,9 @@
         .main_wrap .category > ul > li > ul li {
           text-indent: 01rem;
           line-height: 1.5rem; }
+          .main_wrap .category > ul > li > ul li.active a {
+            color: #a94442;
+            background: #ebebeb; }
           .main_wrap .category > ul > li > ul li a {
             font-size: 0.8rem;
             color: #353535;

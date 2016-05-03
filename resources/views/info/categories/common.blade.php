@@ -15,6 +15,7 @@
     <a href="#">全部类别</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$category->name}}</span>
+    {{ $category_active = $category->name }}
 </div>
 
 <div class="main_wrap container">
@@ -29,7 +30,7 @@
                         <ul>
                             @foreach ( $categories as $category_ )
                                 @if ($category_->parent_id === $category->id)
-                                    <li>
+                                    <li {{ $category_active == $category_->name ? "class=active" : "" }} >
                                         <a href="{{ url('/infos/category/'.$category_->id) }}">{{ $category_->name }}</a>
                                     </li>
                                 @endif
