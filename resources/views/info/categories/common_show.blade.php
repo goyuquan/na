@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title','title_description')
-@section('description','title_description')
-@section('keywords','title_keywords')
+@section('title',$info->title)
+@section('description',$info->title)
+@section('keywords',$info->title)
 
 @section('style')
 <link rel="stylesheet" href="{{url('/css/show.css')}}" >
@@ -14,7 +14,9 @@
     <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="#">全部类别</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>{{$category->name}}</span>
+    <a href="{{url('/infos/category/'.$category->id)}}">{{$category->name}}</a>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>{{$info->title}}</span>
 </div>
 
 <div class="main_wrap container">
@@ -23,7 +25,26 @@
     </div>
     <div class="content">
         <h1>{{$info->title}}</h1>
-        <p> {{$info->text}} </p>
+        <div class="sub_info">
+            <div class="info_id">信息ID:&nbsp;<span>{{ $info->id }}</span></div>
+            <span>发布日期:&nbsp;{{ substr($info->publish_at,0,10) }}</span>
+            <span class="info_category">信息分类:&nbsp;<a href="{{url('/infos/category/'.$info->category_id)}}">{{$info->category->name}}</a></span>
+        </div>
+        <div class="text_wrap">
+            <div class="text_ad">
+            </div>
+            <span>
+                价格:&nbsp;
+                <?php if(isset(json_decode($info->content)->price)){
+                    echo "￥".json_decode($info->content)->price;
+                } else {
+                    echo "面议";
+                }
+                ?>
+            </span>
+            <span>电话:&nbsp;{{ $info->user->phone }}</span>
+            {{$info->text}}
+        </div>
 
     </div>
 </div>

@@ -17,52 +17,47 @@
       background: #fff;
       box-sizing: border-box;
       padding: 1rem; }
-      .main_wrap .content ul.list li {
-        margin-top: 1rem;
-        border-bottom: 1px solid #b2cce1;
-        padding-bottom: 1rem; }
-        .main_wrap .content ul.list li:last-child {
-          border-bottom: none; }
-        .main_wrap .content ul.list li .date {
-          color: #666; }
-        .main_wrap .content ul.list li h4 {
-          display: inline-block;
-          text-indent: 1rem; }
-          .main_wrap .content ul.list li h4 a {
-            color: #575757;
-            font-size: 1rem;
-            line-height: 2rem; }
-            .main_wrap .content ul.list li h4 a:hover {
-              color: #a94442; }
-        .main_wrap .content ul.list li .price {
-          color: #01579B;
-          font-size: 1rem;
-          font-weight: bold;
-          margin-left: 1rem; }
-        .main_wrap .content ul.list li .phone {
-          margin-left: 1rem;
-          font-size: 0.9rem; }
-        .main_wrap .content ul.list li p {
-          padding-left: 4.5rem; }
-      .main_wrap .content ul.pagination {
+      .main_wrap .content h1 {
+        text-align: center; }
+      .main_wrap .content .sub_info {
         text-align: center;
-        margin-top: 2rem; }
-        .main_wrap .content ul.pagination li {
-          border: 1px solid #acacac;
+        border-bottom: 1px solid #01579B;
+        padding-bottom: 0.5rem;
+        color: #797979; }
+        .main_wrap .content .sub_info .info_id {
           display: inline-block; }
-          .main_wrap .content ul.pagination li.active {
-            background: #01579B;
+          .main_wrap .content .sub_info .info_id span {
             color: #fff;
-            border-color: #000; }
-          .main_wrap .content ul.pagination li:hover {
-            border-color: #000; }
-          .main_wrap .content ul.pagination li a:hover {
-            color: #fff;
-            background: #01579B; }
-          .main_wrap .content ul.pagination li a, .main_wrap .content ul.pagination li span {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            font-size: 0.9rem; }
+            background: #acacac;
+            padding: 0 0.5rem;
+            border-radius: 0.3rem; }
+        .main_wrap .content .sub_info > span {
+          margin-left: 2rem; }
+      .main_wrap .content .text_wrap {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 1rem; }
+        .main_wrap .content .text_wrap:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .content .text_wrap {
+          height: 1px; }
+        .main_wrap .content .text_wrap .text_ad {
+          width: 300px;
+          height: 250px;
+          margin: 0 0.5rem 0.5rem 0;
+          float: left; }
+        .main_wrap .content .text_wrap > span {
+          display: inline-block;
+          width: 250px;
+          margin-top: 1rem; }
+          .main_wrap .content .text_wrap > span:nth-child(2), .main_wrap .content .text_wrap > span:nth-child(3) {
+            margin-top: 2rem; }
+          .main_wrap .content .text_wrap > span:nth-last-child(1), .main_wrap .content .text_wrap > span:nth-last-child(1) {
+            margin-bottom: 1.5rem; }
     .main_wrap .sidebar {
       float: right;
       width: 250px;
@@ -74,21 +69,205 @@
         font-size: 1.1rem;
         font-weight: normal;
         line-height: 2rem;
-        text-indent: 1rem; }
-      .main_wrap .sidebar > ul > li {
-        margin-bottom: 0.5rem; }
-        .main_wrap .sidebar > ul > li > a {
-          font-size: 1rem;
+        text-indent: 1rem; } }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 0.5rem;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .content {
+      margin-right: 260px;
+      border: 1px solid #ccc;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .main_wrap .content h1 {
+        text-align: center; }
+      .main_wrap .content .sub_info {
+        text-align: center;
+        border-bottom: 1px solid #01579B;
+        padding-bottom: 0.5rem;
+        color: #797979; }
+        .main_wrap .content .sub_info .info_id {
+          display: inline-block; }
+          .main_wrap .content .sub_info .info_id span {
+            color: #fff;
+            background: #acacac;
+            padding: 0 0.5rem;
+            border-radius: 0.3rem; }
+        .main_wrap .content .sub_info > span {
+          margin-left: 2rem; }
+      .main_wrap .content .text_wrap {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 1rem; }
+        .main_wrap .content .text_wrap:after {
+          content: ".";
           display: block;
-          color: #2e4a5d;
-          margin-bottom: 0.5rem; }
-        .main_wrap .sidebar > ul > li > ul li {
-          text-indent: 01rem;
-          line-height: 1.5rem; }
-          .main_wrap .sidebar > ul > li > ul li a {
-            font-size: 0.8rem;
-            color: #353535;
-            display: block; }
-            .main_wrap .sidebar > ul > li > ul li a:hover {
-              color: #a94442;
-              background: #ebebeb; } }
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .content .text_wrap {
+          height: 1px; }
+        .main_wrap .content .text_wrap .text_ad {
+          width: 300px;
+          height: 250px;
+          margin: 0 0.5rem 0.5rem 0;
+          float: left; }
+        .main_wrap .content .text_wrap > span {
+          display: inline-block;
+          width: 160px;
+          margin-top: 1rem; }
+          .main_wrap .content .text_wrap > span:nth-child(2), .main_wrap .content .text_wrap > span:nth-child(3) {
+            margin-top: 2rem; }
+          .main_wrap .content .text_wrap > span:nth-last-child(1), .main_wrap .content .text_wrap > span:nth-last-child(1) {
+            margin-bottom: 1.5rem; }
+    .main_wrap .sidebar {
+      float: right;
+      width: 250px;
+      border: 1px solid #ccc;
+      background: #fcfcfc;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .main_wrap .sidebar h3 {
+        font-size: 1.1rem;
+        font-weight: normal;
+        line-height: 2rem;
+        text-indent: 1rem; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 0.5rem;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .content {
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .main_wrap .content h1 {
+        text-align: center; }
+      .main_wrap .content .sub_info {
+        text-align: center;
+        border-bottom: 1px solid #01579B;
+        padding-bottom: 0.5rem;
+        color: #797979; }
+        .main_wrap .content .sub_info .info_id {
+          display: inline-block; }
+          .main_wrap .content .sub_info .info_id span {
+            color: #fff;
+            background: #acacac;
+            padding: 0 0.5rem;
+            border-radius: 0.3rem; }
+        .main_wrap .content .sub_info > span {
+          margin-left: 2rem; }
+      .main_wrap .content .text_wrap {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-size: 1rem; }
+        .main_wrap .content .text_wrap:after {
+          content: ".";
+          display: block;
+          height: 0;
+          clear: both;
+          visibility: hidden; }
+        * html .main_wrap .content .text_wrap {
+          height: 1px; }
+        .main_wrap .content .text_wrap .text_ad {
+          width: 300px;
+          height: 250px;
+          margin: 0 0.5rem 0.5rem 0;
+          float: left; }
+        .main_wrap .content .text_wrap > span {
+          display: inline-block;
+          width: 160px;
+          margin-top: 1rem; }
+          .main_wrap .content .text_wrap > span:nth-child(2), .main_wrap .content .text_wrap > span:nth-child(3) {
+            margin-top: 2rem; }
+          .main_wrap .content .text_wrap > span:nth-last-child(1), .main_wrap .content .text_wrap > span:nth-last-child(1) {
+            margin-bottom: 1.5rem; }
+    .main_wrap .sidebar {
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      background: #fcfcfc;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .main_wrap .sidebar h3 {
+        font-size: 1.1rem;
+        font-weight: normal;
+        line-height: 2rem;
+        text-indent: 1rem; } }
+@media only screen and (max-width: 767px) {
+  .main_wrap {
+    display: inline-block;
+    margin-top: 0.5rem;
+    display: block; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .content {
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .main_wrap .content h1 {
+        text-align: center; }
+      .main_wrap .content .sub_info {
+        text-align: center;
+        border-bottom: 1px solid #01579B;
+        padding-bottom: 0.5rem;
+        color: #797979; }
+        .main_wrap .content .sub_info .info_id {
+          display: block; }
+          .main_wrap .content .sub_info .info_id span {
+            color: #fff;
+            background: #acacac;
+            padding: 0 0.5rem;
+            border-radius: 0.3rem; }
+        .main_wrap .content .sub_info > span {
+          display: block; }
+      .main_wrap .content .text_wrap {
+        margin-top: 0.5rem;
+        font-size: 1rem; }
+        .main_wrap .content .text_wrap .text_ad {
+          width: 300px;
+          height: 250px;
+          margin: 1rem auto; }
+        .main_wrap .content .text_wrap > span {
+          display: block;
+          margin-top: 0.5rem; }
+          .main_wrap .content .text_wrap > span:nth-last-child(1) {
+            margin-bottom: 1rem; }
+    .main_wrap .sidebar {
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      background: #fcfcfc;
+      box-sizing: border-box;
+      padding: 1rem; }
+      .main_wrap .sidebar h3 {
+        font-size: 1.1rem;
+        font-weight: normal;
+        line-height: 2rem;
+        text-indent: 1rem; } }
