@@ -80,6 +80,9 @@
         $(".category > ul > li").click(function(){
             $(this).find('ul').slideToggle('fast');
         });
+        $(".category > ul > li > ul > li").click(function(e){
+            e.stopPropagation();
+        });
     });
 </script>
 @endsection
