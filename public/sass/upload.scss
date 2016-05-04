@@ -1,15 +1,25 @@
-// common css admin
-body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
-body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
-a{color:#2d374b;text-decoration:none}
-a:hover{color:#cd0200;text-decoration:underline}
-em{font-style:normal}
-li{list-style:none}
-img{border:0;vertical-align:middle}
-table{border-collapse:collapse;border-spacing:0}
-p{word-wrap:break-word}
+$color:#01579B;
+$hover_color:#a94442;
 
-
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html & { height: 1px }
+}
+@mixin wrap {
+    @include clearfix;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+}
+ 
 .background,.background_photos {
     background: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -19,7 +29,7 @@ p{word-wrap:break-word}
     bottom: 0;
     margin: auto;
     display: none;
-    z-index: 1; 
+    z-index: 1;
 }
 .myModal,.myModal_photos {
     position: absolute;
@@ -95,4 +105,29 @@ p{word-wrap:break-word}
     display: inline;
     margin-left: 0.5em;
     margin-top: 0.5em;
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    @mixin wrap {
+        @include clearfix;
+        margin-top: 1rem;
+        background: #fff;
+        border: 1px solid #ccc;
+        display: block;
+    }
+
 }

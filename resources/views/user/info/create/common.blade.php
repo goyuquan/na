@@ -4,6 +4,10 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+@section('style')
+<link rel="stylesheet" href="{{url('/css/upload.css')}}">
+@endsection
+
 @include('common.thumbnail')
 @section('content')
 <h1>用户 > 信息 > 创建(common) </h1>
@@ -63,7 +67,7 @@ $(function(){
 		}
      });
 
-	var validate = $("#create").validate({
+	var validate = $("#create2").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单

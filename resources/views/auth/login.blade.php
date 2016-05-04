@@ -13,7 +13,6 @@
 <div class="main_wrap container">
 	<div class="form">
 		<div class="login">
-
 			<h1>登&nbsp;录</h1>
 			<form id="login" method="POST" action="{{ url('/login') }}">
 				{!! csrf_field() !!}
@@ -33,6 +32,16 @@
 				<input type="submit" value="登&nbsp;陆">
 			</form>
 		</div>
+
+		@if (count($errors) > 0)
+		    <div>
+		        <ul>
+		            @foreach ($errors->all() as $error)
+		                <li>{{ $error }}</li>
+		            @endforeach
+		        </ul>
+		    </div>
+		@endif
 		<div class="register">
 			<h1>注&nbsp;册</h1>
 			<form id="register" method="POST" action="{{ url('/register') }}">
@@ -68,8 +77,8 @@
 					@endif
 				</section>
 				<section>
-					<input type="hidden" id="rdistinguished" name="distinguished" value="abcedfg">
-					<input type="text" class="form-control" name="distinguish" placeholder="填写:abcedfg">
+					<input type="hidden" id="distinguished" name="distinguished" value="abcedfg" >
+					<input type="text" name="distinguish" placeholder="填写:abcedfg" >
 				</section>
 
 				<input type="submit" value="注&nbsp;册">
@@ -110,11 +119,43 @@
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){
-	var validate = $("#register").validate({
+
+	var validate = $("#login2").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
 	    },
+
+		rules : {
+			name : {
+				required : true,
+				minlength : 2,
+				maxlength : 20
+			},
+			password : {
+				required : true,
+				minlength : 6,
+				maxlength : 50
+			}
+		},
+
+		messages : {
+			name : {
+				required : '请输入用户名'
+			},
+			password : {
+				required : '请输入密码',
+				min : '密码长度不能小于6位',
+				max : '密码长度不能大于50位'
+			}
+		},
+	});
+
+	var validate = $("#register2").validate({
+		debug: true, //调试模式取消submit的默认提交功能
+		submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
+			form.submit();   //提交表单
+		},
 
 		rules : {
 			name : {
@@ -136,9 +177,7 @@ $(function(){
 			},
 			password_confirmation : {
 				required : true,
-				minlength : 6,
-				maxlength : 50,
-				equalTo : '#password'
+				equalTo : '#rpassword'
 			},
 			distinguish : {
 				equalTo : '#distinguished',
@@ -160,8 +199,8 @@ $(function(){
 			},
 			password : {
 				required : '请输入密码',
-				min : '密码长度不能小于6位',
-				max : '密码长度不能大于50位'
+				minlength : '密码长度不能小于6位',
+				maxlength : '密码长度不能大于50位'
 			},
 			password_confirmation : {
 				required : '重复密码不能为空',
@@ -170,37 +209,6 @@ $(function(){
 			distinguish : {
 				required : '输入abcedfg',
 				equalTo : '输入abcedfg'
-			}
-		},
-	});
-
-	var validate = $("#login").validate({
-	    debug: true, //调试模式取消submit的默认提交功能
-	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
-	        form.submit();   //提交表单
-	    },
-
-		rules : {
-			name : {
-				required : true,
-				minlength : 2,
-				maxlength : 20
-			},
-			password : {
-				required : true,
-				minlength : 6,
-				maxlength : 50
-			}
-		},
-
-		messages : {
-			name : {
-				required : '请输入用户名'
-			},
-			password : {
-				required : '请输入密码',
-				min : '密码长度不能小于6位',
-				max : '密码长度不能大于50位'
 			}
 		},
 	});

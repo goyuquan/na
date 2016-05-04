@@ -35,6 +35,7 @@ class PageController extends Controller
             'name' => 'required|unique:pages|min:1|max:20',
             'alias' => 'required|min:2|max:50',
         ],$messages);
+        return dd($request->name);
 
         $page = new Page;
 

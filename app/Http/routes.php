@@ -7,8 +7,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/search/{word}', 'CommonController@search');
 
     Route::get('/register', 'UserController@login');
-    Route::post('/register', 'UserController@_register');
     Route::get('/login', 'UserController@login');
+    Route::post('/register', 'UserController@_register');
     Route::post('/login', 'UserController@_login');
     Route::get('/logout', 'UserController@logout');
 
@@ -19,6 +19,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['middleware' => 'auth'], function () {
 
+        Route::get('/user/info/create_category', 'UserenterController@create_category');
+        Route::get('/user/info/create/category/{id}', 'UserCenterController@create');
+        Route::post('/user/info/create', 'UserCenterController@_create');
         Route::post('/user/info/update/{id}', 'UserCenterController@update');
         Route::get('/user/info/delete/{id}', 'UserCenterController@destroy');
 
