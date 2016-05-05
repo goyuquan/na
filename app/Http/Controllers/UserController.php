@@ -24,21 +24,27 @@ class UserController extends Controller
     }
 
 
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+
     public function _login(Request $request)
     {
-        // $messages = [
-        //     'name.required' => '用户名不能为空',
-        //     'name.unique' => '用户名已被使用',
-        //     'name.max' => '用户名不能大于:max位',
-        //     'name.min' => '用户名不能小于:min位',
-        //     'password.required' => 'password不能为空',
-        //     'password.max' => 'password不能大于:max位',
-        //     'password.min' => 'password不能小于:min位'
-        // ];
-        // $this->validate($request, [
-        //     'name' => 'required|unique:users|min:2|max:50',
-        //     'password' => 'confirmed|required|min:6|max:50'
-        // ],$messages);
+        $messages = [
+            'name.required' => '用户名不能为空',
+            'name.unique' => '用户名已被使用',
+            'name.max' => '用户名不能大于:max位',
+            'name.min' => '用户名不能小于:min位',
+            'password.required' => 'password不能为空',
+            'password.max' => 'password不能大于:max位',
+            'password.min' => 'password不能小于:min位'
+        ];
+        $this->validate($request, [
+            'name' => 'required|unique:users|min:2|max:50',
+            'password' => 'confirmed|required|min:6|max:50'
+        ],$messages);
 
         if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
             return Redirect::intended('/');
@@ -73,7 +79,6 @@ class UserController extends Controller
             'phone' => 'required|unique:users|min:11|max:11',
             'password' => 'confirmed|required|min:6|max:50',
         ]);
-        return "register";
 
         $user = new User;
 

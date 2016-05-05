@@ -4,7 +4,8 @@
     margin-top: 1rem;
     background: #fff;
     border: 1px solid #ccc;
-    display: block; }
+    display: block;
+    position: relative; }
     .main_wrap:after {
       content: ".";
       display: block;
@@ -48,31 +49,32 @@
           float: left;
           width: 80%;
           font-size: 1.2rem; }
-    .main_wrap .form {
+    .main_wrap .login, .main_wrap .register {
       box-sizing: border-box;
       display: inline-block;
       width: 30%;
-      float: right;
       padding: 1.5rem;
       text-align: center;
       background: #4d89b9;
       padding-bottom: 2rem;
-      margin-bottom: 0; }
-      .main_wrap .form h1 {
+      position: absolute;
+      right: 0;
+      height: 100%; }
+      .main_wrap .login h1, .main_wrap .register h1 {
         color: #e5eef5;
         margin-top: 1rem;
         font-weight: normal; }
-      .main_wrap .form input:not([type="submit"]) {
+      .main_wrap .login input:not([type="submit"]), .main_wrap .register input:not([type="submit"]) {
         width: 80%;
         height: 1.8rem;
         margin-top: 0.6rem;
         border: 1px solid #353535;
         padding: 0 0.5rem;
         border-radius: 4px; }
-      .main_wrap .form input + label, .main_wrap .form input + strong {
+      .main_wrap .login input + label, .main_wrap .login input + strong, .main_wrap .register input + label, .main_wrap .register input + strong {
         display: block;
         color: #fff; }
-      .main_wrap .form input[type="submit"] {
+      .main_wrap .login input[type="submit"], .main_wrap .register input[type="submit"] {
         margin-top: 1rem;
         border: 1px solid #353535;
         padding: 0.4rem 2rem;
@@ -80,7 +82,7 @@
         font-size: 1rem;
         border-radius: 0.3rem;
         background: #3378af; }
-        .main_wrap .form input[type="submit"]:hover {
+        .main_wrap .login input[type="submit"]:hover, .main_wrap .register input[type="submit"]:hover {
           background: #a94442; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .main_wrap {
@@ -88,7 +90,8 @@
     margin-top: 1rem;
     background: #fff;
     border: 1px solid #ccc;
-    display: block; }
+    display: block;
+    position: relative; }
     .main_wrap:after {
       content: ".";
       display: block;
@@ -132,31 +135,33 @@
           float: left;
           width: 80%;
           font-size: 1.2rem; }
-    .main_wrap .form {
+    .main_wrap .login, .main_wrap .register {
       box-sizing: border-box;
       display: inline-block;
       width: 30%;
-      float: right;
       padding: 1.5rem;
       text-align: center;
       background: #4d89b9;
       padding-bottom: 2rem;
-      margin-bottom: 0; }
-      .main_wrap .form h1 {
+      margin-bottom: 0;
+      position: absolute;
+      right: 0;
+      height: 100%; }
+      .main_wrap .login h1, .main_wrap .register h1 {
         color: #e5eef5;
         margin-top: 1rem;
         font-weight: normal; }
-      .main_wrap .form input:not([type="submit"]) {
+      .main_wrap .login input:not([type="submit"]), .main_wrap .register input:not([type="submit"]) {
         width: 80%;
         height: 1.8rem;
         margin-top: 0.6rem;
         border: 1px solid #353535;
         padding: 0 0.5rem;
         border-radius: 4px; }
-      .main_wrap .form input + label, .main_wrap .form input + strong {
+      .main_wrap .login input + label, .main_wrap .login input + strong, .main_wrap .register input + label, .main_wrap .register input + strong {
         display: block;
         color: #fff; }
-      .main_wrap .form input[type="submit"] {
+      .main_wrap .login input[type="submit"], .main_wrap .register input[type="submit"] {
         margin-top: 1rem;
         border: 1px solid #353535;
         padding: 0.4rem 2rem;
@@ -164,7 +169,7 @@
         font-size: 1rem;
         border-radius: 0.3rem;
         background: #3378af; }
-        .main_wrap .form input[type="submit"]:hover {
+        .main_wrap .login input[type="submit"]:hover, .main_wrap .register input[type="submit"]:hover {
           background: #a94442; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .main_wrap {
@@ -172,7 +177,8 @@
     margin-top: 1rem;
     background: #fff;
     border: 1px solid #ccc;
-    display: block; }
+    display: block;
+    position: relative; }
     .main_wrap:after {
       content: ".";
       display: block;
@@ -183,7 +189,7 @@
       height: 1px; }
     .main_wrap .main {
       display: inline-block;
-      width: 100%;
+      width: 50%;
       float: left;
       padding-bottom: 4rem; }
       .main_wrap .main h2 {
@@ -216,39 +222,34 @@
           float: left;
           width: 80%;
           font-size: 1.2rem; }
-    .main_wrap .form {
+    .main_wrap .login, .main_wrap .register {
+      width: 50%;
+      position: absolute;
+      display: inline-block;
       box-sizing: border-box;
       display: inline-block;
-      width: 100%;
-      float: right;
+      right: 0;
+      height: 100%;
       padding: 1.5rem;
       text-align: center;
       background: #4d89b9;
       padding-bottom: 2rem;
       margin-bottom: 0; }
-      .main_wrap .form .login {
-        width: 50%;
-        display: inline-block;
-        float: left; }
-      .main_wrap .form .register {
-        width: 50%;
-        display: inline-block;
-        float: left; }
-      .main_wrap .form h1 {
+      .main_wrap .login h1, .main_wrap .register h1 {
         color: #e5eef5;
         margin-top: 1rem;
         font-weight: normal; }
-      .main_wrap .form input:not([type="submit"]) {
+      .main_wrap .login input:not([type="submit"]), .main_wrap .register input:not([type="submit"]) {
         width: 80%;
         height: 1.8rem;
         margin-top: 0.6rem;
         border: 1px solid #353535;
         padding: 0 0.5rem;
         border-radius: 4px; }
-      .main_wrap .form input + label, .main_wrap .form input + strong {
+      .main_wrap .login input + label, .main_wrap .login input + strong, .main_wrap .register input + label, .main_wrap .register input + strong {
         display: block;
         color: #fff; }
-      .main_wrap .form input[type="submit"] {
+      .main_wrap .login input[type="submit"], .main_wrap .register input[type="submit"] {
         margin-top: 1rem;
         border: 1px solid #353535;
         padding: 0.4rem 2rem;
@@ -256,7 +257,7 @@
         font-size: 1rem;
         border-radius: 0.3rem;
         background: #3378af; }
-        .main_wrap .form input[type="submit"]:hover {
+        .main_wrap .login input[type="submit"]:hover, .main_wrap .register input[type="submit"]:hover {
           background: #a94442; } }
 @media only screen and (max-width: 767px) {
   .main_wrap {
@@ -308,7 +309,7 @@
           float: left;
           width: 80%;
           font-size: 1.2rem; }
-    .main_wrap .form {
+    .main_wrap .login, .main_wrap .register {
       box-sizing: border-box;
       display: inline-block;
       width: 100%;
@@ -318,21 +319,21 @@
       background: #4d89b9;
       padding-bottom: 2rem;
       margin-bottom: 0; }
-      .main_wrap .form h1 {
+      .main_wrap .login h1, .main_wrap .register h1 {
         color: #e5eef5;
         margin-top: 1rem;
         font-weight: normal; }
-      .main_wrap .form input:not([type="submit"]) {
+      .main_wrap .login input:not([type="submit"]), .main_wrap .register input:not([type="submit"]) {
         width: 80%;
         height: 1.8rem;
         margin-top: 0.6rem;
         border: 1px solid #353535;
         padding: 0 0.5rem;
         border-radius: 4px; }
-      .main_wrap .form input + label, .main_wrap .form input + strong {
+      .main_wrap .login input + label, .main_wrap .login input + strong, .main_wrap .register input + label, .main_wrap .register input + strong {
         display: block;
         color: #fff; }
-      .main_wrap .form input[type="submit"] {
+      .main_wrap .login input[type="submit"], .main_wrap .register input[type="submit"] {
         margin-top: 1rem;
         border: 1px solid #353535;
         padding: 0.4rem 2rem;
@@ -340,5 +341,5 @@
         font-size: 1rem;
         border-radius: 0.3rem;
         background: #3378af; }
-        .main_wrap .form input[type="submit"]:hover {
+        .main_wrap .login input[type="submit"]:hover, .main_wrap .register input[type="submit"]:hover {
           background: #a94442; } }

@@ -24,6 +24,7 @@ $hover_color:#a94442;
 
     .main_wrap {
         @include wrap;
+        position: relative;
 
         .main {
             display: inline-block;
@@ -63,16 +64,17 @@ $hover_color:#a94442;
                 }
             }
         }
-        .form {
+        .login,.register {
                 box-sizing: border-box;
                 display: inline-block;
                 width: 30%;
-                float: right;
                 padding: 1.5rem;
                 text-align: center;
                 background: #4d89b9;
                 padding-bottom: 2rem;
-                margin-bottom: 0;
+                position: absolute;
+                right: 0;
+                height: 100%;
 
                 h1 {
                     color: #e5eef5;
@@ -112,6 +114,7 @@ $hover_color:#a94442;
 
     .main_wrap {
         @include wrap;
+        position: relative;
 
         .main {
             display: inline-block;
@@ -151,16 +154,18 @@ $hover_color:#a94442;
                 }
             }
         }
-        .form {
+        .login,.register {
             box-sizing: border-box;
             display: inline-block;
             width: 30%;
-            float: right;
             padding: 1.5rem;
             text-align: center;
             background: #4d89b9;
             padding-bottom: 2rem;
             margin-bottom: 0;
+            position: absolute;
+            right: 0;
+            height: 100%;
 
             h1 {
                 color: #e5eef5;
@@ -202,10 +207,11 @@ $hover_color:#a94442;
 
     .main_wrap {
         @include wrap;
+        position: relative;
 
         .main {
             display: inline-block;
-            width: 100%;
+            width: 50%;
             float: left;
             padding-bottom: 4rem;
 
@@ -242,21 +248,14 @@ $hover_color:#a94442;
             }
         }
 
-        .form {
-            .login {
-                width: 50%;
-                display: inline-block;
-                float: left;
-            }
-            .register {
-                width: 50%;
-                display: inline-block;
-                float: left;
-            }
+        .login,.register {
+            width: 50%;
+            position: absolute;
+            display: inline-block;
             box-sizing: border-box;
             display: inline-block;
-            width: 100%;
-            float: right;
+            right: 0;
+            height: 100%;
             padding: 1.5rem;
             text-align: center;
             background: #4d89b9;
@@ -351,7 +350,7 @@ $hover_color:#a94442;
             }
         }
 
-        .form {
+        .login,.register {
             box-sizing: border-box;
             display: inline-block;
             width: 100%;
@@ -394,6 +393,4 @@ $hover_color:#a94442;
             }
         }
     }
-
-
 }

@@ -6,7 +6,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/search', 'CommonController@search_push');
     Route::get('/search/{word}', 'CommonController@search');
 
-    Route::get('/register', 'UserController@login');
+    Route::get('/register', 'UserController@register');
     Route::get('/login', 'UserController@login');
     Route::post('/register', 'UserController@_register');
     Route::post('/login', 'UserController@_login');
