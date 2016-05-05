@@ -16,13 +16,13 @@
 		<form id="login" method="POST" action="{{ url('/login') }}">
 			{!! csrf_field() !!}
 			<section>
-				<input type="text" name="name" id="name" value="{{old('name')}}" placeholder="用户名">
+				<input type="text" name="name" value="{{old('name')}}" placeholder="用户名">
 				@if ($errors->has('name'))
 				<strong>{{ $errors->first('name') }}</strong>
 				@endif
 			</section>
 			<section>
-				<input type="password" name="password" id="password" value="{{old('password')}}" placeholder="密码">
+				<input type="password" name="password" value="{{old('password')}}" placeholder="密码">
 				@if ($errors->has('password'))
 				<strong>{{ $errors->first('password') }}</strong>
 				@endif

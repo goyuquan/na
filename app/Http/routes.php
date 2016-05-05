@@ -2,6 +2,10 @@
 
 Route::group(['middleware' => ['web']], function () {
 
+    Route::get('/admin/album/create', 'AlbumController@create');
+    Route::post('/admin/album/store', 'AlbumController@store');
+
+
     Route::get('/', 'CommonController@home');
     Route::post('/search', 'CommonController@search_push');
     Route::get('/search/{word}', 'CommonController@search');

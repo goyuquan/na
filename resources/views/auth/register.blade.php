@@ -18,19 +18,19 @@
 			<form id="register" method="POST" action="{{ url('/register') }}">
 				{!! csrf_field() !!}
 				<section>
-					<input type="text" name="name" id="name" value="{{old('name')}}" placeholder="用户名">
+					<input type="text" name="name" value="{{old('name')}}" placeholder="用户名">
 					@if ($errors->has('name'))
 					<strong>{{ $errors->first('name') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="email" name="email" id="email" value="{{old('email')}}" placeholder="Email">
+					<input type="email" name="email" value="{{old('email')}}" placeholder="Email">
 					@if ($errors->has('email'))
 					<strong>{{ $errors->first('email') }}</strong>
 					@endif
 				</section>
 				<section>
-					<input type="text" name="phone" id="phone" value="{{old('phone')}}" placeholder="手机号">
+					<input type="text" name="phone" value="{{old('phone')}}" placeholder="手机号">
 					@if ($errors->has('phone'))
 					<strong>{{ $errors->first('phone') }}</strong>
 					@endif
@@ -42,7 +42,7 @@
 					@endif
 				</section>
 				<section>
-					<input type="password" name="password_confirmation" id="password_confirmation" placeholder="重复密码">
+					<input type="password" name="password_confirmation" placeholder="重复密码">
 					@if ($errors->has('password_confirmation'))
 					<strong>{{ $errors->first('password_confirmation') }}</strong>
 					@endif
