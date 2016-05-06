@@ -12,7 +12,7 @@
 <div class="breadcrumb container">
     <a href="{{url('/')}}">首页</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="{{ url('/categories' )}}">全部类别</a>
+    <a href="{{url('/categories')}}">全部类别</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$category->name}}</span>
     <?php $category_active = $category->name ?>
@@ -22,25 +22,8 @@
 
     <div class="category">
         <h3>分类菜单</h3>
-        @if(count($categoriess) > 0)
-        <ul>
-            @foreach ( $categoriess as $category )
-                <li><a href="#">{{ $category->name }}</a>
-                    @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
-                        <ul>
-                            @foreach ( $categories as $category_ )
-                                @if ($category_->parent_id === $category->id)
-                                    <li {{ $category_active == $category_->name ? "class=active" : "" }} >
-                                        <a href="{{ url('/infos/category/'.$category_->id) }}">{{ $category_->name }}</a>
-                                    </li>
-                                @endif
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-        @endif
+
+        @include('info.categories.sidebar_catelist')
 
     </div>
     <div class="content">
