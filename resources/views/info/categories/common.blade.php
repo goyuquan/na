@@ -12,7 +12,7 @@
 <div class="breadcrumb container">
     <a href="{{url('/')}}">首页</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="#">全部类别</a>
+    <a href="{{ url('/categories' )}}">全部类别</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$category->name}}</span>
     <?php $category_active = $category->name ?>

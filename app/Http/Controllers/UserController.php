@@ -21,12 +21,18 @@ class UserController extends Controller
 
     public function login()
     {
+        if(Auth::user()){
+            return Redirect::intended('/');
+        }
         return view('auth.login');
     }
 
 
     public function register()
     {
+        if(Auth::user()){
+            return Redirect::intended('/');
+        }
         return view('auth.register');
     }
 
@@ -50,7 +56,8 @@ class UserController extends Controller
         if (Auth::attempt(['name' => $request->name, 'password' => $request->password])) {
             return Redirect::intended('/');
         } else {
-            return "login wrong";
+            Session()->flash('login', '用户名或密码不正确!');
+            return redirect()->guest('login');
         }
     }
 
@@ -69,9 +76,9 @@ class UserController extends Controller
             'phone.unique' => '手机号已被使用',
             'phone.min' => '手机号长度不正确',
             'phone.max' => '手机号长度不正确',
-            'password.required' => 'password不能为空',
-            'password.max' => 'password不能大于:max位',
-            'password.min' => 'password不能小于:min位',
+            'password.required' => '密码不能为空',
+            'password.max' => '密码不能大于:max位',
+            'password.min' => '密码不能小于:min位',
             'password.confirmed' => '密码不一致',
         ];
         $this->validate($request, [

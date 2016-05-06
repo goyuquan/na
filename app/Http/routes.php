@@ -19,7 +19,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::group(['middleware' => 'auth'], function () {
 
-        Route::get('/user/info/create_category', 'UserenterController@create_category');
+        Route::get('/user/index', 'UserCenterController@index');
+        Route::get('/user/infos', 'UserCenterController@infos');
+        Route::get('/user/info/create_category', 'UserCenterController@create_category');
         Route::get('/user/info/create/category/{id}', 'UserCenterController@create');
         Route::post('/user/info/create', 'UserCenterController@_create');
         Route::post('/user/info/update/{id}', 'UserCenterController@update');
@@ -31,6 +33,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/delete/page/{page}/photos/{id}', 'CommonController@photos_');
 
         Route::group(['middleware' => 'role'], function () {
+
+             Route::get('/admin', 'AdminuserController@admin');
 
              Route::get('/admin/pageinfo/{id}', 'PageinfoController@index');
              Route::get('/admin/pageinfo/create/{page}', 'PageinfoController@create');

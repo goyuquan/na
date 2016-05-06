@@ -9,6 +9,7 @@ use App\Img;
 use Gate;
 use Auth;
 use View;
+use File;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -174,9 +175,11 @@ class UserCenterController extends Controller
         $info = Info::find($id);
         if (Gate::allows('info_authorize', $info)) {
             $content = json_decode($info->content);
-            $url = $content->thumbnail;
+            if (isset($content->thumbnail)) {
+                $url = $content->thumbnail;
+                File::delete(['uploads/thumbnails/'.$url]);
+            }
             $photo = $content->photos_sha1;
-            File::delete(['uploads/thumbnails/'.$url]);
             File::delete(['uploads/'.$photo]);
             Img::where('label',$photo)->delete();
             Info::destroy($id);

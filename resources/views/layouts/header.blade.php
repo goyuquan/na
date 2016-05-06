@@ -8,7 +8,7 @@
         </a>
         <div class="container">
             <div class="top_nav">
-                <a href="{{url('/categories')}}">全部分类</a>
+                <a href="{{url('/categories')}}">分类目录</a>
                 <a href="{{url('/user/info/create_category')}}">创建</a>
                 @if (Auth::guest())
                 <a href="{{ url('/login') }}">登陆</a>

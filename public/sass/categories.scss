@@ -1,0 +1,262 @@
+$color:#01579B;
+$hover_color:#a94442;
+
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html & { height: 1px }
+}
+@mixin wrap {
+    @include clearfix;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .category {
+        @include wrap;
+
+        .head {
+            border-bottom: 1px solid #ccc;
+            line-height: 3rem;
+
+            h2 {
+                color: #353535;
+                display: inline-block;
+            }
+        }
+        .column {
+            box-sizing: border-box;
+            border-left: 1px solid #ccc;
+            margin: 1rem 0 0 0;
+            width: 20%;
+            float: left;
+            padding: 0.8rem;
+
+            &:nth-child(2) {
+                border-left: none;
+            }
+            h3 {
+                color:$color;
+                font-size: 1rem;
+            }
+            h3:not(:first-child) {
+                margin-top: 1.5rem;
+            }
+            ul {
+                margin-top: 0.5rem;
+
+                li {
+
+                    &:hover {
+                        background: #ebebeb;
+                    }
+                    i {
+                        font-size: 1rem;
+                        padding-right: 0.5rem;
+                    }
+                    a {
+                        display: inline-block;
+                        width: 90%;
+                        text-indent: 0.3rem;
+                        color: #353535;
+                        line-height: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .category {
+        @include wrap;
+
+        .head {
+            border-bottom: 1px solid #ccc;
+            line-height: 3rem;
+
+            h2 {
+                color: #353535;
+                display: inline-block;
+            }
+        }
+        .column {
+            box-sizing: border-box;
+            border-left: 1px solid #ccc;
+            margin: 1rem 0 0 0;
+            width: 20%;
+            float: left;
+            padding: 0.8rem;
+
+            &:nth-child(2) {
+                border-left: none;
+            }
+            h3 {
+                color:$color;
+                font-size: 1rem;
+            }
+            h3:not(:first-child) {
+                margin-top: 1.5rem;
+            }
+            ul {
+                margin-top: 0.5rem;
+
+                li {
+
+                    &:hover {
+                        background: #ebebeb;
+                    }
+                    i {
+                        font-size: 1rem;
+                        padding-right: 0.5rem;
+                    }
+                    a {
+                        display: inline-block;
+                        width: 80%;
+                        text-indent: 0.3rem;
+                        color: #353535;
+                        line-height: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .category {
+        @include wrap;
+
+        .head {
+            border-bottom: 1px solid #ccc;
+            line-height: 3rem;
+
+            h2 {
+                color: #353535;
+                display: inline-block;
+            }
+        }
+        .column {
+            box-sizing: border-box;
+            border-left: 1px solid #ccc;
+            margin: 1rem 0 0 0;
+            width: 33%;
+            float: left;
+            padding: 0.8rem;
+
+            &:nth-child(2) {
+                border-left: none;
+            }
+            h3 {
+                color:$color;
+                font-size: 1rem;
+            }
+            h3:not(:first-child) {
+                margin-top: 1.5rem;
+            }
+            ul {
+                margin-top: 0.5rem;
+
+                li {
+
+                    &:hover {
+                        background: #ebebeb;
+                    }
+                    i {
+                        font-size: 1rem;
+                        padding-right: 0.5rem;
+                    }
+                    a {
+                        display: inline-block;
+                        width: 80%;
+                        text-indent: 0.3rem;
+                        color: #353535;
+                        line-height: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    @mixin wrap {
+        @include clearfix;
+        margin-top: 1rem;
+        padding: 1rem 1rem;
+        background: #fff;
+        border: 1px solid #ccc;
+        display: block;
+    }
+
+
+    .category {
+        box-sizing: border-box;
+        @include wrap;
+
+        .head {
+            border-bottom: 1px solid #ccc;
+            line-height: 2.2rem;
+
+            h2 {
+                color: #353535;
+                display: inline-block;
+            }
+        }
+        .column {
+            box-sizing: border-box;
+            border-left: 1px solid #ccc;
+            margin: 1rem 0 0 0;
+            width: 100%;
+            float: left;
+            padding: 0.8rem;
+
+            &:nth-child(2) {
+                border-left: none;
+            }
+            h3 {
+                color:$color;
+                font-size: 1.5rem;
+            }
+            h3:not(:first-child) {
+                margin-top: 1.5rem;
+            }
+            ul {
+                margin-top: 0.5rem;
+
+                li {
+
+                    &:hover {
+                        background: #ebebeb;
+                    }
+                    i {
+                        font-size: 1.2rem;
+                        padding-right: 0.5rem;
+                    }
+                    a {
+                        display: inline-block;
+                        width: 80%;
+                        font-size: 1.2rem;
+                        text-indent: 0.3rem;
+                        color: #353535;
+                        line-height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

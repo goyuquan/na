@@ -58,7 +58,7 @@
 
 @section('script')
 <script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-<script src="{{url('/js/additional-methods.js')}}"></script>
+<script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 	var validate = $("#edit").validate({
@@ -100,8 +100,8 @@ $(function(){
 				isMobile : '手机号码不正确'
 			},
 			password : {
-				min : '密码长度不能小于6位',
-				max : '密码长度不能大于50位'
+				minlength : '密码长度不能小于6位',
+				minlength : '密码长度不能大于50位'
 			},
 			password_confirmation : {
 				equalTo : '两次输入密码不一致'

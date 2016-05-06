@@ -10,6 +10,12 @@ use App\Http\Controllers\Controller;
 class AdminuserController extends Controller
 {
 
+    public function admin()
+    {
+        return view('admin.index');
+    }
+
+
     public function index()
     {
         $users = User::orderBy('id', 'desc')

@@ -91,7 +91,7 @@
 <script type="text/javascript">
 $(function(){
 
-	var validate = $("#register2").validate({
+	var validate = $("#register").validate({
 		debug: true, //调试模式取消submit的默认提交功能
 		submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 			form.submit();   //提交表单

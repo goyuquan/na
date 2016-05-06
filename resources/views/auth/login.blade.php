@@ -20,6 +20,9 @@
 				@if ($errors->has('name'))
 				<strong>{{ $errors->first('name') }}</strong>
 				@endif
+				@if( session('login'))
+					<strong>{{session('login')}}</strong>
+				@endif
 			</section>
 			<section>
 				<input type="password" name="password" value="{{old('password')}}" placeholder="密码">
@@ -66,7 +69,7 @@
 <script type="text/javascript">
 $(function(){
 
-	var validate = $("#login2").validate({
+	var validate = $("#login").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -91,8 +94,8 @@ $(function(){
 			},
 			password : {
 				required : '请输入密码',
-				min : '密码长度不能小于6位',
-				max : '密码长度不能大于50位'
+				minlength : '密码长度不能小于6位',
+				minlength : '密码长度不能大于50位'
 			}
 		},
 	});

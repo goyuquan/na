@@ -1,0 +1,198 @@
+@media only screen and (min-width: 1200px) {
+  .category {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .category:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .category {
+      height: 1px; }
+    .category .head {
+      border-bottom: 1px solid #ccc;
+      line-height: 3rem; }
+      .category .head h2 {
+        color: #353535;
+        display: inline-block; }
+    .category .column {
+      box-sizing: border-box;
+      border-left: 1px solid #ccc;
+      margin: 1rem 0 0 0;
+      width: 20%;
+      float: left;
+      padding: 0.8rem; }
+      .category .column:nth-child(2) {
+        border-left: none; }
+      .category .column h3 {
+        color: #01579B;
+        font-size: 1rem; }
+      .category .column h3:not(:first-child) {
+        margin-top: 1.5rem; }
+      .category .column ul {
+        margin-top: 0.5rem; }
+        .category .column ul li:hover {
+          background: #ebebeb; }
+        .category .column ul li i {
+          font-size: 1rem;
+          padding-right: 0.5rem; }
+        .category .column ul li a {
+          display: inline-block;
+          width: 90%;
+          text-indent: 0.3rem;
+          color: #353535;
+          line-height: 1.6rem; } }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .category {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .category:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .category {
+      height: 1px; }
+    .category .head {
+      border-bottom: 1px solid #ccc;
+      line-height: 3rem; }
+      .category .head h2 {
+        color: #353535;
+        display: inline-block; }
+    .category .column {
+      box-sizing: border-box;
+      border-left: 1px solid #ccc;
+      margin: 1rem 0 0 0;
+      width: 20%;
+      float: left;
+      padding: 0.8rem; }
+      .category .column:nth-child(2) {
+        border-left: none; }
+      .category .column h3 {
+        color: #01579B;
+        font-size: 1rem; }
+      .category .column h3:not(:first-child) {
+        margin-top: 1.5rem; }
+      .category .column ul {
+        margin-top: 0.5rem; }
+        .category .column ul li:hover {
+          background: #ebebeb; }
+        .category .column ul li i {
+          font-size: 1rem;
+          padding-right: 0.5rem; }
+        .category .column ul li a {
+          display: inline-block;
+          width: 80%;
+          text-indent: 0.3rem;
+          color: #353535;
+          line-height: 1.6rem; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .category {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .category:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .category {
+      height: 1px; }
+    .category .head {
+      border-bottom: 1px solid #ccc;
+      line-height: 3rem; }
+      .category .head h2 {
+        color: #353535;
+        display: inline-block; }
+    .category .column {
+      box-sizing: border-box;
+      border-left: 1px solid #ccc;
+      margin: 1rem 0 0 0;
+      width: 33%;
+      float: left;
+      padding: 0.8rem; }
+      .category .column:nth-child(2) {
+        border-left: none; }
+      .category .column h3 {
+        color: #01579B;
+        font-size: 1rem; }
+      .category .column h3:not(:first-child) {
+        margin-top: 1.5rem; }
+      .category .column ul {
+        margin-top: 0.5rem; }
+        .category .column ul li:hover {
+          background: #ebebeb; }
+        .category .column ul li i {
+          font-size: 1rem;
+          padding-right: 0.5rem; }
+        .category .column ul li a {
+          display: inline-block;
+          width: 80%;
+          text-indent: 0.3rem;
+          color: #353535;
+          line-height: 1.6rem; } }
+@media only screen and (max-width: 767px) {
+  .category {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block; }
+    .category:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .category {
+      height: 1px; }
+    .category .head {
+      border-bottom: 1px solid #ccc;
+      line-height: 2.2rem; }
+      .category .head h2 {
+        color: #353535;
+        display: inline-block; }
+    .category .column {
+      box-sizing: border-box;
+      border-left: 1px solid #ccc;
+      margin: 1rem 0 0 0;
+      width: 100%;
+      float: left;
+      padding: 0.8rem; }
+      .category .column:nth-child(2) {
+        border-left: none; }
+      .category .column h3 {
+        color: #01579B;
+        font-size: 1.5rem; }
+      .category .column h3:not(:first-child) {
+        margin-top: 1.5rem; }
+      .category .column ul {
+        margin-top: 0.5rem; }
+        .category .column ul li:hover {
+          background: #ebebeb; }
+        .category .column ul li i {
+          font-size: 1.2rem;
+          padding-right: 0.5rem; }
+        .category .column ul li a {
+          display: inline-block;
+          width: 80%;
+          font-size: 1.2rem;
+          text-indent: 0.3rem;
+          color: #353535;
+          line-height: 2rem; } }
