@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use Redirect;
+
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -78,7 +79,7 @@ class UserController extends Controller
             'email' => 'email|unique:users|max:50',
             'phone' => 'required|unique:users|min:11|max:11',
             'password' => 'confirmed|required|min:6|max:50',
-        ]);
+        ],$messages);
 
         $user = new User;
 
