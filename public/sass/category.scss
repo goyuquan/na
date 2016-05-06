@@ -50,6 +50,16 @@ $hover_color:#a94442;
                         display: block;
                         color: #2e4a5d;
                         margin-bottom: 0.5rem;
+
+                        &.active {
+                            color: #fff;
+                            background: $color;
+                            text-indent: 1rem;
+
+                            &:hover {
+                                background: $hover_color;
+                            }
+                        }
                     }
                     & > ul {
                         li {
@@ -186,6 +196,16 @@ $hover_color:#a94442;
                         display: block;
                         color: #2e4a5d;
                         margin-bottom: 0.5rem;
+
+                        &.active {
+                            color: #fff;
+                            background: $color;
+                            text-indent: 1rem;
+
+                            &:hover {
+                                background: $hover_color;
+                            }
+                        }
                     }
                     & > ul {
                         li {
@@ -322,6 +342,16 @@ $hover_color:#a94442;
                         display: block;
                         color: #2e4a5d;
                         margin-bottom: 0.5rem;
+
+                        &.active {
+                            color: #fff;
+                            background: $color;
+                            text-indent: 1rem;
+
+                            &:hover {
+                                background: $hover_color;
+                            }
+                        }
                     }
                     & > ul {
                         li {
@@ -467,10 +497,20 @@ $hover_color:#a94442;
                         display: block;
                         color: #2e4a5d;
                         margin-bottom: 0.5rem;
+
+                        &.active {
+                            color: #fff;
+                            background: $color;
+                            text-indent: 1rem;
+
+                            &:hover {
+                                background: $hover_color;
+                            }
+                        }
                     }
                     & > ul {
                         display: none;
-                        
+
                         li {
                             text-indent: 01rem;
                             line-height: 1.5rem;
