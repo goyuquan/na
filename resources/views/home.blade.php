@@ -230,82 +230,28 @@
 <h2 class="latest_title">The latest things 最新内容</h2>
 <div class="latest_list container">
     <div class="content">
-        <dl>
-            <dt><a href="#">分类标题</a></dt>
-            <dd>
-                <span class="date">2016-5-1</span>
-                <h4><a href="#">The latest things 最新内容</a></h4>
-                <span class="price">面议</span>
-                <span class="phone">54632541256</span>
-                <p>
-                    Furnished room, all utilities included.
-                    Free wifi and cable.
-                    Off street parking.
-                    Kitchen privileges, includes dishes, pots  pans etc.
-                    Off street parking.
-                </p>
-            </dd>
-            <dd>
-                <span class="date">2016-5-1</span>
-                <h4><a href="#">The latest things 最新内容</a></h4>
-                <span class="price">￥35</span>
-                <span class="phone">54632541256</span>
-                <p>
-                    Furnished room, all utilities included.
-                    Free wifi and cable.
-                    Off street parking.
-                </p>
-            </dd>
-            <dd>
-                <span class="date">2016-5-1</span>
-                <h4><a href="#">The latest things 最新内容</a></h4>
-                <span class="price">￥35</span>
-                <span class="phone">54632541256</span>
-                <p>
-                    Furnished room, all utilities included.
-                    Free wifi and cable.
-                    Off street parking.
-                </p>
-            </dd>
-        </dl>
-        <dl>
-            <dt><a href="#">分类标题</a></dt>
-            <dd>
-                <span class="date">2016-5-1</span>
-                <h4><a href="#">The latest things 最新内容</a></h4>
-                <span class="price">面议</span>
-                <span class="phone">54632541256</span>
-                <p>
-                    Furnished room, all utilities included.
-                    Free wifi and cable.
-                    Off street parking.
-                    Kitchen privileges, includes dishes, pots  pans etc.
-                    Off street parking.
-                </p>
-            </dd>
-            <dd>
-                <span class="date">2016-5-1</span>
-                <h4><a href="#">The latest things 最新内容</a></h4>
-                <span class="price">￥35</span>
-                <span class="phone">54632541256</span>
-                <p>
-                    Furnished room, all utilities included.
-                    Free wifi and cable.
-                    Off street parking.
-                </p>
-            </dd>
-            <dd>
-                <span class="date">2016-5-1</span>
-                <h4><a href="#">The latest things 最新内容</a></h4>
-                <span class="price">￥35</span>
-                <span class="phone">54632541256</span>
-                <p>
-                    Furnished room, all utilities included.
-                    Free wifi and cable.
-                    Off street parking.
-                </p>
-            </dd>
-        </dl>
+
+        <h2><a href="{{url('/categories')}}">分类目录</a></h2>
+        @if(count($infos) > 0)
+        <ul>
+            @foreach($infos as $info)
+            <li>
+                <span class="date">{{ substr($info->publish_at,0,10) }}</span>
+                <h4><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a></h4>
+                <span class="price">
+                    <?php if(isset(json_decode($info->content)->price)){
+                        echo "￥".json_decode($info->content)->price;
+                    } else {
+                        echo "面议";
+                    }
+                    ?>
+                </span>
+                <span class="phone">{{ $info->user->phone }}</span>
+                <p> {{ $info->text }} </p>
+            </li>
+            @endforeach
+        </ul>
+        @endif
 
     </div>
     <div class="sidebar">

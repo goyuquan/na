@@ -134,22 +134,22 @@ $hover_color:#a94442;
             width: 72%;
             float: left;
 
-            dl {
+            h2 {
+                font-size: 1.4rem;
+                border-bottom: 1px solid #ccc;
+                line-height: 2.4rem;
                 margin-top: 1rem;
+                margin-bottom: 1rem;
 
-                dt {
-                    font-size: 1.4rem;
-                    border-bottom: 1px solid #ccc;
-                    line-height: 2.4rem;
-                    margin-bottom: 1rem;
-
-                    a {
-                        &:hover {
-                            color: $hover_color;
-                        }
+                a {
+                    &:hover {
+                        color: $hover_color;
                     }
                 }
-                dd {
+            }
+            ul {
+
+                li {
                     margin-top: 1rem;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
@@ -335,22 +335,22 @@ $hover_color:#a94442;
             width: 72%;
             float: left;
 
-            dl {
+            h2 {
+                font-size: 1.4rem;
+                border-bottom: 1px solid #ccc;
+                line-height: 2.4rem;
                 margin-top: 1rem;
+                margin-bottom: 1rem;
 
-                dt {
-                    font-size: 1.4rem;
-                    border-bottom: 1px solid #ccc;
-                    line-height: 2.4rem;
-                    margin-bottom: 1rem;
-
-                    a {
-                        &:hover {
-                            color: $hover_color;
-                        }
+                a {
+                    &:hover {
+                        color: $hover_color;
                     }
                 }
-                dd {
+            }
+            ul {
+
+                li {
                     margin-top: 1rem;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
@@ -537,22 +537,22 @@ $hover_color:#a94442;
             width: 100%;
             float: left;
 
-            dl {
+            h2 {
+                font-size: 1.4rem;
+                border-bottom: 1px solid #ccc;
+                line-height: 2.4rem;
                 margin-top: 1rem;
+                margin-bottom: 1rem;
 
-                dt {
-                    font-size: 1.4rem;
-                    border-bottom: 1px solid #ccc;
-                    line-height: 2.4rem;
-                    margin-bottom: 1rem;
-
-                    a {
-                        &:hover {
-                            color: $hover_color;
-                        }
+                a {
+                    &:hover {
+                        color: $hover_color;
                     }
                 }
-                dd {
+            }
+            ul {
+
+                li {
                     margin-top: 1rem;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
@@ -752,22 +752,22 @@ $hover_color:#a94442;
             width: 100%;
             float: left;
 
-            dl {
+            h2 {
+                font-size: 1.4rem;
+                border-bottom: 1px solid #ccc;
+                line-height: 2.4rem;
                 margin-top: 1rem;
+                margin-bottom: 1rem;
 
-                dt {
-                    font-size: 1.4rem;
-                    border-bottom: 1px solid #ccc;
-                    line-height: 2.4rem;
-                    margin-bottom: 1rem;
-
-                    a {
-                        &:hover {
-                            color: $hover_color;
-                        }
+                a {
+                    &:hover {
+                        color: $hover_color;
                     }
                 }
-                dd {
+            }
+            ul {
+
+                li {
                     margin-top: 1rem;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
@@ -777,18 +777,17 @@ $hover_color:#a94442;
                     }
 
                     .date {
-                        display: block;
                         color:#666;
                     }
 
                     h4 {
-                        display: block;
+                        display: inline-block;
+                        text-indent: 1rem;
 
                         a {
                             color:#575757;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                             line-height: 2rem;
-                            color: $color;
                             &:hover {
                                 color:$hover_color;
                             }
@@ -798,13 +797,14 @@ $hover_color:#a94442;
                         color: $color;
                         font-size: 1rem;
                         font-weight: bold;
+                        margin-left: 1rem;
                     }
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
                     }
                     p {
-                        color: #575757;
+                        padding-left: 4.5rem;
                     }
                 }
             }

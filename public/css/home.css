@@ -123,42 +123,41 @@
     .latest_list .content {
       width: 72%;
       float: left; }
-      .latest_list .content dl {
-        margin-top: 1rem; }
-        .latest_list .content dl dt {
-          font-size: 1.4rem;
-          border-bottom: 1px solid #ccc;
-          line-height: 2.4rem;
-          margin-bottom: 1rem; }
-          .latest_list .content dl dt a:hover {
-            color: #a94442; }
-        .latest_list .content dl dd {
-          margin-top: 1rem;
-          border-bottom: 1px solid #b2cce1;
-          padding-bottom: 1rem; }
-          .latest_list .content dl dd:last-child {
-            border-bottom: none; }
-          .latest_list .content dl dd .date {
-            color: #666; }
-          .latest_list .content dl dd h4 {
-            display: inline-block;
-            text-indent: 1rem; }
-            .latest_list .content dl dd h4 a {
-              color: #575757;
-              font-size: 1rem;
-              line-height: 2rem; }
-              .latest_list .content dl dd h4 a:hover {
-                color: #a94442; }
-          .latest_list .content dl dd .price {
-            color: #01579B;
+      .latest_list .content h2 {
+        font-size: 1.4rem;
+        border-bottom: 1px solid #ccc;
+        line-height: 2.4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+        .latest_list .content h2 a:hover {
+          color: #a94442; }
+      .latest_list .content ul li {
+        margin-top: 1rem;
+        border-bottom: 1px solid #b2cce1;
+        padding-bottom: 1rem; }
+        .latest_list .content ul li:last-child {
+          border-bottom: none; }
+        .latest_list .content ul li .date {
+          color: #666; }
+        .latest_list .content ul li h4 {
+          display: inline-block;
+          text-indent: 1rem; }
+          .latest_list .content ul li h4 a {
+            color: #575757;
             font-size: 1rem;
-            font-weight: bold;
-            margin-left: 1rem; }
-          .latest_list .content dl dd .phone {
-            margin-left: 1rem;
-            font-size: 0.9rem; }
-          .latest_list .content dl dd p {
-            padding-left: 4.5rem; }
+            line-height: 2rem; }
+            .latest_list .content ul li h4 a:hover {
+              color: #a94442; }
+        .latest_list .content ul li .price {
+          color: #01579B;
+          font-size: 1rem;
+          font-weight: bold;
+          margin-left: 1rem; }
+        .latest_list .content ul li .phone {
+          margin-left: 1rem;
+          font-size: 0.9rem; }
+        .latest_list .content ul li p {
+          padding-left: 4.5rem; }
     .latest_list .sidebar {
       width: 25%;
       float: left;
@@ -302,42 +301,41 @@
     .latest_list .content {
       width: 72%;
       float: left; }
-      .latest_list .content dl {
-        margin-top: 1rem; }
-        .latest_list .content dl dt {
-          font-size: 1.4rem;
-          border-bottom: 1px solid #ccc;
-          line-height: 2.4rem;
-          margin-bottom: 1rem; }
-          .latest_list .content dl dt a:hover {
-            color: #a94442; }
-        .latest_list .content dl dd {
-          margin-top: 1rem;
-          border-bottom: 1px solid #b2cce1;
-          padding-bottom: 1rem; }
-          .latest_list .content dl dd:last-child {
-            border-bottom: none; }
-          .latest_list .content dl dd .date {
-            color: #666; }
-          .latest_list .content dl dd h4 {
-            display: inline-block;
-            text-indent: 1rem; }
-            .latest_list .content dl dd h4 a {
-              color: #575757;
-              font-size: 1rem;
-              line-height: 2rem; }
-              .latest_list .content dl dd h4 a:hover {
-                color: #a94442; }
-          .latest_list .content dl dd .price {
-            color: #01579B;
+      .latest_list .content h2 {
+        font-size: 1.4rem;
+        border-bottom: 1px solid #ccc;
+        line-height: 2.4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+        .latest_list .content h2 a:hover {
+          color: #a94442; }
+      .latest_list .content ul li {
+        margin-top: 1rem;
+        border-bottom: 1px solid #b2cce1;
+        padding-bottom: 1rem; }
+        .latest_list .content ul li:last-child {
+          border-bottom: none; }
+        .latest_list .content ul li .date {
+          color: #666; }
+        .latest_list .content ul li h4 {
+          display: inline-block;
+          text-indent: 1rem; }
+          .latest_list .content ul li h4 a {
+            color: #575757;
             font-size: 1rem;
-            font-weight: bold;
-            margin-left: 1rem; }
-          .latest_list .content dl dd .phone {
-            margin-left: 1rem;
-            font-size: 0.9rem; }
-          .latest_list .content dl dd p {
-            padding-left: 4.5rem; }
+            line-height: 2rem; }
+            .latest_list .content ul li h4 a:hover {
+              color: #a94442; }
+        .latest_list .content ul li .price {
+          color: #01579B;
+          font-size: 1rem;
+          font-weight: bold;
+          margin-left: 1rem; }
+        .latest_list .content ul li .phone {
+          margin-left: 1rem;
+          font-size: 0.9rem; }
+        .latest_list .content ul li p {
+          padding-left: 4.5rem; }
     .latest_list .sidebar {
       width: 25%;
       float: left;
@@ -481,42 +479,41 @@
     .latest_list .content {
       width: 100%;
       float: left; }
-      .latest_list .content dl {
-        margin-top: 1rem; }
-        .latest_list .content dl dt {
-          font-size: 1.4rem;
-          border-bottom: 1px solid #ccc;
-          line-height: 2.4rem;
-          margin-bottom: 1rem; }
-          .latest_list .content dl dt a:hover {
-            color: #a94442; }
-        .latest_list .content dl dd {
-          margin-top: 1rem;
-          border-bottom: 1px solid #b2cce1;
-          padding-bottom: 1rem; }
-          .latest_list .content dl dd:last-child {
-            border-bottom: none; }
-          .latest_list .content dl dd .date {
-            color: #666; }
-          .latest_list .content dl dd h4 {
-            display: inline-block;
-            text-indent: 1rem; }
-            .latest_list .content dl dd h4 a {
-              color: #575757;
-              font-size: 1rem;
-              line-height: 2rem; }
-              .latest_list .content dl dd h4 a:hover {
-                color: #a94442; }
-          .latest_list .content dl dd .price {
-            color: #01579B;
+      .latest_list .content h2 {
+        font-size: 1.4rem;
+        border-bottom: 1px solid #ccc;
+        line-height: 2.4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+        .latest_list .content h2 a:hover {
+          color: #a94442; }
+      .latest_list .content ul li {
+        margin-top: 1rem;
+        border-bottom: 1px solid #b2cce1;
+        padding-bottom: 1rem; }
+        .latest_list .content ul li:last-child {
+          border-bottom: none; }
+        .latest_list .content ul li .date {
+          color: #666; }
+        .latest_list .content ul li h4 {
+          display: inline-block;
+          text-indent: 1rem; }
+          .latest_list .content ul li h4 a {
+            color: #575757;
             font-size: 1rem;
-            font-weight: bold;
-            margin-left: 1rem; }
-          .latest_list .content dl dd .phone {
-            margin-left: 1rem;
-            font-size: 0.9rem; }
-          .latest_list .content dl dd p {
-            padding-left: 4.5rem; }
+            line-height: 2rem; }
+            .latest_list .content ul li h4 a:hover {
+              color: #a94442; }
+        .latest_list .content ul li .price {
+          color: #01579B;
+          font-size: 1rem;
+          font-weight: bold;
+          margin-left: 1rem; }
+        .latest_list .content ul li .phone {
+          margin-left: 1rem;
+          font-size: 0.9rem; }
+        .latest_list .content ul li p {
+          padding-left: 4.5rem; }
     .latest_list .sidebar {
       width: 100%;
       float: left;
@@ -664,42 +661,41 @@
     .latest_list .content {
       width: 100%;
       float: left; }
-      .latest_list .content dl {
-        margin-top: 1rem; }
-        .latest_list .content dl dt {
-          font-size: 1.4rem;
-          border-bottom: 1px solid #ccc;
-          line-height: 2.4rem;
-          margin-bottom: 1rem; }
-          .latest_list .content dl dt a:hover {
-            color: #a94442; }
-        .latest_list .content dl dd {
-          margin-top: 1rem;
-          border-bottom: 1px solid #b2cce1;
-          padding-bottom: 1rem; }
-          .latest_list .content dl dd:last-child {
-            border-bottom: none; }
-          .latest_list .content dl dd .date {
-            display: block;
-            color: #666; }
-          .latest_list .content dl dd h4 {
-            display: block; }
-            .latest_list .content dl dd h4 a {
-              color: #575757;
-              font-size: 1.2rem;
-              line-height: 2rem;
-              color: #01579B; }
-              .latest_list .content dl dd h4 a:hover {
-                color: #a94442; }
-          .latest_list .content dl dd .price {
-            color: #01579B;
+      .latest_list .content h2 {
+        font-size: 1.4rem;
+        border-bottom: 1px solid #ccc;
+        line-height: 2.4rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+        .latest_list .content h2 a:hover {
+          color: #a94442; }
+      .latest_list .content ul li {
+        margin-top: 1rem;
+        border-bottom: 1px solid #b2cce1;
+        padding-bottom: 1rem; }
+        .latest_list .content ul li:last-child {
+          border-bottom: none; }
+        .latest_list .content ul li .date {
+          color: #666; }
+        .latest_list .content ul li h4 {
+          display: inline-block;
+          text-indent: 1rem; }
+          .latest_list .content ul li h4 a {
+            color: #575757;
             font-size: 1rem;
-            font-weight: bold; }
-          .latest_list .content dl dd .phone {
-            margin-left: 1rem;
-            font-size: 0.9rem; }
-          .latest_list .content dl dd p {
-            color: #575757; }
+            line-height: 2rem; }
+            .latest_list .content ul li h4 a:hover {
+              color: #a94442; }
+        .latest_list .content ul li .price {
+          color: #01579B;
+          font-size: 1rem;
+          font-weight: bold;
+          margin-left: 1rem; }
+        .latest_list .content ul li .phone {
+          margin-left: 1rem;
+          font-size: 0.9rem; }
+        .latest_list .content ul li p {
+          padding-left: 4.5rem; }
     .latest_list .sidebar {
       width: 100%;
       float: left;

@@ -17,6 +17,7 @@ class CommonController extends Controller
     public function home()
     {
         $categories = Category::where('parent_id',0)->get(['id','name']);
+        $infos = Info::where('page_id',0)->take(20)->get();
 
         for ($i=0; $i < count($categories) ; $i++) {
             $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id','name']);
@@ -27,7 +28,8 @@ class CommonController extends Controller
 
         return view('home',[
             'categories' => $categories,
-            'type' => $type
+            'type' => $type,
+            'infos' => $infos
         ]);
     }
 

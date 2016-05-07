@@ -17,6 +17,7 @@
     <a href="{{url('/infos/category/'.$category->id)}}">{{$category->name}}</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$info->title}}</span>
+    &nbsp;<button type="button" name="返回" onclick="history.go(-1)">返回</button>
 </div>
 
 <div class="main_wrap container">
