@@ -9,7 +9,11 @@
 @endsection
 
 @section('content')
-<h1>全部类别</h1>
+<div class="breadcrumb container">
+    <a href="{{url('/')}}">首页</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>分类目录</span>
+</div>
 
 
 <div class="category container">
@@ -18,7 +22,7 @@
     </div>
     <div class="column">
 
-        <h3><a href="{{ url('/infos/category/'.$categories[0]->id) }}">{{ $categories[0]->name }}</a></h3>
+        <h3>{{ $categories[0]->name }}</h3>
         @if (count($type[0]) > 0)
         <ul>
             @foreach ($type[0] as $cate)
@@ -30,9 +34,7 @@
         </ul>
         @endif
 
-        {{isset($type[1])}}
-
-        <h3><a href="{{ url('/infos/category/'.$categories[1]->id) }}">{{ $categories[1]->name }}</a></h3>
+        <h3>{{ $categories[1]->name }}</h3>
         @if ( isset($type[1]) && count($type[1]) > 0)
         <ul>
             @foreach ($type[1] as $cate)
@@ -44,7 +46,7 @@
         </ul>
         @endif
 
-        <h3><a href="{{ url('/infos/category/'.$categories[2]->id) }}">{{ $categories[2]->name }}</a></h3>
+        <h3>{{ $categories[2]->name }}</h3>
         @if ( isset($type[2]) && count($type[2]) > 0)
         <ul>
             @foreach ($type[2] as $cate)

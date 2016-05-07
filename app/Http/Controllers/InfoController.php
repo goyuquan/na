@@ -15,12 +15,12 @@ class InfoController extends Controller
     public function index()
     {
 
-        $categories = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id',0)->get(['id','name']);
 
         for ($i=0; $i < count($categories) ; $i++) {
-            $data = Category::where( 'parent_id',$categories[$i]->id )->get();
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id']);
             if ( !$data->isEmpty() ){
-                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get();
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
             }
         }
 
@@ -32,39 +32,19 @@ class InfoController extends Controller
 
     public function category($category)
     {
-        $categories = Category::where('parent_id',0)->get();
+        $categories = Category::where('parent_id',0)->get(['id','name']);
         $category_data = Category::find($category);
-
-        for ($i=0; $i < count($categories) ; $i++) {
-            $data = Category::where( 'parent_id',$categories[$i]->id )->get();
-            if ( !$data->isEmpty() ){
-                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get();
-            }
-        }
-
-        if (!$category_data->parent_id) {
-            $child_category = Category::where('parent_id',$category)->get();
-
-            $infos = [];
-            foreach ($child_category as $key) {
-                for ($i=0; $i < count($key->info); $i++) {
-                    array_push($infos,$key->info[$i]);
-                }
-            }
-            $infos->paginate(10);
-
-            return view('info.categories.common',[
-                'type' => $type,
-                'infos' => $infos,
-                'category' => $category_data,
-                'categories' => $categories
-            ]);
-        }
-
         $folder = Category::find($category_data->parent_id);
         $infos = $category_data->info()
         ->orderBy('publish_at', 'desc')
         ->paginate(10);
+
+        for ($i=0; $i < count($categories) ; $i++) {
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id','name']);
+            if ( !$data->isEmpty() ){
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
+            }
+        }
 
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[

@@ -16,11 +16,18 @@ class CommonController extends Controller
 
     public function home()
     {
-        $categoriess = Category::where('parent_id',0)->get();
-        $categories = Category::where('parent_id','>',0)->get();
+        $categories = Category::where('parent_id',0)->get(['id','name']);
+
+        for ($i=0; $i < count($categories) ; $i++) {
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id','name']);
+            if ( !$data->isEmpty() ){
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
+            }
+        }
+
         return view('home',[
-            'categoriess' => $categoriess,
-            'categories' => $categories
+            'categories' => $categories,
+            'type' => $type
         ]);
     }
 

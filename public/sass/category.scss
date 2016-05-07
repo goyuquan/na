@@ -44,23 +44,23 @@ $hover_color:#a94442;
             & > ul {
                 & > li {
                     margin-bottom: 0.5rem;
+                    color: $color;
 
-                    & > a {
-                        font-size: 1rem;
-                        display: block;
-                        color: #2e4a5d;
-                        margin-bottom: 0.5rem;
+                    h4 {
+                        cursor: pointer;
+                        margin-top: 0.2rem;
+                        padding: 0.2rem;
 
-                        &.active {
-                            color: #fff;
-                            background: $color;
-                            text-indent: 1rem;
-
-                            &:hover {
-                                background: $hover_color;
-                            }
+                        &:hover {
+                            background: #efefef;
+                        }
+                        i {
+                            position: relative;
+                            top: -0.2rem;
+                            left: 0.2rem;
                         }
                     }
+
                     & > ul {
                         li {
                             text-indent: 01rem;
@@ -190,23 +190,17 @@ $hover_color:#a94442;
             & > ul {
                 & > li {
                     margin-bottom: 0.5rem;
+                    color: $color;
 
-                    & > a {
-                        font-size: 1rem;
-                        display: block;
-                        color: #2e4a5d;
-                        margin-bottom: 0.5rem;
+                    h4 {
+                        cursor: pointer;
+                        margin-top: 0.2rem;
 
-                        &.active {
-                            color: #fff;
-                            background: $color;
-                            text-indent: 1rem;
-
-                            &:hover {
-                                background: $hover_color;
-                            }
+                        &:hover {
+                            background: #ebebeb;
                         }
                     }
+
                     & > ul {
                         li {
                             text-indent: 01rem;
@@ -336,23 +330,17 @@ $hover_color:#a94442;
             & > ul {
                 & > li {
                     margin-bottom: 0.5rem;
+                    color: $color;
 
-                    & > a {
-                        font-size: 1rem;
-                        display: block;
-                        color: #2e4a5d;
-                        margin-bottom: 0.5rem;
+                    h4 {
+                        cursor: pointer;
+                        margin-top: 0.2rem;
 
-                        &.active {
-                            color: #fff;
-                            background: $color;
-                            text-indent: 1rem;
-
-                            &:hover {
-                                background: $hover_color;
-                            }
+                        &:hover {
+                            background: #ebebeb;
                         }
                     }
+
                     & > ul {
                         li {
                             text-indent: 01rem;
@@ -491,23 +479,17 @@ $hover_color:#a94442;
             & > ul {
                 & > li {
                     margin-bottom: 0.5rem;
+                        color: $color;
 
-                    & > a {
-                        font-size: 1rem;
-                        display: block;
-                        color: #2e4a5d;
-                        margin-bottom: 0.5rem;
+                    h4 {
+                        cursor: pointer;
+                        margin-top: 0.2rem;
 
-                        &.active {
-                            color: #fff;
-                            background: $color;
-                            text-indent: 1rem;
-
-                            &:hover {
-                                background: $hover_color;
-                            }
+                        &:hover {
+                            background: #ebebeb;
                         }
                     }
+
                     & > ul {
                         display: none;
 

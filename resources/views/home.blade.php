@@ -96,33 +96,31 @@
         <h2>Sell or Advertise anything using</h2>
     </div>
     <div class="column">
-        <h3><a href="#">老中青</a></h3>
+
+        <h3>{{ $categories[0]->name }}</h3>
+        @if ( isset($type[0]) && count($type[0]) > 0)
         <ul>
+            @foreach ($type[0] as $cate)
             <li>
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="#">胆固醇</a>
+                <a href="{{ url('/infos/category/'.$cate->id) }}">{{ $cate->name }}</a>
             </li>
-            <li>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="#">温暖</a>
-            </li>
-            <li>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="#">噢民</a>
-            </li>
-            <li>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="#">党中央</a>
-            </li>
-            <li>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="#">一缺抽</a>
-            </li>
-            <li>
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="#">的脱掉</a>
-            </li>
+            @endforeach
         </ul>
+        @endif
+
+        <h3>{{ $categories[1]->name }}</h3>
+        @if ( isset($type[1]) && count($type[1]) > 0)
+        <ul>
+            @foreach ($type[1] as $cate)
+            <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="{{ url('/infos/category/'.$cate->id) }}">{{ $cate->name }}</a>
+            </li>
+            @endforeach
+        </ul>
+        @endif
+
         <h3><a href="#">老中青</a></h3>
         <ul>
             <li>
