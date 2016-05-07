@@ -1,0 +1,65 @@
+$color:#01579B;
+$hover_color:#a94442;
+
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html & { height: 1px }
+}
+@mixin wrap {
+    @include clearfix;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+    body{font:14px "Microsoft YaHei","宋体","Arial Narrow";}
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+ 
+    .main_wrap {
+        @include wrap;
+    }
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    body{font:14px "Microsoft YaHei","宋体","Arial Narrow";}
+
+    .container {
+        width: 970px;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        margin: 0 auto;
+    }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+}
