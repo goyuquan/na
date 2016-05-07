@@ -22,27 +22,6 @@
 
     <div class="category">
         <h3>分类菜单</h3>
-        <!-- @if(count($categoriess) > 0)
-        <ul>
-            @foreach ( $categoriess as $category )
-                <li><a href="#">{{ $category->name }}</a>
-                    @if ( !App\Category::where('parent_id',$category->id)->get()->isEmpty() )
-                        <ul>
-                            @foreach ( $categories as $category_ )
-                                @if ($category_->parent_id === $category->id)
-                                    <li {{ $category_active == $category_->name ? "class=active" : "" }} >
-                                        <a href="{{ url('/infos/category/'.$category_->id) }}">{{ $category_->name }}</a>
-                                    </li>
-                                @endif
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-        @endif -->
-
-
 
         @include('info.categories.sidebar_catelist')
 
@@ -51,6 +30,7 @@
         <div class="headbar">
             headbar
         </div>
+        
         @if(count($infos) > 0)
         <ul class="list">
             @foreach( $infos as $info )
@@ -84,7 +64,7 @@
         $(".category > ul > li").click(function(){
             $(this).find('ul').slideToggle('fast');
         });
-        $(".category > ul > li > ul > li").click(function(e){
+        $(".category li").click(function(e){
             e.stopPropagation();
         });
     });

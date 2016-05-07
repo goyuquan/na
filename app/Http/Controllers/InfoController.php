@@ -32,40 +32,45 @@ class InfoController extends Controller
 
     public function category($category)
     {
-        $categoriess = Category::where('parent_id',0)->get();
-        $categories = Category::where('parent_id','>',0)->get();
+        $categories = Category::where('parent_id',0)->get();
         $category_data = Category::find($category);
-        $folder = Category::find($category_data->parent_id);
-        $infos = $category_data->info()
-        ->orderBy('publish_at', 'desc')
-        ->paginate(10);
 
-        for ($i=0; $i < count($categoriess) ; $i++) {
-            $data = Category::where( 'parent_id',$categoriess[$i]->id )->get();
+        for ($i=0; $i < count($categories) ; $i++) {
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get();
             if ( !$data->isEmpty() ){
-                $type[$i] = Category::where('parent_id',$categoriess[$i]->id)->get();
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get();
             }
         }
 
         if (!$category_data->parent_id) {
-            $big_categories = Category::where('parent_id',$category_data->parent_id)->get();
+            $child_category = Category::where('parent_id',$category)->get();
+
+            $infos = [];
+            foreach ($child_category as $key) {
+                for ($i=0; $i < count($key->info); $i++) {
+                    array_push($infos,$key->info[$i]);
+                }
+            }
+            $infos->paginate(10);
+
             return view('info.categories.common',[
                 'type' => $type,
                 'infos' => $infos,
                 'category' => $category_data,
-                'categoriess' => $categoriess,
                 'categories' => $categories
             ]);
         }
 
-
+        $folder = Category::find($category_data->parent_id);
+        $infos = $category_data->info()
+        ->orderBy('publish_at', 'desc')
+        ->paginate(10);
 
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
                 'type' => $type,
                 'infos' => $infos,
                 'category' => $category_data,
-                'categoriess' => $categoriess,
                 'categories' => $categories
             ]);
         } else {
@@ -73,7 +78,6 @@ class InfoController extends Controller
                 'type' => $type,
                 'infos' => $infos,
                 'category' => $category_data,
-                'categoriess' => $categoriess,
                 'categories' => $categories
             ]);
         }

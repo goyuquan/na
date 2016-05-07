@@ -32,6 +32,7 @@
         </div>
         <div class="text_wrap">
             <div class="text_ad">
+                text_ad
             </div>
             <span>
                 价格:&nbsp;

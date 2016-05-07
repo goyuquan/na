@@ -1,8 +1,8 @@
 <ul>
-    @for ($i = 0; $i < count($categoriess); $i++)
+    @for ($i = 0; $i < count($categories); $i++)
 
         <li>
-            <a href="{{ url('/infos/category/'.$categoriess[$i]->name) }}" {{ $category_active == $categoriess[$i]->name ? "class=active" : "" }}>{{ $categoriess[$i]->name }}</a>
+            <a href="{{ url('/infos/category/'.$categories[$i]->id) }}" {{ $category_active == $categories[$i]->name ? "class=active" : "" }}>{{ $categories[$i]->name }}</a>
             @if ( isset($type[$i]) && count($type[$i]) > 0)
                 <ul>
                     @foreach ($type[$i] as $cate)
