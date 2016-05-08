@@ -32,6 +32,7 @@ p{word-wrap:break-word}
 }
 
 .breadcrumb i {margin:0 0.5rem}
+.breadcrumb {margin:0.5rem auto!important}
 
 
 @media only screen and (min-width: 1200px) {
@@ -112,7 +113,8 @@ p{word-wrap:break-word}
 
         .content_wrap {
             margin-left: 210px;
-            padding: 2rem 0;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
     }
 
@@ -266,7 +268,8 @@ p{word-wrap:break-word}
 
         .content_wrap {
             margin-left: 210px;
-            padding: 2rem 0;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
     }
 

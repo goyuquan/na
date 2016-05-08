@@ -1,44 +1,61 @@
-@extends('layouts.app')
+@extends('user.layouts.app')
 
 @section('title','创建')
 @section('description','title_description')
 @section('keywords','title_keywords')
 
-@section('s')
+@section('style')
+<link rel="stylesheet" href="/css/upload.css">
+<link rel="stylesheet" href="/css/user/create.css">
+@endsection
 
 @include('common.thumbnail')
 @section('content')
-<h1>用户 > 信息 > 创建(common) </h1>
-<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
-	<input type="hidden" name="category_id" value="{{$category->id}}">
-	{!! csrf_field() !!}
-	<section>
-		<label for="title">标题</label>
-		<input type="text" name="title" id="title">
-	</section>
-	<section>
-		<label for="text">正文</label>
-		<input type="text" name="text" id="text">
-	</section>
-	@if(Auth::User()->role > 1)
-		<section>
-			<label for="publish_at">发布时间</label>
-			<input type="date" name="publish_at" id="publish_at">
-		</section>
-	@endif
-	<section class="thumb_wrap">
-		<label for="thumbnail">缩略图</label>
-		<button type="button" id="thumbnail_bt">上传缩略图</button>
-	</section>
-	<section class="photo_wrap">
-		<label for="photos">图片</label>
-		<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{sha1(time())}}">
-		<button type="button" id="photos_bt">上传图片</button>
-	</section>
+
+<div class="breadcrumb container">
+    <a href="{{url('/user/index')}}">首页</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <a href="{{url('/user/index')}}">用户中心</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>信息发布</span>
+</div>
+
+<div class="main_wrap container">
+    @include('user.layouts.sidebar')
+
+    <div class="content_wrap">
+		<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
+			<input type="hidden" name="category_id" value="{{$category->id}}">
+			{!! csrf_field() !!}
+			<section>
+				<label for="title">标题</label>
+				<input type="text" name="title" id="title">
+			</section>
+			<section>
+				<label for="text">正文</label>
+				<textarea name="text" id="text" rows="10" cols="60"></textarea>
+			</section>
+			@if(Auth::User()->role > 1)
+			<section>
+				<label for="publish_at">发布时间</label>
+				<input type="date" name="publish_at" id="publish_at">
+			</section>
+			@endif
+			<section class="thumb_wrap">
+				<label for="thumbnail">缩略图</label>
+				<button type="button" id="thumbnail_bt">上传缩略图</button>
+			</section>
+			<section class="photo_wrap">
+				<label for="photos">图片</label>
+				<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{sha1(time())}}">
+				<button type="button" id="photos_bt">上传图片</button>
+			</section>
 
 
-	<input type="submit" value="提交">
-</form>
+			<input type="submit" value="提交">
+		</form>
+	</div>
+</div>
 
 @endsection
 
@@ -74,7 +91,7 @@ $(function(){
 		rules : {
 			title : {
 				required : true,
-				minlength : 5,
+				minlength : 4,
 				maxlength : 50
 			},
 			text : {
@@ -87,13 +104,13 @@ $(function(){
 		messages : {
 			title : {
 				required : '标题不能为空',
-				minlength : '标题最长不能小于5',
+				minlength : '标题最长不能小于4位',
 				maxlength : '标题最长不能大于50'
 			},
 			text : {
-				required : '内容不能为空',
-				minlength : '内容最长不能小于10',
-				maxlength : '内容最长不能大于1000'
+				required : '正文内容不能为空',
+				minlength : '正文内容最长不能小于10',
+				maxlength : '正文内容最长不能大于1000'
 			}
 		},
 	});

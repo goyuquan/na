@@ -33,11 +33,18 @@ class UserCenterController extends Controller
 
     public function create_category()
     {
-        $categoriess = Category::where('parent_id',0)->get();
-        $categories = Category::where('parent_id','>',0)->get();
+        $categories = Category::where('parent_id',0)->get();
+
+        for ($i=0; $i < count($categories) ; $i++) {
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id']);
+            if ( !$data->isEmpty() ){
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
+            }
+        }
+
         return view('user.info.create_category',[
-            'categoriess' => $categoriess,
-            'categories' => $categories
+            'categories' => $categories,
+            'type' => $type
         ]);
     }
 

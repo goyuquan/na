@@ -14,6 +14,10 @@
 		<input type="text" name="tele" id="text">
 	</section>
 	<section>
+		<label for="text">内容</label>
+		<input type="text" name="text" id="text">
+	</section>
+	<section>
 		<label for="publish_at">发布时间</label>
 		<input type="date" name="publish_at" id="publish_at">
 	</section>
@@ -41,7 +45,7 @@ $(function(){
 				maxlength : 50
 			},
 			text : {
-				required : true,
+				required : false,
 				minlength : 10,
 				maxlength : 1000
 			}

@@ -38,6 +38,9 @@ p {
 .breadcrumb i {
   margin: 0 0.5rem; }
 
+.breadcrumb {
+  margin: 0.5rem auto !important; }
+
 @media only screen and (min-width: 1200px) {
   body {
     font: 14px "Microsoft YaHei","宋体","Arial Narrow"; }
@@ -122,7 +125,8 @@ p {
       float: left; }
     .main_wrap .content_wrap {
       margin-left: 210px;
-      padding: 2rem 0; }
+      padding-top: 2rem;
+      padding-bottom: 2rem; }
 
   .footer {
     margin-top: 1rem;
@@ -264,7 +268,8 @@ p {
       float: left; }
     .main_wrap .content_wrap {
       margin-left: 210px;
-      padding: 2rem 0; }
+      padding-top: 2rem;
+      padding-bottom: 2rem; }
 
   .footer {
     margin-top: 1rem;
