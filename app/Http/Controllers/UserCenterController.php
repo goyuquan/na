@@ -25,7 +25,7 @@ class UserCenterController extends Controller
     public function infos()
     {
         $infos = Auth::user()->info()->orderBy('publish_at', 'desc')
-        ->paginate(10);
+        ->paginate(20);
         return view('user.info.index',[
             'infos' => $infos
         ]);

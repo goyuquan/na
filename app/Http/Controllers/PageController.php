@@ -90,13 +90,13 @@ class PageController extends Controller
 
         Session()->flash('page', 'page update was successful!');
 
-        return redirect('/admin/page');
+        return redirect('/admin/pages');
     }
 
     public function destroy($id)
     {
         Page::destroy($id);
-        return redirect('/admin/page');
+        return redirect('/admin/pages');
     }
 
 }

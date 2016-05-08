@@ -26,7 +26,10 @@
             <a href="{{ url('/') }}" class="logo">
                 <img src="{{url('img/new-logo.gif')}}" />
             </a>
-
+            <ul>
+                <li><a href="{{url('/user/index')}}">用户中心首页</a></li>
+                <li><a href="{{url('/user/infos')}}">信息管理</a></li>
+            </ul>
         </div>
     </div>
 </div>

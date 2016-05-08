@@ -94,6 +94,35 @@ p {
         width: 20%;
         float: left;
         font-size: 1em; }
+      .header .head ul {
+        padding-top: 2rem; }
+        .header .head ul li {
+          display: inline-block; }
+          .header .head ul li a {
+            font-size: 1.5rem;
+            margin-left: 2rem; }
+
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 0.5rem !important; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .sidebar {
+      width: 200px;
+      float: left; }
+    .main_wrap .content_wrap {
+      margin-left: 210px;
+      padding: 2rem 0; }
 
   .footer {
     margin-top: 1rem;
@@ -207,6 +236,35 @@ p {
         width: 20%;
         float: left;
         font-size: 1em; }
+      .header .head ul {
+        padding-top: 2rem; }
+        .header .head ul li {
+          display: inline-block; }
+          .header .head ul li a {
+            font-size: 1.5rem;
+            margin-left: 2rem; }
+
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 0.5rem !important; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
+    .main_wrap .sidebar {
+      width: 200px;
+      float: left; }
+    .main_wrap .content_wrap {
+      margin-left: 210px;
+      padding: 2rem 0; }
 
   .footer {
     margin-top: 1rem;
@@ -336,6 +394,29 @@ p {
       width: 100%;
       text-align: center;
       font-size: 1em; }
+    .header ul {
+      padding-top: 2rem; }
+      .header ul li {
+        display: inline-block; }
+        .header ul li a {
+          font-size: 1.5rem;
+          margin-left: 2rem; }
+
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 0.5rem !important; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
 
   .footer {
     margin-top: 1rem;
@@ -467,6 +548,29 @@ p {
       width: 100%;
       text-align: center;
       font-size: 1em; }
+    .header ul {
+      padding-top: 2rem; }
+      .header ul li {
+        display: inline-block; }
+        .header ul li a {
+          font-size: 1.5rem;
+          margin-left: 2rem; }
+
+  .main_wrap {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 0.5rem !important; }
+    .main_wrap:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    * html .main_wrap {
+      height: 1px; }
 
   .footer {
     margin-top: 1rem;

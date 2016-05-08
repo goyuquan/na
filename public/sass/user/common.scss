@@ -23,6 +23,14 @@ img{border:0;vertical-align:middle}
 table{border-collapse:collapse;border-spacing:0}
 p{word-wrap:break-word}
 
+@mixin wrap {
+    @include clearfix;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+}
+
 .breadcrumb i {margin:0 0.5rem}
 
 
@@ -72,12 +80,39 @@ p{word-wrap:break-word}
                 display: block;
             }
 
+
             a.logo {
                 display: inline-block;
                 width: 20%;
                 float: left;
                 font-size: 1em;
             }
+            ul {
+                padding-top: 2rem;
+                li {
+                    display: inline-block;
+
+                    a {
+                        font-size: 1.5rem;
+                        margin-left: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .main_wrap {
+        @include wrap;
+        margin-top: 0.5rem!important;
+
+        .sidebar {
+            width:200px;
+            float: left;
+        }
+
+        .content_wrap {
+            margin-left: 210px;
+            padding: 2rem 0;
         }
     }
 
@@ -206,6 +241,32 @@ p{word-wrap:break-word}
                 float: left;
                 font-size: 1em;
             }
+            ul {
+                padding-top: 2rem;
+                li {
+                    display: inline-block;
+
+                    a {
+                        font-size: 1.5rem;
+                        margin-left: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .main_wrap {
+        @include wrap;
+        margin-top: 0.5rem!important;
+
+        .sidebar {
+            width:200px;
+            float: left;
+        }
+
+        .content_wrap {
+            margin-left: 210px;
+            padding: 2rem 0;
         }
     }
 
@@ -349,6 +410,22 @@ p{word-wrap:break-word}
             text-align: center;
             font-size: 1em;
         }
+        ul {
+            padding-top: 2rem;
+            li {
+                display: inline-block;
+
+                a {
+                    font-size: 1.5rem;
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+
+    .main_wrap {
+        @include wrap;
+        margin-top: 0.5rem!important;
     }
 
     .footer {
@@ -493,6 +570,22 @@ p{word-wrap:break-word}
             text-align: center;
             font-size: 1em;
         }
+        ul {
+            padding-top: 2rem;
+            li {
+                display: inline-block;
+
+                a {
+                    font-size: 1.5rem;
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+
+    .main_wrap {
+        @include wrap;
+        margin-top: 0.5rem!important;
     }
 
     .footer {
