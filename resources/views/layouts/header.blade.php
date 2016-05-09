@@ -43,7 +43,7 @@
                         <button type="submit">搜索</button>
                     </div>
                     <div class="post_bt">
-                        <a href="#">free post</a>
+                        <a href="{{url('/user/info/create_category')}}">free post</a>
                     </div>
                 </form>
             </div>

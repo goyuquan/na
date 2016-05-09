@@ -29,16 +29,20 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" id="title">
+				<input type="text" name="title">
 			</section>
 			<section>
 				<label for="text">正文</label>
-				<textarea name="text" id="text" rows="10" cols="60"></textarea>
+				<textarea name="text" rows="10" cols="60"></textarea>
 			</section>
 			@if(Auth::User()->role > 1)
 			<section>
+				<label for="phone">电话号码</label>
+				<input type="text" name="phone">
+			</section>
+			<section>
 				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at" id="publish_at">
+				<input type="date" name="publish_at">
 			</section>
 			@endif
 			<section class="thumb_wrap">
@@ -61,8 +65,8 @@
 
 @section('script')
 <script src="{{url('/js/thumbnail.js')}}"></script>
-<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-<script src="http://apps.bdimg.com/libs/dropzone/3.8.4/dropzone.min.js"></script>
+<script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
+<script src="{{url('/js/dropzone.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 

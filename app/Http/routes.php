@@ -24,6 +24,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/user/info/create_category', 'UserCenterController@create_category');
         Route::get('/user/info/create/category/{id}', 'UserCenterController@create');
         Route::post('/user/info/create', 'UserCenterController@_create');
+        Route::get('/user/info/edit/{id}', 'UserCenterController@edit');
+        Route::get('/user/info/refresh/{id}', 'UserCenterController@refresh');
         Route::post('/user/info/update/{id}', 'UserCenterController@update');
         Route::get('/user/info/delete/{id}', 'UserCenterController@destroy');
 

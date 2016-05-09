@@ -1,83 +1,99 @@
-@extends('layouts.app')
+@extends('user.layouts.app')
+
+@section('title','创建')
+@section('description','title_description')
+@section('keywords','title_keywords')
 
 @section('style')
-<style media="screen">
-
-</style>
+<link rel="stylesheet" href="/css/upload.css">
+<link rel="stylesheet" href="/css/user/create.css">
 @endsection
+
 @include('common.thumbnail')
 @section('content')
-<h1>用户 > 信息 > 编辑 > {{$info->title}}</h1>
 
-<form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
-	<input type="hidden" name="page" value="{{$info->id}}">
-	{!! csrf_field() !!}
-	<section>
-		<label for="title">标题</label>
-		<input type="text" name="title" id="title" value="{{$info->title}}">
-		@if ($errors->has('title'))
-			<strong>{{ $errors->first('title') }}</strong>
-		@endif
-	</section>
-	<section>
-		<label for="text">描述</label>
-		<input type="text" name="text" id="text" value="{{$info->text}}">
-		@if ($errors->has('text'))
-			<strong>{{ $errors->first('text') }}</strong>
-		@endif
-	</section>
-	<section>
-		@if(count($categoriess) > 0)
-		<label for="parent_category">父类别</label>
-		<select name="parent_category" id="parent_category">
-			@foreach ( $categoriess as $category )
-			<option value="{{$category->id}}"
-				@if($category->id == $current_category->parent_id)
-				 selected="selected"
-				 @endif
-				>{{$category->name}}</option>
-			@endforeach
-		</select>
-		@endif
+<div class="breadcrumb container">
+    <a href="{{url('/user/index')}}">首页</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <a href="{{url('/user/index')}}">用户中心</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>信息发布</span>
+</div>
 
-		@if(count($categories) > 0)
-		<label for="category">类别</label>
-		<select name="category_id" id="category">
-			@foreach ( $categories as $category )
-			<option value="{{$category->id}}" data-parent="{{$category->parent_id}}"
-				@if($category->id == $current_category->id)
-				selected="selected"
+<div class="main_wrap container">
+    @include('user.layouts.sidebar')
+
+    <div class="content_wrap">
+		<form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
+			<input type="hidden" name="page" value="{{$info->id}}">
+			{!! csrf_field() !!}
+			<section>
+				<label for="title">标题</label>
+				<input type="text" name="title" id="title" value="{{$info->title}}">
+				@if ($errors->has('title'))
+					<strong>{{ $errors->first('title') }}</strong>
 				@endif
-				>{{$category->name}}</option>
-			@endforeach
-		</select>
-		@endif
-	</section>
-	<section class="thumb_wrap">
-		<label for="thumbnail">缩略图</label>
-		@if(isset($content->thumbnail))
-		<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
-		<button type="button" id="delete_thumb">删除</button>
-		@else
-		<button type="button" id="thumbnail_bt">上传缩略图</button>
-		@endif
-	</section>
-	<section class="photo_wrap">
-		<label for="photos">图片</label>
-			@if($photos && count($photos) > 0)
-				@foreach($photos as $photo)
-				<img src="{{url('uploads/thumbnails/'.$photo->name)}}" />
-				@endforeach
-				<button type="button" id="delete_photos">删除</button>
-			@else
-				<button type="button" id="photos_bt">上传图片</button>
-			@endif
-		<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{ $content->photos_sha1 or sha1(time()) }}">
-	</section>
+			</section>
+			<section>
+				<label for="text">描述</label>
+				<input type="text" name="text" id="text" value="{{$info->text}}">
+				@if ($errors->has('text'))
+					<strong>{{ $errors->first('text') }}</strong>
+				@endif
+			</section>
+			<section>
+				@if(count($categoriess) > 0)
+				<label for="parent_category">父类别</label>
+				<select name="parent_category" id="parent_category">
+					@foreach ( $categoriess as $category )
+					<option value="{{$category->id}}"
+						@if($category->id == $current_category->parent_id)
+						 selected="selected"
+						 @endif
+						>{{$category->name}}</option>
+					@endforeach
+				</select>
+				@endif
 
-	<input type="submit" value="修改">
-</form>
+				@if(count($categories) > 0)
+				<label for="category">类别</label>
+				<select name="category_id" id="category">
+					@foreach ( $categories as $category )
+					<option value="{{$category->id}}" data-parent="{{$category->parent_id}}"
+						@if($category->id == $current_category->id)
+						selected="selected"
+						@endif
+						>{{$category->name}}</option>
+					@endforeach
+				</select>
+				@endif
+			</section>
+			<section class="thumb_wrap">
+				<label for="thumbnail">缩略图</label>
+				@if(isset($content->thumbnail))
+				<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
+				<button type="button" id="delete_thumb">删除</button>
+				@else
+				<button type="button" id="thumbnail_bt">上传缩略图</button>
+				@endif
+			</section>
+			<section class="photo_wrap">
+				<label for="photos">图片</label>
+					@if($photos && count($photos) > 0)
+						@foreach($photos as $photo)
+						<img src="{{url('uploads/thumbnails/'.$photo->name)}}" />
+						@endforeach
+						<button type="button" id="delete_photos">删除</button>
+					@else
+						<button type="button" id="photos_bt">上传图片</button>
+					@endif
+				<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{ $content->photos_sha1 or sha1(time()) }}">
+			</section>
 
+			<input type="submit" value="修改">
+		</form>
+	</div>
+</div>
 @endsection
 
 @section('script')

@@ -15,7 +15,6 @@
     @include('user.layouts.header')
     @yield('content')
     @include('layouts.footer')
-    <script src="{{ url('/js/jquery-1.12.3.min.js')}}"></script>
     @yield('script')
 </body>
 </html>

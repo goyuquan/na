@@ -93,6 +93,7 @@ class UserCenterController extends Controller
             if (isset($content->photos_sha1)) {
                 $photos = Img::where('label',$content->photos_sha1)->get(['name']);
             }
+
             $folder = Category::find($category->parent_id);
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
