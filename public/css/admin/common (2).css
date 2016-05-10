@@ -52,19 +52,9 @@ p {
   .header {
     display: inline-block;
     width: 100%;
+    background: #FAFAFA;
     border-bottom: 1px solid #E4E4E4;
-    padding-bottom: 0.5rem;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+33,cccccc+100 */
-    background: #eeeeee;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #eeeeee 33%, #cccccc 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
-    /* IE6-9 */ }
+    padding-bottom: 0.5rem; }
     .header:after {
       content: ".";
       display: block;
@@ -205,19 +195,9 @@ p {
   .header {
     display: inline-block;
     width: 100%;
+    background: #FAFAFA;
     border-bottom: 1px solid #E4E4E4;
-    padding-bottom: 0.5rem;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+33,cccccc+100 */
-    background: #eeeeee;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #eeeeee 33%, #cccccc 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
-    /* IE6-9 */ }
+    padding-bottom: 0.5rem; }
     .header:after {
       content: ".";
       display: block;
@@ -354,20 +334,10 @@ p {
   .header {
     display: inline-block;
     width: 100%;
+    background: #FAFAFA;
     border-bottom: 1px solid #E4E4E4;
     padding-bottom: 0.5rem;
-    display: inline-block;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+33,cccccc+100 */
-    background: #eeeeee;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #eeeeee 33%, #cccccc 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
-    /* IE6-9 */ }
+    display: inline-block; }
     .header:after {
       content: ".";
       display: block;
@@ -518,20 +488,10 @@ p {
   .header {
     display: inline-block;
     width: 100%;
+    background: #FAFAFA;
     border-bottom: 1px solid #E4E4E4;
     padding-bottom: 0.5rem;
-    display: inline-block;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+33,cccccc+100 */
-    background: #eeeeee;
-    /* Old browsers */
-    background: -moz-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #eeeeee 33%, #cccccc 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #eeeeee 33%, #cccccc 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
-    /* IE6-9 */ }
+    display: inline-block; }
     .header:after {
       content: ".";
       display: block;
