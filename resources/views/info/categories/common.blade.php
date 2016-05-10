@@ -15,6 +15,7 @@
     <a href="{{url('/categories')}}">全部类别</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$category->name}}</span>
+    &nbsp;<button type="button" name="返回" onclick="history.go(-1)">返回</button>
     <?php $category_active = $category->name ?>
 </div>
 
@@ -30,7 +31,7 @@
         <div class="headbar">
             headbar
         </div>
-        
+
         @if(count($infos) > 0)
         <ul class="list">
             @foreach( $infos as $info )

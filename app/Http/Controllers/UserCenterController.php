@@ -19,6 +19,11 @@ class UserCenterController extends Controller
 
     public function index()
     {
+        $infos = Auth::user()->info()->orderBy('publish_at', 'desc')
+        ->paginate(20);
+        return view('user.info.index',[
+            'infos' => $infos
+        ]);
         return view('user.index');
     }
 
@@ -76,7 +81,9 @@ class UserCenterController extends Controller
             'publish_at' => $publish_at,
         ]);
 
-        Session()->flash('info', 'info create was successful!');
+        Session()->flash('info', '信息发布成功!');
+
+        return redirect('/user/infos');
 
         return view('common.infomation');
     }
@@ -155,6 +162,7 @@ class UserCenterController extends Controller
             $info->update();
 
             Session()->flash('info', 'info update was successful!');
+            
             return redirect('/user/infos');
         } else {
             return view('common.info_authorize',['info' => "无权编辑!"]);
