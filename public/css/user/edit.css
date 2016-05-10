@@ -1,0 +1,274 @@
+@media only screen and (min-width: 1200px) {
+  .content_wrap {
+    box-sizing: border-box;
+    padding: 2rem; }
+    .content_wrap form input[type="text"],
+    .content_wrap form input[type="date"] {
+      display: inline-block;
+      height: 2rem;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 2rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form textarea {
+      display: inline-block;
+      padding: 12px 12px;
+      font-size: 14px;
+      width: 26rem;
+      height: 10rem;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form select {
+      display: inline-block;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+      .content_wrap form select option {
+        font-size: 1.2rem;
+        color: #555; }
+    .content_wrap form input[type="submit"] {
+      padding: 0.5em 2em;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 0.3rem;
+      background: #3378af;
+      margin: 2rem auto 1rem;
+      display: block; }
+      .content_wrap form input[type="submit"]:hover {
+        background: #a94442; }
+    .content_wrap form section {
+      margin-top: 1rem; }
+      .content_wrap form section label {
+        font-size: 1.2rem;
+        display: inline-block;
+        text-align: right;
+        margin-right: 1rem; }
+        .content_wrap form section label[for="text"] {
+          vertical-align: top; }
+        .content_wrap form section label:first-child {
+          width: 10rem; }
+        .content_wrap form section label:last-child {
+          color: #a94442; }
+      .content_wrap form section input[name="title"] {
+        width: 26rem; }
+      .content_wrap form section button {
+        padding: 0.3rem 1rem; } }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .content_wrap {
+    box-sizing: border-box;
+    padding: 2rem; }
+    .content_wrap form input[type="text"],
+    .content_wrap form input[type="date"] {
+      display: inline-block;
+      height: 2rem;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 2rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form textarea {
+      display: inline-block;
+      padding: 12px 12px;
+      font-size: 14px;
+      width: 26rem;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form input[type="submit"] {
+      padding: 0.5em 2em;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 0.3rem;
+      background: #3378af;
+      margin: 2rem auto 1rem;
+      display: block; }
+      .content_wrap form input[type="submit"]:hover {
+        background: #a94442; }
+    .content_wrap form section {
+      margin-top: 1rem; }
+      .content_wrap form section label {
+        font-size: 1.2rem;
+        display: inline-block;
+        text-align: right;
+        margin-right: 1rem; }
+        .content_wrap form section label[for="text"] {
+          vertical-align: top; }
+        .content_wrap form section label:first-child {
+          width: 10rem; }
+        .content_wrap form section label:last-child {
+          color: #a94442; }
+      .content_wrap form section input[name="title"] {
+        width: 26rem; }
+      .content_wrap form section button {
+        padding: 0.3rem 1rem; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .content_wrap {
+    box-sizing: border-box;
+    padding: 2rem; }
+    .content_wrap form input[type="text"],
+    .content_wrap form input[type="date"] {
+      display: inline-block;
+      height: 2rem;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 2rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form textarea {
+      display: inline-block;
+      padding: 12px 12px;
+      font-size: 14px;
+      width: 100%;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form input[type="submit"] {
+      padding: 0.5em 2em;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 0.3rem;
+      background: #3378af;
+      margin: 2rem auto 1rem;
+      display: block; }
+      .content_wrap form input[type="submit"]:hover {
+        background: #a94442; }
+    .content_wrap form section {
+      margin-top: 1rem; }
+      .content_wrap form section label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        display: inline-block; }
+        .content_wrap form section label[type="text"] {
+          display: block; }
+        .content_wrap form section label[for="text"] {
+          vertical-align: top; }
+        .content_wrap form section label:last-child {
+          color: #a94442; }
+      .content_wrap form section input[name="title"] {
+        width: 100%; }
+      .content_wrap form section button {
+        padding: 0.3rem 1rem; } }
+@media only screen and (max-width: 767px) {
+  .content_wrap {
+    box-sizing: border-box;
+    padding: 2rem; }
+    .content_wrap form input[type="text"],
+    .content_wrap form input[type="date"] {
+      display: inline-block;
+      height: 2rem;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 2rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form textarea {
+      display: inline-block;
+      padding: 12px 12px;
+      font-size: 14px;
+      width: 100%;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form input[type="submit"] {
+      padding: 0.5em 2em;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 0.3rem;
+      background: #3378af;
+      margin: 2rem auto 1rem;
+      display: block; }
+      .content_wrap form input[type="submit"]:hover {
+        background: #a94442; }
+    .content_wrap form section {
+      margin-top: 1rem; }
+      .content_wrap form section label {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        display: inline-block; }
+        .content_wrap form section label[type="text"] {
+          display: block; }
+        .content_wrap form section label[for="text"] {
+          vertical-align: top; }
+        .content_wrap form section label:last-child {
+          color: #a94442; }
+      .content_wrap form section input[name="title"] {
+        width: 100%; }
+      .content_wrap form section button {
+        padding: 0.3rem 1rem; } }

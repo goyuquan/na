@@ -6,7 +6,7 @@
 
 @section('style')
 <link rel="stylesheet" href="/css/upload.css">
-<link rel="stylesheet" href="/css/user/create.css">
+<link rel="stylesheet" href="/css/user/edit.css">
 @endsection
 
 @include('common.thumbnail')
@@ -29,14 +29,14 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" id="title" value="{{$info->title}}">
+				<input type="text" name="title" value="{{$info->title}}">
 				@if ($errors->has('title'))
 					<strong>{{ $errors->first('title') }}</strong>
 				@endif
 			</section>
 			<section>
 				<label for="text">描述</label>
-				<input type="text" name="text" id="text" value="{{$info->text}}">
+				<textarea type="text" name="text">{{$info->text}}</textarea>
 				@if ($errors->has('text'))
 					<strong>{{ $errors->first('text') }}</strong>
 				@endif
@@ -54,7 +54,7 @@
 					@endforeach
 				</select>
 				@endif
-
+                &nbsp;&nbsp;
 				@if(count($categories) > 0)
 				<label for="category">类别</label>
 				<select name="category_id" id="category">
@@ -97,10 +97,11 @@
 @endsection
 
 @section('script')
+<script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
 @include('user.info.edit.category_select')
 <script src="{{url('/js/thumbnail.js')}}"></script>
-<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
-<script src="http://apps.bdimg.com/libs/dropzone/3.8.4/dropzone.min.js"></script>
+<script src="{{url('/js/jquery.validate.min.js')}}"></script>
+<script src="{{url('/js/dropzone.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 

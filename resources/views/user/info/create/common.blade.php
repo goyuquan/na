@@ -64,8 +64,8 @@
 @endsection
 
 @section('script')
-<script src="{{url('/js/thumbnail.js')}}"></script>
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
+<script src="{{url('/js/thumbnail.js')}}"></script>
 <script src="{{url('/js/dropzone.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
