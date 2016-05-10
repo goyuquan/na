@@ -1,64 +1,105 @@
 @extends('admin.layouts.admin')
 
+@section('title','title_description')
+@section('description','title_description')
+@section('keywords','title_keywords')
+
+@section('style')
+<link rel="stylesheet" href="{{url('/css/admin/users.css')}}" />
+@endsection
+
 @section('content')
 
-@if(count($pagess) > 0)
-<ul>
-    @foreach ( $pagess as $page )
-        <li><a href="/admin/pageinfo/{{$page->id}}">{{ $page->name }}</a>
-            <span>[{{ $page->alias }}]</span>
-            <a href="/admin/page/edit/{{$page->id}}">编辑</a>
-            <a class="del" href="/admin/page/delete/{{$page->id}}">删除</a>
-            @if ( !App\Category::where('parent_id',$page->id)->get()->isEmpty() )
+<div class="breadcrumb container">
+    <a href="{{url('/user/index')}}">首页</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>页面管理</span>
+</div>
 
-                <ul> @foreach ( $pages as $page_ )
-                    @if ($page_->parent_id === $page->id)
-                    <li>
-                        <b> {{$page_->name}} </b>
-                        <span>[{{$page_->alias}}]</span>
-                        <a href="/admin/page/edit/{{$page_->id}}">编辑</a>
-                        <a class="del" href="/admin/page/delete/{{$page_->id}}">删除</a>
-                    </li>
-                    @endif
-                @endforeach </ul>
+<div class="main_wrap container">
+    @include('user.layouts.sidebar')
 
-            @endif
-        </li>
-    @endforeach
-</ul>
-@endif
+    <div class="content_wrap">
 
-<form id="page" method="POST" action="{{ url('/admin/page/create') }}">
-	{!! csrf_field() !!}
-	<section>
-		<label for="name">页面名称</label>
-		<input type="text" name="name" id="name">
-		@if ($errors->has('name'))
-			<strong>{{ $errors->first('name') }}</strong>
-		@endif
-	</section>
-	<section>
-		<label for="alias">别名</label>
-		<input type="text" name="alias" id="alias">
-		@if ($errors->has('alias'))
-			<strong>{{ $errors->first('alias') }}</strong>
-		@endif
-	</section>
-    @if(count($pagess) > 0)
-	<section>
-		<label for="parent">父页面</label>
-        <select name="parent" id="parent">
-            <option value=0>无</option>
+        @if(count($pagess) > 0)
+        <table>
+            <thead>
+                <th> 页面名称 </th>
+                <th> 别名 </th>
+                <th> 操作 </th>
+            </thead>
             @foreach ( $pagess as $page )
-            <option value="{{$page->id}}">{{$page->name}}</option>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="/admin/pageinfo/{{$page->id}}">{{ $page->name }}</a>
+                        @if ( !App\Category::where('parent_id',$page->id)->get()->isEmpty() )
+                            <table>
+                                @foreach ( $pages as $page_ )
+                                @if ($page_->parent_id === $page->id)
+                                <thead>
+                                    <th> 名称 </th>
+                                    <th> 别名 </th>
+                                    <th> 操作 </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> {{$page_->name}} </td>
+                                        <td>{{$page_->alias}}</td>
+                                        <td>
+                                            <a href="/admin/page/edit/{{$page_->id}}">编辑</a>
+                                            <a class="del" href="/admin/page/delete/{{$page_->id}}">删除</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                @endif
+                                @endforeach
+                            </table>
+                        @endif
+                    </td>
+                    <td>{{ $page->alias }}</td>
+                    <td>
+                        <a href="/admin/page/edit/{{$page->id}}">编辑</a>
+                        <a class="del" href="/admin/page/delete/{{$page->id}}">删除</a>
+                    </td>
+                </tr>
+            </tbody>
             @endforeach
-        </select>
-	</section>
-    @endif
+        </table>
+        @endif
 
-	<input type="submit" value="添加">
-</form>
+            <form id="page" method="POST" action="{{ url('/admin/page/create') }}">
+                {!! csrf_field() !!}
+                <section>
+                    <label for="name">页面名称</label>
+                    <input type="text" name="name" id="name">
+                    @if ($errors->has('name'))
+                    <strong>{{ $errors->first('name') }}</strong>
+                    @endif
+                </section>
+                <section>
+                    <label for="alias">别名</label>
+                    <input type="text" name="alias" id="alias">
+                    @if ($errors->has('alias'))
+                    <strong>{{ $errors->first('alias') }}</strong>
+                    @endif
+                </section>
+                @if(count($pagess) > 0)
+                <section>
+                    <label for="parent">父页面</label>
+                    <select name="parent" id="parent">
+                        <option value=0>无</option>
+                        @foreach ( $pagess as $page )
+                        <option value="{{$page->id}}">{{$page->name}}</option>
+                        @endforeach
+                    </select>
+                </section>
+                @endif
 
+                <input type="submit" value="添加">
+            </form>
+        </div>
+</div>
 @endsection
 
 @section('script')

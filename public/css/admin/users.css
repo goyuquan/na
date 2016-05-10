@@ -18,10 +18,6 @@
         padding: 0.6rem 1rem; }
         .content_wrap table tr td:first-child {
           color: #337ab7; }
-        .content_wrap table tr td:nth-child(2) {
-          width: 8rem; }
-        .content_wrap table tr td:last-child {
-          width: 10rem; }
   .content_wrap ul.pagination {
     text-align: center;
     margin-top: 2rem; }
@@ -61,10 +57,6 @@
         padding: 0.6rem 1rem; }
         table tr td:first-child {
           color: #337ab7; }
-        table tr td:nth-child(2) {
-          width: 8rem; }
-        table tr td:last-child {
-          width: 10rem; }
 
   ul.pagination {
     text-align: center;

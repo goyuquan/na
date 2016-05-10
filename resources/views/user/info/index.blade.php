@@ -8,14 +8,6 @@
 <link rel="stylesheet" href="{{url('/css/user/info_list.css')}}" />
 @endsection
 
-@section('style')
-<style media="screen">
-    form {
-        display: inline-block;
-    }
-</style>
-@endsection
-
 @section('content')
 
 <div class="breadcrumb container">
