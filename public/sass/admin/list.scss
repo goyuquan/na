@@ -1,0 +1,84 @@
+$color:#01579B;
+$hover_color:#a94442;
+
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    * html & { height: 1px }
+}
+@mixin wrap {
+    @include clearfix;
+    margin-top: 1rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+label:first-child {
+    width:6rem!important;
+}
+input[type="submit"] {
+    display: inline-block!important;
+    padding: 0.2rem 1rem!important;
+    margin: 0 0 0 1rem!important;
+}
+table {
+    margin-top: 2rem!important;
+}
+.content_wrap form section label {
+    margin-right: 0!important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .content_wrap {
+        & > ul {
+            box-sizing: border-box;
+            & > li {
+                border: 1px solid #ccc;
+                border-radius: 0.3rem;
+                padding: 0.5rem;
+                & > span {
+                    display: inline-block;
+                    min-width: 10rem;
+                    font-size: 1.2rem;
+                }
+                a {
+                    font-size: 1.2rem;
+                }
+                &:nth-child(even) {
+                    background: #eee;
+                }
+                ul {
+                    margin-left: 4rem;
+                    margin-top: 1rem;
+                    li {
+                        border: 1px solid #aaa;
+                        border-radius: 0.3rem;
+                        padding: 0.5rem;
+                        & > span {
+                            display: inline-block;
+                            width: 10rem;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+@media only screen and (max-width: 767px) {
+}

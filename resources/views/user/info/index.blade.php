@@ -22,18 +22,29 @@
     @include('user.layouts.sidebar')
 
     <div class="content_wrap">
+
+        <a class="add" href="{{url('/user/info/create_category')}}">发布新信息</a>
+         <span> 用户信息每天可以刷新一次置顶 </span>
+
+         <hr>
         @if(count($infos) > 0)
 
         <table>
             <thead>
                 <th> 标题 </th>
                 <th> 时间 </th>
+                @if($user->role > 4)
+                    <th> 用户 </th>
+                @endif
                 <th> 管理 </th>
             </thead>
             @foreach($infos as $info)
             <tr>
                 <td>{{$info->title}}</td>
                 <td>{{ substr($info->publish_at,0,10) }}</td>
+                @if($user->role > 4)
+                <td> {{$info->user->name}} </td>
+                @endif
                 <td>&nbsp;
                     @if( time() - strtotime($info->publish_at) > (60*60*24))
                         <a href="/user/info/refresh/{{$info->id}}">刷新</a>

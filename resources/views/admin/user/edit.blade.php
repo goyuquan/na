@@ -5,7 +5,7 @@
 @section('keywords','title_keywords')
 
 @section('style')
-<link rel="stylesheet" href="/css/admin/edit.css">
+<link rel="stylesheet" href="/css/admin/form.css">
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/user/index')}}">用户中心</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>信息发布</span>
+    <span>修改用户</span>
 </div>
 
 <div class="main_wrap container">
@@ -81,6 +81,7 @@
 
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
+<script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){

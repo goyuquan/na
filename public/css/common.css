@@ -76,6 +76,8 @@ p {
           color: #333;
           font-size: 1.2em;
           margin-left: 0.5em; }
+          .header .top_bar .top_nav a:hover {
+            color: #a94442; }
     .header .head {
       width: 100%; }
       .header .head .container {
@@ -262,6 +264,8 @@ p {
           color: #333;
           font-size: 1.2em;
           margin-left: 0.5em; }
+          .header .top_bar .top_nav a:hover {
+            color: #a94442; }
     .header .head {
       width: 100%; }
       .header .head .container {

@@ -5,7 +5,7 @@
 @section('keywords','title_keywords')
 
 @section('style')
-<link rel="stylesheet" href="{{url('/css/admin/users.css')}}" />
+<link rel="stylesheet" href="{{url('/css/admin/table.css')}}" />
 @endsection
 
 @section('content')

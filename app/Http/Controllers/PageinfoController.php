@@ -18,7 +18,7 @@ class PageinfoController extends Controller
     public function index($id)
     {
         $page = Page::find($id);
-        $pageinfos = $page->info;
+        $pageinfos = $page->info()->paginate(20);
 
         return view('admin.pageinfo.index',[
             'page' => $page,
@@ -69,9 +69,15 @@ class PageinfoController extends Controller
         $pageinfo = Info::find($id);
         $page = $pageinfo->page;
         if(View::exists('admin.pageinfo.edit.'.$page->alias)){
-            return view('admin.pageinfo.edit.'.$page->alias,[ 'pageinfo' => $pageinfo ]);
+            return view('admin.pageinfo.edit.'.$page->alias,[
+                'pageinfo' => $pageinfo ,
+                'page' => $page
+            ]);
         } else {
-            return view('admin.pageinfo.edit.common',[ 'pageinfo' => $pageinfo ]);
+            return view('admin.pageinfo.edit.common',[
+                'pageinfo' => $pageinfo,
+                'page' => $page
+             ]);
         }
     }
 

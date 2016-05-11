@@ -19,20 +19,34 @@ class UserCenterController extends Controller
 
     public function index()
     {
-        $infos = Auth::user()->info()->orderBy('publish_at', 'desc')
-        ->paginate(20);
+        $user = Auth::user();
+        if($user->role > 4){
+            $infos = Info::orderBy('publish_at', 'desc')
+            ->paginate(20);
+        } else {
+            $infos = $user->info()->orderBy('publish_at', 'desc')
+            ->paginate(20);
+        }
         return view('user.info.index',[
-            'infos' => $infos
+            'infos' => $infos,
+            'user' => $user
         ]);
         return view('user.index');
     }
 
     public function infos()
     {
-        $infos = Auth::user()->info()->orderBy('publish_at', 'desc')
-        ->paginate(20);
+        $user = Auth::user();
+        if($user->role > 4){
+            $infos = Info::orderBy('publish_at', 'desc')
+            ->paginate(20);
+        } else {
+            $infos = $user->info()->orderBy('publish_at', 'desc')
+            ->paginate(20);
+        }
         return view('user.info.index',[
-            'infos' => $infos
+            'infos' => $infos,
+            'user' => $user
         ]);
     }
 
@@ -91,7 +105,8 @@ class UserCenterController extends Controller
     public function edit($id)
     {
         $info = Info::find($id);
-        if (Gate::allows('info_authorize', $info)) {
+        $user = Auth::user();
+        if (Gate::allows('info_authorize', $info) || $user->role > 4) {
             $categoriess = Category::where('parent_id',0)->get();
             $categories = Category::where('parent_id','>',0)->get();
             $category = $info->category;
@@ -162,7 +177,7 @@ class UserCenterController extends Controller
             $info->update();
 
             Session()->flash('info', 'info update was successful!');
-            
+
             return redirect('/user/infos');
         } else {
             return view('common.info_authorize',['info' => "无权编辑!"]);

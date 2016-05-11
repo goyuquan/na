@@ -1,4 +1,13 @@
 @media only screen and (min-width: 1200px) {
+  .content_wrap .add {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #3378af; }
+    .content_wrap .add:hover {
+      background: #a94442; }
   .content_wrap table {
     width: 100%;
     box-sizing: border-box; }
@@ -18,8 +27,6 @@
         padding: 0.6rem 1rem; }
         .content_wrap table tr td:first-child {
           color: #337ab7; }
-        .content_wrap table tr td:nth-child(2) {
-          width: 8rem; }
         .content_wrap table tr td:last-child {
           width: 10rem; }
   .content_wrap ul.pagination {
@@ -42,6 +49,16 @@
         padding: 0.2rem 0.6rem;
         font-size: 0.9rem; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .add {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #3378af; }
+    .add:hover {
+      background: #a94442; }
+
   table {
     width: 100%;
     box-sizing: border-box; }
@@ -86,6 +103,17 @@
         padding: 0.2rem 0.6rem;
         font-size: 0.9rem; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .add {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #3378af; }
+    .add:hover {
+      background: #a94442;
+      color: #fff; }
+
   table {
     width: 100%;
     box-sizing: border-box; }
@@ -126,6 +154,17 @@
         padding: 0.2rem 0.6rem;
         font-size: 0.9rem; } }
 @media only screen and (max-width: 767px) {
+  .add {
+    display: inline-block;
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #3378af; }
+    .add:hover {
+      background: #a94442;
+      color: #fff; }
+
   table {
     width: 100%;
     box-sizing: border-box; }

@@ -9,13 +9,12 @@
         <div class="container">
             <div class="top_nav">
                 <a href="{{url('/')}}">网站首页</a>
-                <a href="{{url('/categories')}}">分类目录</a>
-                <a href="{{url('/user/info/create_category')}}">创建</a>
+                <a href="{{url('/user/info/create_category')}}">免费发布信息</a>
                 @if (Auth::guest())
                 <a href="{{ url('/login') }}">登陆</a>
                 <a href="{{ url('/register') }}">注册</a>
                 @else
-                <a href="/user/index"> {{ Auth::user()->name }} </a>
+                <a href="/user/index"> {{ Auth::user()->name }} - 用户中心</a>
                 <a href="{{ url('/logout') }}" class="item"><i class="fa fa-btn fa-sign-out"></i>退出</a>
                 @endif
             </div>

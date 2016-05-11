@@ -1,35 +1,68 @@
 @extends('admin.layouts.admin')
 
+@section('title','title_description')
+@section('description','title_description')
+@section('keywords','title_keywords')
+
+@section('style')
+<link rel="stylesheet" href="{{url('/css/admin/form.css')}}" />
+<style media="screen">
+    h1 {
+        text-align: center;
+    }
+    .add:hover {
+        color: #fff;
+        background: #a94442;
+    }
+</style>
+@endsection
 
 @section('content')
-<h1>页面 > 记录 > 新建  </h1>
-<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
-	{!! csrf_field() !!}
-	<section>
-		<label for="title">单位名称</label>
-		<input type="text" name="title" id="title">
-	</section>
-	<section>
-		<label for="tele">电话号码</label>
-		<input type="text" name="tele" id="text">
-	</section>
-	<section>
-		<label for="text">内容</label>
-		<input type="text" name="text" id="text">
-	</section>
-	<section>
-		<label for="publish_at">发布时间</label>
-		<input type="date" name="publish_at" id="publish_at">
-	</section>
+
+<div class="breadcrumb container">
+    <a href="{{url('/admin/index')}}">首页</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <a href="{{url('/admin/pages')}}">页面管理</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <a href="{{url('/admin/pageinfo/'.$page->id)}}">{{$page->name}}</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>内容添加</span>
+</div>
+
+<div class="main_wrap container">
+	@include('user.layouts.sidebar')
+
+	<div class="content_wrap">
+		<h1>{{$page->name}}</h1>
+		<hr>
+		<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
+			{!! csrf_field() !!}
+			<section>
+				<label for="title">单位名称</label>
+				<input type="text" name="title" id="title">
+			</section>
+			<section>
+				<label for="tele">电话号码</label>
+				<input type="text" name="tele" id="text">
+			</section>
+			<section>
+				<label for="text">内容</label>
+				<input type="text" name="text" id="text">
+			</section>
+			<section>
+				<label for="publish_at">发布时间</label>
+				<input type="date" name="publish_at" id="publish_at">
+			</section>
 
 
-	<input type="submit" value="提交">
-</form>
-
+			<input type="submit" value="提交">
+		</form>
+	</div>
+</div>
 @endsection
 
 @section('script')
-<script src="http://cdn.bootcss.com/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+<script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 

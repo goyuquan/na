@@ -24,7 +24,18 @@ $hover_color:#a94442;
 @media only screen and (min-width: 1200px) {
 
     .content_wrap {
+        .add {
+            display: inline-block;
+            padding: 0.5em 1em;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 0.3rem;
+            background: #3378af;
 
+            &:hover {
+                background: $hover_color;
+            }
+        }
         table {
             width: 100%;
             box-sizing: border-box;
@@ -52,7 +63,6 @@ $hover_color:#a94442;
                         color: #337ab7;
                     }
                     &:nth-child(2) {
-                        width: 8rem;
                     }
                     &:last-child {
                         width: 10rem;
@@ -90,10 +100,23 @@ $hover_color:#a94442;
             }
         }
     }
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
+    .add {
+        display: inline-block;
+        padding: 0.5em 1em;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af;
+
+        &:hover {
+            background: $hover_color;
+        }
+    }
     table {
         width: 100%;
         box-sizing: border-box;
@@ -162,6 +185,20 @@ $hover_color:#a94442;
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
+    .add {
+        display: inline-block;
+        padding: 0.5em 1em;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af;
+
+        &:hover {
+            background: $hover_color;
+            color: #fff;
+        }
+    }
+
     table {
         width: 100%;
         box-sizing: border-box;
@@ -223,6 +260,20 @@ $hover_color:#a94442;
 }
 
 @media only screen and (max-width: 767px) {
+
+    .add {
+        display: inline-block;
+        padding: 0.5em 1em;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af;
+
+        &:hover {
+            background: $hover_color;
+            color: #fff;
+        }
+    }
 
     table {
         width: 100%;

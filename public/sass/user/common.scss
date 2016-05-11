@@ -70,6 +70,10 @@ p{word-wrap:break-word}
                     color: #333;
                     font-size: 1.2em;
                     margin-left: 0.5em;
+
+                    &:hover {
+                        color: $hover_color;
+                    }
                 }
             }
         }
