@@ -49,7 +49,7 @@ Route::group(['middleware' => ['web']], function () {
 
              Route::get('/admin/articles', 'ArticleController@articles');
              Route::get('/admin/article/create', 'ArticleController@create');
-             Route::post('/admin/article/create', 'ArticleController@_create');
+             Route::post('/admin/article/create', 'ArticleController@store');
              Route::get('/admin/article/edit/{page}', 'ArticleController@edit');
              Route::post('/admin/article/update/{page}', 'ArticleController@update');
              Route::get('/admin/article/delete/{id}', 'ArticleController@destroy');

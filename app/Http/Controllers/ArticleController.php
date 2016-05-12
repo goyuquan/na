@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\ArticleRepository;
 
@@ -42,27 +42,24 @@ class ArticleController extends Controller
     {
         $messages = [
             'title.required' => '标题不能为空',
-            'title.unique' => '标题不能重复',
             'title.max' => '标题不能大于:max位',
-            'title.min' => '标题不能小于:min位',
-            'content.required' => '内容不能为空',
-            'published_at.required' => '发布时间不能为空',
+            'title.min' => '标题不能小于:min位'
         ];
         $this->validate($request, [
-            'title' => 'required|min:s|max:255',
-            'content' => 'required',
-            'published_at' => 'required',
+            'title' => 'required|min:2|max:255'
         ],$messages);
 
-        $request->user()->article()->create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'published_at' => $request->published_at,
-        ]);
+        $article = new Article;
+
+        $article->title = $request->title;
+        $article->text = $request->text;
+        $article->publish_at = $request->publish_at;
+
+        $article->save();
 
         Session()->flash('status', 'Article create was successful!');
 
-        return redirect('/admin/articles/');
+        return redirect('/admin/articles');
     }
 
 
