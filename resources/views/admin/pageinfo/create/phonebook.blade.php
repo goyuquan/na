@@ -30,7 +30,6 @@
 </div>
 
 <div class="main_wrap container">
-	@include('user.layouts.sidebar')
 
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>

@@ -112,13 +112,7 @@ p{word-wrap:break-word}
         @include wrap;
         margin-top: 0.5rem!important;
 
-        .sidebar {
-            width:200px;
-            float: left;
-        }
-
         .content_wrap {
-            margin-left: 210px;
             padding-top: 2rem;
             padding-bottom: 2rem;
         }

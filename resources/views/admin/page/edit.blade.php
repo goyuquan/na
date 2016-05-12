@@ -24,7 +24,6 @@
 </div>
 
 <div class="main_wrap container">
-    @include('user.layouts.sidebar')
 
     <div class="content_wrap">
         <form id="page" method="POST" action="{{ url('/admin/page/update/'.$name->id) }}">

@@ -68,15 +68,18 @@ class PageinfoController extends Controller
     {
         $pageinfo = Info::find($id);
         $page = $pageinfo->page;
+        $content = json_decode($pageinfo->content);
         if(View::exists('admin.pageinfo.edit.'.$page->alias)){
             return view('admin.pageinfo.edit.'.$page->alias,[
                 'pageinfo' => $pageinfo ,
-                'page' => $page
+                'page' => $page,
+                'content' => $content
             ]);
         } else {
             return view('admin.pageinfo.edit.common',[
                 'pageinfo' => $pageinfo,
-                'page' => $page
+                'page' => $page,
+                'content' => $content
              ]);
         }
     }

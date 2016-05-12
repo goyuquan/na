@@ -28,7 +28,6 @@
 </div>
 
 <div class="main_wrap container">
-	@include('user.layouts.sidebar')
 
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>
@@ -37,15 +36,19 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" id="title" value="{{$pageinfo->title}}">
+				<input type="text" name="title" value="{{$pageinfo->title}}">
 			</section>
 			<section>
 				<label for="text">正文</label>
-				<input type="text" name="text" id="text" value="{{$pageinfo->text}}">
+				<input type="text" name="text" value="{{$pageinfo->text}}">
+			</section>
+			<section>
+				<label for="muqian">目前</label>
+				<input type="text" name="muqian" value="{{$content->muqian}}">
 			</section>
 			<section>
 				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at" id="publish_at" value="{{ substr($pageinfo->publish_at,0,10) }}">
+				<input type="date" name="publish_at" value="{{ substr($pageinfo->publish_at,0,10) }}">
 			</section>
 
 

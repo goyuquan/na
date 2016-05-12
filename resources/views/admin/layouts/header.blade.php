@@ -13,6 +13,7 @@
                 <a href="{{url('/admin/users/')}}">用户</a>
                 <a href="{{url('/admin/categories')}}">分类</a>
                 <a href="{{url('/admin/pages')}}">页面</a>
+                <a href="{{url('/admin/articles')}}">文章</a>
 
                 @if (Auth::guest())
                 <a href="{{ url('/login') }}">登陆</a>
@@ -35,6 +36,7 @@
                 <li><a href="{{url('/admin/users/')}}">用户</a></li>
                 <li><a href="{{url('/admin/categories')}}">分类</a></li>
                 <li><a href="{{url('/admin/pages')}}">页面</a></li>
+                <li><a href="{{url('/admin/articles')}}">文章</a></li>
             </ul>
         </div>
     </div>

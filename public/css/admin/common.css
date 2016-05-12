@@ -130,11 +130,7 @@ p {
       visibility: hidden; }
     * html .main_wrap {
       height: 1px; }
-    .main_wrap .sidebar {
-      width: 200px;
-      float: left; }
     .main_wrap .content_wrap {
-      margin-left: 210px;
       padding-top: 2rem;
       padding-bottom: 2rem; }
 

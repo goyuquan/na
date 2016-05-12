@@ -19,8 +19,7 @@
 </div>
 
 <div class="main_wrap container">
-	@include('user.layouts.sidebar')
-	
+
 	<div class="content_wrap">
 		<div class="main_wrap">
 			main

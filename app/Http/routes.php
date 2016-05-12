@@ -14,6 +14,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/categories', 'InfoController@index');
     Route::get('/info/{id}', 'InfoController@info');
+    Route::get('/articles', 'ArticleController@index');
+    Route::get('/article/{id}', 'ArticleController@article');
     Route::get('/infos/category/{category}', 'InfoController@category');
 
 
@@ -44,6 +46,13 @@ Route::group(['middleware' => ['web']], function () {
              Route::get('/admin/pageinfo/edit/{page}', 'PageinfoController@edit');
              Route::post('/admin/pageinfo/update/{page}', 'PageinfoController@update');
              Route::get('/admin/pageinfo/delete/{id}', 'PageinfoController@destroy');
+
+             Route::get('/admin/articles', 'ArticleController@articles');
+             Route::get('/admin/article/create', 'ArticleController@create');
+             Route::post('/admin/article/create', 'ArticleController@_create');
+             Route::get('/admin/article/edit/{page}', 'ArticleController@edit');
+             Route::post('/admin/article/update/{page}', 'ArticleController@update');
+             Route::get('/admin/article/delete/{id}', 'ArticleController@destroy');
 
              Route::group(['middleware' => 'admin'], function () {
 
