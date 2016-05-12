@@ -6,6 +6,11 @@
 
 @section('style')
 <link rel="stylesheet" href="/css/admin/form.css">
+<style media="screen">
+    label:first-child {
+        width: auto!important;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -32,17 +37,16 @@
                 @endif
             </section>
             <section>
-                <label for="text">正文</label>
-                <textarea type="text" name="text" ></textarea>
-                @if ($errors->has('text'))
-                <label>{{ $errors->first('text') }}</label>
-                @endif
-            </section>
-            <section>
                 <label for="publish_at">发布时间</label>
                 <input type="date" name="publish_at" id="publish_at">
                 @if ($errors->has('publish_at'))
                 <label>{{ $errors->first('publish_at') }}</label>
+                @endif
+            </section>
+            <section>
+                <textarea id="text" name="text" ></textarea>
+                @if ($errors->has('text'))
+                <label>{{ $errors->first('text') }}</label>
                 @endif
             </section>
 
@@ -55,7 +59,18 @@
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
+<script src="{{url('/js/tinymce.min.js')}}"></script>
 <script>
+
+tinymce.init({
+  selector: '#text',
+  a_plugin_option: true,
+  a_configuration_option: 400,
+  height: 500,
+  plugins : 'advlist autolink link image lists charmap print preview',
+  toolbar: 'undo, redo, selectall, removeformat'
+});
+
 $(function(){
 
     var $creat_form = $("#create").validate({//表单验证
@@ -63,11 +78,8 @@ $(function(){
 		rules : {
 			title : {
 				required : true,
-				minlength : 5,
+				minlength : 2,
 				maxlength : 200
-			},
-			category : {
-				required : true,
 			}
 		},
 
@@ -75,17 +87,9 @@ $(function(){
 		messages : {
 			title : {
 				required : '请输入标题',
-                minlength : '不能小于5位',
+                minlength : '不能小于2位',
                 maxlength : '不能大于200位',
-			},
-			category : {
-				required : '请选择分类'
 			}
-		},
-
-		// Do not change code below
-		errorPlacement : function(error, element) {
-			error.insertAfter(element.parent());
 		}
 	});
 
