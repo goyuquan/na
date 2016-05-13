@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','title_description')
+@section('title',$category->name.'_'.$parent_category->name.'_宁安信息网')
 @section('description','title_description')
 @section('keywords','title_keywords')
 

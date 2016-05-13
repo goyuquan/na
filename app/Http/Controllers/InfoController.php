@@ -14,7 +14,6 @@ class InfoController extends Controller
 
     public function index()
     {
-
         $categories = Category::where('parent_id',0)->get(['id','name']);
 
         for ($i=0; $i < count($categories) ; $i++) {
@@ -34,6 +33,7 @@ class InfoController extends Controller
     {
         $categories = Category::where('parent_id',0)->get(['id','name']);
         $category_data = Category::find($category);
+        $parent_category = Category::find($category_data->parent_id);
         $folder = Category::find($category_data->parent_id);
         $infos = $category_data->info()
         ->orderBy('publish_at', 'desc')
@@ -45,20 +45,22 @@ class InfoController extends Controller
                 $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
             }
         }
-
+// return dd($parent_category->name);
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
                 'type' => $type,
                 'infos' => $infos,
                 'category' => $category_data,
-                'categories' => $categories
+                'categories' => $categories,
+                'parent_category' => $parent_category
             ]);
         } else {
             return view('info.categories.common',[
                 'type' => $type,
                 'infos' => $infos,
                 'category' => $category_data,
-                'categories' => $categories
+                'categories' => $categories,
+                'parent_category' => $parent_category
             ]);
         }
     }
