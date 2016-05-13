@@ -257,16 +257,14 @@
     <div class="sidebar">
         @include('includes.home_sidebar_pic_ad')
 
-        <h2 class="news_list"> <a href="#"> 首页新闻列表 </a> </h2>
+        <h2 class="news_list"> <a href="{{url('/articles')}}"> 首页新闻列表 </a> </h2>
+        @if(count($articles) > 0)
         <ul>
-            <li><a href="#">非法民不有压下夺有的</a></li>
-            <li><a href="#">oordinate representations</a></li>
-            <li><a href="#">oordinate reprntations</a></li>
-            <li><a href="#">oordinate representations</a></li>
-            <li><a href="#">oordinate rtations</a></li>
-            <li><a href="#">oordinate represent病症ations</a></li>
+            @foreach( $articles as $article )
+            <li><a href="{{url('/article/'.$article->id)}}">{{ $article->title }}</li>
+            @endforeach
         </ul>
-
+        @endif
     </div>
 </div>
 

@@ -6,6 +6,7 @@ use App\Info;
 use App\Img;
 use App\Category;
 use Image;
+use App\Article;
 use File;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -19,6 +20,9 @@ class CommonController extends Controller
         $categories = Category::where('parent_id',0)->get(['id','name']);
         $infos = Info::where('page_id',0)->take(20)->get();
 
+        $articles = Article::where('publish_at','<',date("Y-m-d h:i:s"))
+        ->orderBy('id', 'desc')->paginate(20);
+
         for ($i=0; $i < count($categories) ; $i++) {
             $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id','name']);
             if ( !$data->isEmpty() ){
@@ -29,7 +33,8 @@ class CommonController extends Controller
         return view('home',[
             'categories' => $categories,
             'type' => $type,
-            'infos' => $infos
+            'infos' => $infos,
+            'articles' => $articles
         ]);
     }
 
