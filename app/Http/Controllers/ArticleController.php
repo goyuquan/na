@@ -79,17 +79,17 @@ class ArticleController extends Controller
             'title.required' => '标题不能为空',
             'title.max' => '标题不能小于:max位',
             'title.min' => '标题不能小于:min位',
-            'content.required' => '内容不能为空',
+            'text.required' => '内容不能为空',
         ];
         $this->validate($request, [
             'title' => 'required|min:2|max:255',
-            'content' => 'required',
+            'text' => 'required',
         ],$messages);
 
         $article = Article::find($id);
         $article->title = $request->title;
-        $article->content = $request->content;
-        $article->published_at = $request->published_at;
+        $article->text = $request->text;
+        $article->publish_at = $request->publish_at;
         $article->save();
 
         Session()->flash('status', 'Article update was successful!');

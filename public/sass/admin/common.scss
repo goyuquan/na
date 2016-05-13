@@ -33,7 +33,18 @@ p{word-wrap:break-word}
 
 .breadcrumb i {margin:0 0.5rem}
 .breadcrumb {margin:0.5rem auto!important}
+.add {
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    background: #3378af;
 
+    &:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+}
 
 @media only screen and (min-width: 1200px) {
 

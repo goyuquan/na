@@ -19,6 +19,9 @@
 </div>
 
 <div class="main_wrap container">
+    <br>
+    <a style="margin:2rem;" class="add" href="{{url('/admin/article/create')}}">添加文章</a>
+    <br>
     <div class="content_wrap">
         @if (count($articles) > 0)
                 <table>
@@ -38,8 +41,8 @@
                             <td><a href="/article/{{ $article->id }}"> {{str_limit($article->title,50)}} </a></td>
                             <td>{{ substr($article->published_at,1,10) }}</td>
                             <td>
-                                <a href="/admin/article/{{ $article->id }}/edit">编辑 </a>
-                                <a href="/admin/article/{{ $article->id }}/destroy" class="del">删除 </a>
+                                <a href="/admin/article/edit/{{ $article->id }}">编辑 </a>
+                                <a href="/admin/article/destroy/{{ $article->id }}" class="del">删除 </a>
                             </td>
                         </tr>
                         @endforeach
