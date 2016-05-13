@@ -12,6 +12,7 @@
     }
 </style>
 @endsection
+<?php $dashboard_="";$user_="";$_category_="";$page_="";$article_="active" ?>
 
 @section('content')
 
@@ -38,13 +39,13 @@
             </section>
             <section>
                 <label for="publish_at">发布时间</label>
-                <input type="date" name="publish_at" id="publish_at" value="{{substr($article->publish_at,0,10)}}">
+                <input type="date" name="publish_at" value="{{substr($article->publish_at,0,10)}}">
                 @if ($errors->has('publish_at'))
                 <label>{{ $errors->first('publish_at') }}</label>
                 @endif
             </section>
             <section>
-                <textarea id="text" name="text" >{{$article->text}}</textarea>
+                <textarea name="text" >{{$article->text}}</textarea>
                 @if ($errors->has('text'))
                 <label>{{ $errors->first('text') }}</label>
                 @endif

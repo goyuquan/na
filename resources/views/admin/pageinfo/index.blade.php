@@ -4,9 +4,14 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="";$user_="";$_category_="";$page_="active";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="{{url('/css/admin/table.css')}}" />
 <style media="screen">
+    .content_wrap table tr td:first-child {
+        color: #000;
+    }
     h1 {
         text-align: center;
     }

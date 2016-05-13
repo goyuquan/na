@@ -52,7 +52,7 @@ Route::group(['middleware' => ['web']], function () {
              Route::post('/admin/article/create', 'ArticleController@store');
              Route::get('/admin/article/edit/{page}', 'ArticleController@edit');
              Route::post('/admin/article/update/{page}', 'ArticleController@update');
-             Route::get('/admin/article/delete/{id}', 'ArticleController@destroy');
+             Route::get('/admin/article/destroy/{id}', 'ArticleController@destroy');
 
              Route::group(['middleware' => 'admin'], function () {
 

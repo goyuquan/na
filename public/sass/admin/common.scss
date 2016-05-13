@@ -45,7 +45,15 @@ p{word-wrap:break-word}
         text-decoration: underline;
     }
 }
-
+.head {
+    ul {
+        li {
+            .active {
+                color: #000;
+            }
+        }
+    }
+}
 @media only screen and (min-width: 1200px) {
 
     body{font:14px "Microsoft YaHei","宋体","Arial Narrow";}

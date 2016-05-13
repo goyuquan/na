@@ -4,6 +4,8 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="";$user_="";$_category_="";$page_="active";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="{{url('/css/admin/form.css')}}" />
 <style media="screen">
@@ -38,19 +40,19 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">单位名称</label>
-				<input type="text" name="title" id="title">
+				<input type="text" name="title">
 			</section>
 			<section>
 				<label for="tele">电话号码</label>
-				<input type="text" name="tele" id="text">
+				<input type="text" name="tele">
 			</section>
 			<section>
 				<label for="text">内容</label>
-				<input type="text" name="text" id="text">
+                <textarea name="text" rows="10" cols="50"></textarea>
 			</section>
 			<section>
 				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at" id="publish_at">
+				<input type="date" name="publish_at">
 			</section>
 
 

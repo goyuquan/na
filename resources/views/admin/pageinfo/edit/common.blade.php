@@ -4,6 +4,8 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="";$user_="";$_category_="";$page_="active";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="{{url('/css/admin/form.css')}}" />
 <style media="screen">
@@ -40,7 +42,7 @@
 			</section>
 			<section>
 				<label for="text">正文</label>
-				<input type="text" name="text" value="{{$pageinfo->text}}">
+                <textarea name="text" rows="10" cols="50">{{$pageinfo->text}}</textarea>
 			</section>
 			<section>
 				<label for="muqian">目前</label>

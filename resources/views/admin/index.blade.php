@@ -4,6 +4,8 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="active";$user_="";$_category_="";$page_="";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="{{url('/css/user/info_list.css')}}" />
 @endsection

@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="{{url('/css/admin/list.css')}}" />
 @endsection
 
+<?php $dashboard_="";$user_="";$_category_="active";$page_="";$article_="" ?>
+
 @section('content')
 
 <div class="breadcrumb container">

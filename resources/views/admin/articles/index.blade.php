@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="/css/admin/table.css">
 @endsection
 
-@section('content')
+<?php $dashboard_="";$user_="";$_category_="";$page_="";$article_="active" ?>
 
+@section('content')
 <div class="breadcrumb container">
     <a href="{{url('/admin/index')}}">后台首页</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>

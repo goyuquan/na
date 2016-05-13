@@ -4,6 +4,8 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="";$user_="";$_category_="";$page_="active";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="{{url('/css/admin/form.css')}}" />
 <style media="screen">
@@ -42,7 +44,7 @@
 			</section>
 			<section>
 				<label for="text">正文</label>
-				<input type="text" name="text" id="text">
+                <textarea name="text" rows="10" cols="50"></textarea>
 			</section>
 			<section>
 				<label for="publish_at">发布时间</label>

@@ -4,6 +4,8 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="";$user_="active";$_category_="";$page_="";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="/css/admin/form.css">
 @endsection

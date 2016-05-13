@@ -12,6 +12,7 @@
     }
 </style>
 @endsection
+<?php $dashboard_="";$user_="";$_category_="";$page_="";$article_="active" ?>
 
 @section('content')
 

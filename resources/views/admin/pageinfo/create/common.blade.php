@@ -4,6 +4,8 @@
 @section('description','title_description')
 @section('keywords','title_keywords')
 
+<?php $dashboard_="";$user_="";$_category_="";$page_="active";$article_="" ?>
+
 @section('style')
 <link rel="stylesheet" href="{{url('/css/admin/form.css')}}" />
 <style media="screen">
@@ -47,7 +49,7 @@
 			</section>
 			<section>
 				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at" id="publish_at">
+				<input type="date" name="publish_at">
 			</section>
 
 			<input type="submit" value="提交">
