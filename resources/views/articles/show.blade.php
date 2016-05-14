@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',$article->title)
+@section('title',$article->title.'_宁安新闻_宁安信息网')
 @section('description',$article->title)
 @section('keywords',$article->title)
 
@@ -12,7 +12,7 @@
 <div class="breadcrumb container">
     <a href="{{url('/')}}">首页</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="{{url('/articles')}}">新闻</a>
+    <a href="{{url('/articles')}}">宁安新闻</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$article->title}}</span>
     &nbsp;<button type="button" name="返回" onclick="history.go(-1)">返回</button>

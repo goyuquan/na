@@ -231,13 +231,13 @@
 <div class="latest_list container">
     <div class="content">
 
-        <h2><a href="{{url('/categories')}}">分类目录</a></h2>
+        <h2><a href="{{url('/categories')}}">信息分类目录</a></h2>
         @if(count($infos) > 0)
         <ul>
             @foreach($infos as $info)
             <li>
                 <span class="date">{{ substr($info->publish_at,0,10) }}</span>
-                <h4><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a></h4>
+                <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,30) }}</a></h4>
                 <span class="price">
                     <?php if(isset(json_decode($info->content)->price)){
                         echo "￥".json_decode($info->content)->price;
@@ -247,7 +247,7 @@
                     ?>
                 </span>
                 <span class="phone">{{ $info->user->phone }}</span>
-                <p> {{ $info->text }} </p>
+                <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach
         </ul>
@@ -257,7 +257,7 @@
     <div class="sidebar">
         @include('includes.home_sidebar_pic_ad')
 
-        <h2 class="news_list"> <a href="{{url('/articles')}}"> 首页新闻列表 </a> </h2>
+        <h2 class="news_list"> <a href="{{url('/articles')}}"> 宁安新闻 </a> </h2>
         @if(count($articles) > 0)
         <ul>
             @foreach( $articles as $article )

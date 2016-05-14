@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="breadcrumb container">
-    <a href="{{url('/')}}">首页</a>
+    <a href="{{url('/')}}">宁安信息网</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>分类目录</span>
 </div>

@@ -10,9 +10,9 @@
 
 @section('content')
 <div class="breadcrumb container">
-    <a href="{{url('/')}}">首页</a>
+    <a href="{{url('/')}}">宁安信息网</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="{{url('/categories')}}">全部类别</a>
+    <a href="{{url('/categories')}}">信息分类</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>{{$category->name}}</span>
     &nbsp;<button type="button" name="返回" onclick="history.go(-1)">返回</button>
@@ -37,7 +37,7 @@
             @foreach( $infos as $info )
             <li>
                 <span class="date">{{ substr($info->publish_at,0,10) }}</span>
-                <h4><a href="{{url('/info/'.$info->id)}}">{{ $info->title }}</a></h4>
+                <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,30) }}</a></h4>
                 <span class="price">
                     <?php if(isset(json_decode($info->content)->price)){
                         echo "￥".json_decode($info->content)->price;
@@ -47,7 +47,7 @@
                     ?>
                 </span>
                 <span class="phone">{{ $info->user->phone }}</span>
-                <p> {{ $info->text }} </p>
+                <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach
         </ul>
