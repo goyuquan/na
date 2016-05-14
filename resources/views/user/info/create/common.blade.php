@@ -96,7 +96,7 @@ $(function(){
 			title : {
 				required : true,
 				minlength : 4,
-				maxlength : 50
+				maxlength : 30
 			},
 			text : {
 				required : true,
@@ -109,7 +109,7 @@ $(function(){
 			title : {
 				required : '标题不能为空',
 				minlength : '标题最长不能小于4位',
-				maxlength : '标题最长不能大于50'
+				maxlength : '标题最长不能大于30'
 			},
 			text : {
 				required : '正文内容不能为空',

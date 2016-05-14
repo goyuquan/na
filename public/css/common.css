@@ -95,7 +95,13 @@ p {
         display: inline-block;
         width: 20%;
         float: left;
-        font-size: 1em; }
+        font-size: 1em;
+        text-align: center; }
+        .header .head a.logo span {
+          color: #999;
+          font-weight: bold; }
+        .header .head a.logo:hover span {
+          color: #a94442; }
       .header .head .search_wrap {
         display: inline-block;
         display: inline-block;
@@ -274,7 +280,13 @@ p {
         display: inline-block;
         width: 20%;
         float: left;
-        font-size: 1em; }
+        font-size: 1em;
+        text-align: center; }
+        .header .head a.logo span {
+          color: #999;
+          font-weight: bold; }
+        .header .head a.logo:hover span {
+          color: #a94442; }
       .header .head .search_wrap {
         display: inline-block;
         display: inline-block;
@@ -467,7 +479,13 @@ p {
       padding: 1rem 0;
       width: 100%;
       text-align: center;
-      font-size: 1em; }
+      font-size: 1em;
+      text-align: center; }
+      .header a.logo span {
+        color: #999;
+        font-weight: bold; }
+      .header a.logo:hover span {
+        color: #a94442; }
     .header .search_wrap {
       display: block;
       width: 100%;
@@ -652,7 +670,13 @@ p {
       padding: 1rem 0;
       width: 100%;
       text-align: center;
-      font-size: 1em; }
+      font-size: 1em;
+      text-align: center; }
+      .header a.logo span {
+        color: #999;
+        font-weight: bold; }
+      .header a.logo:hover span {
+        color: #a94442; }
 
   .search_wrap {
     display: block;

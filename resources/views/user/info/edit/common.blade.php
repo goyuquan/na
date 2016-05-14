@@ -160,8 +160,8 @@ $(function(){
 		rules : {
 			title : {
 				required : true,
-				minlength : 5,
-				maxlength : 50
+				minlength : 4,
+				maxlength : 30
 			},
             text : {
 				required : true,
@@ -172,8 +172,8 @@ $(function(){
 		messages : {
 			title : {
 				required : '标题不能为空',
-				minlength : '标题最长不能小于5',
-				maxlength : '标题最长不能大于50'
+				minlength : '标题最长不能小于4',
+				maxlength : '标题最长不能大于30'
 			},
             text : {
 				required : '内容不能为空',

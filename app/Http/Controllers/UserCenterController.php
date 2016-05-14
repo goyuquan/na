@@ -84,6 +84,19 @@ class UserCenterController extends Controller
 
     public function _create(Request $request)
     {
+        $messages = [
+            'title.required' => '标题不能为空',
+            'title.max' => '标题不能大于:max位',
+            'title.min' => '标题不能小于:min位',
+            'text.required' => '内容不能为空',
+            'text.max' => '内容不能大于:max位',
+            'text.min' => '内容不能小于:min位',
+        ];
+        $this->validate($request, [
+            'title' => 'required|min:4|max:30',
+            'text' => 'required|min:10|max:1000',
+        ],$messages);
+        
         $content = collect($request->input())->except(['_token', 'query_string','category_id','title','text','publish_at']);
         $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
 
@@ -153,7 +166,7 @@ class UserCenterController extends Controller
             'text.min' => '内容不能小于:min位',
         ];
         $this->validate($request, [
-            'title' => 'required|min:5|max:50',
+            'title' => 'required|min:4|max:30',
             'text' => 'required|min:10|max:1000',
         ],$messages);
 

@@ -24,7 +24,8 @@
     <div class="head">
         <div class="container">
             <a href="{{ url('/') }}" class="logo">
-                <img src="{{url('img/new-logo.gif')}}" />
+                <img src="{{url('img/ningan.png')}}" alt="宁安信息网"/>
+                <span>www.ning-an.com</span>
             </a>
 
             <div class="search_wrap">
