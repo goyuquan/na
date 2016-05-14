@@ -8,7 +8,7 @@
         </a>
         <div class="container">
             <div class="top_nav">
-                <a href="{{url('/')}}">网站首页</a>
+                <a href="{{url('/')}}">网站宁安信息网</a>
                 <a href="{{url('/user/info/create_category')}}">免费发布信息</a>
                 @if (Auth::guest())
                 <a href="{{ url('/login') }}">登陆</a>
@@ -26,7 +26,7 @@
                 <img src="{{url('img/new-logo.gif')}}" />
             </a>
             <ul>
-                <li><a href="{{url('/user/index')}}">用户中心首页</a></li>
+                <li><a href="{{url('/user/index')}}">用户中心宁安信息网</a></li>
                 <li><a href="{{url('/user/infos')}}">信息管理</a></li>
             </ul>
         </div>

@@ -11,7 +11,7 @@
 @section('content')
 
 <div class="breadcrumb container">
-    <a href="{{url('/user/index')}}">首页</a>
+    <a href="{{url('/user/index')}}">宁安信息网</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/user/index')}}">用户中心</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>

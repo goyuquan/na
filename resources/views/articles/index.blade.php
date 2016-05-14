@@ -10,23 +10,23 @@
 
 @section('content')
 <div class="breadcrumb container">
-    <a href="{{url('/')}}">首页</a>
+    <a href="{{url('/')}}">宁安信息网</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>新闻</span>
+    <span>宁安新闻</span>
     &nbsp;<button type="button" name="返回" onclick="history.go(-1)">返回</button>
 </div>
 
 <div class="main_wrap container">
 
     <div class="category">
-        <h3>分类菜单</h3>
+        <h3>分类信息</h3>
 
         @include('info.categories.sidebar_catelist')
 
     </div>
     <div class="content">
         <div class="headbar">
-            headbar
+            宁安新闻
         </div>
 
         @if(count($articles) > 0)
@@ -34,7 +34,7 @@
             @foreach( $articles as $article )
             <li>
                 <span class="date">{{ substr($article->publish_at,0,10) }}</span>
-                <h4><a href="{{url('/article/'.$article->id)}}">{{ $article->title }}</a></h4>
+                <h4><a href="{{url('/article/'.$article->id)}}">{{ str_limit($article->title,30) }}</a></h4>
             </li>
             @endforeach
         </ul>

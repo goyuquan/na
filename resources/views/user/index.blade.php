@@ -5,7 +5,7 @@
 @section('keywords','title_keywords')
 
 @section('content')
-<h1>用户首页</h1>
+<h1>用户宁安信息网</h1>
 <ul>
     <li><a href="/user/infos">发布的内容</a></li>
 </ul>

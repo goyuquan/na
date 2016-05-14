@@ -10,9 +10,9 @@
 
 @section('content')
 <div class="breadcrumb container">
-    <a href="{{url('/')}}">首页</a>
+    <a href="{{url('/')}}">宁安信息网</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="{{url('/categories')}}">全部类别</a>
+    <a href="{{url('/categories')}}">分类信息</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/infos/category/'.$category->id)}}">{{$category->name}}</a>
     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -29,7 +29,7 @@
         <div class="sub_info">
             <div class="info_id">信息ID:&nbsp;<span>{{ $info->id }}</span></div>
             <span>发布日期:&nbsp;{{ substr($info->publish_at,0,10) }}</span>
-            <span class="info_category">信息分类:&nbsp;<a href="{{url('/infos/category/'.$info->category_id)}}">{{$info->category->name}}</a></span>
+            <span class="info_category">分类信息:&nbsp;<a href="{{url('/infos/category/'.$info->category_id)}}">{{$info->category->name}}</a></span>
         </div>
         <div class="text_wrap">
             <div class="text_ad">

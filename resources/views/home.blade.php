@@ -12,7 +12,7 @@
 
 <div class="services container">
     <div class="head">
-        <h2>Sell or Advertise anything using</h2>
+        <h2>宁安本地服务信息</h2>
     </div>
     <ul class="list">
         <li>
@@ -93,7 +93,7 @@
 
 <div class="category container">
     <div class="head">
-        <h2>Sell or Advertise anything using</h2>
+        <h2><a href="{{url('/categories')}}">宁安分类信息目录</a></h2>
     </div>
     <div class="column">
 
@@ -227,11 +227,10 @@
     </div>
 </div>
 
-<h2 class="latest_title">The latest things 最新内容</h2>
+<h2 class="latest_title">宁安最新信息</h2>
 <div class="latest_list container">
     <div class="content">
 
-        <h2><a href="{{url('/categories')}}">信息分类目录</a></h2>
         @if(count($infos) > 0)
         <ul>
             @foreach($infos as $info)
@@ -261,7 +260,7 @@
         @if(count($articles) > 0)
         <ul>
             @foreach( $articles as $article )
-            <li><a href="{{url('/article/'.$article->id)}}">{{ $article->title }}</li>
+            <li><a href="{{url('/article/'.$article->id)}}">{{ str_limit($article->title,16) }}</li>
             @endforeach
         </ul>
         @endif

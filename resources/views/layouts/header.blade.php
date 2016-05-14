@@ -29,12 +29,6 @@
             <div class="search_wrap">
                 <form id="search" method="POST" action="{{ url('/search') }}">
                     {!! csrf_field() !!}
-                    <div class="search_category">
-                        <select name="search_category">
-                            <option>类别一</option>
-                            <option>类别一别一</option>
-                        </select>
-                    </div>
                     <div class="key_word">
                         <input type="text" name="word" placeholder="请输入搜索关键词">
                         <button type="submit" class="submit"> <i class="fa fa-search"></i>&nbsp; </button>
@@ -43,7 +37,7 @@
                         <button type="submit">搜索</button>
                     </div>
                     <div class="post_bt">
-                        <a href="{{url('/user/info/create_category')}}">free post</a>
+                        <a href="{{url('/user/info/create_category')}}">免费发布信息</a>
                     </div>
                 </form>
             </div>
