@@ -8,6 +8,7 @@
         </a>
         <div class="container">
             <div class="top_nav">
+                <a href="{{url('/')}}">首页</a>
                 <a href="{{url('/categories')}}">分类目录</a>
                 <a href="{{url('/user/info/create_category')}}">免费发布信息</a>
                 @if (Auth::guest())

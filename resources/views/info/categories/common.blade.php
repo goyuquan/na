@@ -46,7 +46,7 @@
                     }
                     ?>
                 </span>
-                <span class="phone">{{ $info->user->phone }}</span>
+                <span class="phone">{{ json_decode($info->content)->phone }}</span>
                 <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach

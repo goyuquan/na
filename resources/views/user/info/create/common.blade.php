@@ -38,7 +38,7 @@
 			@if(Auth::User()->role > 1)
 			<section>
 				<label for="phone">电话号码</label>
-				<input type="text" name="phone">
+				<input type="text" name="phone" value="{{ Auth::user()->phone }}">
 			</section>
 			<section>
 				<label for="publish_at">发布时间</label>

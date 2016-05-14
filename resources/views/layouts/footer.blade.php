@@ -1,13 +1,13 @@
 <div class="footer">
     <div class="container">
         <div class="links">
-            <ul>
+            <!-- <ul>
                 <li><a href="#">about us</a></li>
                 <li><a href="#">about us</a></li>
                 <li><a href="#">about us</a></li>
                 <li><a href="#">about us</a></li>
                 <li><a href="#">about us</a></li>
-            </ul>
+            </ul> -->
         </div>
         <div class="about">
             <h2 class="title">宁安信息网——宁安本地服务信息网站</h2>

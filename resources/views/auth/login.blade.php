@@ -6,6 +6,11 @@
 
 @section('style')
 	<link rel="stylesheet" href="{{url('/css/login.css')}}" />
+	<style media="screen">
+		.add_a {
+			color: #fff;
+		}
+	</style>
 @endsection
 
 @section('content')
@@ -31,15 +36,16 @@
 				@endif
 			</section>
 
-			<input type="submit" value="登&nbsp;陆">
+			<input type="submit" value="登&nbsp;陆"><br><br>
+			<a class="add_a" href="{{url('/register')}}">没有帐号？注册</a>
 		</form>
 	</div>
 
 	<div class="main">
-		<h2>this is a useful website</h2>
+		<h2>宁安本地服务信息网站</h2>
 
 		<ul>
-			<li>
+			<!-- <li>
 				<div class="icon">
 					<img src="{{url('/img/icon_3456464653364.png')}}" />
 				</div>
@@ -50,12 +56,13 @@
 					<img src="{{url('/img/icon_34564365464.png')}}" />
 				</div>
 				<span>Lorem ipsum dolor sit amet, consectetuipsum dolor sit amet, consectetuipsum dolor sit amet, consectetur</span>
-			</li>
+			</li> -->
 			<li>
 				<div class="icon">
 					<img src="{{url('/img/icon_34564364.png')}}" />
 				</div>
-				<span>Lorem ipsum dolor sit amet, consectetuipsum dolor sit amet, consectetuipsum dolor sit amet, consectetur</span>
+				<span>响应式设计，电脑、平板电脑、手机显示更合理，可以智能地根据用户行为以及使用的设备环境
+					（系统平台、屏幕尺寸、屏幕定向等）进行相对应的布局。。</span>
 			</li>
 		</ul>
 	</div>
@@ -64,7 +71,7 @@
 @endsection
 
 @section('script')
-<script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
+<script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script type="text/javascript">
 $(function(){

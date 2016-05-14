@@ -68,6 +68,10 @@
 				</select>
 				@endif
 			</section>
+            <section>
+				<label for="phone">电话号码</label>
+				<input type="text" name="phone" value="{{ Auth::user()->phone }}">
+			</section>
 			<section class="thumb_wrap">
 				<label for="thumbnail">缩略图</label>
 				@if(isset($content->thumbnail))

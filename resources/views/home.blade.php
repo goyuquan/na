@@ -17,44 +17,44 @@
     <ul class="list">
         <li>
             <a href="#">
-                <i class="fa fa-flag" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-phone-square" aria-hidden="true"></i>
+                <h3>公共服务电话</h4>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-beer" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-train" aria-hidden="true"></i>
+                <h3>火车时刻表</h4>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-cloud" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-bus" aria-hidden="true"></i>
+                <h3>公交线路</h4>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-comment" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+                <h3>餐厅饭店</h4>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-cog" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <h3>快递</h4>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-coffee" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-internet-explorer" aria-hidden="true"></i>
+                <h3>网吧</h4>
             </a>
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-code-fork" aria-hidden="true"></i>
-                <h3>汽车</h4>
+                <i class="fa fa-microphone" aria-hidden="true"></i>
+                <h3>KTV</h4>
             </a>
         </li>
         <li>
@@ -245,7 +245,9 @@
                     }
                     ?>
                 </span>
-                <span class="phone">{{ $info->user->phone }}</span>
+
+                <span class="phone">{{ json_decode($info->content)->phone }}</span>
+
                 <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach
@@ -260,7 +262,7 @@
         @if(count($articles) > 0)
         <ul>
             @foreach( $articles as $article )
-            <li><a href="{{url('/article/'.$article->id)}}">{{ str_limit($article->title,16) }}</li>
+            <li><a href="{{url('/article/'.$article->id)}}">{{ str_limit($article->title,16) }}</a></li>
             @endforeach
         </ul>
         @endif

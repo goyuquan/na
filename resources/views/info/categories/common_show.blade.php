@@ -44,7 +44,7 @@
                 }
                 ?>
             </span>
-            <span>电话:&nbsp;{{ $info->user->phone }}</span>
+            <span>电话:&nbsp;{{ json_decode($info->content)->phone }}</span>
             {{$info->text}}
         </div>
 
