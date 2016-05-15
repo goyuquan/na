@@ -46,6 +46,7 @@ class PageinfoController extends Controller
     {
         $content = collect($request->input())->except(['_token', 'query_string','title','text','publish_at']);
         $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
+        $page_ = Page::find($page);
 
         if(Auth::user()->role > 1)
         {
@@ -59,7 +60,7 @@ class PageinfoController extends Controller
 
             Session()->flash('pageinfo', 'pageinfo create was successful!');
 
-            return redirect('/admin/pages');
+            return redirect('/admin/pageinfo/'.$page_->id );
         }
     }
 
@@ -87,24 +88,12 @@ class PageinfoController extends Controller
 
     public function update(Request $request,$id)
     {
-        $messages = [
-            'title.required' => '标题不能为空',
-            'title.max' => '标题不能大于:max位',
-            'title.min' => '标题不能小于:min位',
-            'text.required' => '内容不能为空',
-            'text.max' => '内容不能大于:max位',
-            'text.min' => '内容不能小于:min位',
-        ];
-        $this->validate($request, [
-            'title' => 'required|min:5|max:50',
-            'text' => 'required|min:10|max:1000',
-        ],$messages);
 
         $content = collect($request->input())->except(['_token', 'query_string','category_id','title','text','publish_at']);
 
         $info = Info::find($id);
 
-        if (Gate::allows('info_authorize', $info)) {
+        if (Gate::allows('info_authorize', $info) || Auth::user()->role > 5) {
             if ($info->title != $request->title){
                 $info->title = $request->title;
             }
@@ -120,7 +109,7 @@ class PageinfoController extends Controller
             $info->update();
 
             Session()->flash('pageinfo', 'pageinfo update was successful!');
-            return redirect('/admin/pages');
+            return redirect('/admin/pageinfo/'.$info->page_id );
         } else {
             return view('common.info_authorize',['info' => "无权编辑!"]);
         }
@@ -133,7 +122,7 @@ class PageinfoController extends Controller
         $info = Info::find($id);
         if (Gate::allows('info_authorize', $info)) {
             Info::destroy($id);
-            return redirect('/admin/infos');
+            return redirect('/admin/pageinfo/'.$info->page_id );
         } else {
             return view('common.info_authorize',['info' => "无权删除!"]);
         }

@@ -26,9 +26,9 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/admin/pages')}}">页面管理</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="{{url('/admin/pageinfo/'.$page->id)}}">{{$page->name}}</a>
+    <a href="{{url('/admin/pageinfo/'.$pageinfo->page_id)}}">{{$page->name}}</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>内容添加</span>
+    <span>内容编辑</span>
 </div>
 
 <div class="main_wrap container">
@@ -36,21 +36,16 @@
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>
 		<hr>
-		<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
+		<form id="edit" method="POST" action="{{ url('/admin/pageinfo/update/'.$pageinfo->id) }}">
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" id="title">
+				<input type="text" name="title" value="{{$pageinfo->title}}">
 			</section>
 			<section>
-				<label for="text">正文</label>
-                <textarea name="text" rows="10" cols="50"></textarea>
+				<label for="tele">电话</label>
+				<input type="text" name="tele" value="{{$content->tele}}">
 			</section>
-			<section>
-				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at" id="publish_at">
-			</section>
-
 
 			<input type="submit" value="提交">
 		</form>
@@ -60,10 +55,11 @@
 
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
+<script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 
-	var validate = $("#create").validate({
+	var validate = $("#edit").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -75,7 +71,7 @@ $(function(){
 				maxlength : 50
 			},
 			text : {
-				required : true,
+				required : false,
 				minlength : 10,
 				maxlength : 1000
 			}

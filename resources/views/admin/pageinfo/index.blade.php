@@ -36,7 +36,7 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/admin/pages')}}">页面管理</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>内容列表</span>
+    <span>{{$page->name}}</span>
 </div>
 
 <div class="main_wrap container">
@@ -76,6 +76,7 @@
 
 @endsection
 @section('script')
+<script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
     $(".del").click(function(e){

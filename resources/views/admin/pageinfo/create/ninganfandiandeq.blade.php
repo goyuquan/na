@@ -26,7 +26,9 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/admin/pages')}}">页面管理</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>内容编辑</span>
+    <a href="{{url('/admin/pageinfo/'.$page->id)}}">{{$page->name}}</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>内容添加</span>
 </div>
 
 <div class="main_wrap container">
@@ -34,15 +36,24 @@
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>
 		<hr>
-		<form id="edit" method="POST" action="{{ url('/admin/pageinfo/update/'.$pageinfo->id) }}">
+		<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
 			{!! csrf_field() !!}
+
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" value="{{$pageinfo->title}}">
+				<input type="text" name="title" >
 			</section>
 			<section>
-				<label for="text">正文</label>
-                <textarea name="text" rows="10" cols="50">{{$pageinfo->text}}</textarea>
+				<label for="addr">地址</label>
+				<input type="text" name="addr" >
+			</section>
+			<section>
+				<label for="tel">电话</label>
+				<input type="text" name="tel" >
+			</section>
+			<section>
+				<label for="spescail">特色菜</label>
+				<input type="text" name="spescail" >
 			</section>
 
 			<input type="submit" value="提交">
@@ -53,11 +64,10 @@
 
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
-<script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script type="text/javascript">
 $(function(){
 
-	var validate = $("#edit").validate({
+	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -69,7 +79,7 @@ $(function(){
 				maxlength : 50
 			},
 			text : {
-				required : false,
+				required : true,
 				minlength : 10,
 				maxlength : 1000
 			}
