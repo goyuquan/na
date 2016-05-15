@@ -29,6 +29,7 @@
                 <th> 用户名 </th>
                 <th> email </th>
                 <th> 手机号 </th>
+                <th> 权限 </th>
                 <th> 注册时间 </th>
                 <th> 更新时间 </th>
                 <th>  </th>
@@ -40,6 +41,7 @@
                     <td> {{$user->name}} </td>
                     <td> {{$user->email}} </td>
                     <td> {{$user->phone}} </td>
+                    <td> {{$user->role}} </td>
                     <td> {{substr($user->created_at,0,10)}} </td>
                     <td> {{substr($user->updated_at,0,10)}} </td>
                     <td>

@@ -16,6 +16,9 @@
         color: #fff;
         background: #a94442;
     }
+    label:first-child {
+        width: auto!important;
+    }
 </style>
 @endsection
 
@@ -71,25 +74,21 @@ $(function(){
 		rules : {
 			title : {
 				required : true,
-				minlength : 5,
-				maxlength : 50
+				minlength : 5
 			},
 			text : {
 				required : true,
-				minlength : 10,
-				maxlength : 1000
+				minlength : 10
 			}
 		},
 		messages : {
 			title : {
 				required : '标题不能为空',
-				minlength : '标题最长不能小于5',
-				maxlength : '标题最长不能大于50'
+				minlength : '标题最长不能小于5'
 			},
 			text : {
 				required : '内容不能为空',
-				minlength : '内容最长不能小于10',
-				maxlength : '内容最长不能大于1000'
+				minlength : '内容最长不能小于10'
 			}
 		},
 	});

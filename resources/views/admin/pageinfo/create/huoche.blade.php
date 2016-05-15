@@ -29,7 +29,9 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/admin/pages')}}">页面管理</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <span>内容编辑</span>
+    <a href="{{url('/admin/pageinfo/'.$page->id)}}">{{$page->name}}</a>
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    <span>内容添加</span>
 </div>
 
 <div class="main_wrap container">
@@ -37,15 +39,15 @@
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>
 		<hr>
-		<form id="edit" method="POST" action="{{ url('/admin/pageinfo/update/'.$pageinfo->id) }}">
+		<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
 			{!! csrf_field() !!}
+
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" value="{{$pageinfo->title}}">
+				<input type="text" name="title" >
 			</section>
 			<section>
-				<label for="text">正文</label>
-                <textarea name="text" rows="10" cols="50">{{$pageinfo->text}}</textarea>
+				<textarea id="text" type="text" name="text" ></textarea>
 			</section>
 
 			<input type="submit" value="提交">
@@ -57,10 +59,23 @@
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
+<script src="{{url('/js/tinymce.min.js')}}"></script>
+
+
 <script type="text/javascript">
+
+tinymce.init({
+    selector: '#text',
+    a_plugin_option: true,
+    a_configuration_option: 400,
+    height: 500,
+    plugins : 'advlist autolink link image lists charmap print preview',
+    toolbar: 'undo, redo, selectall, removeformat'
+});
+
 $(function(){
 
-	var validate = $("#edit").validate({
+	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -68,11 +83,9 @@ $(function(){
 		rules : {
 			title : {
 				required : true,
-				minlength : 5
 			},
 			text : {
-				required : false,
-				minlength : 10
+				required : true,
 			}
 		},
 		messages : {

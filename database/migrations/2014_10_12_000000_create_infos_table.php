@@ -11,7 +11,7 @@ class CreateInfosTable extends Migration
             $table->tinyInteger('category_id');
             $table->tinyInteger('page_id');
             $table->char('title',50);
-            $table->text('text');
+            $table->text('text')->nullable();;
             $table->text('content');
             $table->integer('top');
             $table->dateTime('publish_at');

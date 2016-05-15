@@ -29,7 +29,7 @@
         </li>
         <li>
             <a href="#">
-                <i class="fa fa-bus" aria-hidden="true"></i>
+                <i class="fa fa-code-fork" aria-hidden="true"></i>
                 <h3>公交线路</h4>
             </a>
         </li>

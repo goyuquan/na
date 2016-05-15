@@ -18,7 +18,7 @@ class PageinfoController extends Controller
     public function index($id)
     {
         $page = Page::find($id);
-        $pageinfos = $page->info()->paginate(20);
+        $pageinfos = $page->info()->orderBy('id','desc')->paginate(20);
 
         return view('admin.pageinfo.index',[
             'page' => $page,
