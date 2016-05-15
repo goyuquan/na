@@ -36,7 +36,7 @@
         <li>
             <a href="#">
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
-                <h3>客运站发到站时刻表</h4>
+                <h3>客运站时刻表</h4>
             </a>
         </li>
         <li>

@@ -23,7 +23,7 @@
     <div class="head">
         <div class="container">
             <a href="{{ url('/') }}" class="logo">
-                <img src="{{url('img/new-logo.gif')}}" />
+                <img src="{{url('img/ningan.png')}}" />
             </a>
             <ul>
                 <li><a href="{{url('/user/index')}}">用户中心首页</a></li>

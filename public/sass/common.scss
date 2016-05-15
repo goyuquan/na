@@ -296,6 +296,10 @@ p{word-wrap:break-word}
                 font-size: 1em;
                 text-align: center;
 
+                img {
+                    display: block;
+                    width: 100%;
+                }
                 span {
                     color: #999;
                     font-weight: bold;
@@ -523,6 +527,7 @@ p{word-wrap:break-word}
             span {
                 color: #999;
                 font-weight: bold;
+                display: block;
             }
             &:hover span{
                 color: $hover_color
@@ -745,6 +750,7 @@ p{word-wrap:break-word}
             span {
                 color: #999;
                 font-weight: bold;
+                display: block;
             }
             &:hover span{
                 color: $hover_color

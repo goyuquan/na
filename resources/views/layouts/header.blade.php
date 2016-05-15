@@ -17,7 +17,11 @@
                 @else
                 <a href="/user/index"> {{ Auth::user()->name }} - 用户中心 </a>
                 <a href="{{ url('/logout') }}" class="item"><i class="fa fa-btn fa-sign-out"></i>退出</a>
+                    @if(Auth::user()->role > 4)
+                    <a href="{{url('/admin')}}">管理</a>
+                    @endif
                 @endif
+
             </div>
         </div>
     </div>

@@ -21,10 +21,10 @@ class UserCenterController extends Controller
     {
         $user = Auth::user();
         if($user->role > 4){
-            $infos = Info::orderBy('publish_at', 'desc')
+            $infos = Info::where('page_id',0)->orderBy('publish_at', 'desc')
             ->paginate(20);
         } else {
-            $infos = $user->info()->orderBy('publish_at', 'desc')
+            $infos = $user->info()->where('page_id',0)->orderBy('publish_at', 'desc')
             ->paginate(20);
         }
         return view('user.info.index',[
@@ -38,10 +38,10 @@ class UserCenterController extends Controller
     {
         $user = Auth::user();
         if($user->role > 4){
-            $infos = Info::orderBy('publish_at', 'desc')
+            $infos = Info::where('page_id',0)->orderBy('publish_at', 'desc')
             ->paginate(20);
         } else {
-            $infos = $user->info()->orderBy('publish_at', 'desc')
+            $infos = $user->info()->where('page_id',0)->orderBy('publish_at', 'desc')
             ->paginate(20);
         }
         return view('user.info.index',[
@@ -96,7 +96,7 @@ class UserCenterController extends Controller
             'title' => 'required|min:4|max:30',
             'text' => 'required|min:10|max:1000',
         ],$messages);
-        
+
         $content = collect($request->input())->except(['_token', 'query_string','category_id','title','text','publish_at']);
         $publish_at = $request->publish_at ? $request->publish_at : date("Y-m-d H:i:s",time()+8*60*60);
 

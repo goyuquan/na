@@ -282,6 +282,9 @@ p {
         float: left;
         font-size: 1em;
         text-align: center; }
+        .header .head a.logo img {
+          display: block;
+          width: 100%; }
         .header .head a.logo span {
           color: #999;
           font-weight: bold; }
@@ -483,7 +486,8 @@ p {
       text-align: center; }
       .header a.logo span {
         color: #999;
-        font-weight: bold; }
+        font-weight: bold;
+        display: block; }
       .header a.logo:hover span {
         color: #a94442; }
     .header .search_wrap {
@@ -674,7 +678,8 @@ p {
       text-align: center; }
       .header a.logo span {
         color: #999;
-        font-weight: bold; }
+        font-weight: bold;
+        display: block; }
       .header a.logo:hover span {
         color: #a94442; }
 

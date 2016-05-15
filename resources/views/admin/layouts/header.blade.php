@@ -28,7 +28,7 @@
     <div class="head">
         <div class="container">
             <a href="{{ url('/') }}" class="logo">
-                <img src="{{url('img/new-logo.gif')}}" />
+                <img src="{{url('img/ningan.png')}}" />
             </a>
             <ul>
                 <li><a class="{{$dashboard_}}" href="{{url('/admin')}}">控制台</a></li>
