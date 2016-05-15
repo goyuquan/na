@@ -43,13 +43,13 @@ input[type="submit"] {
             <section>
 
                 <label for="name">页面名称</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name">
                 @if ($errors->has('name'))
                 <strong>{{ $errors->first('name') }}</strong>
                 @endif
 
                 <label for="alias">别名</label>
-                <input type="text" name="alias" id="alias">
+                <input type="text" name="alias">
                 @if ($errors->has('alias'))
                 <strong>{{ $errors->first('alias') }}</strong>
                 @endif
@@ -72,6 +72,7 @@ input[type="submit"] {
         @if(count($pagess) > 0)
         <table>
             <thead>
+                <th> ID </th>
                 <th> 页面名称 </th>
                 <th> 别名 </th>
                 <th> 操作 </th>
@@ -79,6 +80,7 @@ input[type="submit"] {
             @foreach ( $pagess as $page )
             <tbody>
                 <tr>
+                    <td> {{$page->id}} </td>
                     <td>
                         <a href="/admin/pageinfo/{{$page->id}}">{{ $page->name }}</a>
                         <!-- @if ( !App\Category::where('parent_id',$page->id)->get()->isEmpty() )
@@ -143,24 +145,24 @@ $(function(){
 			name : {
 				required : true,
 				minlength : 1,
-				maxlength : 20
+				maxlength : 50
 			},
 			alias : {
 				required : true,
 				minlength : 2,
-				maxlength : 20
+				maxlength : 50
 			}
 		},
 
 		messages : {
 			name : {
 				required : '名称不能为空',
-				max : '名称最长不能大于20'
+				maxlength : '名称最长不能大于20'
 			},
 			alias : {
 				required : '别名不能为空',
-				min : '别名最长不能小于2',
-				max : '别名最长不能大于20'
+				minlength : '别名最长不能小于2',
+				maxlength : '别名最长不能大于20'
 			}
 		}
 

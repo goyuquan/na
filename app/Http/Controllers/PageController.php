@@ -22,20 +22,6 @@ class PageController extends Controller
 
     public function create(Request $request)
     {
-        $messages = [
-            'name.required' => '页面名不能为空',
-            'name.unique' => '页面名已被使用',
-            'name.max' => '页面名不能大于:max位',
-            'name.min' => '页面名不能小于:min位',
-            'alias.required' => '别名不能为空',
-            'alias.max' => '别名不能大于:max位',
-            'alias.min' => '别名不能小于:min位',
-        ];
-        $this->validate($request, [
-            'name' => 'required|unique:pages|min:1|max:20',
-            'alias' => 'required|min:2|max:50',
-        ],$messages);
-        return dd($request->name);
 
         $page = new Page;
 
