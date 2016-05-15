@@ -16,6 +16,9 @@
         color: #fff;
         background: #a94442;
     }
+    label:first-child {
+        width: auto!important;
+    }
 </style>
 @endsection
 
@@ -26,7 +29,7 @@
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <a href="{{url('/admin/pages')}}">页面管理</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
-    <a href="{{url('/admin/pageinfo/'.$page->page_id)}}">{{$page->name}}</a>
+    <a href="{{url('/admin/pageinfo/'.$page->id)}}">{{$page->name}}</a>
         <i class="fa fa-angle-right" aria-hidden="true"></i>
     <span>内容添加</span>
 </div>
@@ -36,15 +39,28 @@
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>
 		<hr>
-		<form id="edit" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
+		<form id="create" method="POST" action="{{ url('/admin/pageinfo/update/'.$pageinfo->id) }}">
 			{!! csrf_field() !!}
+
 			<section>
-				<label for="title">标题</label>
-				<input type="text" name="title">
+				<label for="title">线路</label>
+				<input type="text" name="title" value="{{$pageinfo->title}}">
 			</section>
 			<section>
-				<label for="tele">电话</label>
-				<input type="text" name="tele">
+				<label for="time">运营时间</label>
+				<input type="text" name="time" value="{{$content->time}}">
+			</section>
+			<section>
+				<label for="start">始发站</label>
+				<input type="text" name="start" value="{{$content->start}}">
+			</section>
+			<section>
+				<label for="end">终点站</label>
+				<input type="text" name="end" value="{{$content->end}}">
+			</section>
+			<section>
+				<label for="site">车站列表</label>
+				<textarea type="text" name="site" >{{$pageinfo->text}}</textarea>
 			</section>
 
 			<input type="submit" value="提交">

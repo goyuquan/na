@@ -1,8 +1,8 @@
 @extends('admin.layouts.admin')
 
-@section('title','title_description')
-@section('description','title_description')
-@section('keywords','title_keywords')
+@section('title','宁安信息网后台')
+@section('description','宁安信息网,宁安本地服务网站,为你提供招聘信息、房产、生意转让、二手物品、车辆、求职招聘、生活服务、商务服务、教育培训等海量分类信息,充分满足您免费查看/发布信息的需求。')
+@section('keywords','宁安信息网,宁安招聘,宁安房产,宁安吧,宁安论坛,231084,157400,宁安网,宁安免费发布信息')
 
 <?php $dashboard_="";$user_="";$_category_="";$page_="active";$article_="" ?>
 
@@ -60,43 +60,4 @@
 		</form>
 	</div>
 </div>
-@endsection
-
-@section('script')
-<script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
-<script type="text/javascript">
-$(function(){
-
-	var validate = $("#create").validate({
-	    debug: true, //调试模式取消submit的默认提交功能
-	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
-	        form.submit();   //提交表单
-	    },
-		rules : {
-			title : {
-				required : true,
-				minlength : 5,
-				maxlength : 50
-			},
-			text : {
-				required : true,
-				minlength : 10,
-				maxlength : 1000
-			}
-		},
-		messages : {
-			title : {
-				required : '标题不能为空',
-				minlength : '标题最长不能小于5',
-				maxlength : '标题最长不能大于50'
-			},
-			text : {
-				required : '内容不能为空',
-				minlength : '内容最长不能小于10',
-				maxlength : '内容最长不能大于1000'
-			}
-		},
-	});
-});
-</script>
 @endsection
