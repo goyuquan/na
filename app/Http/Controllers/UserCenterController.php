@@ -20,18 +20,10 @@ class UserCenterController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if($user->role > 4){
-            $infos = Info::where('page_id',0)->orderBy('publish_at', 'desc')
-            ->paginate(20);
-        } else {
-            $infos = $user->info()->where('page_id',0)->orderBy('publish_at', 'desc')
-            ->paginate(20);
-        }
-        return view('user.info.index',[
-            'infos' => $infos,
+        
+        return view('user.index',[
             'user' => $user
         ]);
-        return view('user.index');
     }
 
     public function infos()

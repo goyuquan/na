@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('title',$article->title.'_宁安新闻_宁安信息网')
-@section('description',$article->title)
-@section('keywords',$article->title)
+@section('description',$article->title.',宁安新闻,宁安本地服务网站,为你提供招聘信息、房产、生意转让、二手物品、车辆、求职招聘、生活服务、商务服务、教育培训等海量分类信息,充分满足您免费查看/发布信息的需求。')
+@section('keywords',$article->title.',宁安新闻')
 
 @section('style')
 <link rel="stylesheet" href="{{url('/css/show.css')}}" >
