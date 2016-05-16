@@ -39,16 +39,20 @@
 	<div class="content_wrap">
 		<h1>{{$page->name}}</h1>
 		<hr>
-		<form id="create" method="POST" action="{{ url('/admin/pageinfo/create/'.$page->id) }}">
+		<form id="create" method="POST" action="{{ url('/admin/pageinfo/update/'.$pageinfo->id) }}">
 			{!! csrf_field() !!}
 
 			<section>
-				<label for="title">标题</label>
-				<input type="text" name="title" >
+				<label for="title">方向</label>
+				<input type="text" name="title" value="{{$pageinfo->title}}">
 			</section>
 			<section>
-				<label for="text">正文</label>
-				<textarea type="text" name="text" ></textarea>
+				<label for="start">发车时间</label>
+				<input type="text" name="start" value="{{$content->start}}">
+			</section>
+			<section>
+				<label for="phone">电话</label>
+				<input type="text" name="phone" value="{{$content->phone}}">
 			</section>
 
 			<input type="submit" value="提交">

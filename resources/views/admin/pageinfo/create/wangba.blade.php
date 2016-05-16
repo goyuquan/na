@@ -47,7 +47,15 @@
 				<input type="text" name="title" >
 			</section>
 			<section>
-				<label for="text">正文</label>
+				<label for="phone">电话</label>
+				<input type="text" name="phone" >
+			</section>
+			<section>
+				<label for="addr">地址</label>
+				<input type="text" name="addr" >
+			</section>
+			<section>
+				<label for="text">特色服务</label>
 				<textarea type="text" name="text" ></textarea>
 			</section>
 

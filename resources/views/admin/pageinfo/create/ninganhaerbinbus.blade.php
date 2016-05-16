@@ -43,12 +43,16 @@
 			{!! csrf_field() !!}
 
 			<section>
-				<label for="title">标题</label>
+				<label for="title">方向</label>
 				<input type="text" name="title" >
 			</section>
 			<section>
-				<label for="text">正文</label>
-				<textarea type="text" name="text" ></textarea>
+				<label for="start">发车时间</label>
+				<input type="text" name="start" >
+			</section>
+			<section>
+				<label for="phone">电话</label>
+				<input type="text" name="phone" >
 			</section>
 
 			<input type="submit" value="提交">

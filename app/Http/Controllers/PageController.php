@@ -13,7 +13,7 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::where('parent_id','>',0)->get();
-        $pagess = Page::where('parent_id',0)->get();
+        $pagess = Page::where('parent_id',0)->orderBy('id','desc')->get();
         return view('admin.page.index',[
             'pagess' => $pagess,
             'pages' => $pages
