@@ -26,23 +26,38 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="name">用户名</label>
-				<input type="text" name="name" value="{{$user->name}}">
+				<input type="text" name="name" value="{{$user->name}}" disabled="disabled">
+                @if ($errors->has('name'))
+                <strong>{{ $errors->first('name') }}</strong>
+                @endif
 			</section>
 			<section>
 				<label for="email">email</label>
 				<input type="text" name="email" value="{{$user->email}}">
+                @if ($errors->has('email'))
+                <strong>{{ $errors->first('email') }}</strong>
+                @endif
 			</section>
 			<section>
 				<label for="phone">手机号</label>
 				<input type="text" name="phone" value="{{$user->phone}}">
+                @if ($errors->has('phone'))
+                <strong>{{ $errors->first('phone') }}</strong>
+                @endif
 			</section>
 			<section>
 				<label for="password">密码</label>
-				<input type="password" name="password">
+				<input type="password" name="password" id="password">
+                @if ($errors->has('password'))
+                <strong>{{ $errors->first('password') }}</strong>
+                @endif
 			</section>
 			<section>
-				<label for="password">重复密码</label>
-				<input type="password" name="password">
+				<label for="password_confirmation">重复密码</label>
+				<input type="password" name="password_confirmation">
+                @if ($errors->has('password_confirmation'))
+                <strong>{{ $errors->first('password_confirmation') }}</strong>
+                @endif
 			</section>
 			<input type="submit" value="提交">
 		</form>
@@ -63,39 +78,44 @@ $(function(){
 	        form.submit();
 	    },
 
-		rules : {
-			name : {
-				required : true,
-				minlength : 2,
-				maxlength : 30
-			},
+        rules : {
 			email : {
-				required : true,
-				minlength : 10,
-				maxlength : 1000
+				email : true
 			},
 			phone : {
 				required : true,
 				isMobile : true
 			},
+			password : {
+				required : false,
+				minlength : 6,
+				maxlength : 50
+			},
+			password_confirmation : {
+				required : false,
+				equalTo : '#password'
+			}
 		},
 
 		messages : {
-			name : {
-				required : '标题不能为空',
-				minlength : '标题最长不能小于2位',
-				maxlength : '标题最长不能大于30'
-			},
 			email : {
-				required : '正文内容不能为空',
-				minlength : '正文内容最长不能小于10',
-				maxlength : '正文内容最长不能大于1000'
+				required : '请输入 email',
+				email : 'email 格式不正确'
 			},
 			phone : {
-				required : '手机号不能为空',
-				isMobile : '手机号格式不正确'
+				required : '手机号码必须填写',
+				isMobile : '手机号码不正确'
 			},
+			password : {
+				minlength : '密码长度不能小于6位',
+				maxlength : '密码长度不能大于50位'
+			},
+			password_confirmation : {
+				required : '重复密码不能为空',
+				equalTo : '两次输入密码不一致'
+			}
 		},
+
 	});
 });
 </script>

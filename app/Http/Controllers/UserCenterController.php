@@ -6,6 +6,7 @@ use App\Category;
 use App\Info;
 use App\Column;
 use App\Img;
+use App\User;
 use Gate;
 use Auth;
 use View;
@@ -152,6 +153,36 @@ class UserCenterController extends Controller
         $user = Auth::User();
 
         return view('user.userdata.edit',['user' => $user]);
+    }
+
+
+    public function update_userdata(Request $request, $id)
+    {
+        $messages = [
+            'email.email' => 'email格式不正确',
+            'email.required' => '请输入email',
+            'phone.required' => '请填写手机号',
+            'password.max' => '密码不能大于:max位',
+            'password.min' => '密码不能小于:min位',
+            'password.confirmed' => '两次密码不一致'
+        ];
+        $this->validate($request, [
+            'email' => 'email|required',
+            'phone' => 'required',
+            'password' => 'confirmed|min:6|max:50',
+        ],$messages);
+
+        $user = User::find($id);
+
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
+
+        $user->save();
+
+        return view('user.index',['user' => $user]);
     }
 
 

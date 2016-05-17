@@ -32,6 +32,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/user/info/delete/{id}', 'UserCenterController@destroy');
 
         Route::get('/user/userdata/edit', 'UserCenterController@edit_userdata');
+        Route::post('/user/userdata/update/{id}', 'UserCenterController@update_userdata');
 
         Route::post('/upload/thumbnail', 'CommonController@thumbnail');
         Route::get('/delete/page/{page}/thumbnail/{id}', 'CommonController@thumbnail_');
