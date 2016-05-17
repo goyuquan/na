@@ -52,6 +52,7 @@
                 <strong>{{ $errors->first('password') }}</strong>
                 @endif
 			</section>
+            <p style="text-indent:200px;color:#a94442;"> 不修改密码留空 </p>
 			<section>
 				<label for="password_confirmation">重复密码</label>
 				<input type="password" name="password_confirmation">
