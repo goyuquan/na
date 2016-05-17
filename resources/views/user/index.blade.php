@@ -5,7 +5,16 @@
 @section('keywords','宁安信息网,宁安招聘,宁安房产,宁安吧,宁安论坛,231084,157400,宁安网,宁安免费发布信息')
 
 @section('style')
-<link rel="stylesheet" href="/css/user/create.css">
+<style media="screen">
+    .add {
+        display: inline-block;
+        padding: 0.5em 1em;
+        color: #fff;
+        font-size: 1rem;
+        border-radius: 0.3rem;
+        background: #3378af;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -21,7 +30,11 @@
     <div class="content_wrap">
         <ul>
             <li>用户名：{{$user->name}}</li>
+            <li>email：{{$user->email}}</li>
+            <li>手机号：{{$user->phone}}</li>
         </ul>
+        <br>
+        <a class="add" href="{{url('/user/userdata/edit')}}">修改资料</a>
     </div>
 </div>
 

@@ -3,12 +3,11 @@
     box-sizing: border-box;
     padding: 2rem; }
     .content_wrap form input[type="text"],
+    .content_wrap form input[type="password"],
     .content_wrap form input[type="date"] {
       display: inline-block;
-      height: 2rem;
       padding: 6px 12px;
       font-size: 14px;
-      line-height: 2rem;
       color: #555;
       background-color: #fff;
       background-image: none;
@@ -67,12 +66,11 @@
     box-sizing: border-box;
     padding: 2rem; }
     .content_wrap form input[type="text"],
+    .content_wrap form input[type="password"],
     .content_wrap form input[type="date"] {
       display: inline-block;
-      height: 2rem;
       padding: 6px 12px;
       font-size: 14px;
-      line-height: 2rem;
       color: #555;
       background-color: #fff;
       background-image: none;
@@ -131,12 +129,11 @@
     box-sizing: border-box;
     padding: 2rem; }
     .content_wrap form input[type="text"],
+    .content_wrap form input[type="password"],
     .content_wrap form input[type="date"] {
       display: inline-block;
-      height: 2rem;
       padding: 6px 12px;
       font-size: 14px;
-      line-height: 2rem;
       color: #555;
       background-color: #fff;
       background-image: none;
@@ -194,12 +191,11 @@
     box-sizing: border-box;
     padding: 2rem; }
     .content_wrap form input[type="text"],
+    .content_wrap form input[type="password"],
     .content_wrap form input[type="date"] {
       display: inline-block;
-      height: 2rem;
       padding: 6px 12px;
       font-size: 14px;
-      line-height: 2rem;
       color: #555;
       background-color: #fff;
       background-image: none;

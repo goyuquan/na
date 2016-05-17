@@ -20,7 +20,7 @@ class UserCenterController extends Controller
     public function index()
     {
         $user = Auth::user();
-        
+
         return view('user.index',[
             'user' => $user
         ]);
@@ -144,6 +144,14 @@ class UserCenterController extends Controller
         } else {
             return view('common.info_authorize',['info' => "无权编辑!"]);
         }
+    }
+
+
+    public function edit_userdata()
+    {
+        $user = Auth::User();
+
+        return view('user.userdata.edit',['user' => $user]);
     }
 
 
