@@ -36,5 +36,6 @@ table {
           padding: 0.5rem; }
           .content_wrap > ul > li ul li > span {
             display: inline-block;
-            width: 10rem;
-            font-size: 1.2rem; } }
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            margin-left: 2rem; } }
