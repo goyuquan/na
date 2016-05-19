@@ -29,7 +29,7 @@
     </div>
     <div class="content">
         <div class="headbar">
-            headbar
+            <h2>{{$category->name}}</h2>
         </div>
 
         @if(count($infos) > 0)

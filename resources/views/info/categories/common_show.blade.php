@@ -50,6 +50,8 @@
                 ?>
             </span>
             <span>电话:&nbsp;{{ json_decode($info->content)->phone }}</span>
+            <br>
+            <br>
             {{$info->text}}
         </div>
 
