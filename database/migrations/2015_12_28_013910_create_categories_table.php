@@ -8,8 +8,8 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->smallInteger('parent_id')->nullable();
-            $table->string('name',20)->unique();
-            $table->string('alias',20)->unique();
+            $table->string('name',20);
+            $table->string('alias',50)->unique();
             $table->timestamps();
         });
     }
