@@ -16,80 +16,79 @@
     </div>
     <ul class="list">
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/10') }}">
                 <i class="fa fa-phone-square" aria-hidden="true"></i>
                 <h3>公共服务电话</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-train" aria-hidden="true"></i>
                 <h3>火车时刻表</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-code-fork" aria-hidden="true"></i>
                 <h3>公交线路</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <h3>客运站时刻表</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-bus" aria-hidden="true"></i>
                 <h3>宁安哈尔滨客车</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-truck" aria-hidden="true"></i>
                 <h3>快递</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-cutlery" aria-hidden="true"></i>
                 <h3>餐厅饭店</h4>
                 </a>
             </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-internet-explorer" aria-hidden="true"></i>
                 <h3>网吧</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-microphone" aria-hidden="true"></i>
                 <h3>KTV</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-gamepad" aria-hidden="true"></i>
                 <h3>娱乐</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-glass" aria-hidden="true"></i>
                 <h3>酒吧</h4>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{ url('/pages/8') }}">
                 <i class="fa fa-spinner" aria-hidden="true"></i>
                 <h3>洗浴</h4>
             </a>
         </li>
     </ul>
 </div>
-
 
 <div class="category container">
     <div class="head">
@@ -173,7 +172,7 @@
             @endforeach
         </ul>
         @endif
-        
+
         <h3>{{ $categories[8]->name }}</h3>
         @if ( isset($type[8]) && count($type[8]) > 0)
         <ul>

@@ -45,7 +45,7 @@ class InfoController extends Controller
                 $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
             }
         }
-// return dd($parent_category->name);
+
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
             return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
                 'type' => $type,

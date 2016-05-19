@@ -3,12 +3,80 @@
 namespace App\Http\Controllers;
 
 use App\Page;
+use App\Category;
+use App\info;
+use View;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
+
+    public function pages($page)
+    {
+        $page = Page::find($page);
+        $items = $page->info()->paginate(20);
+
+        $categories = Category::where('parent_id',0)->get(['id','name']);
+        for ($i=0; $i < count($categories) ; $i++) {
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id','name']);
+            if ( !$data->isEmpty() ){
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
+            }
+        }
+
+        if(View::exists('page.'.$page->alias)){
+            return view('page.'.$page->alias,[
+                'page' => $page,
+                'items' => $items,
+                'categories' => $categories,
+                'type' => $type
+            ]);
+        } else {
+            return view('page.common',[
+                'page' => $page,
+                'items' => $items,
+                'categories' => $categories,
+                'type' => $type
+            ]);
+        }
+
+    }
+
+    public function show($id)
+    {
+        $item = info::find($id);
+        $page = $item->page
+        $content = json_decode($item->content);;
+
+        $categories = Category::where('parent_id',0)->get(['id','name']);
+        for ($i=0; $i < count($categories) ; $i++) {
+            $data = Category::where( 'parent_id',$categories[$i]->id )->get(['id','name']);
+            if ( !$data->isEmpty() ){
+                $type[$i] = Category::where('parent_id',$categories[$i]->id)->get(['id','name']);
+            }
+        }
+
+        if(View::exists('page.show.'.$page->alias)){
+            return view('page.show.'.$page->alias,[
+                'item' => $item,
+                'page' => $page,
+                'content' => $content,
+                'categories' => $categories,
+                'type' => $type
+            ]);
+        } else {
+            return view('page.show.common',[
+                'item' => $item,
+                'page' => $page,
+                'content' => $content,
+                'categories' => $categories,
+                'type' => $type
+            ]);
+        }
+
+    }
 
     public function index()
     {
