@@ -70,7 +70,7 @@ $hover_color:#a94442;
                     float: left;
                 }
 
-                & > span {
+                & > span.item {
                     display: inline-block;
                     width: 250px;
                     margin-top: 1rem;
@@ -154,7 +154,7 @@ $hover_color:#a94442;
                     float: left;
                 }
 
-                & > span {
+                & > span.item {
                     display: inline-block;
                     width: 160px;
                     margin-top: 1rem;
@@ -238,7 +238,7 @@ $hover_color:#a94442;
                     float: left;
                 }
 
-                & > span {
+                & > span.item {
                     display: inline-block;
                     width: 160px;
                     margin-top: 1rem;
@@ -327,7 +327,7 @@ $hover_color:#a94442;
                     margin: 1rem auto;
                 }
 
-                & > span {
+                & > span.item {
                     display: block;
                     margin-top: 0.5rem;
 
