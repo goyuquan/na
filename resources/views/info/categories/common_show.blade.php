@@ -32,9 +32,7 @@
             <span class="info_category">分类信息:&nbsp;<a href="{{url('/infos/category/'.$info->category_id)}}">{{$info->category->name}}</a></span>
         </div>
         <div class="text_wrap">
-            <div class="text_ad">
-                text_ad
-            </div>
+            @include('info.categories.text_ad')
             <span>
                 价格:&nbsp;
                 <?php if(isset(json_decode($info->content)->price)){

@@ -35,6 +35,15 @@
         <div class="text_wrap">
             @include('info.categories.text_ad')
             {{$item->text}}
+            <section>
+                运行时间:   {{ json_decode($item->content)->time }}
+            </section>
+            <section>
+                始发站:   {{ json_decode($item->content)->start }}
+            </section>
+            <section>
+                终点站:   {{ json_decode($item->content)->end }}
+            </section>
         </div>
         @include('page.include.content_bottom_full_banner')
 

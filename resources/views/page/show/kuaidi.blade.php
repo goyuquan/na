@@ -34,7 +34,8 @@
         </div>
         <div class="text_wrap">
             @include('info.categories.text_ad')
-            {{$item->text}}
+            <section>联系电话:  {{ json_decode($item->content)->phone }}</section>
+            <section>地址:  {{ $item->text }}</section>
         </div>
         @include('page.include.content_bottom_full_banner')
 

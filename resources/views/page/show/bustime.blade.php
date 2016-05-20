@@ -34,7 +34,7 @@
         </div>
         <div class="text_wrap">
             @include('info.categories.text_ad')
-            {{$item->text}}
+             发车时间:  {{$item->text}}
         </div>
         @include('page.include.content_bottom_full_banner')
 

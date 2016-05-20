@@ -21,6 +21,8 @@
         <h2>宁安分类信息目录</h2>
     </div>
     <div class="column">
+
+
         <h3>{{ $categories[1]->name }}</h3>
         @if ( isset($type[1]) && count($type[1]) > 0)
         <ul>
@@ -71,10 +73,10 @@
         </ul>
         @endif
 
-        <h3>{{ $categories[4]->name }}</h3>
-        @if ( isset($type[4]) && count($type[4]) > 0)
+        <h3>{{ $categories[9]->name }}</h3>
+        @if ( isset($type[9]) && count($type[9]) > 0)
         <ul>
-            @foreach ($type[4] as $cate)
+            @foreach ($type[9] as $cate)
             <li>
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="{{ url('/infos/category/'.$cate->id) }}">{{ $cate->name }}</a>
@@ -82,6 +84,7 @@
             @endforeach
         </ul>
         @endif
+
     </div>
     <div class="column">
 
@@ -151,10 +154,11 @@
         </ul>
         @endif
 
-        <h3>{{ $categories[9]->name }}</h3>
-        @if ( isset($type[9]) && count($type[9]) > 0)
+
+        <h3>{{ $categories[4]->name }}</h3>
+        @if ( isset($type[4]) && count($type[4]) > 0)
         <ul>
-            @foreach ($type[9] as $cate)
+            @foreach ($type[4] as $cate)
             <li>
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="{{ url('/infos/category/'.$cate->id) }}">{{ $cate->name }}</a>
@@ -162,6 +166,7 @@
             @endforeach
         </ul>
         @endif
+
     </div>
 
 </div>

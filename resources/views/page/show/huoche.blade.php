@@ -34,7 +34,7 @@
         </div>
         <div class="text_wrap">
             @include('info.categories.text_ad')
-            {{$item->text}}
+            <?php echo(html_entity_decode($item->text, ENT_QUOTES, 'UTF-8')); ?>
         </div>
         @include('page.include.content_bottom_full_banner')
 

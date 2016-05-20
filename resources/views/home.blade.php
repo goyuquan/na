@@ -12,7 +12,7 @@
 
 <div class="services container">
     <div class="head">
-        <h2>宁安本地服务</h2>
+        <h2><a href="{{url('/services')}}">宁安本地服务</a></h2>
     </div>
     <ul class="list">
         <li>
@@ -22,67 +22,67 @@
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/19') }}">
                 <i class="fa fa-train" aria-hidden="true"></i>
                 <h3>火车时刻表</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/20') }}">
                 <i class="fa fa-code-fork" aria-hidden="true"></i>
                 <h3>公交线路</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/21') }}">
                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <h3>客运站时刻表</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/23') }}">
                 <i class="fa fa-bus" aria-hidden="true"></i>
                 <h3>宁安哈尔滨客车</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/22') }}">
                 <i class="fa fa-truck" aria-hidden="true"></i>
                 <h3>快递</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/9') }}">
                 <i class="fa fa-cutlery" aria-hidden="true"></i>
                 <h3>餐厅饭店</h4>
                 </a>
             </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/24') }}">
                 <i class="fa fa-internet-explorer" aria-hidden="true"></i>
                 <h3>网吧</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/25') }}">
                 <i class="fa fa-microphone" aria-hidden="true"></i>
                 <h3>KTV</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/26') }}">
                 <i class="fa fa-gamepad" aria-hidden="true"></i>
                 <h3>娱乐</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/28') }}">
                 <i class="fa fa-glass" aria-hidden="true"></i>
                 <h3>酒吧</h4>
             </a>
         </li>
         <li>
-            <a href="{{ url('/pages/8') }}">
+            <a href="{{ url('/pages/27') }}">
                 <i class="fa fa-spinner" aria-hidden="true"></i>
                 <h3>洗浴</h4>
             </a>
@@ -147,10 +147,10 @@
         </ul>
         @endif
 
-        <h3>{{ $categories[4]->name }}</h3>
-        @if ( isset($type[4]) && count($type[4]) > 0)
+        <h3>{{ $categories[9]->name }}</h3>
+        @if ( isset($type[9]) && count($type[9]) > 0)
         <ul>
-            @foreach ($type[4] as $cate)
+            @foreach ($type[9] as $cate)
             <li>
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="{{ url('/infos/category/'.$cate->id) }}">{{ $cate->name }}</a>
@@ -158,6 +158,7 @@
             @endforeach
         </ul>
         @endif
+
     </div>
     <div class="column">
 
@@ -227,10 +228,11 @@
         </ul>
         @endif
 
-        <h3>{{ $categories[9]->name }}</h3>
-        @if ( isset($type[9]) && count($type[9]) > 0)
+
+        <h3>{{ $categories[4]->name }}</h3>
+        @if ( isset($type[4]) && count($type[4]) > 0)
         <ul>
-            @foreach ($type[9] as $cate)
+            @foreach ($type[4] as $cate)
             <li>
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="{{ url('/infos/category/'.$cate->id) }}">{{ $cate->name }}</a>

@@ -70,19 +70,26 @@ class InfoController extends Controller
         $info = Info::find($id);
         $content = json_decode($info->content);
         $category = $info->category;
-        $parent_category =  Category::find($category->parent_id);
-        if(View::exists('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show')){
-            return view('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show',[
-                'info' => $info,
-                'category' => $category,
-                'parent_category' => $parent_category,
-                'content' => $content
-            ]);
+        if($category){
+            $parent_category =  Category::find($category->parent_id);
+            if(View::exists('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show')){
+                return view('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show',[
+                    'info' => $info,
+                    'category' => $category,
+                    'parent_category' => $parent_category,
+                    'content' => $content
+                ]);
+            } else {
+                return view('info.categories.common_show',[
+                    'info' => $info,
+                    'category' => $category,
+                    'parent_category' => $parent_category,
+                    'content' => $content
+                ]);
+            }
         } else {
-            return view('info.categories.common_show',[
+            return view('page.search_show',[
                 'info' => $info,
-                'category' => $category,
-                'parent_category' => $parent_category,
                 'content' => $content
             ]);
         }

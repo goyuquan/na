@@ -35,15 +35,6 @@
             <li>
                 <span class="date">{{ substr($result->publish_at,0,10) }}</span>
                 <h4><a href="{{url('/info/'.$result->id)}}">{{ str_limit($result->title,30) }}</a></h4>
-                <span class="price">
-                    <?php if(isset(json_decode($result->content)->price)){
-                        echo "￥".json_decode($result->content)->price;
-                    } else {
-                        echo "面议";
-                    }
-                    ?>
-                </span>
-                <span class="phone">{{ $result->user->phone }}</span>
                 <p> {{ str_limit($result->text,100) }} </p>
             </li>
             @endforeach

@@ -39,6 +39,12 @@ class CommonController extends Controller
     }
 
 
+    public function services()
+    {
+        return view('services');
+    }
+
+
     public function search_push(Request $request)
     {
         $word = $request->word;

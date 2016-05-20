@@ -5,6 +5,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'CommonController@home');
     Route::post('/search', 'CommonController@search_push');
     Route::get('/search/{word}', 'CommonController@search');
+    Route::get('/services', 'CommonController@services');
 
     Route::get('/register', 'UserController@register');
     Route::get('/login', 'UserController@login');

@@ -34,7 +34,9 @@
         </div>
         <div class="text_wrap">
             @include('info.categories.text_ad')
-            {{$item->text}}
+            <section>联系电话:  {{ json_decode($item->content)->tel }}</section>
+            <section>地址:    {{ json_decode($item->content)->addr }}</section>
+            <section>特色:    {{ json_decode($item->content)->spescail }}</section>
         </div>
         @include('page.include.content_bottom_full_banner')
 

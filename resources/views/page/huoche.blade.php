@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<?php $category_active = ''; ?>
 
 @section('title',$page->name.'_宁安信息网')
 @section('description',$page->name.'_宁安本地服务网站,为你提供招聘信息、房产、生意转让、二手物品、车辆、求职招聘、生活服务、商务服务、教育培训等海量分类信息,充分满足您免费查看/发布信息的需求。')
@@ -15,7 +16,6 @@
     <span>{{$page->name}}</span>
     &nbsp;<button type="button" name="返回" onclick="history.go(-1)">返回</button>
 </div>
-<?php $category_active = ''; ?>
 <div class="main_wrap container">
 
     @include('page.include.top_body_full_banner')
@@ -33,19 +33,19 @@
         </div>
 
         @if(count($items) > 0)
+        @foreach( $items as $item )
         <table>
             <thead>
-                <th> 名称 </th>
+                <th> <a href="{{url('/page/'.$item->id)}}">{{ str_limit($item->title,30) }}</a> </th>
             </thead>
             <hr>
             <tbody>
-                @foreach( $items as $item )
                 <tr>
-                    <td><h4><a href="{{url('/page/'.$item->id)}}">{{ str_limit($item->title,30) }}</a></h4></td>
+                    <td><?php echo(html_entity_decode($item->text, ENT_QUOTES, 'UTF-8')); ?></td>
                 </tr>
-                @endforeach
             </tbody>
         </table>
+        @endforeach
         @endif
         {{$items->links()}}
 

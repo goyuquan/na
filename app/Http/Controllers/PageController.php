@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Page;
 use App\Category;
-use App\info;
+use App\Info;
 use View;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -46,9 +46,9 @@ class PageController extends Controller
 
     public function show($id)
     {
-        $item = info::find($id);
-        $page = $item->page
-        $content = json_decode($item->content);;
+        $item = Info::find($id);
+        $page = $item->page;
+        $content = json_decode($item->content);
 
         $categories = Category::where('parent_id',0)->get(['id','name']);
         for ($i=0; $i < count($categories) ; $i++) {
