@@ -6,6 +6,9 @@
 
 @section('style')
 <link rel="stylesheet" href="/css/admin/form.css">
+<link rel="stylesheet" href="/css/themes/default/default.css" />
+<link rel="stylesheet" href="/css/plugins/code/prettify.css" />
+
 <style media="screen">
     label:first-child {
         width: auto!important;
@@ -45,7 +48,7 @@
                 @endif
             </section>
             <section>
-                <textarea id="text" name="text" ></textarea>
+                <textarea id="text" name="text" style="width:100%;height:400px;" ></textarea>
                 @if ($errors->has('text'))
                 <label>{{ $errors->first('text') }}</label>
                 @endif
@@ -59,18 +62,31 @@
 
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
-<script src="{{url('/js/jquery.validate.min.js')}}"></script>
-<script src="{{url('/js/tinymce.min.js')}}"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/kindeditor-all-min.js"></script>
+<script src="/js/lang/zh-CN.js"></script>
+<script src="/js/plugins/code/prettify.js"></script>
 <script>
 
-tinymce.init({
-  selector: '#text',
-  a_plugin_option: true,
-  a_configuration_option: 400,
-  height: 500,
-  plugins : 'advlist autolink link image lists charmap print preview',
-  toolbar: 'undo, redo, selectall, removeformat'
-});
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="text"]', {
+            cssPath : '/css/plugins/code/prettify.css',
+            allowFileManager : false,
+            items : ['source','undo','redo','|','removeformat','unlink','selectall'],
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
 
 $(function(){
 

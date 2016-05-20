@@ -6,6 +6,8 @@
 
 @section('style')
 <link rel="stylesheet" href="/css/admin/form.css">
+<link rel="stylesheet" href="/css/themes/default/default.css" />
+<link rel="stylesheet" href="/css/plugins/code/prettify.css" />
 <style media="screen">
     label:first-child {
         width: auto!important;
@@ -27,7 +29,7 @@
 <div class="main_wrap container">
     <div class="content_wrap">
 
-        <form id="create" method="POST" action="{{ url('/admin/article/update/'.$article->id) }}">
+        <form id="edit" method="POST" action="{{ url('/admin/article/update/'.$article->id) }}">
             {!! csrf_field() !!}
 
             <section>
@@ -39,13 +41,13 @@
             </section>
             <section>
                 <label for="publish_at">发布时间</label>
-                <input type="date" name="publish_at" value="{{substr($article->publish_at,0,10)}}">
+                <input type="date" name="publish_at" value="{{substr($article->publish_at,0,10)}}" format="yyyy-MM-dd">
                 @if ($errors->has('publish_at'))
                 <label>{{ $errors->first('publish_at') }}</label>
                 @endif
             </section>
             <section>
-                <textarea name="text" >{{$article->text}}</textarea>
+                <textarea id="text" name="text" style="width:100%;height:400px;"><?php echo htmlspecialchars(stripslashes($article->text)); ?></textarea>
                 @if ($errors->has('text'))
                 <label>{{ $errors->first('text') }}</label>
                 @endif
@@ -59,22 +61,35 @@
 
 @section('script')
 <script src="{{url('/js/jquery-1.12.3.min.js')}}"></script>
-<script src="{{url('/js/jquery.validate.min.js')}}"></script>
-<script src="{{url('/js/tinymce.min.js')}}"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/kindeditor-all-min.js"></script>
+<script src="/js/lang/zh-CN.js"></script>
+<script src="/js/plugins/code/prettify.js"></script>
 <script>
 
-tinymce.init({
-  selector: '#text',
-  a_plugin_option: true,
-  a_configuration_option: 400,
-  height: 500,
-  plugins : 'advlist autolink link image lists charmap print preview',
-  toolbar: 'undo, redo, selectall, removeformat'
-});
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="text"]', {
+            cssPath : '/css/plugins/code/prettify.css',
+            allowFileManager : false,
+            items : ['source','undo','redo','|','removeformat','unlink','selectall'],
+            afterCreate : function() {
+                var self = this;
+                K.ctrl(document, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+                K.ctrl(self.edit.doc, 13, function() {
+                    self.sync();
+                    K('form[name=example]')[0].submit();
+                });
+            }
+        });
+        prettyPrint();
+    });
 
 $(function(){
 
-    var $creat_form = $("#create").validate({//表单验证
+    var $creat_form = $("#edit").validate({//表单验证
 		// Rules for form validation
 		rules : {
 			title : {
