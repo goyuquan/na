@@ -90,6 +90,8 @@
 
 $(function(){
 
+    $("input[name='title']").focus();
+
     var $creat_form = $("#create").validate({//表单验证
 		// Rules for form validation
 		rules : {
