@@ -57,7 +57,7 @@
           width: 10rem; }
         .content_wrap form section label:last-child {
           color: #a94442; }
-      .content_wrap form section input[name="title"] {
+      .content_wrap form section input[name="title"], .content_wrap form section input.long {
         width: 26rem; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }

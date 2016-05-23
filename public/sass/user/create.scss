@@ -101,7 +101,8 @@ $hover_color:#a94442;
                 }
                 input {
 
-                    &[name="title"] {
+                    &[name="title"],
+                    &.long {
                         width: 26rem;
                     }
                 }

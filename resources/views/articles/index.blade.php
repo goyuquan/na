@@ -34,7 +34,7 @@
             @foreach( $articles as $article )
             <li>
                 <span class="date">{{ substr($article->publish_at,0,10) }}</span>
-                <h4><a href="{{url('/article/'.$article->id)}}">{{ str_limit($article->title,30) }}</a></h4>
+                <h4><a href="{{url('/article/'.$article->id)}}">{{ str_limit($article->title,60) }}</a></h4>
             </li>
             @endforeach
         </ul>
