@@ -86,7 +86,7 @@ class UserCenterController extends Controller
             'text.min' => '内容不能小于:min位',
         ];
         $this->validate($request, [
-            'title' => 'required|min:4|max:30',
+            'title' => 'required|min:2|max:30',
             'text' => 'required|min:10|max:1000',
         ],$messages);
 
@@ -113,8 +113,6 @@ class UserCenterController extends Controller
         $info = Info::find($id);
         $user = Auth::user();
         if (Gate::allows('info_authorize', $info) || $user->role > 4) {
-            $categoriess = Category::where('parent_id',0)->get();
-            $categories = Category::where('parent_id','>',0)->get();
             $category = $info->category;
             $content = json_decode($info->content);
             $photos = NULL;
@@ -126,20 +124,12 @@ class UserCenterController extends Controller
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
                     'info' => $info,
-                    'content' => $content,
-                    'categories' => $categories,
-                    'categoriess' => $categoriess,
-                    'current_category' => $category,
-                    'photos' => $photos
+                    'content' => $content
                 ]);
             } else {
                 return view('user.Info.edit.common',[
                     'info' => $info,
-                    'content' => $content,
-                    'categories' => $categories,
-                    'categoriess' => $categoriess,
-                    'current_category' => $category,
-                    'photos' => $photos
+                    'content' => $content
                 ]);
             }
         } else {

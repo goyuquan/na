@@ -120,6 +120,10 @@ $hover_color:#a94442;
                             }
                         }
                     }
+                    .item {
+                        margin-left: 1rem;
+                        color: #666;
+                    }
                     .price {
                         color: $color;
                         font-size: 1rem;
@@ -132,6 +136,7 @@ $hover_color:#a94442;
                     }
                     p {
                         padding-left: 4.5rem;
+                        color: #333;
                     }
                 }
             }
@@ -269,12 +274,17 @@ $hover_color:#a94442;
                         font-weight: bold;
                         margin-left: 1rem;
                     }
+                    .item {
+                        margin-left: 1rem;
+                        color: #666;
+                    }
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
                     }
                     p {
                         padding-left: 6rem;
+                        color: #333;
                     }
                 }
             }
@@ -412,12 +422,17 @@ $hover_color:#a94442;
                         font-weight: bold;
                         margin-left: 1rem;
                     }
+                    .item {
+                        margin-left: 1rem;
+                        color: #666;
+                    }
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
                     }
                     p {
                         padding-left: 6rem;
+                        color: #333;
                     }
                 }
             }
@@ -566,11 +581,16 @@ $hover_color:#a94442;
                         font-weight: bold;
                         margin-left: 1rem;
                     }
+                    .item {
+                        margin-left: 1rem;
+                        color: #666;
+                    }
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
                     }
                     p {
+                        color: #333;
                         margin-top: 0.6rem;
                         padding-left: 1rem;
                     }

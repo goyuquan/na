@@ -53,7 +53,8 @@
         .main_wrap .content .text_wrap > span.item {
           display: inline-block;
           width: 250px;
-          margin-top: 1rem; }
+          margin-top: 1rem;
+          vertical-align: top; }
           .main_wrap .content .text_wrap > span.item:nth-child(2), .main_wrap .content .text_wrap > span.item:nth-child(3) {
             margin-top: 2rem; }
           .main_wrap .content .text_wrap > span.item:nth-last-child(1), .main_wrap .content .text_wrap > span.item:nth-last-child(1) {
@@ -125,7 +126,8 @@
         .main_wrap .content .text_wrap > span.item {
           display: inline-block;
           width: 160px;
-          margin-top: 1rem; }
+          margin-top: 1rem;
+          vertical-align: top; }
           .main_wrap .content .text_wrap > span.item:nth-child(2), .main_wrap .content .text_wrap > span.item:nth-child(3) {
             margin-top: 2rem; }
           .main_wrap .content .text_wrap > span.item:nth-last-child(1), .main_wrap .content .text_wrap > span.item:nth-last-child(1) {
@@ -197,7 +199,8 @@
         .main_wrap .content .text_wrap > span.item {
           display: inline-block;
           width: 160px;
-          margin-top: 1rem; }
+          margin-top: 1rem;
+          vertical-align: top; }
           .main_wrap .content .text_wrap > span.item:nth-child(2), .main_wrap .content .text_wrap > span.item:nth-child(3) {
             margin-top: 2rem; }
           .main_wrap .content .text_wrap > span.item:nth-last-child(1), .main_wrap .content .text_wrap > span.item:nth-last-child(1) {
@@ -257,7 +260,8 @@
           margin: 1rem auto; }
         .main_wrap .content .text_wrap > span.item {
           display: block;
-          margin-top: 0.5rem; }
+          margin-top: 0.5rem;
+          vertical-align: top; }
           .main_wrap .content .text_wrap > span.item:nth-last-child(1) {
             margin-bottom: 1rem; }
     .main_wrap .sidebar {

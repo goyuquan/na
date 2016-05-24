@@ -124,7 +124,9 @@ $hover_color:#a94442;
                 }
                 input {
 
-                    &[name="title"] {
+                    &[name="title"],
+                    &.long,
+                    &.long {
                         width: 26rem;
                     }
                 }
@@ -236,7 +238,9 @@ $hover_color:#a94442;
                 }
                 input {
 
-                    &[name="title"] {
+                    &[name="title"],
+                    &.long,
+                    &.long {
                         width: 26rem;
                     }
                 }
@@ -347,7 +351,9 @@ $hover_color:#a94442;
                 }
                 input {
 
-                    &[name="title"] {
+                    &[name="title"],
+                    &.long,
+                    &.long {
                         width: 100%;
                     }
                 }
@@ -458,7 +464,8 @@ $hover_color:#a94442;
                 }
                 input {
 
-                    &[name="title"] {
+                    &[name="title"],
+                    &.long {
                         width: 100%;
                     }
                 }

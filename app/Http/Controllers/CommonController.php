@@ -18,7 +18,7 @@ class CommonController extends Controller
     public function home()
     {
         $categories = Category::where('parent_id',0)->get(['id','name']);
-        $infos = Info::where('page_id',0)->take(20)->get();
+        $infos = Info::where('page_id',0)->orderBy('id', 'desc')->take(20)->get();
 
         $articles = Article::where('publish_at','<',date("Y-m-d h:i:s"))
         ->orderBy('id', 'desc')->paginate(20);

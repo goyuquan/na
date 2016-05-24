@@ -20,12 +20,12 @@
 </div>
 
 <div class="main_wrap container">
-
+    @include('info.categories.category_top')
     <div class="category">
+        @include('info.categories.category_sidebar_top')
         <h3>分类菜单</h3>
-
         @include('info.categories.sidebar_catelist')
-
+        @include('info.categories.category_sidebar_bottom')
     </div>
     <div class="content">
         <div class="headbar">
@@ -34,11 +34,13 @@
 
         <ul class="list">
             @include('info.categories.topsys')
+
             @if(count($infos) > 0)
             @foreach( $infos as $info )
             <li>
                 <span class="date">{{ substr($info->publish_at,0,10) }}</span>
                 <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,30) }}</a></h4>
+                <span class="item">{{ json_decode($info->content)->danwei }}</span>
                 <span class="price">
                     <?php if(!empty(json_decode($info->content)->price) || isset(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
@@ -54,6 +56,8 @@
             @endif
         </ul>
         {{$infos->links()}}
+
+        @include('info.categories.category_bottom')
 
     </div>
 

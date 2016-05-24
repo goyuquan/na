@@ -23,7 +23,7 @@
 <div class="main_wrap container">
     @include('info.categories.show_top')
     <div class="sidebar">
-        @include('info.categories.how_sidebar')
+        @include('info.categories.show_sidebar')
     </div>
     <div class="content">
         <h1>{{$info->title}}</h1>
@@ -34,8 +34,13 @@
         </div>
         <div class="text_wrap">
             @include('info.categories.text_ad')
-            <span>
-                价格:&nbsp;
+            <span class="item">职位: {{$info->title}}</span>
+            <span class="item">招聘单位: {{$content->danwei}}</span>
+            <span class="item">工作地点: {{$content->didian}}</span>
+            <span class="item">电话号码: {{$content->phone}}</span>
+            <span class="item">招聘人数: {{$content->count}}</span>
+            <span class="item">
+                薪资:&nbsp;
                 <?php if(isset($content->price)){
                     echo "￥".$content->price;
                 } else {
@@ -43,12 +48,11 @@
                 }
                 ?>
             </span><br>
-            <span>电话:&nbsp;{{ json_decode($info->content)->phone }}</span>
             <br>
             <br>
-            {{$info->text}}
+            职位描述:   {{$info->text}}
         </div>
-        @include('info.categories.bottom_top')
+        @include('info.categories.show_bottom')
     </div>
 </div>
 

@@ -74,6 +74,9 @@
             line-height: 2rem; }
             .main_wrap .content ul.list li h4 a:hover {
               color: #a94442; }
+        .main_wrap .content ul.list li .item {
+          margin-left: 1rem;
+          color: #666; }
         .main_wrap .content ul.list li .price {
           color: #01579B;
           font-size: 1rem;
@@ -83,7 +86,8 @@
           margin-left: 1rem;
           font-size: 0.9rem; }
         .main_wrap .content ul.list li p {
-          padding-left: 4.5rem; }
+          padding-left: 4.5rem;
+          color: #333; }
       .main_wrap .content ul.pagination {
         text-align: center;
         margin-top: 2rem; }
@@ -179,11 +183,15 @@
           font-size: 1rem;
           font-weight: bold;
           margin-left: 1rem; }
+        .main_wrap .content ul.list li .item {
+          margin-left: 1rem;
+          color: #666; }
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
         .main_wrap .content ul.list li p {
-          padding-left: 6rem; }
+          padding-left: 6rem;
+          color: #333; }
       .main_wrap .content ul.pagination {
         text-align: center;
         margin-top: 2rem; }
@@ -279,11 +287,15 @@
           font-size: 1rem;
           font-weight: bold;
           margin-left: 1rem; }
+        .main_wrap .content ul.list li .item {
+          margin-left: 1rem;
+          color: #666; }
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
         .main_wrap .content ul.list li p {
-          padding-left: 6rem; }
+          padding-left: 6rem;
+          color: #333; }
       .main_wrap .content ul.pagination {
         text-align: center;
         margin-top: 2rem; }
@@ -382,10 +394,14 @@
           font-size: 1rem;
           font-weight: bold;
           margin-left: 1rem; }
+        .main_wrap .content ul.list li .item {
+          margin-left: 1rem;
+          color: #666; }
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
         .main_wrap .content ul.list li p {
+          color: #333;
           margin-top: 0.6rem;
           padding-left: 1rem; }
       .main_wrap .content ul.pagination {

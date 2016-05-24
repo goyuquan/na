@@ -6,9 +6,10 @@
 
 @section('style')
 <link rel="stylesheet" href="/css/upload.css">
-<link rel="stylesheet" href="/css/user/create.css">
+<link rel="stylesheet" href="/css/user/edit.css">
 @endsection
 
+@include('common.thumbnail')
 @section('content')
 
 <div class="breadcrumb container">
@@ -23,51 +24,49 @@
     @include('user.layouts.sidebar')
 
     <div class="content_wrap">
-		<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
-			<input type="hidden" name="category_id" value="{{$category->id}}">
+		<form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
+			<input type="hidden" name="page" value="{{$info->id}}">
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">职位名</label>
-				<input type="text" name="title" value="{{ old('title') }}">
-                @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
+				<input type="text" name="title" value="{{$info->title}}">
+				@if ($errors->has('title'))
+					<strong>{{ $errors->first('title') }}</strong>
+				@endif
 			</section>
-            <section>
-                <label for="danwei">招聘单位</label>
-                <input class="long" type="text" name="danwei" >
-            </section>
-            <section>
-                <label for="didian">工作地点</label>
-                <input class="long" type="text" name="didian" >
-            </section>
-            <section>
-                <label for="price">薪资</label>
-                <input type="text" name="price" >
-            </section>
-            <section>
-                <label for="phone">电话号码</label>
-                <input type="text" name="phone" value="{{ Auth::user()->phone }}">
-            </section>
-            <section>
-                <label for="count">招聘人数</label>
-                <input type="text" name="count" >
-            </section>
+			<section>
+				<label for="danwei">招聘单位</label>
+				<input class="long" type="text" name="danwei" value="{{$content->danwei}}">
+			</section>
+			<section>
+				<label for="didian">工作地点</label>
+				<input class="long" type="text" name="didian" value="{{$content->didian}}">
+			</section>
+			<section>
+				<label for="price">薪资</label>
+				<input type="text" name="price" value="{{$content->price}}">
+			</section>
+			<section>
+				<label for="phone">电话号码</label>
+				<input type="text" name="phone" value="{{$content->phone}}">
+			</section>
+			<section>
+				<label for="count">招聘人数</label>
+				<input type="text" name="count" value="{{$content->count}}">
+			</section>
+
 			<section>
 				<label for="text">职位描述</label>
-				<textarea name="text" rows="10" cols="60">{{ old('text') }}</textarea>
-                @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
+				<textarea type="text" name="text">{{$info->text}}</textarea>
+				@if ($errors->has('text'))
+					<strong>{{ $errors->first('text') }}</strong>
+				@endif
 			</section>
-			@if(Auth::User()->role > 1)
-			<section>
-				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at">
-			</section>
-			@endif
 
-			<input type="submit" value="提交">
+			<input type="submit" value="修改">
 		</form>
 	</div>
 </div>
-
 @endsection
 
 @section('script')
@@ -76,8 +75,7 @@
 <script type="text/javascript">
 $(function(){
 
-
-	var validate = $("#create").validate({
+    var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -147,6 +145,7 @@ $(function(){
 			}
 		},
 	});
+
 });
 </script>
 @endsection

@@ -74,6 +74,7 @@ $hover_color:#a94442;
                     display: inline-block;
                     width: 250px;
                     margin-top: 1rem;
+                    vertical-align: top;
 
                     &:nth-child(2),
                     &:nth-child(3) {
@@ -158,6 +159,7 @@ $hover_color:#a94442;
                     display: inline-block;
                     width: 160px;
                     margin-top: 1rem;
+                    vertical-align: top;
 
                     &:nth-child(2),
                     &:nth-child(3) {
@@ -242,6 +244,7 @@ $hover_color:#a94442;
                     display: inline-block;
                     width: 160px;
                     margin-top: 1rem;
+                    vertical-align: top;
 
                     &:nth-child(2),
                     &:nth-child(3) {
@@ -330,6 +333,7 @@ $hover_color:#a94442;
                 & > span.item {
                     display: block;
                     margin-top: 0.5rem;
+                    vertical-align: top;
 
                     &:nth-last-child(1) {
                         margin-bottom: 1rem;
