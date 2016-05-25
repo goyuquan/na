@@ -40,6 +40,20 @@
 				<label for="didian">工作地点</label>
 				<input class="long" type="text" name="didian" value="{{$content->didian}}">
 			</section>
+            <section>
+                <label for="gongzuoshijian">工作时间</label>
+                <input class="long" type="text" name="gongzuoshijian" value="{{$content->gongzuoshijian}}">
+            </section>
+            <section>
+                <label for="checkmode">结算方式</label>
+                <select name="checkmode">
+                    <option value="day" <?php if($content->checkmode == "day") {echo 'selected="selected"';} ?> >按天结算</option>
+                    <option value="hour" <?php if($content->checkmode == "hour") {echo 'selected="selected"';} ?> >按小时结算</option>
+                    <option value="month" <?php if($content->checkmode == "month") {echo 'selected="selected"';} ?> >按月结算</option>
+                    <option value="times" <?php if($content->checkmode == "times") {echo 'selected="selected"';} ?> >按次结算</option>
+                    <option value="other" <?php if($content->checkmode == "other") {echo 'selected="selected"';} ?> >其他</option>
+                </select>
+            </section>
 			<section>
 				<label for="price">薪资</label>
 				<input type="text" name="price" value="{{$content->price}}">

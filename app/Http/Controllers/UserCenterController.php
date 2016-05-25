@@ -119,7 +119,6 @@ class UserCenterController extends Controller
             if (isset($content->photos_sha1)) {
                 $photos = Img::where('label',$content->photos_sha1)->get(['name']);
             }
-
             $folder = Category::find($category->parent_id);
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
@@ -204,9 +203,6 @@ class UserCenterController extends Controller
             }
             if ($info->content != $content){
                 $info->content = $content;
-            }
-            if ($info->category_id != $request->category_id){
-                $info->category_id = $request->category_id;
             }
             $info->update();
 

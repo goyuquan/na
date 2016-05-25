@@ -31,10 +31,8 @@ $hover_color:#a94442;
             input[type="text"],
             input[type="date"] {
                 display: inline-block;
-                height: 2rem;
                 padding: 6px 12px;
                 font-size: 14px;
-                line-height: 2rem;
                 color: #555;
                 background-color: #fff;
                 background-image: none;
@@ -46,12 +44,26 @@ $hover_color:#a94442;
                 -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
                 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
             }
+            select {
+                display: inline-block;
+                padding: 6px 12px;
+                font-size: 1rem;
+                line-height: 1rem;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
             textarea {
                 display: inline-block;
                 padding: 12px 12px;
                 font-size: 14px;
-                width: 26rem;
-                height: 10rem;
                 line-height: 1rem;
                 color: #555;
                 background-color: #fff;
@@ -110,10 +122,7 @@ $hover_color:#a94442;
                     display: inline-block;
                     text-align: right;
                     margin-right: 1rem;
-
-                    &[for="text"] {
-                        vertical-align: top;
-                    }
+                    vertical-align: top;
 
                     &:first-child {
                         width: 10rem;
@@ -147,10 +156,8 @@ $hover_color:#a94442;
             input[type="text"],
             input[type="date"] {
                 display: inline-block;
-                height: 2rem;
                 padding: 6px 12px;
                 font-size: 14px;
-                line-height: 2rem;
                 color: #555;
                 background-color: #fff;
                 background-image: none;
@@ -158,6 +165,22 @@ $hover_color:#a94442;
                 border-radius: 4px;
                 -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
                 box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
+            select {
+                display: inline-block;
+                padding: 6px 12px;
+                font-size: 1rem;
+                line-height: 1rem;
+                color: #555;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
                 -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
                 -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
                 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
@@ -224,10 +247,8 @@ $hover_color:#a94442;
                     display: inline-block;
                     text-align: right;
                     margin-right: 1rem;
+                    vertical-align: top;
 
-                    &[for="text"] {
-                        vertical-align: top;
-                    }
 
                     &:first-child {
                         width: 10rem;
@@ -261,10 +282,8 @@ $hover_color:#a94442;
             input[type="text"],
             input[type="date"] {
                 display: inline-block;
-                height: 2rem;
                 padding: 6px 12px;
                 font-size: 14px;
-                line-height: 2rem;
                 color: #555;
                 background-color: #fff;
                 background-image: none;
@@ -337,14 +356,12 @@ $hover_color:#a94442;
                     font-size: 1.2rem;
                     margin-bottom: 0.5rem;
                     display: inline-block;
+                    vertical-align: top;
 
                     &[type="text"] {
                         display: block;
                     }
 
-                    &[for="text"] {
-                        vertical-align: top;
-                    }
                     &:last-child {
                         color: $hover_color;
                     }
@@ -374,10 +391,8 @@ $hover_color:#a94442;
             input[type="text"],
             input[type="date"] {
                 display: inline-block;
-                height: 2rem;
                 padding: 6px 12px;
                 font-size: 14px;
-                line-height: 2rem;
                 color: #555;
                 background-color: #fff;
                 background-image: none;
@@ -450,14 +465,12 @@ $hover_color:#a94442;
                     font-size: 1.2rem;
                     margin-bottom: 0.5rem;
                     display: inline-block;
+                    vertical-align: top;
 
                     &[type="text"] {
                         display: block;
                     }
 
-                    &[for="text"] {
-                        vertical-align: top;
-                    }
                     &:last-child {
                         color: $hover_color;
                     }

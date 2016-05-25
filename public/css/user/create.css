@@ -18,6 +18,21 @@
       -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
       -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form select {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
     .content_wrap form textarea {
       display: inline-block;
       padding: 12px 12px;
@@ -50,9 +65,8 @@
         font-size: 1.2rem;
         display: inline-block;
         text-align: right;
-        margin-right: 1rem; }
-        .content_wrap form section label[for="text"] {
-          vertical-align: top; }
+        margin-right: 1rem;
+        vertical-align: top; }
         .content_wrap form section label:first-child {
           width: 10rem; }
         .content_wrap form section label:last-child {
@@ -81,6 +95,21 @@
       -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
       -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .content_wrap form select {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
     .content_wrap form textarea {
       display: inline-block;
       padding: 12px 12px;
@@ -113,9 +142,8 @@
         font-size: 1.2rem;
         display: inline-block;
         text-align: right;
-        margin-right: 1rem; }
-        .content_wrap form section label[for="text"] {
-          vertical-align: top; }
+        margin-right: 1rem;
+        vertical-align: top; }
         .content_wrap form section label:first-child {
           width: 10rem; }
         .content_wrap form section label:last-child {

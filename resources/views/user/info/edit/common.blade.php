@@ -36,13 +36,11 @@
 			</section>
 			<section>
 				<label for="text">描述</label>
-				<textarea type="text" name="text">{{$info->text}}</textarea>
+				<textarea type="text" name="text" rows="5" cols="51">{{$info->text}}</textarea>
 				@if ($errors->has('text'))
 					<strong>{{ $errors->first('text') }}</strong>
 				@endif
 			</section>
-            
-            @include('user.info.edit.category_select')
 
             <section>
 				<label for="phone">电话号码</label>
@@ -59,7 +57,7 @@
 			</section>
 			<section class="photo_wrap">
 				<label for="photos">图片</label>
-					@if($photos && count($photos) > 0)
+					@if(isset($photos) && count($photos) > 0)
 						@foreach($photos as $photo)
 						<img src="{{url('uploads/thumbnails/'.$photo->name)}}" />
 						@endforeach

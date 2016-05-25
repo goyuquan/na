@@ -39,6 +39,16 @@
             <span class="item">工作地点: {{$content->didian}}</span>
             <span class="item">电话号码: {{$content->phone}}</span>
             <span class="item">招聘人数: {{$content->count}}</span>
+            <span class="item">工作时间: {{$content->gongzuoshijian}}</span>
+            <?php
+            $checkmode = array(
+                "day" => "按天",
+                "hour" => "按小时",
+                "month" => "按月",
+                "times" => "按次",
+                "other" => "其他" );
+             ?>
+            <span class="item">结算方式: {{$checkmode[$content->checkmode]}}</span>
             <span class="item">
                 薪资:&nbsp;
                 <?php if(isset($content->price)){

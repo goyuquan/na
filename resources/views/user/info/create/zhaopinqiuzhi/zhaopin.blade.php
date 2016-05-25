@@ -5,7 +5,6 @@
 @section('keywords','宁安信息网,宁安招聘,宁安房产,宁安吧,宁安论坛,231084,157400,宁安网,宁安免费发布信息')
 
 @section('style')
-<link rel="stylesheet" href="/css/upload.css">
 <link rel="stylesheet" href="/css/user/create.css">
 @endsection
 
@@ -52,8 +51,12 @@
                 <input type="text" name="count" >
             </section>
 			<section>
+				<label for="yaoqiu">职位要求</label>
+				<textarea name="yaoqiu" rows="5" cols="60"></textarea>
+			</section>
+			<section>
 				<label for="text">职位描述</label>
-				<textarea name="text" rows="10" cols="60">{{ old('text') }}</textarea>
+				<textarea name="text" rows="5" cols="60">{{ old('text') }}</textarea>
                 @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
 			</section>
 			@if(Auth::User()->role > 1)

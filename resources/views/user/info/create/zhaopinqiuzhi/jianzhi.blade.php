@@ -5,7 +5,7 @@
 @section('keywords','宁安信息网,宁安招聘,宁安房产,宁安吧,宁安论坛,231084,157400,宁安网,宁安免费发布信息')
 
 @section('style')
-<link rel="stylesheet" href="/css/user/edit.css">
+<link rel="stylesheet" href="/css/user/create.css">
 @endsection
 
 @section('content')
@@ -22,53 +22,69 @@
     @include('user.layouts.sidebar')
 
     <div class="content_wrap">
-		<form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
-			<input type="hidden" name="page" value="{{$info->id}}">
+		<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
+			<input type="hidden" name="category_id" value="{{$category->id}}">
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">职位名</label>
-				<input type="text" name="title" value="{{$info->title}}">
-				@if ($errors->has('title'))
-					<strong>{{ $errors->first('title') }}</strong>
-				@endif
+				<input type="text" name="title" value="{{ old('title') }}">
+                @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
-			<section>
-				<label for="danwei">招聘单位</label>
-				<input class="long" type="text" name="danwei" value="{{$content->danwei}}">
-			</section>
-			<section>
-				<label for="didian">工作地点</label>
-				<input class="long" type="text" name="didian" value="{{$content->didian}}">
-			</section>
-			<section>
-				<label for="price">薪资</label>
-				<input type="text" name="price" value="{{$content->price}}">
-			</section>
-			<section>
-				<label for="phone">电话号码</label>
-				<input type="text" name="phone" value="{{$content->phone}}">
-			</section>
-			<section>
-				<label for="count">招聘人数</label>
-				<input type="text" name="count" value="{{$content->count}}">
-			</section>
-
+            <section>
+                <label for="danwei">招聘单位</label>
+                <input class="long" type="text" name="danwei" >
+            </section>
+            <section>
+                <label for="didian">工作地点</label>
+                <input class="long" type="text" name="didian" >
+            </section>
+            <section>
+                <label for="gongzuoshijian">工作时间</label>
+                <input class="long" type="text" name="gongzuoshijian" >
+            </section>
+            <section>
+                <label for="checkmode">结算方式</label>
+                <select name="checkmode">
+                    <option value="day">按天结算</option>
+                    <option value="hour">按小时结算</option>
+                    <option value="month">按月结算</option>
+                    <option value="times">按次结算</option>
+                    <option value="other">其他</option>
+                </select>
+            </section>
+            <section>
+                <label for="price">薪资</label>
+                <input type="text" name="price" >
+            </section>
+            <section>
+                <label for="phone">电话号码</label>
+                <input type="text" name="phone" value="{{ Auth::user()->phone }}">
+            </section>
+            <section>
+                <label for="count">招聘人数</label>
+                <input type="text" name="count" >
+            </section>
 			<section>
 				<label for="yaoqiu">职位要求</label>
-				<textarea type="text" name="yaoqiu" rows="5" cols="60">{{$content->yaoqiu}}</textarea>
+				<textarea name="yaoqiu" rows="5" cols="60"></textarea>
 			</section>
 			<section>
 				<label for="text">职位描述</label>
-				<textarea type="text" name="text" rows="5" cols="60">{{$info->text}}</textarea>
-				@if ($errors->has('text'))
-					<strong>{{ $errors->first('text') }}</strong>
-				@endif
+				<textarea name="text" rows="5" cols="60">{{ old('text') }}</textarea>
+                @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
 			</section>
+			@if(Auth::User()->role > 1)
+			<section>
+				<label for="publish_at">发布时间</label>
+				<input type="date" name="publish_at">
+			</section>
+			@endif
 
-			<input type="submit" value="修改">
+			<input type="submit" value="提交">
 		</form>
 	</div>
 </div>
+
 @endsection
 
 @section('script')
@@ -77,7 +93,8 @@
 <script type="text/javascript">
 $(function(){
 
-    var validate = $("#create").validate({
+
+	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -147,7 +164,6 @@ $(function(){
 			}
 		},
 	});
-
 });
 </script>
 @endsection

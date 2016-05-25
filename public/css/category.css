@@ -69,7 +69,6 @@
           display: inline-block;
           text-indent: 1rem; }
           .main_wrap .content ul.list li h4 a {
-            color: #575757;
             font-size: 1rem;
             line-height: 2rem; }
             .main_wrap .content ul.list li h4 a:hover {
@@ -78,8 +77,7 @@
           margin-left: 1rem;
           color: #666; }
         .main_wrap .content ul.list li .price {
-          color: #01579B;
-          font-size: 1rem;
+          color: #a94442;
           font-weight: bold;
           margin-left: 1rem; }
         .main_wrap .content ul.list li .phone {
@@ -173,14 +171,12 @@
           display: inline-block;
           text-indent: 1rem; }
           .main_wrap .content ul.list li h4 a {
-            color: #575757;
             font-size: 1rem;
             line-height: 2rem; }
             .main_wrap .content ul.list li h4 a:hover {
               color: #a94442; }
         .main_wrap .content ul.list li .price {
-          color: #01579B;
-          font-size: 1rem;
+          color: #a94442;
           font-weight: bold;
           margin-left: 1rem; }
         .main_wrap .content ul.list li .item {
@@ -277,14 +273,12 @@
           display: inline-block;
           text-indent: 1rem; }
           .main_wrap .content ul.list li h4 a {
-            color: #575757;
             font-size: 1rem;
             line-height: 2rem; }
             .main_wrap .content ul.list li h4 a:hover {
               color: #a94442; }
         .main_wrap .content ul.list li .price {
-          color: #01579B;
-          font-size: 1rem;
+          color: #a94442;
           font-weight: bold;
           margin-left: 1rem; }
         .main_wrap .content ul.list li .item {
@@ -384,14 +378,12 @@
           font-weight: bold !important; }
           .main_wrap .content ul.list li h4 a {
             font-weight: bold !important;
-            color: #575757;
             font-size: 1.5rem;
             line-height: 2rem; }
             .main_wrap .content ul.list li h4 a:hover {
               color: #a94442; }
         .main_wrap .content ul.list li .price {
-          color: #01579B;
-          font-size: 1rem;
+          color: #a94442;
           font-weight: bold;
           margin-left: 1rem; }
         .main_wrap .content ul.list li .item {

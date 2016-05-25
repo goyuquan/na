@@ -23,7 +23,7 @@
 <div class="main_wrap container">
     @include('info.categories.show_top')
     <div class="sidebar">
-        @include('info.categories.how_sidebar')
+        @include('info.categories.show_sidebar')
     </div>
     <div class="content">
         <h1>{{$info->title}}</h1>
@@ -48,7 +48,7 @@
             <br>
             {{$info->text}}
         </div>
-        @include('info.categories.bottom_top')
+        @include('info.categories.show_bottom')
     </div>
 </div>
 

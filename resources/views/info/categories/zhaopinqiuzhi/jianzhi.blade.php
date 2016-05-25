@@ -37,6 +37,14 @@
 
             @if(count($infos) > 0)
             @foreach( $infos as $info )
+            <?php
+            $checkmode = array(
+                "day" => "按天",
+                "hour" => "按小时",
+                "month" => "按月",
+                "times" => "按次",
+                "other" => "其他" );
+             ?>
             <li>
                 <span class="date">{{ substr($info->publish_at,0,10) }}</span>
                 <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,20) }}</a></h4>
@@ -49,8 +57,9 @@
                         }
                     ?>
                 </span>
+                <span class="item">{{ $checkmode[json_decode($info->content)->checkmode] }}结算</span>
                 <span class="phone">{{ json_decode($info->content)->phone }}</span>
-                <p>职位要求:    {{ json_decode($info->content)->yaoqiu }}</p>
+                <p>职位要求:    {{ json_decode($info->content)->yaoqiu }} &nbsp;工作时间:   {{ json_decode($info->content)->gongzuoshijian }}</p>
                 <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach

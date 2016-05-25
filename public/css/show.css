@@ -36,7 +36,8 @@
       .main_wrap .content .text_wrap {
         display: inline-block;
         margin-top: 0.5rem;
-        font-size: 1rem; }
+        font-size: 1rem;
+        display: block; }
         .main_wrap .content .text_wrap:after {
           content: ".";
           display: block;
@@ -109,7 +110,8 @@
       .main_wrap .content .text_wrap {
         display: inline-block;
         margin-top: 0.5rem;
-        font-size: 1rem; }
+        font-size: 1rem;
+        display: block; }
         .main_wrap .content .text_wrap:after {
           content: ".";
           display: block;
@@ -182,7 +184,8 @@
       .main_wrap .content .text_wrap {
         display: inline-block;
         margin-top: 0.5rem;
-        font-size: 1rem; }
+        font-size: 1rem;
+        display: block; }
         .main_wrap .content .text_wrap:after {
           content: ".";
           display: block;
@@ -253,7 +256,8 @@
           display: block; }
       .main_wrap .content .text_wrap {
         margin-top: 0.5rem;
-        font-size: 1rem; }
+        font-size: 1rem;
+        display: block; }
         .main_wrap .content .text_wrap .text_ad {
           width: 300px;
           height: 250px;
