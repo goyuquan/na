@@ -91,7 +91,7 @@
 <script type="text/javascript">
 $(function(){
 
-    var validate = $("#create").validate({
+	var validate = $("#edit").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -113,7 +113,7 @@ $(function(){
 				minlength : 2,
 				maxlength : 50
 			},
-			xinzi : {
+			price : {
 				number : true
 			},
             phone : {
@@ -122,6 +122,10 @@ $(function(){
             count : {
                 number : true
             },
+			yaoqiu : {
+				required : true,
+				maxlength : 1000
+			}
 			text : {
 				required : true,
 				minlength : 10,
@@ -154,6 +158,10 @@ $(function(){
 			count : {
 				number : '请填招聘人数'
 			},
+			yaoqiu : {
+				required : '职位要求不能为空',
+				maxlength : '职位要求最长不能大于1000'
+			}
 			text : {
 				required : '职位描述不能为空',
 				minlength : '职位描述最长不能小于10',
@@ -161,7 +169,6 @@ $(function(){
 			}
 		},
 	});
-
 });
 </script>
 @endsection

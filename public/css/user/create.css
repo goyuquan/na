@@ -2,6 +2,10 @@
   .content_wrap {
     box-sizing: border-box;
     padding: 2rem; }
+    .content_wrap form input[type="radio"] {
+      position: relative;
+      top: 6px;
+      display: inline-block; }
     .content_wrap form input[type="text"],
     .content_wrap form input[type="password"],
     .content_wrap form input[type="date"] {

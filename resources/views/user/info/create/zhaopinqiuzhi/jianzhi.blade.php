@@ -116,7 +116,7 @@ $(function(){
 				minlength : 2,
 				maxlength : 50
 			},
-			xinzi : {
+			price : {
 				number : true
 			},
             phone : {
@@ -125,6 +125,10 @@ $(function(){
             count : {
                 number : true
             },
+			yaoqiu : {
+				required : true,
+				maxlength : 1000
+			}
 			text : {
 				required : true,
 				minlength : 10,
@@ -157,12 +161,16 @@ $(function(){
 			count : {
 				number : '请填招聘人数'
 			},
+			yaoqiu : {
+				required : '职位要求不能为空',
+				maxlength : '职位要求最长不能大于1000'
+			}
 			text : {
 				required : '职位描述不能为空',
 				minlength : '职位描述最长不能小于10',
 				maxlength : '职位描述最长不能大于1000'
 			}
-		},
+		}
 	});
 });
 </script>

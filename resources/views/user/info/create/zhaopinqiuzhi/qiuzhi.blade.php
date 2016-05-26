@@ -26,25 +26,49 @@
 			<input type="hidden" name="category_id" value="{{$category->id}}">
 			{!! csrf_field() !!}
 			<section>
-				<label for="title">职位名</label>
+				<label for="title">期望职位</label>
 				<input type="text" name="title" value="{{ old('title') }}">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
             <section>
-                <label for="danwei">招聘单位</label>
-                <input class="long" type="text" name="danwei" >
+                <label for="name">姓名</label>
+                <input type="text" name="name" >
             </section>
             <section>
-                <label for="didian">工作地点</label>
-                <input class="long" type="text" name="didian" >
+                <label for="sex">男:</label>
+                <input type="radio" checked="checked" name="sex" value="男" />
+                <label style="margin-left:60px;" for="female">女:</label>
+                <input type="radio" name="sex" value="女" />
             </section>
             <section>
-                <label for="price">薪资</label>
+                <label for="age">年龄</label>
+                <input type="text" name="age" >
+            </section>
+            <section>
+                <label for="experience">工作年限</label>
+                <input  type="text" name="experience" >
+            </section>
+            <section>
+                <label for="price">期望薪资</label>
                 <input type="text" name="price" >
+            </section>
+            <section>
+                <label for="edu">学历</label>
+                <select name="edu">
+                    <option value="ben">大学本科</option>
+                    <option value="zhuan">大学专科</option>
+                    <option value="gao">高中</option>
+                    <option value="chu">初中</option>
+                    <option value="xiao">小学</option>
+                </select>
             </section>
             <section>
                 <label for="phone">电话号码</label>
                 <input type="text" name="phone" value="{{ Auth::user()->phone }}">
+            </section>
+            <section>
+                <label for="didian">期望工作地点</label>
+                <input type="text" name="didian" >
             </section>
             <section>
                 <label for="count">招聘人数</label>
@@ -79,7 +103,8 @@
 <script type="text/javascript">
 $(function(){
 
-    var validate = $("#create").validate({
+
+	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单
@@ -101,7 +126,7 @@ $(function(){
 				minlength : 2,
 				maxlength : 50
 			},
-			price : {
+			xinzi : {
 				number : true
 			},
             phone : {
@@ -110,10 +135,6 @@ $(function(){
             count : {
                 number : true
             },
-			yaoqiu : {
-				required : true,
-				maxlength : 1000
-			}
 			text : {
 				required : true,
 				minlength : 10,
@@ -146,18 +167,13 @@ $(function(){
 			count : {
 				number : '请填招聘人数'
 			},
-			yaoqiu : {
-				required : '职位要求不能为空',
-				maxlength : '职位要求最长不能大于1000'
-			}
 			text : {
 				required : '职位描述不能为空',
 				minlength : '职位描述最长不能小于10',
 				maxlength : '职位描述最长不能大于1000'
 			}
-		}
+		},
 	});
-
 });
 </script>
 @endsection

@@ -28,6 +28,11 @@ $hover_color:#a94442;
         padding: 2rem;
 
         form {
+            input[type="radio"] {
+                position: relative;
+                top: 6px;
+                display: inline-block;
+            }
             input[type="text"],
             input[type="password"],
             input[type="date"] {
