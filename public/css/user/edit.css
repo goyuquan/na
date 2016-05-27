@@ -88,8 +88,12 @@
           width: 10rem; }
         .content_wrap form section label:last-child {
           color: #a94442; }
-      .content_wrap form section input[name="title"], .content_wrap form section input.long, .content_wrap form section input.long {
+      .content_wrap form section input[name="title"], .content_wrap form section input.long {
         width: 26rem; }
+      .content_wrap form section input.short {
+        width: 5rem; }
+      .content_wrap form section input.tiny {
+        width: 2rem; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -183,8 +187,12 @@
           width: 10rem; }
         .content_wrap form section label:last-child {
           color: #a94442; }
-      .content_wrap form section input[name="title"], .content_wrap form section input.long, .content_wrap form section input.long {
+      .content_wrap form section input[name="title"], .content_wrap form section input.long {
         width: 26rem; }
+      .content_wrap form section input.short {
+        width: 5rem; }
+      .content_wrap form section input.tiny {
+        width: 2rem; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {

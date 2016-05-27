@@ -43,6 +43,7 @@ $hover_color:#a94442;
                 -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
                 -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
                 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
             }
             select {
                 display: inline-block;
@@ -134,9 +135,14 @@ $hover_color:#a94442;
                 input {
 
                     &[name="title"],
-                    &.long,
                     &.long {
                         width: 26rem;
+                    }
+                    &.short {
+                        width: 5rem;
+                    }
+                    &.tiny {
+                        width: 2rem;
                     }
                 }
                 button {
@@ -168,6 +174,7 @@ $hover_color:#a94442;
                 -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
                 -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
                 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
             }
             select {
                 display: inline-block;
@@ -260,9 +267,14 @@ $hover_color:#a94442;
                 input {
 
                     &[name="title"],
-                    &.long,
                     &.long {
                         width: 26rem;
+                    }
+                    &.short {
+                        width: 5rem;
+                    }
+                    &.tiny {
+                        width: 2rem;
                     }
                 }
                 button {

@@ -27,7 +27,7 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">职位名</label>
-				<input type="text" name="title" value="{{$info->title}}">
+				<input class="short" type="text" name="title" value="{{$info->title}}">
 				@if ($errors->has('title'))
 					<strong>{{ $errors->first('title') }}</strong>
 				@endif

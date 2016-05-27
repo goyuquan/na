@@ -77,6 +77,10 @@
           color: #a94442; }
       .content_wrap form section input[name="title"], .content_wrap form section input.long {
         width: 26rem; }
+      .content_wrap form section input.short {
+        width: 5rem; }
+      .content_wrap form section input.tiny {
+        width: 2rem; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -99,6 +103,14 @@
       -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
       -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
       transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+      .content_wrap form input[type="text"] .short,
+      .content_wrap form input[type="password"] .short,
+      .content_wrap form input[type="date"] .short {
+        width: 5rem; }
+      .content_wrap form input[type="text"] .tiny,
+      .content_wrap form input[type="password"] .tiny,
+      .content_wrap form input[type="date"] .tiny {
+        width: 2rem; }
     .content_wrap form select {
       display: inline-block;
       padding: 6px 12px;
@@ -152,8 +164,12 @@
           width: 10rem; }
         .content_wrap form section label:last-child {
           color: #a94442; }
-      .content_wrap form section input[name="title"] {
+      .content_wrap form section input[name="title"], .content_wrap form section input.long {
         width: 26rem; }
+      .content_wrap form section input.short {
+        width: 5rem; }
+      .content_wrap form section input.tiny {
+        width: 2rem; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {

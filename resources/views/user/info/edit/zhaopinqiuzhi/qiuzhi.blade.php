@@ -27,12 +27,12 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">期望职位</label>
-				<input type="text" name="title" value="{{ $info->title }}">
+				<input class="short" type="text" name="title" value="{{ $info->title }}">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
             <section>
                 <label for="name">姓名</label>
-                <input type="text" name="name" value="{{ $content->name }}">
+                <input class="short" type="text" name="name" value="{{ $content->name }}">
             </section>
             <section>
                 <label for="sex">男:</label>
@@ -42,11 +42,11 @@
             </section>
             <section>
                 <label for="age">年龄</label>
-                <input type="text" name="age" value="{{ $content->age }}">
+                <input class="tiny" type="text" name="age" value="{{ $content->age }}">
             </section>
             <section>
                 <label for="year">工作年限</label>
-                <input  type="text" name="year"  value="{{ $content->year }}">
+                <input class="tiny" type="text" name="year"  value="{{ $content->year }}">年
             </section>
             <section>
                 <label for="edu">学历</label>
@@ -60,15 +60,15 @@
             </section>
             <section>
                 <label for="phone">电话号码</label>
-                <input type="text" name="phone"  value="{{ $content->phone }}">
+                <input class="short" type="text" name="phone"  value="{{ $content->phone }}">
             </section>
             <section>
                 <label for="price">期望薪资</label>
-                <input type="text" name="price"  value="{{ $content->price }}">
+                <input class="tiny" type="text" name="price"  value="{{ $content->price }}">
             </section>
             <section>
                 <label for="didian">期望工作地点</label>
-                <input type="text" name="didian"  value="{{ $content->didian }}">
+                <input class="short" type="text" name="didian"  value="{{ $content->didian }}">
             </section>
 			<section>
 				<label for="experience">工作经历</label>

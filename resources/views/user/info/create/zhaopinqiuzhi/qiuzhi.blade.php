@@ -27,7 +27,7 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">期望职位</label>
-				<input type="text" name="title" value="{{ old('title') }}">
+				<input class="short" type="text" name="title" value="{{ old('title') }}">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
             <section>
@@ -46,7 +46,7 @@
             </section>
             <section>
                 <label for="year">工作年限</label>
-                <input  type="text" name="year" >
+                <input  type="text" name="year" >年
             </section>
             <section>
                 <label for="edu">学历</label>
