@@ -123,12 +123,14 @@ class UserCenterController extends Controller
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
                     'info' => $info,
-                    'content' => $content
+                    'content' => $content,
+                    'category' => $category
                 ]);
             } else {
                 return view('user.Info.edit.common',[
                     'info' => $info,
-                    'content' => $content
+                    'content' => $content,
+                    'category' => $category
                 ]);
             }
         } else {
@@ -186,7 +188,7 @@ class UserCenterController extends Controller
             'text.min' => '内容不能小于:min位',
         ];
         $this->validate($request, [
-            'title' => 'required|min:4|max:30',
+            'title' => 'required|min:2|max:30',
             'text' => 'required|min:10|max:1000',
         ],$messages);
 
@@ -240,9 +242,12 @@ class UserCenterController extends Controller
                 $url = $content->thumbnail;
                 File::delete(['uploads/thumbnails/'.$url]);
             }
-            $photo = $content->photos_sha1;
-            File::delete(['uploads/'.$photo]);
-            Img::where('label',$photo)->delete();
+
+            if(isset($content->photos_sha1)) {
+                $photo = $content->photos_sha1;
+                File::delete(['uploads/'.$photo]);
+                Img::where('label',$photo)->delete();
+            }
             Info::destroy($id);
             return redirect('/user/infos');
         } else {

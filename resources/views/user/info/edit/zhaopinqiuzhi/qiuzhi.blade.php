@@ -22,61 +22,61 @@
     @include('user.layouts.sidebar')
 
     <div class="content_wrap">
-		<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
+		<form id="create" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
 			<input type="hidden" name="category_id" value="{{$category->id}}">
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">期望职位</label>
-				<input type="text" name="title" value="{{ old('title') }}">
+				<input type="text" name="title" value="{{ $info->title }}">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
             <section>
                 <label for="name">姓名</label>
-                <input type="text" name="name" >
+                <input type="text" name="name" value="{{ $content->name }}">
             </section>
             <section>
                 <label for="sex">男:</label>
-                <input type="radio" checked="checked" name="sex" value="男" />
+                <input type="radio" <?php if($content->sex == "男" ){ echo 'checked="checked"'; } ?>  name="sex" value="男" />
                 <label style="margin-left:60px;" for="female">女:</label>
-                <input type="radio" name="sex" value="女" />
+                <input type="radio" <?php if($content->sex == "女" ){ echo 'checked="checked"'; } ?> name="sex" value="女" />
             </section>
             <section>
                 <label for="age">年龄</label>
-                <input type="text" name="age" >
+                <input type="text" name="age" value="{{ $content->age }}">
             </section>
             <section>
                 <label for="year">工作年限</label>
-                <input  type="text" name="year" >
+                <input  type="text" name="year"  value="{{ $content->year }}">
             </section>
             <section>
                 <label for="edu">学历</label>
                 <select name="edu">
-                    <option value="ben">大学本科</option>
-                    <option value="zhuan">大学专科</option>
-                    <option value="gao">高中</option>
-                    <option value="chu">初中</option>
-                    <option value="xiao">小学</option>
+                    <option value="ben" <?php if($content->edu == "ben") {echo 'selected="selected"';} ?>>大学本科</option>
+                    <option value="zhuan" <?php if($content->edu == "zhuan") {echo 'selected="selected"';} ?>>大学专科</option>
+                    <option value="gao" <?php if($content->edu == "gao") {echo 'selected="selected"';} ?>>高中</option>
+                    <option value="chu" <?php if($content->edu == "chu") {echo 'selected="selected"';} ?>>初中</option>
+                    <option value="xiao" <?php if($content->edu == "xiao") {echo 'selected="selected"';} ?>>小学</option>
                 </select>
             </section>
             <section>
                 <label for="phone">电话号码</label>
-                <input type="text" name="phone" value="{{ Auth::user()->phone }}">
+                <input type="text" name="phone"  value="{{ $content->phone }}">
             </section>
             <section>
                 <label for="price">期望薪资</label>
-                <input type="text" name="price" >
+                <input type="text" name="price"  value="{{ $content->price }}">
             </section>
             <section>
                 <label for="didian">期望工作地点</label>
-                <input type="text" name="didian" >
+                <input type="text" name="didian"  value="{{ $content->didian }}">
             </section>
 			<section>
 				<label for="experience">工作经历</label>
-				<textarea name="experience" rows="5" cols="60"></textarea>
+				<textarea name="experience" rows="5" cols="60">{{ $content->experience }}</textarea>
 			</section>
 			<section>
 				<label for="text">期望职位描述</label>
-				<textarea name="text" rows="5" cols="60">{{ old('text') }}</textarea>
+				<textarea name="text" rows="5" cols="60">{{ $info->text }}</textarea>
                 @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
 			</section>
 			@if(Auth::User()->role > 1)
@@ -100,10 +100,10 @@
 $(function(){
 
 
-	var validate = $("#create").validate({
-	    debug: true, //调试模式取消submit的默认提交功能
-	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
-	        form.submit();   //提交表单
+	var validate = $("#edit").validate({
+	    debug: true,
+	    submitHandler: function(form){
+	        form.submit();
 	    },
 
 		rules : {
