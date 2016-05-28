@@ -29,24 +29,24 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title">
+				<input type="text" name="title" value="{{ $info->title }}">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
 			<section>
 				<label for="mianji">面积</label>
-				<input class="short" type="text" name="mianji">&nbsp;平方米
+				<input class="short" type="text" name="mianji" value="{{ $content->mianji }}">&nbsp;平方米
 			</section>
 			<section>
 				<label for="price">总价</label>
-				<input class="short" type="text" name="price">&nbsp;万
+				<input class="short" type="text" name="price" value="{{ $content->price }}">&nbsp;万
 			</section>
 			<section>
 				<label for="area">小区(楼盘)</label>
-				<input type="text" name="area">
+				<input type="text" name="area" value="{{ $content->area }}">
 			</section>
 			<section>
 				<label for="addr">地址</label>
-				<input class="long" type="text" name="addr">
+				<input class="long" type="text" name="addr" value="{{ $content->addr }}">
 			</section>
             <section>
                 <label for="huxing">户型</label>
@@ -61,11 +61,11 @@
             </section>
             <section>
 				<label for="floor">楼层</label>
-				<input class="tiny" type="text" name="floor">
+				<input class="tiny" type="text" name="floor" value="{{ $content->floor }}">
 			</section>
             <section>
 				<label for="maxfloor">最高楼层</label>
-				<input class="tiny" type="text" name="maxfloor">
+				<input class="tiny" type="text" name="maxfloor" value="{{ $content->maxfloor }}">
 			</section>
             <section>
                 <label for="zhuangxiu">装修程度</label>
@@ -85,7 +85,7 @@
 			</section>
             <section>
                 <label for="who">联系人</label>
-                <input type="text" name="who">
+                <input type="text" name="who" value="{{ $content->who }}">
             </section>
             <section>
                 <label for="phone">电话号码</label>
@@ -94,7 +94,7 @@
 			@if(Auth::User()->role > 1)
 			<section>
 				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at">
+				<input type="date" name="publish_at" value="{{ substr($info->publish_at,0,10) }}">
 			</section>
 			@endif
 			<section class="thumb_wrap">

@@ -1,4 +1,6 @@
 $(function(){
+    $('.background').height($('html').height()).css('margin','0');
+    $('.background_photos').height($('html').height()).css('margin','0');
 
     $("#img_upload").click(function(){
         $('#file_form').submit(function(e) {
