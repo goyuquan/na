@@ -34,37 +34,33 @@
         </div>
         <div class="text_wrap">
             @include('info.categories.text_ad')
-            <span class="item">职位: {{$info->title}}</span>
-            <span class="item">招聘单位: {{$content->danwei}}</span>
-            <span class="item">工作地点: {{$content->didian}}</span>
-            <span class="item">联系人: {{$content->who}}</span>
+            <?php $edu = array(
+                'ben' => '大学本科',
+                'zhuan' => '大学专科',
+                'gao' => '高中',
+                'chu' => '初中',
+                'xiao' => '小学'
+            ); ?>
+            <span class="item">期望职位: {{$info->title}}</span>
+            <span class="item">姓名: {{$content->name}}</span>
+            <span class="item">性别: {{$content->sex}}</span>
+            <span class="item">年龄: {{$content->age}}</span>
+            <span class="item">工作年限: {{$content->year}}</span>
+            <span class="item">学历: {{ $edu[$content->edu] }}</span>
             <span class="item">电话号码: {{$content->phone}}</span>
-            <span class="item">招聘人数: {{$content->count}}</span>
-            <span class="item">工作时间: {{$content->gongzuoshijian}}</span>
-            <?php
-            $checkmode = array(
-                "day" => "按天",
-                "hour" => "按小时",
-                "month" => "按月",
-                "times" => "按次",
-                "other" => "其他" );
-             ?>
-            <span class="item">结算方式: {{$checkmode[$content->checkmode]}}</span>
+            <span class="item">期望工作地点: {{$content->didian}}</span>
             <span class="item">
-                薪资:&nbsp;
+                期望薪资:&nbsp;
                 <?php if(isset($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";
                 }
                 ?>
-            </span><br>
+            </span>
             <br>
             <br>
-            职位要求:   {{$content->yaoqiu}}
-            <br>
-            <br>
-            职位描述:   {{$info->text}}
+            期望职位描述:   {{$info->text}}
         </div>
         @include('info.categories.show_bottom')
     </div>

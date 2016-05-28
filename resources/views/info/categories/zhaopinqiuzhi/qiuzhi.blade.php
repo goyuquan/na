@@ -35,16 +35,23 @@
         <ul class="list">
             @include('info.categories.topsys')
 
+            <?php $edu = array(
+                'ben' => '大学本科',
+                'zhuan' => '大学专科',
+                'gao' => '高中',
+                'chu' => '初中',
+                'xiao' => '小学'
+            ); ?>
             @if(count($infos) > 0)
             @foreach( $infos as $info )
             <li>
                 <span class="date">{{ substr($info->publish_at,0,10) }}</span>
                 <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,20) }}</a></h4>
-                <span class="item">{{ json_decode($info->content)->danwei }}</span>
                 <span class="item">{{ json_decode($info->content)->name }}</span>
                 <span class="item">{{ json_decode($info->content)->sex }}</span>
                 <span class="item">年龄:  {{ json_decode($info->content)->age }}</span>
-                <span class="item">工作经验:  {{ json_decode($info->content)->age }}年</span>
+                <span class="item">学历:  {{ $edu[json_decode($info->content)->edu] }}</span>
+                <span class="item">工作经验:  {{ json_decode($info->content)->year }}年</span>
                 <span class="price">
                     <?php if(!empty(json_decode($info->content)->price) || isset(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
@@ -54,7 +61,6 @@
                     ?>
                 </span>
                 <span class="phone">{{ json_decode($info->content)->phone }}</span>
-                <p>职位要求:    {{ json_decode($info->content)->yaoqiu }}</p>
                 <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach

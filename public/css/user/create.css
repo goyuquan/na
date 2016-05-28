@@ -80,7 +80,8 @@
       .content_wrap form section input.short {
         width: 5rem; }
       .content_wrap form section input.tiny {
-        width: 2rem; }
+        width: 3rem;
+        text-align: center; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -110,7 +111,8 @@
       .content_wrap form input[type="text"] .tiny,
       .content_wrap form input[type="password"] .tiny,
       .content_wrap form input[type="date"] .tiny {
-        width: 2rem; }
+        width: 3rem;
+        text-align: center; }
     .content_wrap form select {
       display: inline-block;
       padding: 6px 12px;
@@ -169,7 +171,8 @@
       .content_wrap form section input.short {
         width: 5rem; }
       .content_wrap form section input.tiny {
-        width: 2rem; }
+        width: 3rem;
+        text-align: center; }
       .content_wrap form section button {
         padding: 0.3rem 1rem; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {

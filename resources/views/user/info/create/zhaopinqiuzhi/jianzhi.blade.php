@@ -57,6 +57,10 @@
                 <input  class="tiny" type="text" name="price" >
             </section>
             <section>
+                <label for="who">联系人</label>
+                <input type="text" name="who">
+            </section>
+            <section>
                 <label for="phone">电话号码</label>
                 <input type="text" name="phone" value="{{ Auth::user()->phone }}">
             </section>
@@ -119,6 +123,11 @@ $(function(){
 			price : {
 				number : true
 			},
+            who : {
+                required : true,
+                minlength : 1,
+                maxlength : 4
+            },
             phone : {
                 isMobile : true
             },
@@ -152,9 +161,14 @@ $(function(){
 				minlength : '工作地点最长不能小于4位',
 				maxlength : '工作地点最长不能大于30'
 			},
-			xinzi : {
-				number : '请填写数字'
+			price : {
+				number : '请填写数字或不填表示面议'
 			},
+            who : {
+                required : '联系人不能为空',
+                minlength : '联系人最长不能小于1位',
+                maxlength : '联系人最长不能大于4'
+            },
 			phone : {
 				isMobile : '请填正确的手机号'
 			},

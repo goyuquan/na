@@ -130,7 +130,6 @@ $(function(){
                 isMobile : true
             },
 			price : {
-				required : true,
 				number : true
 			},
             didian : {
@@ -173,8 +172,7 @@ $(function(){
                 isMobile : '请填正确的手机号'
             },
 			price : {
-				required : '期望薪资不能为空',
-				number : '期望薪资只能是数字'
+				number : '请填写数字或不填表示面议'
 			},
             didian : {
                 required : '工作地点不能为空',

@@ -37,6 +37,7 @@
             <span class="item">职位: {{$info->title}}</span>
             <span class="item">招聘单位: {{$content->danwei}}</span>
             <span class="item">工作地点: {{$content->didian}}</span>
+            <span class="item">联系人: {{$content->who}}</span>
             <span class="item">电话号码: {{$content->phone}}</span>
             <span class="item">招聘人数: {{$content->count}}</span>
             <span class="item">
