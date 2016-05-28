@@ -27,20 +27,20 @@
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">职位名</label>
-				<input type="text" name="title" value="{{ old('title') }}">
+				<input class="short" type="text" name="title" value="{{ old('title') }}">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
             <section>
                 <label for="danwei">招聘单位</label>
-                <input class="long" type="text" name="danwei" >
+                <input type="text" name="danwei" >
             </section>
             <section>
                 <label for="didian">工作地点</label>
-                <input class="long" type="text" name="didian" >
+                <input type="text" name="didian" >
             </section>
             <section>
                 <label for="price">薪资</label>
-                <input type="text" name="price" >
+                <input class="tiny" type="text" name="price" >
             </section>
             <section>
                 <label for="phone">电话号码</label>
@@ -48,7 +48,7 @@
             </section>
             <section>
                 <label for="count">招聘人数</label>
-                <input type="text" name="count" >
+                <input class="tiny" type="text" name="count" >
             </section>
 			<section>
 				<label for="yaoqiu">职位要求</label>
