@@ -19,7 +19,9 @@ $hover_color:#a94442;
     border: 1px solid #ccc;
     display: block;
 }
-
+.blue {
+    color:$color;
+}
 @media only screen and (min-width: 1200px) {
 
     .main_wrap {
@@ -99,14 +101,18 @@ $hover_color:#a94442;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
 
+                    .thumbnail {
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        padding: 0.2rem;
+                        float: left;
+                        margin-top: 0.5rem;
+                        margin-right: 0.5rem;
+                    }
+
                     &:last-child {
                         border-bottom: none;
                     }
-
-                    .date {
-                        color:#666;
-                    }
-
                     h4 {
                         display: inline-block;
                         text-indent: 1rem;
@@ -132,6 +138,14 @@ $hover_color:#a94442;
                         margin-left: 1rem;
                         font-size: 0.9rem;
                     }
+                    .date {
+                        color:#666;
+                    }
+                    .size {
+                        color: $color;
+                        font-weight: bold;
+                    }
+
                     p {
                         padding-left: 4.5rem;
                         color: #333;
@@ -245,13 +259,19 @@ $hover_color:#a94442;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
 
+                    .thumbnail {
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        padding: 0.2rem;
+                        float: left;
+                        margin-top: 0.5rem;
+                        margin-right: 0.5rem;
+                    }
+
                     &:last-child {
                         border-bottom: none;
                     }
 
-                    .date {
-                        color:#666;
-                    }
 
                     h4 {
                         display: inline-block;
@@ -277,6 +297,13 @@ $hover_color:#a94442;
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
+                    }
+                    .date {
+                        color:#666;
+                    }
+                    .size {
+                        color: $color;
+                        font-weight: bold;
                     }
                     p {
                         padding-left: 6rem;
@@ -391,13 +418,19 @@ $hover_color:#a94442;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
 
+                    .thumbnail {
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        padding: 0.2rem;
+                        float: left;
+                        margin-top: 0.5rem;
+                        margin-right: 0.5rem;
+                    }
+
                     &:last-child {
                         border-bottom: none;
                     }
 
-                    .date {
-                        color:#666;
-                    }
 
                     h4 {
                         display: inline-block;
@@ -423,6 +456,13 @@ $hover_color:#a94442;
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
+                    }
+                    .date {
+                        color:#666;
+                    }
+                    .size {
+                        color: $color;
+                        font-weight: bold;
                     }
                     p {
                         padding-left: 6rem;
@@ -540,19 +580,28 @@ $hover_color:#a94442;
             padding:1rem;
 
             ul.list {
+
                 li {
                     margin-top: 1rem;
                     border-bottom: 1px solid #b2cce1;
                     padding-bottom: 1rem;
 
+                    .thumbnail {
+                        display: block;
+                        border: 1px solid #ccc;
+                        padding: 0.2rem;
+                        width: 100%;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
                     &:last-child {
                         border-bottom: none;
                     }
 
-                    .date {
-                        display: block;
-                        color:#666;
-                    }
 
                     h4 {
                         display: block;
@@ -574,12 +623,23 @@ $hover_color:#a94442;
                         margin-left: 1rem;
                     }
                     .item {
+                        margin-top: 0.4rem;
                         margin-left: 1rem;
                         color: #666;
+                        display: block;
+                        width: 100%;
                     }
                     .phone {
                         margin-left: 1rem;
                         font-size: 0.9rem;
+                    }
+                    .date {
+                        display: block;
+                        color:#666;
+                    }
+                    .size {
+                        color: $color;
+                        font-weight: bold;
                     }
                     p {
                         color: #333;

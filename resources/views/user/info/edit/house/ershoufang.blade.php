@@ -24,7 +24,7 @@
     @include('user.layouts.sidebar')
 
     <div class="content_wrap">
-		<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
+		<form id="create" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
 			<input type="hidden" name="category_id" value="{{$category->id}}">
 			{!! csrf_field() !!}
 			<section>

@@ -1,3 +1,6 @@
+.blue {
+  color: #01579B; }
+
 @media only screen and (min-width: 1200px) {
   .main_wrap {
     display: inline-block;
@@ -61,10 +64,15 @@
         margin-top: 1rem;
         border-bottom: 1px solid #b2cce1;
         padding-bottom: 1rem; }
+        .main_wrap .content ul.list li .thumbnail {
+          display: inline-block;
+          border: 1px solid #ccc;
+          padding: 0.2rem;
+          float: left;
+          margin-top: 0.5rem;
+          margin-right: 0.5rem; }
         .main_wrap .content ul.list li:last-child {
           border-bottom: none; }
-        .main_wrap .content ul.list li .date {
-          color: #666; }
         .main_wrap .content ul.list li h4 {
           display: inline-block;
           text-indent: 1rem; }
@@ -83,6 +91,11 @@
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
+        .main_wrap .content ul.list li .date {
+          color: #666; }
+        .main_wrap .content ul.list li .size {
+          color: #01579B;
+          font-weight: bold; }
         .main_wrap .content ul.list li p {
           padding-left: 4.5rem;
           color: #333; }
@@ -163,10 +176,15 @@
         margin-top: 1rem;
         border-bottom: 1px solid #b2cce1;
         padding-bottom: 1rem; }
+        .main_wrap .content ul.list li .thumbnail {
+          display: inline-block;
+          border: 1px solid #ccc;
+          padding: 0.2rem;
+          float: left;
+          margin-top: 0.5rem;
+          margin-right: 0.5rem; }
         .main_wrap .content ul.list li:last-child {
           border-bottom: none; }
-        .main_wrap .content ul.list li .date {
-          color: #666; }
         .main_wrap .content ul.list li h4 {
           display: inline-block;
           text-indent: 1rem; }
@@ -185,6 +203,11 @@
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
+        .main_wrap .content ul.list li .date {
+          color: #666; }
+        .main_wrap .content ul.list li .size {
+          color: #01579B;
+          font-weight: bold; }
         .main_wrap .content ul.list li p {
           padding-left: 6rem;
           color: #333; }
@@ -265,10 +288,15 @@
         margin-top: 1rem;
         border-bottom: 1px solid #b2cce1;
         padding-bottom: 1rem; }
+        .main_wrap .content ul.list li .thumbnail {
+          display: inline-block;
+          border: 1px solid #ccc;
+          padding: 0.2rem;
+          float: left;
+          margin-top: 0.5rem;
+          margin-right: 0.5rem; }
         .main_wrap .content ul.list li:last-child {
           border-bottom: none; }
-        .main_wrap .content ul.list li .date {
-          color: #666; }
         .main_wrap .content ul.list li h4 {
           display: inline-block;
           text-indent: 1rem; }
@@ -287,6 +315,11 @@
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
+        .main_wrap .content ul.list li .date {
+          color: #666; }
+        .main_wrap .content ul.list li .size {
+          color: #01579B;
+          font-weight: bold; }
         .main_wrap .content ul.list li p {
           padding-left: 6rem;
           color: #333; }
@@ -367,11 +400,16 @@
         margin-top: 1rem;
         border-bottom: 1px solid #b2cce1;
         padding-bottom: 1rem; }
+        .main_wrap .content ul.list li .thumbnail {
+          display: block;
+          border: 1px solid #ccc;
+          padding: 0.2rem;
+          width: 100%; }
+          .main_wrap .content ul.list li .thumbnail img {
+            display: block;
+            width: 100%; }
         .main_wrap .content ul.list li:last-child {
           border-bottom: none; }
-        .main_wrap .content ul.list li .date {
-          display: block;
-          color: #666; }
         .main_wrap .content ul.list li h4 {
           display: block;
           text-indent: 1rem;
@@ -387,11 +425,20 @@
           font-weight: bold;
           margin-left: 1rem; }
         .main_wrap .content ul.list li .item {
+          margin-top: 0.4rem;
           margin-left: 1rem;
-          color: #666; }
+          color: #666;
+          display: block;
+          width: 100%; }
         .main_wrap .content ul.list li .phone {
           margin-left: 1rem;
           font-size: 0.9rem; }
+        .main_wrap .content ul.list li .date {
+          display: block;
+          color: #666; }
+        .main_wrap .content ul.list li .size {
+          color: #01579B;
+          font-weight: bold; }
         .main_wrap .content ul.list li p {
           color: #333;
           margin-top: 0.6rem;
