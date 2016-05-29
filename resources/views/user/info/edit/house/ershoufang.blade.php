@@ -51,12 +51,12 @@
             <section>
                 <label for="huxing">户型</label>
                 <select name="huxing">
-                    <option value="3_2">三室两厅</option>
-                    <option value="3_1">三室一厅</option>
-                    <option value="2_2">两室两厅</option>
-                    <option value="2_1">两室一厅</option>
-                    <option value="1_1">一室一厅</option>
-                    <option value="other">其他</option>
+                    <option value="3_2" {{ $content->huxing == "3_2" ? "selected='selected'" : ""  }}>三室两厅</option>
+                    <option value="3_1" {{ $content->huxing == "3_1" ? "selected='selected'" : ""  }}>三室一厅</option>
+                    <option value="2_2" {{ $content->huxing == "2_2" ? "selected='selected'" : ""  }}>两室两厅</option>
+                    <option value="2_1" {{ $content->huxing == "2_1" ? "selected='selected'" : ""  }}>两室一厅</option>
+                    <option value="1_1" {{ $content->huxing == "1_1" ? "selected='selected'" : ""  }}>一室一厅</option>
+                    <option value="other" {{ $content->huxing == "other" ? "selected='selected'" : ""  }}>其他</option>
                 </select>
             </section>
             <section>
@@ -70,17 +70,17 @@
             <section>
                 <label for="zhuangxiu">装修程度</label>
                 <select name="zhuangxiu">
-                    <option value="hifi">豪华装修</option>
-                    <option value="high">精装修</option>
-                    <option value="middle">中等装修</option>
-                    <option value="base">简单装修</option>
-                    <option value="low">毛坯</option>
-                    <option value="other">其他</option>
+                    <option value="hifi" {{ $content->zhuangxiu == "hifi" ? "selected='selected'" : ""  }}>豪华装修</option>
+                    <option value="high" {{ $content->zhuangxiu == "high" ? "selected='selected'" : ""  }}>精装修</option>
+                    <option value="middle" {{ $content->zhuangxiu == "middle" ? "selected='selected'" : ""  }}>中等装修</option>
+                    <option value="base" {{ $content->zhuangxiu == "base" ? "selected='selected'" : ""  }}>简单装修</option>
+                    <option value="low" {{ $content->zhuangxiu == "low" ? "selected='selected'" : ""  }}>毛坯</option>
+                    <option value="other" {{ $content->zhuangxiu == "other" ? "selected='selected'" : ""  }}>其他</option>
                 </select>
             </section>
 			<section>
 				<label for="text">详细描述</label>
-				<textarea name="text" rows="10" cols="60"></textarea>
+				<textarea name="text" rows="10" cols="60">{{ $info->text }}</textarea>
                 @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
 			</section>
             <section>
@@ -97,14 +97,26 @@
 				<input type="date" name="publish_at" value="{{ substr($info->publish_at,0,10) }}">
 			</section>
 			@endif
-			<section class="thumb_wrap">
+            <section class="thumb_wrap">
 				<label for="thumbnail">缩略图</label>
+				@if(isset($content->thumbnail))
+				<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
+				<button type="button" id="delete_thumb">删除</button>
+				@else
 				<button type="button" id="thumbnail_bt">上传缩略图</button>
+				@endif
 			</section>
 			<section class="photo_wrap">
 				<label for="photos">图片</label>
-				<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{sha1(time())}}">
-				<button type="button" id="photos_bt">上传图片</button>
+					@if(isset($photos) && count($photos) > 0)
+						@foreach($photos as $photo)
+						<img src="{{url('uploads/thumbnails/'.$photo->name)}}" />
+						@endforeach
+						<button type="button" id="delete_photos">删除</button>
+					@else
+						<button type="button" id="photos_bt">上传图片</button>
+					@endif
+				<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{ $content->photos_sha1 or sha1(time()) }}">
 			</section>
 
 

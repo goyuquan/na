@@ -124,13 +124,15 @@ class UserCenterController extends Controller
                 return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
                     'info' => $info,
                     'content' => $content,
-                    'category' => $category
+                    'category' => $category,
+                    'photos' => $photos
                 ]);
             } else {
                 return view('user.Info.edit.common',[
                     'info' => $info,
                     'content' => $content,
-                    'category' => $category
+                    'category' => $category,
+                    'photos' => $photos
                 ]);
             }
         } else {
