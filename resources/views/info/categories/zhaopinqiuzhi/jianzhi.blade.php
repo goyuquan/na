@@ -49,6 +49,9 @@
                 <span class="date">{{ substr($info->publish_at,0,10) }}</span>
                 <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,20) }}</a></h4>
                 <span class="item">{{ json_decode($info->content)->danwei }}</span>
+                <span class="item">联系人:
+                    {{ isset(json_decode($info->content)->who) ? json_decode($info->content)->who : '' }}
+                </span>
                 <span class="price">
                     <?php if(!empty(json_decode($info->content)->price) || isset(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
