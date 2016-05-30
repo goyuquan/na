@@ -46,22 +46,17 @@ class InfoController extends Controller
             }
         }
 
+        $data = [
+            'type' => $type,
+            'infos' => $infos,
+            'category' => $category_data,
+            'categories' => $categories,
+            'parent_category' => $parent_category
+        ];
         if(View::exists('info.categories.'.$folder->alias.'.'.$category_data->alias)){
-            return view('info.categories.'.$folder->alias.'.'.$category_data->alias,[
-                'type' => $type,
-                'infos' => $infos,
-                'category' => $category_data,
-                'categories' => $categories,
-                'parent_category' => $parent_category
-            ]);
+            return view('info.categories.'.$folder->alias.'.'.$category_data->alias,$data);
         } else {
-            return view('info.categories.common',[
-                'type' => $type,
-                'infos' => $infos,
-                'category' => $category_data,
-                'categories' => $categories,
-                'parent_category' => $parent_category
-            ]);
+            return view('info.categories.common',$data);
         }
     }
 
@@ -72,20 +67,17 @@ class InfoController extends Controller
         $category = $info->category;
         if($category){
             $parent_category =  Category::find($category->parent_id);
+
+            $data = [
+                'info' => $info,
+                'category' => $category,
+                'parent_category' => $parent_category,
+                'content' => $content
+            ];
             if(View::exists('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show')){
-                return view('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show',[
-                    'info' => $info,
-                    'category' => $category,
-                    'parent_category' => $parent_category,
-                    'content' => $content
-                ]);
+                return view('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show',$data);
             } else {
-                return view('info.categories.common_show',[
-                    'info' => $info,
-                    'category' => $category,
-                    'parent_category' => $parent_category,
-                    'content' => $content
-                ]);
+                return view('info.categories.common_show',$data);
             }
         } else {
             return view('page.search_show',[

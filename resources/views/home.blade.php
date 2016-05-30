@@ -257,6 +257,7 @@
                 <span class="price">
                     <?php if(isset(json_decode($info->content)->price)){
                         echo "￥".json_decode($info->content)->price;
+                        if ($info->category->parent_id == 15) echo "万";
                     } else {
                         echo "面议";
                     }
@@ -264,6 +265,7 @@
                 </span>
 
                 <span class="phone">{{ json_decode($info->content)->phone }}</span>
+                <a href="{{ url('/infos/category/'.$info->category->id) }}">宁安{{ $info->category->name }}</a>
 
                 <p> {{ str_limit($info->text,100) }} </p>
             </li>

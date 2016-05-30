@@ -26,20 +26,16 @@ class PageController extends Controller
             }
         }
 
+        $data = [
+            'page' => $page,
+            'items' => $items,
+            'categories' => $categories,
+            'type' => $type
+        ];
         if(View::exists('page.'.$page->alias)){
-            return view('page.'.$page->alias,[
-                'page' => $page,
-                'items' => $items,
-                'categories' => $categories,
-                'type' => $type
-            ]);
+            return view('page.'.$page->alias,$data);
         } else {
-            return view('page.common',[
-                'page' => $page,
-                'items' => $items,
-                'categories' => $categories,
-                'type' => $type
-            ]);
+            return view('page.common',$data);
         }
 
     }
@@ -58,22 +54,17 @@ class PageController extends Controller
             }
         }
 
+        $data = [
+            'item' => $item,
+            'page' => $page,
+            'content' => $content,
+            'categories' => $categories,
+            'type' => $type
+        ]
         if(View::exists('page.show.'.$page->alias)){
-            return view('page.show.'.$page->alias,[
-                'item' => $item,
-                'page' => $page,
-                'content' => $content,
-                'categories' => $categories,
-                'type' => $type
-            ]);
+            return view('page.show.'.$page->alias,$data);
         } else {
-            return view('page.show.common',[
-                'item' => $item,
-                'page' => $page,
-                'content' => $content,
-                'categories' => $categories,
-                'type' => $type
-            ]);
+            return view('page.show.common',$data);
         }
 
     }

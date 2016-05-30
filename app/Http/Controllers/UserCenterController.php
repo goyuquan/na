@@ -120,20 +120,18 @@ class UserCenterController extends Controller
                 $photos = Img::where('label',$content->photos_sha1)->get(['name']);
             }
             $folder = Category::find($category->parent_id);
+
+            $data = [
+                'info' => $info,
+                'content' => $content,
+                'category' => $category,
+                'photos' => $photos
+            ];
+            
             if(View::exists('user.info.edit.'.$folder->alias.'.'.$category->alias)){
-                return view('user.info.edit.'.$folder->alias.'.'.$category->alias,[
-                    'info' => $info,
-                    'content' => $content,
-                    'category' => $category,
-                    'photos' => $photos
-                ]);
+                return view('user.info.edit.'.$folder->alias.'.'.$category->alias,$data);
             } else {
-                return view('user.Info.edit.common',[
-                    'info' => $info,
-                    'content' => $content,
-                    'category' => $category,
-                    'photos' => $photos
-                ]);
+                return view('user.Info.edit.common',$data);
             }
         } else {
             return view('common.info_authorize',['info' => "无权编辑!"]);
