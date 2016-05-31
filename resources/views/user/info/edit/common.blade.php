@@ -47,7 +47,7 @@
             </section>
             <section>
                 <label for="phone">电话号码</label>
-                <input type="text" name="phone" value="{{ Auth::user()->phone }}">
+                <input type="text" name="phone" value="{{ $content->phone }}">
             </section>
 			@if(Auth::User()->role > 1)
 			<section>
