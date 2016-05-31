@@ -24,69 +24,68 @@
     @include('user.layouts.sidebar')
 
     <div class="content_wrap">
-		<form id="edit" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
+		<form id="create" method="POST" action="{{ url('/user/info/create/') }}">
 			<input type="hidden" name="category_id" value="{{$category->id}}">
-            <input type="hidden" name="page" value="{{$info->id}}">
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
-				<input type="text" name="title" value="{{ $info->title }}">
+				<input type="text" name="title">
                 @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
 			<section>
 				<label for="mianji">面积</label>
-				<input class="short" type="text" name="mianji" value="{{ $content->mianji }}">&nbsp;平方米
+				<input class="short" type="text" name="mianji">&nbsp;平方米
 			</section>
 			<section>
-				<label for="price">总价</label>
-				<input class="short" type="text" name="price" value="{{ $content->price }}">
+				<label for="price">价格</label>
+				<input class="short" type="text" name="price">
 			</section>
 			<section>
 				<label for="area">小区(楼盘)</label>
-				<input type="text" name="area" value="{{ $content->area }}">
+				<input type="text" name="area">
 			</section>
 			<section>
 				<label for="addr">地址</label>
-				<input class="long" type="text" name="addr" value="{{ $content->addr }}">
+				<input class="long" type="text" name="addr">
 			</section>
             <section>
                 <label for="huxing">户型</label>
                 <select name="huxing">
-                    <option value="3_2" {{ $content->huxing == "3_2" ? "selected='selected'" : ""  }}>三室两厅</option>
-                    <option value="3_1" {{ $content->huxing == "3_1" ? "selected='selected'" : ""  }}>三室一厅</option>
-                    <option value="2_2" {{ $content->huxing == "2_2" ? "selected='selected'" : ""  }}>两室两厅</option>
-                    <option value="2_1" {{ $content->huxing == "2_1" ? "selected='selected'" : ""  }}>两室一厅</option>
-                    <option value="1_1" {{ $content->huxing == "1_1" ? "selected='selected'" : ""  }}>一室一厅</option>
-                    <option value="other" {{ $content->huxing == "other" ? "selected='selected'" : ""  }}>其他户型</option>
+                    <option value="3_2">三室两厅</option>
+                    <option value="3_1">三室一厅</option>
+                    <option value="2_2">两室两厅</option>
+                    <option value="2_1">两室一厅</option>
+                    <option value="1_1">一室一厅</option>
+                    <option value="other">其他户型</option>
                 </select>
             </section>
             <section>
 				<label for="floor">楼层</label>
-				<input class="tiny" type="text" name="floor" value="{{ $content->floor }}">
+				<input class="tiny" type="text" name="floor">
 			</section>
             <section>
 				<label for="maxfloor">最高楼层</label>
-				<input class="tiny" type="text" name="maxfloor" value="{{ $content->maxfloor }}">
+				<input class="tiny" type="text" name="maxfloor">
 			</section>
             <section>
                 <label for="zhuangxiu">装修程度</label>
                 <select name="zhuangxiu">
-                    <option value="hifi" {{ $content->zhuangxiu == "hifi" ? "selected='selected'" : ""  }}>豪华装修</option>
-                    <option value="high" {{ $content->zhuangxiu == "high" ? "selected='selected'" : ""  }}>精装修</option>
-                    <option value="middle" {{ $content->zhuangxiu == "middle" ? "selected='selected'" : ""  }}>中等装修</option>
-                    <option value="base" {{ $content->zhuangxiu == "base" ? "selected='selected'" : ""  }}>简单装修</option>
-                    <option value="low" {{ $content->zhuangxiu == "low" ? "selected='selected'" : ""  }}>毛坯</option>
-                    <option value="other" {{ $content->zhuangxiu == "other" ? "selected='selected'" : ""  }}>其他</option>
+                    <option value="hifi">豪华装修</option>
+                    <option value="high">精装修</option>
+                    <option value="middle">中等装修</option>
+                    <option value="base">简单装修</option>
+                    <option value="low">毛坯</option>
+                    <option value="other">其他</option>
                 </select>
             </section>
 			<section>
 				<label for="text">详细描述</label>
-				<textarea name="text" rows="10" cols="60">{{ $info->text }}</textarea>
+				<textarea name="text" rows="10" cols="60"></textarea>
                 @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
 			</section>
             <section>
                 <label for="who">联系人</label>
-                <input type="text" name="who" value="{{ $content->who }}">
+                <input type="text" name="who">
             </section>
             <section>
                 <label for="phone">电话号码</label>
@@ -95,21 +94,15 @@
 			@if(Auth::User()->role > 1)
 			<section>
 				<label for="publish_at">发布时间</label>
-				<input type="date" name="publish_at" value="{{ substr($info->publish_at,0,10) }}">
+				<input type="date" name="publish_at">
 			</section>
 			@endif
-            <section class="thumb_wrap">
+			<section class="thumb_wrap">
 				<label for="thumbnail">缩略图</label>
-				@if(isset($content->thumbnail))
-                <input type="hidden" name="thumbnail" value="{{$content->thumbnail}}">
-				<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
-				<button type="button" id="delete_thumb">删除</button>
-				@else
 				<button type="button" id="thumbnail_bt">上传缩略图</button>
-				@endif
 			</section>
 
-            @include('common.photo_edit')
+            @include('common.photo_create')
 
 			<input type="submit" value="提交">
 		</form>
@@ -122,11 +115,11 @@
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script src="{{url('/js/thumbnail.js')}}"></script>
-@include('common.photo_edit_js')
+@include('common.photo_create_js')
 <script type="text/javascript">
 $(function(){
 
-	var validate = $("#edit").validate({
+	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能
 	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
 	        form.submit();   //提交表单

@@ -38,7 +38,7 @@
 				<input class="short" type="text" name="mianji" value="{{ $content->mianji }}">&nbsp;平方米
 			</section>
 			<section>
-				<label for="price">总价</label>
+				<label for="price">价格</label>
 				<input class="short" type="text" name="price" value="{{ $content->price }}">
 			</section>
 			<section>

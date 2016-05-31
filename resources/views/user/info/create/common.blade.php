@@ -49,12 +49,8 @@
 				<label for="thumbnail">缩略图</label>
 				<button type="button" id="thumbnail_bt">上传缩略图</button>
 			</section>
-			<section class="photo_wrap">
-				<label for="photos">图片</label>
-				<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{sha1(time())}}">
-				<button type="button" id="photos_bt">上传图片</button>
-			</section>
 
+            @include('common.photo_create')
 
 			<input type="submit" value="提交">
 		</form>
@@ -67,30 +63,14 @@
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script src="{{url('/js/thumbnail.js')}}"></script>
-<script src="{{url('/js/dropzone.min.js')}}"></script>
+@include('common.photo_create_js')
 <script type="text/javascript">
 $(function(){
 
-    $("#my-awesome-dropzone").dropzone({
-        url: "/upload/photos/"+$("#photos_sha1").val(),
-        parallelUploads: 1,
-        maxFilesize: 0.5,
-		maxFiles:10,
-        thumbnailWidth: 100,
-        thumbnailHeight: 100,
-        dictFileTooBig:"文件太大了",
-        dragenter:function(){
-			$("#my-awesome-dropzone").css("border-color","#eea236");
-		},
-		dragleave:function(){
-			$("#my-awesome-dropzone").css("border-color","#398439");
-		}
-     });
-
 	var validate = $("#create").validate({
-	    debug: true, //调试模式取消submit的默认提交功能
-	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
-	        form.submit();   //提交表单
+	    debug: true,
+	    submitHandler: function(form){
+	        form.submit();
 	    },
 
 		rules : {

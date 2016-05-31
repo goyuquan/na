@@ -257,7 +257,6 @@
                 <span class="price">
                     <?php if(isset(json_decode($info->content)->price)){
                         echo "￥".json_decode($info->content)->price;
-                        if ($info->category->parent_id == 15) echo "万";
                     } else {
                         echo "面议";
                     }

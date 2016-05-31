@@ -57,7 +57,7 @@
 				@endif
 			</section>
 
-            @include('user.info.edit.photo_edit')
+            @include('common.photo_edit')
 
 			<input type="submit" value="修改">
 		</form>
@@ -69,7 +69,7 @@
 <script src="{{url('/js/thumbnail.js')}}"></script>
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
-@include('user.info.edit.photo_edit_js')
+@include('common.photo_edit_js')
 <script type="text/javascript">
 $(function(){
 
