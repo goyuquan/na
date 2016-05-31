@@ -71,6 +71,14 @@
             <br>
             <br>
             详细描述:   {{$info->text}}
+
+            @if( $photos || count($photos) > 0)
+            <ul class="imgs">
+                @foreach( $photos as $photo )
+                    <li><img src="{{ url('/uploads/'.$photo->name) }}" alt="" /></li>
+                @endforeach
+            </ul>
+            @endif
         </div>
         @include('info.categories.show_bottom')
     </div>

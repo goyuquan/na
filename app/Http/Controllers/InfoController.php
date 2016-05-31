@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Info;
+use App\Img;
 use View;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -68,12 +69,20 @@ class InfoController extends Controller
         if($category){
             $parent_category =  Category::find($category->parent_id);
 
+            $photos = isset($content->photos_sha1) ? $content->photos_sha1 : null ;
+
+            if ($photos) {
+                $photos = Img::where('label',$photos)->get();
+            }
+
             $data = [
                 'info' => $info,
                 'category' => $category,
                 'parent_category' => $parent_category,
-                'content' => $content
+                'content' => $content,
+                'photos' => $photos
             ];
+            
             if(View::exists('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show')){
                 return view('info.categories.'.$parent_category->alias.'.'.$category->alias.'_show',$data);
             } else {

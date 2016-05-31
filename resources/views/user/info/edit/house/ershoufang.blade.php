@@ -26,6 +26,7 @@
     <div class="content_wrap">
 		<form id="create" method="POST" action="{{ url('/user/info/update/'.$info->id) }}">
 			<input type="hidden" name="category_id" value="{{$category->id}}">
+            <input type="hidden" name="page" value="{{$info->id}}">
 			{!! csrf_field() !!}
 			<section>
 				<label for="title">标题</label>
@@ -100,25 +101,15 @@
             <section class="thumb_wrap">
 				<label for="thumbnail">缩略图</label>
 				@if(isset($content->thumbnail))
+                <input type="hidden" name="thumbnail" value="{{$content->thumbnail}}">
 				<img id="thumbnail" name="{{$content->thumbnail}}" src="{{url('/uploads/thumbnails/'.$content->thumbnail)}}" />
 				<button type="button" id="delete_thumb">删除</button>
 				@else
 				<button type="button" id="thumbnail_bt">上传缩略图</button>
 				@endif
 			</section>
-			<section class="photo_wrap">
-				<label for="photos">图片</label>
-					@if(isset($photos) && count($photos) > 0)
-						@foreach($photos as $photo)
-						<img src="{{url('uploads/thumbnails/'.$photo->name)}}" />
-						@endforeach
-						<button type="button" id="delete_photos">删除</button>
-					@else
-						<button type="button" id="photos_bt">上传图片</button>
-					@endif
-				<input type="hidden" id="photos_sha1" name="photos_sha1" value="{{ $content->photos_sha1 or sha1(time()) }}">
-			</section>
 
+            @include('user.info.edit.photo_edit')
 
 			<input type="submit" value="提交">
 		</form>
@@ -131,25 +122,9 @@
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script src="{{url('/js/thumbnail.js')}}"></script>
-<script src="{{url('/js/dropzone.min.js')}}"></script>
+@include('user.info.edit.photo_edit_js')
 <script type="text/javascript">
 $(function(){
-
-    $("#my-awesome-dropzone").dropzone({
-        url: "/upload/photos/"+$("#photos_sha1").val(),
-        parallelUploads: 1,
-        maxFilesize: 0.5,
-		maxFiles:10,
-        thumbnailWidth: 100,
-        thumbnailHeight: 100,
-        dictFileTooBig:"文件太大了",
-        dragenter:function(){
-			$("#my-awesome-dropzone").css("border-color","#eea236");
-		},
-		dragleave:function(){
-			$("#my-awesome-dropzone").css("border-color","#398439");
-		}
-     });
 
 	var validate = $("#create").validate({
 	    debug: true, //调试模式取消submit的默认提交功能

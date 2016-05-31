@@ -52,12 +52,17 @@ $(function(){
     $('.myModal').click(function(e){ e.stopPropagation(); })
     $('.close_bt').click(function(){ $('.background').fadeOut(); });
 
-    $(".photo_wrap").on("click","#photos_bt",function(){
-        $(".dz-message span").text("拖拽图片上传,每个文件不能超过500K");
-        $('.background_photos').fadeIn();
-     });
-    $('.background_photos').click(function(){ $(this).fadeOut(); })
-    $('.myModal_photos').click(function(e){ e.stopPropagation(); })
-    $('.close_bt').click(function(){ $('.background_photos').fadeOut(); });
+    $('#delete_thumb').click(function(){
+        var src = $("#thumbnail").attr("name");
+        var page = $("input[name='page']").val();
+        $.ajax({
+            type:"GET",
+            url:"/delete/page/"+page+"/thumbnail/"+src,
+            success:function(data){
+                $("#delete_thumb").after('<label for="thumbnail">缩略图</label> <button type="button" id="thumbnail_bt">上传缩略图</button>')
+                $("#delete_thumb,#thumbnail,.thumb_wrap input").remove();
+            }
+        });
+    });
 
 });
