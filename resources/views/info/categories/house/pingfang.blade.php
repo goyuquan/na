@@ -35,24 +35,6 @@
         @if(count($infos) > 0)
         <ul class="list">
             @foreach( $infos as $info )
-            <?php
-            $huxing = array(
-                '3_2' => '三室两厅',
-                '3_1' => '三室一厅',
-                '2_2' => '两室两厅',
-                '2_1' => '两室一厅',
-                '1_1' => '一室一厅',
-                'other' => '其他户型'
-             );
-             $zhuangxiu = array(
-                 'hifi' => '豪华装修',
-                 'high' => '精装修',
-                 'middle' => '中等装修',
-                 'base' => '简单装修',
-                 'low' => '毛坯',
-                 'other' => '其他装修'
-              );
-             ?>
             <li>
                 <?php
                 $img = isset(json_decode($info->content)->thumbnail) ? json_decode($info->content)->thumbnail : null;
@@ -74,10 +56,6 @@
                         ?>
                     </span>
                     <p>
-                        <span class="item">{{ json_decode($info->content)->area }}小区</span>
-                        <span class="item">{{ $huxing[json_decode($info->content)->huxing] }}</span>
-                        <span class="item">{{ json_decode($info->content)->floor.'/'.json_decode($info->content)->maxfloor }}层</span>
-                        <span class="item">{{ $zhuangxiu[json_decode($info->content)->zhuangxiu] }}</span>
                         <span class="item size">{{ json_decode($info->content)->mianji }}㎡</span>
                     </p>
 

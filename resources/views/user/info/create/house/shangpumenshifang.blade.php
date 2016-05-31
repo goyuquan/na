@@ -30,10 +30,24 @@
 			<section>
 				<label for="title">标题</label>
 				<input type="text" name="title">
+                @if ($errors->has('title')) <strong>{{ $errors->first('title') }}</strong> @endif
 			</section>
 			<section>
-				<label for="text">正文</label>
+				<label for="mianji">面积</label>
+				<input class="short" type="text" name="mianji">&nbsp;平方米
+			</section>
+			<section>
+				<label for="price">价格</label>
+				<input class="short" type="text" name="price">
+			</section>
+			<section>
+				<label for="addr">地址</label>
+				<input class="long" type="text" name="addr">
+			</section>
+			<section>
+				<label for="text">详细描述</label>
 				<textarea name="text" rows="10" cols="60"></textarea>
+                @if ($errors->has('text')) <strong>{{ $errors->first('text') }}</strong> @endif
 			</section>
             <section>
                 <label for="who">联系人</label>
@@ -72,16 +86,54 @@
 $(function(){
 
 	var validate = $("#create").validate({
-	    debug: true,
-	    submitHandler: function(form){
-	        form.submit();
+	    debug: true, //调试模式取消submit的默认提交功能
+	    submitHandler: function(form){   //表单提交句柄,为一回调函数,带一个参数：form
+	        form.submit();   //提交表单
 	    },
 
 		rules : {
 			title : {
 				required : true,
+				minlength : 5,
+				maxlength : 30
+			},
+			mianji : {
+				required : true,
+                number : true,
+				min : 5
+			},
+			price : {
+                number : true
+			},
+			area : {
+				required : true,
+				minlength : 2,
+				maxlength : 10
+			},
+			addr : {
+				required : true,
 				minlength : 4,
 				maxlength : 30
+			},
+			floor : {
+				required : true,
+                number : true,
+				min : 1,
+				max : 50
+			},
+			maxfloor : {
+				required : true,
+                number : true,
+				min: 1,
+				max : 500
+			},
+			who : {
+				required : true,
+				minlength : 1,
+				maxlength : 4
+			},
+			phone : {
+				isMobile : true
 			},
 			text : {
 				required : true,
@@ -93,13 +145,51 @@ $(function(){
 		messages : {
 			title : {
 				required : '标题不能为空',
-				minlength : '标题最长不能小于4位',
+				minlength : '标题最长不能小于5位',
 				maxlength : '标题最长不能大于30'
 			},
+			mianji : {
+				required : '不能为空',
+                number : '请填写数字',
+				min : '不能小于5'
+			},
+            price : {
+                number : '请填写数字'
+            },
+            area : {
+                required : '不能为空',
+                minlength : '不能小于2位',
+                maxlength : '不能大于10位'
+            },
+            addr : {
+                required : '不能为空',
+                minlength : '不能小于4位',
+                maxlength : '不能大于30位'
+            },
+            floor : {
+                required : '不能为空',
+                number : '请填写数字',
+                min : '不能小于1',
+                max : '不能大于50'
+            },
+            maxfloor : {
+                required : '不能为空',
+                number : '请填写数字',
+                min : '不能小于1',
+                max : '不能大于50'
+            },
+			who : {
+				required : '不能为空',
+				minlength : '不能小于1位',
+				maxlength : '不能大于4'
+			},
+			phone : {
+				isMobile : '请填写正确的手机号'
+			},
 			text : {
-				required : '正文内容不能为空',
-				minlength : '正文内容最长不能小于10',
-				maxlength : '正文内容最长不能大于1000'
+				required : '不能为空',
+				minlength : '不能小于10',
+				maxlength : '不能大于1000'
 			}
 		},
 	});

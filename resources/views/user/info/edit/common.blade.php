@@ -41,11 +41,20 @@
 					<strong>{{ $errors->first('text') }}</strong>
 				@endif
 			</section>
-
             <section>
-				<label for="phone">电话号码</label>
-				<input type="text" name="phone" value="{{ Auth::user()->phone }}">
+                <label for="who">联系人</label>
+                <input type="text" name="who" value="{{ $content->who }}">
+            </section>
+            <section>
+                <label for="phone">电话号码</label>
+                <input type="text" name="phone" value="{{ Auth::user()->phone }}">
+            </section>
+			@if(Auth::User()->role > 1)
+			<section>
+				<label for="publish_at">发布时间</label>
+				<input type="date" name="publish_at" value="{{ substr($info->publish_at,0,10) }}">
 			</section>
+			@endif
 			<section class="thumb_wrap">
 				<label for="thumbnail">缩略图</label>
 				@if(isset($content->thumbnail))

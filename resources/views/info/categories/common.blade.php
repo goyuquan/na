@@ -47,7 +47,8 @@
                         }
                     ?>
                 </span>
-                <span class="phone">{{ json_decode($info->content)->phone }}</span>
+                <span class="item">联系人:  {{ json_decode($info->content)->who }}</span>
+                <span class="phone">电话号码:   {{ json_decode($info->content)->phone }}</span>
                 <p> {{ str_limit($info->text,100) }} </p>
             </li>
             @endforeach

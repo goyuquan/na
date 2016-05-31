@@ -29,7 +29,7 @@
     </div>
     <div class="content">
         <div class="headbar">
-            <h2>{{$category->name}}</h2>
+            <h2>宁安{{$category->name}}</h2>
         </div>
 
         @if(count($infos) > 0)
@@ -67,7 +67,7 @@
                     <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,30) }}</a></h4>
                     <span class="price">
                         <?php if(isset(json_decode($info->content)->price)){
-                            echo "￥".json_decode($info->content)->price."万";
+                            echo "￥".json_decode($info->content)->price;
                         } else {
                             echo "面议";
                         }
