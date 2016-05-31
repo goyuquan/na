@@ -60,7 +60,7 @@ class PageController extends Controller
             'content' => $content,
             'categories' => $categories,
             'type' => $type
-        ]
+        ];
         if(View::exists('page.show.'.$page->alias)){
             return view('page.show.'.$page->alias,$data);
         } else {
