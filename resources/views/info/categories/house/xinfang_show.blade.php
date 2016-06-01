@@ -52,16 +52,25 @@
                  'other' => '其他'
               );
              ?>
-            <span class="item">{{$content->area}}小区</span>
-            <span class="item">户型:  {{ $huxing[$content->huxing] }}</span>
+            <span class="item">{{$content->area or ""}}小区</span>
+            @if(isset($content->huxing))
+            <span class="item">户型:  {{ $huxing[$content->huxing]  or ""}}</span>
+            @endif
+
+            @if(isset($content->huxing) && isset($content->maxfloor))
             <span class="item">{{ $content->floor.'/'.$content->maxfloor }}层</span>
+            @endif
+
+            @if(isset($content->zhuangxiu))
             <span class="item">{{ $zhuangxiu[$content->zhuangxiu] }}</span>
-            <span class="item">{{ $content->mianji }}㎡</span>
-            <span class="item">电话号码: {{$content->phone}}</span>
-            <span class="item">联系人:  {{$content->who}}</span>
+            @endif
+
+            <span class="item">{{ $content->mianji  or ""}}㎡</span>
+            <span class="item">电话号码: {{$content->phone or ""}}</span>
+            <span class="item">联系人:  {{$content->who or ""}}</span>
             <span class="item">
                 总价:&nbsp;
-                <?php if(isset($content->price)){
+                <?php if(!empty($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";

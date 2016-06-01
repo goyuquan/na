@@ -51,6 +51,7 @@
             <section>
                 <label for="huxing">户型</label>
                 <select name="huxing">
+                    <option>{{null}}</option>
                     <option value="3_2">三室两厅</option>
                     <option value="3_1">三室一厅</option>
                     <option value="2_2">两室两厅</option>
@@ -70,6 +71,7 @@
             <section>
                 <label for="zhuangxiu">装修程度</label>
                 <select name="zhuangxiu">
+                    <option>{{null}}</option>
                     <option value="hifi">豪华装修</option>
                     <option value="high">精装修</option>
                     <option value="middle">中等装修</option>
@@ -116,6 +118,8 @@
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script src="{{url('/js/thumbnail.js')}}"></script>
 @include('common.photo_create_js')
+
+@if(Auth::User()->role < 5)
 <script type="text/javascript">
 $(function(){
 
@@ -144,6 +148,12 @@ $(function(){
 				required : true,
 				minlength : 2,
 				maxlength : 10
+			},
+			huxing : {
+				required : true
+			},
+			zhuangxiu : {
+				required : true
 			},
 			addr : {
 				required : true,
@@ -197,6 +207,12 @@ $(function(){
                 minlength : '不能小于2位',
                 maxlength : '不能大于10位'
             },
+            huxing : {
+                required : '请选择'
+            },
+            zhuangxiu : {
+                required : '请选择'
+            },
             addr : {
                 required : '不能为空',
                 minlength : '不能小于4位',
@@ -231,4 +247,5 @@ $(function(){
 	});
 });
 </script>
+@endif
 @endsection

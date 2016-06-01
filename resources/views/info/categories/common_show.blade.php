@@ -36,7 +36,7 @@
             @include('info.categories.text_ad')
             <span>
                 价格:&nbsp;
-                <?php if(isset($content->price)){
+                <?php if(!empty($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";
@@ -55,7 +55,7 @@
                 @endforeach
             </ul>
             @endif
-            
+
         </div>
         @include('info.categories.show_bottom')
     </div>

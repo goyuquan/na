@@ -80,6 +80,7 @@
 @section('script')
 <script src="{{url('/js/jquery.validate.min.js')}}"></script>
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
+@if(Auth::User()->role < 5)
 <script type="text/javascript">
 $(function(){
 
@@ -174,4 +175,5 @@ $(function(){
 
 });
 </script>
+@endif
 @endsection

@@ -89,6 +89,7 @@
 <script src="{{url('/js/validate-phone-additional-methods.js')}}"></script>
 <script src="{{url('/js/thumbnail.js')}}"></script>
 @include('common.photo_edit_js')
+@if(Auth::User()->role < 5)
 <script type="text/javascript">
 $(function(){
 
@@ -202,4 +203,5 @@ $(function(){
 	});
 });
 </script>
+@endif
 @endsection

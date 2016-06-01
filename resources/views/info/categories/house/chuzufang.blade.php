@@ -66,7 +66,7 @@
                     <span class="date">{{ substr($info->publish_at,0,10) }}</span>
                     <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,30) }}</a></h4>
                     <span class="price">
-                        <?php if(isset(json_decode($info->content)->price)){
+                        <?php if(empty(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
                         } else {
                             echo "面议";
@@ -75,9 +75,13 @@
                     </span>
                     <p>
                         <span class="item">{{ json_decode($info->content)->area }}小区</span>
-                        <span class="item">{{ $huxing[json_decode($info->content)->huxing] }}</span>
+                        @if(!empty(json_decode($info->content)->huxing))
+                            <span class="item">{{ $huxing[json_decode($info->content)->huxing] }}</span>
+                        @endif
                         <span class="item">{{ json_decode($info->content)->floor.'/'.json_decode($info->content)->maxfloor }}层</span>
-                        <span class="item">{{ $zhuangxiu[json_decode($info->content)->zhuangxiu] }}</span>
+                        @if(!empty(json_decode($info->content)->zhuangxiu))
+                            <span class="item">{{ $zhuangxiu[json_decode($info->content)->zhuangxiu] }}</span>
+                        @endif
                         <span class="item size">{{ json_decode($info->content)->mianji }}㎡</span>
                     </p>
 

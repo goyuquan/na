@@ -39,7 +39,7 @@
             <span class="item">联系人:  {{$content->who}}</span>
             <span class="item">
                 总价:&nbsp;
-                <?php if(isset($content->price)){
+                <?php if(empty($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";
