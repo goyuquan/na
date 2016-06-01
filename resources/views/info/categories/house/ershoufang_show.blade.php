@@ -53,9 +53,13 @@
               );
              ?>
             <span class="item">{{$content->area}}小区</span>
-            <span class="item">户型:  {{ $huxing[$content->huxing] }}</span>
+            @if(!empty($content->huxing))
+                <span class="item">户型:  {{ $huxing[$content->huxing] }}</span>
+            @endif
             <span class="item">{{ $content->floor.'/'.$content->maxfloor }}层</span>
-            <span class="item">{{ $zhuangxiu[$content->zhuangxiu] }}</span>
+            @if(!empty($content->zhuangxiu))
+                <span class="item">{{ $zhuangxiu[$content->zhuangxiu] }}</span>
+            @endif
             <span class="item">{{ $content->mianji }}㎡</span>
             <span class="item">电话号码: {{$content->phone}}</span>
             <span class="item">联系人:  {{$content->who}}</span>
