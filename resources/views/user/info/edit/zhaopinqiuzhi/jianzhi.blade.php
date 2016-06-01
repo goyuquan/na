@@ -47,6 +47,7 @@
             <section>
                 <label for="checkmode">结算方式</label>
                 <select name="checkmode">
+                    <option>{{null}}</option>
                     <option value="day" <?php if($content->checkmode == "day") {echo 'selected="selected"';} ?> >按天结算</option>
                     <option value="hour" <?php if($content->checkmode == "hour") {echo 'selected="selected"';} ?> >按小时结算</option>
                     <option value="month" <?php if($content->checkmode == "month") {echo 'selected="selected"';} ?> >按月结算</option>

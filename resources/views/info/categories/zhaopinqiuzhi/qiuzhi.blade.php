@@ -53,7 +53,7 @@
                 <span class="item">学历:  {{ $edu[json_decode($info->content)->edu] }}</span>
                 <span class="item">工作经验:  {{ json_decode($info->content)->year }}年</span>
                 <span class="price">
-                    <?php if(!empty(json_decode($info->content)->price) || isset(json_decode($info->content)->price)){
+                    <?php if(!empty(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
                         } else {
                             echo "面议";

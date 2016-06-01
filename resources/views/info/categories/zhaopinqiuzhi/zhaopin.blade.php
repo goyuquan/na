@@ -45,7 +45,7 @@
                     {{ isset(json_decode($info->content)->who) ? json_decode($info->content)->who : '' }}
                 </span>
                 <span class="price">
-                    <?php if(!empty(json_decode($info->content)->price) || isset(json_decode($info->content)->price)){
+                    <?php if(!empty(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
                         } else {
                             echo "面议";

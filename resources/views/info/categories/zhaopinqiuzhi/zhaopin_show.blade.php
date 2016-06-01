@@ -42,7 +42,7 @@
             <span class="item">招聘人数: {{$content->count}}</span>
             <span class="item">
                 薪资:&nbsp;
-                <?php if(isset($content->price)){
+                <?php if(!empty($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";

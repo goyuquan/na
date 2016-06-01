@@ -51,7 +51,7 @@
             <span class="item">期望工作地点: {{$content->didian}}</span>
             <span class="item">
                 期望薪资:&nbsp;
-                <?php if(isset($content->price)){
+                <?php if(!empty($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";

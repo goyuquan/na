@@ -57,9 +57,7 @@
             <span class="item">户型:  {{ $huxing[$content->huxing]  or ""}}</span>
             @endif
 
-            @if(isset($content->huxing) && isset($content->maxfloor))
             <span class="item">{{ $content->floor.'/'.$content->maxfloor }}层</span>
-            @endif
 
             @if(isset($content->zhuangxiu))
             <span class="item">{{ $zhuangxiu[$content->zhuangxiu] }}</span>

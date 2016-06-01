@@ -51,6 +51,7 @@
             <section>
                 <label for="edu">学历</label>
                 <select name="edu">
+                    <option>{{null}}</option>
                     <option value="ben" <?php if($content->edu == "ben") {echo 'selected="selected"';} ?>>大学本科</option>
                     <option value="zhuan" <?php if($content->edu == "zhuan") {echo 'selected="selected"';} ?>>大学专科</option>
                     <option value="gao" <?php if($content->edu == "gao") {echo 'selected="selected"';} ?>>高中</option>

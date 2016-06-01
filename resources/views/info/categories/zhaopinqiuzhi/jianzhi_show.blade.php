@@ -52,7 +52,7 @@
             <span class="item">结算方式: {{$checkmode[$content->checkmode]}}</span>
             <span class="item">
                 薪资:&nbsp;
-                <?php if(isset($content->price)){
+                <?php if(!empty($content->price)){
                     echo "￥".$content->price;
                 } else {
                     echo "面议";
