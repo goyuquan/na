@@ -48,7 +48,7 @@
                     <span class="date">{{ substr($info->publish_at,0,10) }}</span>
                     <h4><a href="{{url('/info/'.$info->id)}}">{{ str_limit($info->title,30) }}</a></h4>
                     <span class="price">
-                        <?php if(empty(json_decode($info->content)->price)){
+                        <?php if(!empty(json_decode($info->content)->price)){
                             echo "￥".json_decode($info->content)->price;
                         } else {
                             echo "面议";

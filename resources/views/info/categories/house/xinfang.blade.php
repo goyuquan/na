@@ -78,7 +78,9 @@
                         @if(!empty(json_decode($info->content)->huxing))
                             <span class="item">{{ $huxing[json_decode($info->content)->huxing] }}</span>
                         @endif
-                        <span class="item">{{ json_decode($info->content)->floor.'/'.json_decode($info->content)->maxfloor }}层</span>
+                        @if(isset($content->huxing) && isset($content->maxfloor))
+                            <span class="item">{{ json_decode($info->content)->floor.'/'.json_decode($info->content)->maxfloor }}层</span>
+                        @endif
                         @if(!empty(json_decode($info->content)->zhuangxiu))
                             <span class="item">{{ $zhuangxiu[json_decode($info->content)->zhuangxiu] }}</span>
                         @endif
